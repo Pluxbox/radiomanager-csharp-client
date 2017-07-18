@@ -25,25 +25,6 @@ namespace RadioManager.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get Visual Slide Image as JPEG
-        /// </summary>
-        /// <remarks>
-        /// Get Visual Slide Image as JPEG
-        /// </remarks>
-        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>VisualImageResult</returns>
-        VisualImageResult DownloadVisualSlide ();
-
-        /// <summary>
-        /// Get Visual Slide Image as JPEG
-        /// </summary>
-        /// <remarks>
-        /// Get Visual Slide Image as JPEG
-        /// </remarks>
-        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of VisualImageResult</returns>
-        ApiResponse<VisualImageResult> DownloadVisualSlideWithHttpInfo ();
-        /// <summary>
         /// Get Visual Slide Image as Base64
         /// </summary>
         /// <remarks>
@@ -64,25 +45,6 @@ namespace RadioManager.Api
         ApiResponse<VisualResult> GetVisualSlideWithHttpInfo ();
         #endregion Synchronous Operations
         #region Asynchronous Operations
-        /// <summary>
-        /// Get Visual Slide Image as JPEG
-        /// </summary>
-        /// <remarks>
-        /// Get Visual Slide Image as JPEG
-        /// </remarks>
-        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of VisualImageResult</returns>
-        System.Threading.Tasks.Task<VisualImageResult> DownloadVisualSlideAsync ();
-
-        /// <summary>
-        /// Get Visual Slide Image as JPEG
-        /// </summary>
-        /// <remarks>
-        /// Get Visual Slide Image as JPEG
-        /// </remarks>
-        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (VisualImageResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VisualImageResult>> DownloadVisualSlideAsyncWithHttpInfo ();
         /// <summary>
         /// Get Visual Slide Image as Base64
         /// </summary>
@@ -212,140 +174,6 @@ namespace RadioManager.Api
         public void AddDefaultHeader(string key, string value)
         {
             this.Configuration.AddDefaultHeader(key, value);
-        }
-
-        /// <summary>
-        /// Get Visual Slide Image as JPEG Get Visual Slide Image as JPEG
-        /// </summary>
-        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>VisualImageResult</returns>
-        public VisualImageResult DownloadVisualSlide ()
-        {
-             ApiResponse<VisualImageResult> localVarResponse = DownloadVisualSlideWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get Visual Slide Image as JPEG Get Visual Slide Image as JPEG
-        /// </summary>
-        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of VisualImageResult</returns>
-        public ApiResponse< VisualImageResult > DownloadVisualSlideWithHttpInfo ()
-        {
-
-            var localVarPath = "/visual/image";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-
-            // authentication (API Key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
-            {
-                localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DownloadVisualSlide", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<VisualImageResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (VisualImageResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(VisualImageResult)));
-        }
-
-        /// <summary>
-        /// Get Visual Slide Image as JPEG Get Visual Slide Image as JPEG
-        /// </summary>
-        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of VisualImageResult</returns>
-        public async System.Threading.Tasks.Task<VisualImageResult> DownloadVisualSlideAsync ()
-        {
-             ApiResponse<VisualImageResult> localVarResponse = await DownloadVisualSlideAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get Visual Slide Image as JPEG Get Visual Slide Image as JPEG
-        /// </summary>
-        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (VisualImageResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<VisualImageResult>> DownloadVisualSlideAsyncWithHttpInfo ()
-        {
-
-            var localVarPath = "/visual/image";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-
-            // authentication (API Key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
-            {
-                localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DownloadVisualSlide", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<VisualImageResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (VisualImageResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(VisualImageResult)));
         }
 
         /// <summary>

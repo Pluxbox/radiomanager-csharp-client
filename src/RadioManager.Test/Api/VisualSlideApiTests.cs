@@ -65,17 +65,6 @@ namespace RadioManager.Test
 
         
         /// <summary>
-        /// Test DownloadVisualSlide
-        /// </summary>
-        [Test]
-        public void DownloadVisualSlideTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.DownloadVisualSlide();
-            //Assert.IsInstanceOf<VisualImageResult> (response, "response is VisualImageResult");
-        }
-        
-        /// <summary>
         /// Test GetVisualSlide
         /// </summary>
         [Test]
