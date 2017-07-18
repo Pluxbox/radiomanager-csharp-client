@@ -1,19 +1,56 @@
-# \ExternalMessageApi
+# RadioManager.Api.ExternalMessageApi
 
 All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**QueueExternalMessage**](ExternalMessageApi.md#QueueExternalMessage) | **Post** /externalmessagequeue | Queue External Message.
+[**QueueExternalMessage**](ExternalMessageApi.md#queueexternalmessage) | **POST** /externalmessagequeue | Queue External Message.
 
 
+<a name="queueexternalmessage"></a>
 # **QueueExternalMessage**
-> interface{} QueueExternalMessage($message)
+> Object QueueExternalMessage (ExternalMessageQueueData message)
 
 Queue External Message.
 
 Queue External Message.
 
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using RadioManager.Api;
+using RadioManager.Client;
+using RadioManager.Model;
+
+namespace Example
+{
+    public class QueueExternalMessageExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: API Key
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+
+            var apiInstance = new ExternalMessageApi();
+            var message = new ExternalMessageQueueData(); // ExternalMessageQueueData | Data **(Required)**
+
+            try
+            {
+                // Queue External Message.
+                Object result = apiInstance.QueueExternalMessage(message);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalMessageApi.QueueExternalMessage: " + e.Message );
+            }
+        }
+    }
+}
+```
 
 ### Parameters
 
@@ -23,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**interface{}**](interface{}.md)
+**Object**
 
 ### Authorization
 

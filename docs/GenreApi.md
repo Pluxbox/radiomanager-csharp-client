@@ -1,27 +1,65 @@
-# \GenreApi
+# RadioManager.Api.GenreApi
 
 All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetGenreById**](GenreApi.md#GetGenreById) | **Get** /genres/{id} | Get genre by id
-[**ListGenres**](GenreApi.md#ListGenres) | **Get** /genres | List all genres.
+[**GetGenreById**](GenreApi.md#getgenrebyid) | **GET** /genres/{id} | Get genre by id
+[**ListGenres**](GenreApi.md#listgenres) | **GET** /genres | List all genres.
 
 
+<a name="getgenrebyid"></a>
 # **GetGenreById**
-> GenreResult GetGenreById($id, $externalStationId)
+> GenreResult GetGenreById (long? id, long? externalStationId = null)
 
 Get genre by id
 
 Get genre by id
 
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using RadioManager.Api;
+using RadioManager.Client;
+using RadioManager.Model;
+
+namespace Example
+{
+    public class GetGenreByIdExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: API Key
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+
+            var apiInstance = new GenreApi();
+            var id = 789;  // long? | ID of Genre **(Required)**
+            var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
+
+            try
+            {
+                // Get genre by id
+                GenreResult result = apiInstance.GetGenreById(id, externalStationId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GenreApi.GetGenreById: " + e.Message );
+            }
+        }
+    }
+}
+```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int64**| ID of Genre **(Required)** | 
- **externalStationId** | **int64**| Query on a different (content providing) station *(Optional)* | [optional] 
+ **id** | **long?**| ID of Genre **(Required)** | 
+ **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type
 
@@ -38,23 +76,64 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="listgenres"></a>
 # **ListGenres**
-> GenreResults ListGenres($page, $parentId, $programId, $broadcastId, $externalStationId)
+> GenreResults ListGenres (long? page = null, long? parentId = null, long? programId = null, long? broadcastId = null, long? externalStationId = null)
 
 List all genres.
 
 List all genres.
 
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using RadioManager.Api;
+using RadioManager.Client;
+using RadioManager.Model;
+
+namespace Example
+{
+    public class ListGenresExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: API Key
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+
+            var apiInstance = new GenreApi();
+            var page = 789;  // long? | Current page *(Optional)* (optional) 
+            var parentId = 789;  // long? | Search on Parent ID of Genre *(Optional)* (optional) 
+            var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
+            var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
+            var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
+
+            try
+            {
+                // List all genres.
+                GenreResults result = apiInstance.ListGenres(page, parentId, programId, broadcastId, externalStationId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GenreApi.ListGenres: " + e.Message );
+            }
+        }
+    }
+}
+```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int64**| Current page *(Optional)* | [optional] 
- **parentId** | **int64**| Search on Parent ID of Genre *(Optional)* | [optional] 
- **programId** | **int64**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **broadcastId** | **int64**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **externalStationId** | **int64**| Query on a different (content providing) station *(Optional)* | [optional] 
+ **page** | **long?**| Current page *(Optional)* | [optional] 
+ **parentId** | **long?**| Search on Parent ID of Genre *(Optional)* | [optional] 
+ **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type
 

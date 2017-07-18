@@ -1,18 +1,17 @@
-# ItemOutputOnly
-
+# RadioManager.Model.ItemOutputOnly
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int64** |  | [optional] [default to null]
-**UpdatedAt** | [**time.Time**](time.Time.md) |  | [optional] [default to null]
-**CreatedAt** | [**time.Time**](time.Time.md) |  | [optional] [default to null]
-**DeletedAt** | [**time.Time**](time.Time.md) |  | [optional] [default to null]
-**DataModified** | **int64** |  | [optional] [default to null]
-**Order** | **int64** |  | [optional] [default to null]
-**TemplateblockId** | **int64** |  | [optional] [default to null]
-**TemplateitemId** | **int64** |  | [optional] [default to null]
-**ExternalStationId** | **int64** |  | [optional] [default to null]
+**Id** | **long?** |  | [optional] 
+**UpdatedAt** | **DateTime?** |  | [optional] 
+**CreatedAt** | **DateTime?** |  | [optional] 
+**DeletedAt** | **DateTime?** |  | [optional] 
+**DataModified** | **long?** |  | [optional] 
+**Order** | **long?** |  | [optional] 
+**TemplateblockId** | **long?** |  | [optional] 
+**TemplateitemId** | **long?** |  | [optional] 
+**ExternalStationId** | **long?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

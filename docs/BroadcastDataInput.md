@@ -1,33 +1,32 @@
-# BroadcastDataInput
-
+# RadioManager.Model.BroadcastDataInput
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProgramId** | **int64** |  | [optional] [default to null]
-**ModelTypeId** | **int64** |  | [optional] [default to null]
-**StationId** | **int64** |  | [optional] [default to null]
-**FieldValues** | [**BroadcastFieldValues**](Broadcast_field_values.md) |  | [optional] [default to null]
-**Title** | **string** |  | [optional] [default to null]
-**Start** | [**time.Time**](time.Time.md) |  | [optional] [default to null]
-**Stop** | [**time.Time**](time.Time.md) |  | [optional] [default to null]
-**GenreId** | **int64** |  | [optional] [default to null]
-**Description** | **string** |  | [optional] [default to null]
-**ShortName** | **string** |  | [optional] [default to null]
-**MediumName** | **string** |  | [optional] [default to null]
-**Website** | **string** |  | [optional] [default to null]
-**Email** | **string** |  | [optional] [default to null]
-**Recommended** | **bool** |  | [optional] [default to null]
-**Language** | **string** |  | [optional] [default to null]
-**Published** | **bool** |  | [optional] [default to null]
-**RepetitionUid** | **string** |  | [optional] [default to null]
-**RepetitionType** | **string** |  | [optional] [default to null]
-**RepetitionEnd** | [**time.Time**](time.Time.md) |  | [optional] [default to null]
-**RepetitionStart** | [**time.Time**](time.Time.md) |  | [optional] [default to null]
-**RepetitionDays** | **[]bool** |  | [optional] [default to null]
-**PtyCodeId** | **int64** |  | [optional] [default to null]
-**Tags** | **[]int32** |  | [optional] [default to null]
-**Presenters** | **[]int32** |  | [optional] [default to null]
+**ProgramId** | **long?** |  | [optional] 
+**ModelTypeId** | **long?** |  | [optional] 
+**StationId** | **long?** |  | [optional] 
+**FieldValues** | [**BroadcastFieldValues**](BroadcastFieldValues.md) |  | [optional] 
+**Title** | **string** |  | [optional] 
+**Start** | **DateTime?** |  | [optional] 
+**Stop** | **DateTime?** |  | [optional] 
+**GenreId** | **long?** |  | [optional] 
+**Description** | **string** |  | [optional] 
+**ShortName** | **string** |  | [optional] 
+**MediumName** | **string** |  | [optional] 
+**Website** | **string** |  | [optional] 
+**Email** | **string** |  | [optional] 
+**Recommended** | **bool?** |  | [optional] 
+**Language** | **string** |  | [optional] 
+**Published** | **bool?** |  | [optional] 
+**RepetitionUid** | **Guid?** |  | [optional] 
+**RepetitionType** | **string** |  | [optional] 
+**RepetitionEnd** | **DateTime?** |  | [optional] 
+**RepetitionStart** | **DateTime?** |  | [optional] 
+**RepetitionDays** | **List&lt;bool?&gt;** |  | [optional] 
+**PtyCodeId** | **long?** |  | [optional] 
+**Tags** | **List&lt;int?&gt;** |  | [optional] 
+**Presenters** | **List&lt;int?&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

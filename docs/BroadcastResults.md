@@ -1,19 +1,18 @@
-# BroadcastResults
-
+# RadioManager.Model.BroadcastResults
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CurrentPage** | **int64** |  | [optional] [default to null]
-**From** | **int64** |  | [optional] [default to null]
-**LastPage** | **int64** |  | [optional] [default to null]
-**NextPageUrl** | **string** |  | [optional] [default to null]
-**Path** | **string** |  | [optional] [default to null]
-**PerPage** | **int64** |  | [optional] [default to null]
-**PrevPageUrl** | **string** |  | [optional] [default to null]
-**To** | **int64** |  | [optional] [default to null]
-**Total** | **int64** |  | [optional] [default to null]
-**Results** | [**[]BroadcastResult**](BroadcastResult.md) |  | [optional] [default to null]
+**CurrentPage** | **long?** |  | [optional] 
+**From** | **long?** |  | [optional] 
+**LastPage** | **long?** |  | [optional] 
+**NextPageUrl** | **string** |  | [optional] 
+**Path** | **string** |  | [optional] 
+**PerPage** | **long?** |  | [optional] 
+**PrevPageUrl** | **string** |  | [optional] 
+**To** | **long?** |  | [optional] 
+**Total** | **long?** |  | [optional] 
+**Results** | [**List&lt;BroadcastResult&gt;**](BroadcastResult.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 
