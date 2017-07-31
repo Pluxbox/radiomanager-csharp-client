@@ -1,7 +1,7 @@
 /* 
- * Pluxbox Radiomanager Client
+ * RadioManager
  *
- * Pluxbox RadioManager gives you the power, flexibility and speed you always wanted in a lightweight and easy-to-use web-based radio solution. With Pluxbox RadioManager you can organise your radio workflow and automate your omnichannel communication with your listeners. We offer wide range specialised services for the radio and connections like Hybrid Radio, Visual Radio, your website and social media without losing focus on your broadcast. For more information visit https://pluxbox.com
+ * RadioManager
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -1863,7 +1863,7 @@ namespace RadioManager.Api
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
-            if (startMax != null) localVarQueryParams.Add("start_max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
+            if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
             if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
             if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
             if (presenterId != null) localVarQueryParams.Add("presenter_id", Configuration.ApiClient.ParameterToString(presenterId)); // query parameter
@@ -1964,7 +1964,7 @@ namespace RadioManager.Api
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
-            if (startMax != null) localVarQueryParams.Add("start_max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
+            if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
             if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
             if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
             if (presenterId != null) localVarQueryParams.Add("presenter_id", Configuration.ApiClient.ParameterToString(presenterId)); // query parameter

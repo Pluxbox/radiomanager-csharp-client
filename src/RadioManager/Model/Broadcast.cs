@@ -1,7 +1,7 @@
 /* 
- * Pluxbox Radiomanager Client
+ * RadioManager
  *
- * Pluxbox RadioManager gives you the power, flexibility and speed you always wanted in a lightweight and easy-to-use web-based radio solution. With Pluxbox RadioManager you can organise your radio workflow and automate your omnichannel communication with your listeners. We offer wide range specialised services for the radio and connections like Hybrid Radio, Visual Radio, your website and social media without losing focus on your broadcast. For more information visit https://pluxbox.com
+ * RadioManager
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -92,7 +92,7 @@ namespace RadioManager.Model
         /// <param name="RepetitionStart">RepetitionStart.</param>
         /// <param name="RepetitionDays">RepetitionDays.</param>
         /// <param name="PtyCodeId">PtyCodeId.</param>
-        public Broadcast(long? ProgramId = default(long?), long? ModelTypeId = default(long?), long? StationId = default(long?), BroadcastFieldValues FieldValues = default(BroadcastFieldValues), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), bool? Published = default(bool?), Guid? RepetitionUid = default(Guid?), RepetitionTypeEnum? RepetitionType = default(RepetitionTypeEnum?), DateTime? RepetitionEnd = default(DateTime?), DateTime? RepetitionStart = default(DateTime?), List<bool?> RepetitionDays = default(List<bool?>), long? PtyCodeId = default(long?))
+        public Broadcast(long? ProgramId = default(long?), long? ModelTypeId = default(long?), long? StationId = default(long?), BroadcastFieldValues FieldValues = default(BroadcastFieldValues), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), bool? Published = default(bool?), string RepetitionUid = default(string), RepetitionTypeEnum? RepetitionType = default(RepetitionTypeEnum?), DateTime? RepetitionEnd = default(DateTime?), DateTime? RepetitionStart = default(DateTime?), List<bool?> RepetitionDays = default(List<bool?>), long? PtyCodeId = default(long?))
         {
             this.ProgramId = ProgramId;
             this.ModelTypeId = ModelTypeId;
@@ -218,7 +218,7 @@ namespace RadioManager.Model
         /// Gets or Sets RepetitionUid
         /// </summary>
         [DataMember(Name="repetition_uid", EmitDefaultValue=false)]
-        public Guid? RepetitionUid { get; set; }
+        public string RepetitionUid { get; set; }
 
 
         /// <summary>

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Recommended** | **bool?** |  | [optional] 
 **Language** | **string** |  | [optional] 
 **Published** | **bool?** |  | [optional] 
-**RepetitionUid** | **Guid?** |  | [optional] 
+**RepetitionUid** | **string** |  | [optional] 
 **RepetitionType** | **string** |  | [optional] 
 **RepetitionEnd** | **DateTime?** |  | [optional] 
 **RepetitionStart** | **DateTime?** |  | [optional] 
