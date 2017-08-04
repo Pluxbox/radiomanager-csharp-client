@@ -25,41 +25,25 @@ using SwaggerDateConverter = RadioManager.Client.SwaggerDateConverter;
 namespace RadioManager.Model
 {
     /// <summary>
-    /// BlockRelations
+    /// StoryInputOnly
     /// </summary>
     [DataContract]
-    public partial class BlockRelations :  IEquatable<BlockRelations>, IValidatableObject
+    public partial class StoryInputOnly :  IEquatable<StoryInputOnly>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="BlockRelations" /> class.
+        /// Initializes a new instance of the <see cref="StoryInputOnly" /> class.
         /// </summary>
-        /// <param name="Items">Items.</param>
-        /// <param name="Broadcast">Broadcast.</param>
-        /// <param name="Program">Program.</param>
-        public BlockRelations(BlockRelationsItems Items = default(BlockRelationsItems), BlockRelationsBroadcast Broadcast = default(BlockRelationsBroadcast), BlockRelationsProgram Program = default(BlockRelationsProgram))
+        /// <param name="Tags">Tags.</param>
+        public StoryInputOnly(List<int?> Tags = default(List<int?>))
         {
-            this.Items = Items;
-            this.Broadcast = Broadcast;
-            this.Program = Program;
+            this.Tags = Tags;
         }
         
         /// <summary>
-        /// Gets or Sets Items
+        /// Gets or Sets Tags
         /// </summary>
-        [DataMember(Name="items", EmitDefaultValue=false)]
-        public BlockRelationsItems Items { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Broadcast
-        /// </summary>
-        [DataMember(Name="broadcast", EmitDefaultValue=false)]
-        public BlockRelationsBroadcast Broadcast { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Program
-        /// </summary>
-        [DataMember(Name="program", EmitDefaultValue=false)]
-        public BlockRelationsProgram Program { get; set; }
+        [DataMember(Name="tags", EmitDefaultValue=false)]
+        public List<int?> Tags { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,10 +52,8 @@ namespace RadioManager.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BlockRelations {\n");
-            sb.Append("  Items: ").Append(Items).Append("\n");
-            sb.Append("  Broadcast: ").Append(Broadcast).Append("\n");
-            sb.Append("  Program: ").Append(Program).Append("\n");
+            sb.Append("class StoryInputOnly {\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -92,34 +74,24 @@ namespace RadioManager.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BlockRelations);
+            return this.Equals(input as StoryInputOnly);
         }
 
         /// <summary>
-        /// Returns true if BlockRelations instances are equal
+        /// Returns true if StoryInputOnly instances are equal
         /// </summary>
-        /// <param name="input">Instance of BlockRelations to be compared</param>
+        /// <param name="input">Instance of StoryInputOnly to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BlockRelations input)
+        public bool Equals(StoryInputOnly input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Items == input.Items ||
-                    (this.Items != null &&
-                    this.Items.Equals(input.Items))
-                ) && 
-                (
-                    this.Broadcast == input.Broadcast ||
-                    (this.Broadcast != null &&
-                    this.Broadcast.Equals(input.Broadcast))
-                ) && 
-                (
-                    this.Program == input.Program ||
-                    (this.Program != null &&
-                    this.Program.Equals(input.Program))
+                    this.Tags == input.Tags ||
+                    (this.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags))
                 );
         }
 
@@ -132,12 +104,8 @@ namespace RadioManager.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Items != null)
-                    hashCode = hashCode * 59 + this.Items.GetHashCode();
-                if (this.Broadcast != null)
-                    hashCode = hashCode * 59 + this.Broadcast.GetHashCode();
-                if (this.Program != null)
-                    hashCode = hashCode * 59 + this.Program.GetHashCode();
+                if (this.Tags != null)
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

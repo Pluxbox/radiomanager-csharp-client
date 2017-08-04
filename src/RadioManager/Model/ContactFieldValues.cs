@@ -70,30 +70,28 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ContactFieldValues);
+            return this.Equals(input as ContactFieldValues);
         }
 
         /// <summary>
         /// Returns true if ContactFieldValues instances are equal
         /// </summary>
-        /// <param name="other">Instance of ContactFieldValues to be compared</param>
+        /// <param name="input">Instance of ContactFieldValues to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ContactFieldValues other)
+        public bool Equals(ContactFieldValues input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.Description == other.Description ||
-                    this.Description != null &&
-                    this.Description.Equals(other.Description)
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 );
         }
 
@@ -103,14 +101,12 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.Description != null)
-                    hash = hash * 59 + this.Description.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                return hashCode;
             }
         }
 

@@ -70,30 +70,28 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as TagRelationsBroadcastsParams);
+            return this.Equals(input as TagRelationsBroadcastsParams);
         }
 
         /// <summary>
         /// Returns true if TagRelationsBroadcastsParams instances are equal
         /// </summary>
-        /// <param name="other">Instance of TagRelationsBroadcastsParams to be compared</param>
+        /// <param name="input">Instance of TagRelationsBroadcastsParams to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TagRelationsBroadcastsParams other)
+        public bool Equals(TagRelationsBroadcastsParams input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.TagId == other.TagId ||
-                    this.TagId != null &&
-                    this.TagId.Equals(other.TagId)
+                    this.TagId == input.TagId ||
+                    (this.TagId != null &&
+                    this.TagId.Equals(input.TagId))
                 );
         }
 
@@ -103,14 +101,12 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.TagId != null)
-                    hash = hash * 59 + this.TagId.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.TagId.GetHashCode();
+                return hashCode;
             }
         }
 

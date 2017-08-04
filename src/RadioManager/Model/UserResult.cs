@@ -206,85 +206,83 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as UserResult);
+            return this.Equals(input as UserResult);
         }
 
         /// <summary>
         /// Returns true if UserResult instances are equal
         /// </summary>
-        /// <param name="other">Instance of UserResult to be compared</param>
+        /// <param name="input">Instance of UserResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UserResult other)
+        public bool Equals(UserResult input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Email == other.Email ||
-                    this.Email != null &&
-                    this.Email.Equals(other.Email)
+                    this.Email == input.Email ||
+                    (this.Email != null &&
+                    this.Email.Equals(input.Email))
                 ) && 
                 (
-                    this.Firstname == other.Firstname ||
-                    this.Firstname != null &&
-                    this.Firstname.Equals(other.Firstname)
+                    this.Firstname == input.Firstname ||
+                    (this.Firstname != null &&
+                    this.Firstname.Equals(input.Firstname))
                 ) && 
                 (
-                    this.Lastname == other.Lastname ||
-                    this.Lastname != null &&
-                    this.Lastname.Equals(other.Lastname)
+                    this.Lastname == input.Lastname ||
+                    (this.Lastname != null &&
+                    this.Lastname.Equals(input.Lastname))
                 ) && 
                 (
-                    this.Phone == other.Phone ||
-                    this.Phone != null &&
-                    this.Phone.Equals(other.Phone)
+                    this.Phone == input.Phone ||
+                    (this.Phone != null &&
+                    this.Phone.Equals(input.Phone))
                 ) && 
                 (
-                    this.CreatedAt == other.CreatedAt ||
-                    this.CreatedAt != null &&
-                    this.CreatedAt.Equals(other.CreatedAt)
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
-                    this.UpdatedAt == other.UpdatedAt ||
-                    this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(other.UpdatedAt)
+                    this.UpdatedAt == input.UpdatedAt ||
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
-                    this.Active == other.Active ||
-                    this.Active != null &&
-                    this.Active.Equals(other.Active)
+                    this.Active == input.Active ||
+                    (this.Active != null &&
+                    this.Active.Equals(input.Active))
                 ) && 
                 (
-                    this.Settings == other.Settings ||
-                    this.Settings != null &&
-                    this.Settings.Equals(other.Settings)
+                    this.Settings == input.Settings ||
+                    (this.Settings != null &&
+                    this.Settings.Equals(input.Settings))
                 ) && 
                 (
-                    this.Language == other.Language ||
-                    this.Language != null &&
-                    this.Language.Equals(other.Language)
+                    this.Language == input.Language ||
+                    (this.Language != null &&
+                    this.Language.Equals(input.Language))
                 ) && 
                 (
-                    this.ActiveExternalStationId == other.ActiveExternalStationId ||
-                    this.ActiveExternalStationId != null &&
-                    this.ActiveExternalStationId.Equals(other.ActiveExternalStationId)
+                    this.ActiveExternalStationId == input.ActiveExternalStationId ||
+                    (this.ActiveExternalStationId != null &&
+                    this.ActiveExternalStationId.Equals(input.ActiveExternalStationId))
                 ) && 
                 (
-                    this.RoleId == other.RoleId ||
-                    this.RoleId != null &&
-                    this.RoleId.Equals(other.RoleId)
+                    this.RoleId == input.RoleId ||
+                    (this.RoleId != null &&
+                    this.RoleId.Equals(input.RoleId))
                 );
         }
 
@@ -294,36 +292,34 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Email != null)
-                    hash = hash * 59 + this.Email.GetHashCode();
+                    hashCode = hashCode * 59 + this.Email.GetHashCode();
                 if (this.Firstname != null)
-                    hash = hash * 59 + this.Firstname.GetHashCode();
+                    hashCode = hashCode * 59 + this.Firstname.GetHashCode();
                 if (this.Lastname != null)
-                    hash = hash * 59 + this.Lastname.GetHashCode();
+                    hashCode = hashCode * 59 + this.Lastname.GetHashCode();
                 if (this.Phone != null)
-                    hash = hash * 59 + this.Phone.GetHashCode();
+                    hashCode = hashCode * 59 + this.Phone.GetHashCode();
                 if (this.CreatedAt != null)
-                    hash = hash * 59 + this.CreatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null)
-                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.Active != null)
-                    hash = hash * 59 + this.Active.GetHashCode();
+                    hashCode = hashCode * 59 + this.Active.GetHashCode();
                 if (this.Settings != null)
-                    hash = hash * 59 + this.Settings.GetHashCode();
+                    hashCode = hashCode * 59 + this.Settings.GetHashCode();
                 if (this.Language != null)
-                    hash = hash * 59 + this.Language.GetHashCode();
+                    hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.ActiveExternalStationId != null)
-                    hash = hash * 59 + this.ActiveExternalStationId.GetHashCode();
+                    hashCode = hashCode * 59 + this.ActiveExternalStationId.GetHashCode();
                 if (this.RoleId != null)
-                    hash = hash * 59 + this.RoleId.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.RoleId.GetHashCode();
+                return hashCode;
             }
         }
 

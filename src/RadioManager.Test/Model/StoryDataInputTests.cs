@@ -104,6 +104,14 @@ namespace RadioManager.Test
         {
             // TODO unit test for the property 'Description'
         }
+        /// <summary>
+        /// Test the property 'Tags'
+        /// </summary>
+        [Test]
+        public void TagsTest()
+        {
+            // TODO unit test for the property 'Tags'
+        }
 
     }
 

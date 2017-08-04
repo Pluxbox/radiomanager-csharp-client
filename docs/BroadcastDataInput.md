@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **RepetitionType** | **string** |  | [optional] 
 **RepetitionEnd** | **DateTime?** |  | [optional] 
 **RepetitionStart** | **DateTime?** |  | [optional] 
-**RepetitionDays** | **List&lt;bool?&gt;** |  | [optional] 
+**RepetitionDays** | **string** |  | [optional] 
 **PtyCodeId** | **long?** |  | [optional] 
 **Tags** | **List&lt;int?&gt;** |  | [optional] 
 **Presenters** | **List&lt;int?&gt;** |  | [optional] 

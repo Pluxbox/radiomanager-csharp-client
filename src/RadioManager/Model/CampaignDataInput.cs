@@ -153,60 +153,58 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as CampaignDataInput);
+            return this.Equals(input as CampaignDataInput);
         }
 
         /// <summary>
         /// Returns true if CampaignDataInput instances are equal
         /// </summary>
-        /// <param name="other">Instance of CampaignDataInput to be compared</param>
+        /// <param name="input">Instance of CampaignDataInput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CampaignDataInput other)
+        public bool Equals(CampaignDataInput input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.ModelTypeId == other.ModelTypeId ||
-                    this.ModelTypeId != null &&
-                    this.ModelTypeId.Equals(other.ModelTypeId)
+                    this.ModelTypeId == input.ModelTypeId ||
+                    (this.ModelTypeId != null &&
+                    this.ModelTypeId.Equals(input.ModelTypeId))
                 ) && 
                 (
-                    this.FieldValues == other.FieldValues ||
-                    this.FieldValues != null &&
-                    this.FieldValues.SequenceEqual(other.FieldValues)
+                    this.FieldValues == input.FieldValues ||
+                    (this.FieldValues != null &&
+                    this.FieldValues.SequenceEqual(input.FieldValues))
                 ) && 
                 (
-                    this.Title == other.Title ||
-                    this.Title != null &&
-                    this.Title.Equals(other.Title)
+                    this.Title == input.Title ||
+                    (this.Title != null &&
+                    this.Title.Equals(input.Title))
                 ) && 
                 (
-                    this.Start == other.Start ||
-                    this.Start != null &&
-                    this.Start.Equals(other.Start)
+                    this.Start == input.Start ||
+                    (this.Start != null &&
+                    this.Start.Equals(input.Start))
                 ) && 
                 (
-                    this.Stop == other.Stop ||
-                    this.Stop != null &&
-                    this.Stop.Equals(other.Stop)
+                    this.Stop == input.Stop ||
+                    (this.Stop != null &&
+                    this.Stop.Equals(input.Stop))
                 ) && 
                 (
-                    this.Recommended == other.Recommended ||
-                    this.Recommended != null &&
-                    this.Recommended.Equals(other.Recommended)
+                    this.Recommended == input.Recommended ||
+                    (this.Recommended != null &&
+                    this.Recommended.Equals(input.Recommended))
                 ) && 
                 (
-                    this.Description == other.Description ||
-                    this.Description != null &&
-                    this.Description.Equals(other.Description)
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 );
         }
 
@@ -216,26 +214,24 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.ModelTypeId != null)
-                    hash = hash * 59 + this.ModelTypeId.GetHashCode();
+                    hashCode = hashCode * 59 + this.ModelTypeId.GetHashCode();
                 if (this.FieldValues != null)
-                    hash = hash * 59 + this.FieldValues.GetHashCode();
+                    hashCode = hashCode * 59 + this.FieldValues.GetHashCode();
                 if (this.Title != null)
-                    hash = hash * 59 + this.Title.GetHashCode();
+                    hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.Start != null)
-                    hash = hash * 59 + this.Start.GetHashCode();
+                    hashCode = hashCode * 59 + this.Start.GetHashCode();
                 if (this.Stop != null)
-                    hash = hash * 59 + this.Stop.GetHashCode();
+                    hashCode = hashCode * 59 + this.Stop.GetHashCode();
                 if (this.Recommended != null)
-                    hash = hash * 59 + this.Recommended.GetHashCode();
+                    hashCode = hashCode * 59 + this.Recommended.GetHashCode();
                 if (this.Description != null)
-                    hash = hash * 59 + this.Description.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                return hashCode;
             }
         }
 
