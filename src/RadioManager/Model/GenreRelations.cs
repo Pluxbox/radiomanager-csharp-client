@@ -79,33 +79,35 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as GenreRelations);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as GenreRelations);
         }
 
         /// <summary>
         /// Returns true if GenreRelations instances are equal
         /// </summary>
-        /// <param name="input">Instance of GenreRelations to be compared</param>
+        /// <param name="other">Instance of GenreRelations to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(GenreRelations input)
+        public bool Equals(GenreRelations other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.Broadcasts == input.Broadcasts ||
-                    (this.Broadcasts != null &&
-                    this.Broadcasts.Equals(input.Broadcasts))
+                    this.Broadcasts == other.Broadcasts ||
+                    this.Broadcasts != null &&
+                    this.Broadcasts.Equals(other.Broadcasts)
                 ) && 
                 (
-                    this.Programs == input.Programs ||
-                    (this.Programs != null &&
-                    this.Programs.Equals(input.Programs))
+                    this.Programs == other.Programs ||
+                    this.Programs != null &&
+                    this.Programs.Equals(other.Programs)
                 );
         }
 
@@ -115,14 +117,16 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.Broadcasts != null)
-                    hashCode = hashCode * 59 + this.Broadcasts.GetHashCode();
+                    hash = hash * 59 + this.Broadcasts.GetHashCode();
                 if (this.Programs != null)
-                    hashCode = hashCode * 59 + this.Programs.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this.Programs.GetHashCode();
+                return hash;
             }
         }
 

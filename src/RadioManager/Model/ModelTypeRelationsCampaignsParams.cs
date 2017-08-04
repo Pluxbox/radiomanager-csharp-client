@@ -70,28 +70,30 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as ModelTypeRelationsCampaignsParams);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as ModelTypeRelationsCampaignsParams);
         }
 
         /// <summary>
         /// Returns true if ModelTypeRelationsCampaignsParams instances are equal
         /// </summary>
-        /// <param name="input">Instance of ModelTypeRelationsCampaignsParams to be compared</param>
+        /// <param name="other">Instance of ModelTypeRelationsCampaignsParams to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ModelTypeRelationsCampaignsParams input)
+        public bool Equals(ModelTypeRelationsCampaignsParams other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.ModelTypeId == input.ModelTypeId ||
-                    (this.ModelTypeId != null &&
-                    this.ModelTypeId.Equals(input.ModelTypeId))
+                    this.ModelTypeId == other.ModelTypeId ||
+                    this.ModelTypeId != null &&
+                    this.ModelTypeId.Equals(other.ModelTypeId)
                 );
         }
 
@@ -101,12 +103,14 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.ModelTypeId != null)
-                    hashCode = hashCode * 59 + this.ModelTypeId.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this.ModelTypeId.GetHashCode();
+                return hash;
             }
         }
 

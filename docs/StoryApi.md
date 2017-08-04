@@ -34,9 +34,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new StoryApi();
             var data = new StoryDataInput(); // StoryDataInput | Data **(Required)**
@@ -100,9 +100,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new StoryApi();
             var id = 789;  // long? | ID of Story **(Required)**
@@ -166,9 +166,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new StoryApi();
             var id = 789;  // long? | ID of Story **(Required)**
@@ -234,9 +234,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new StoryApi();
             var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
@@ -308,9 +308,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new StoryApi();
             var id = 789;  // long? | ID of Story **(Required)**

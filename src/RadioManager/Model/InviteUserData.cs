@@ -100,33 +100,35 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as InviteUserData);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as InviteUserData);
         }
 
         /// <summary>
         /// Returns true if InviteUserData instances are equal
         /// </summary>
-        /// <param name="input">Instance of InviteUserData to be compared</param>
+        /// <param name="other">Instance of InviteUserData to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InviteUserData input)
+        public bool Equals(InviteUserData other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
+                    this.Email == other.Email ||
+                    this.Email != null &&
+                    this.Email.Equals(other.Email)
                 ) && 
                 (
-                    this.RoleId == input.RoleId ||
-                    (this.RoleId != null &&
-                    this.RoleId.Equals(input.RoleId))
+                    this.RoleId == other.RoleId ||
+                    this.RoleId != null &&
+                    this.RoleId.Equals(other.RoleId)
                 );
         }
 
@@ -136,14 +138,16 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.Email != null)
-                    hashCode = hashCode * 59 + this.Email.GetHashCode();
+                    hash = hash * 59 + this.Email.GetHashCode();
                 if (this.RoleId != null)
-                    hashCode = hashCode * 59 + this.RoleId.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this.RoleId.GetHashCode();
+                return hash;
             }
         }
 

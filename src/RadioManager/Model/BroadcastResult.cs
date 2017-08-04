@@ -427,188 +427,190 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as BroadcastResult);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as BroadcastResult);
         }
 
         /// <summary>
         /// Returns true if BroadcastResult instances are equal
         /// </summary>
-        /// <param name="input">Instance of BroadcastResult to be compared</param>
+        /// <param name="other">Instance of BroadcastResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BroadcastResult input)
+        public bool Equals(BroadcastResult other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.Id == other.Id ||
+                    this.Id != null &&
+                    this.Id.Equals(other.Id)
                 ) && 
                 (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
+                    this.UpdatedAt == other.UpdatedAt ||
+                    this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(other.UpdatedAt)
                 ) && 
                 (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
+                    this.CreatedAt == other.CreatedAt ||
+                    this.CreatedAt != null &&
+                    this.CreatedAt.Equals(other.CreatedAt)
                 ) && 
                 (
-                    this.DeletedAt == input.DeletedAt ||
-                    (this.DeletedAt != null &&
-                    this.DeletedAt.Equals(input.DeletedAt))
+                    this.DeletedAt == other.DeletedAt ||
+                    this.DeletedAt != null &&
+                    this.DeletedAt.Equals(other.DeletedAt)
                 ) && 
                 (
-                    this.ExternalStationId == input.ExternalStationId ||
-                    (this.ExternalStationId != null &&
-                    this.ExternalStationId.Equals(input.ExternalStationId))
+                    this.ExternalStationId == other.ExternalStationId ||
+                    this.ExternalStationId != null &&
+                    this.ExternalStationId.Equals(other.ExternalStationId)
                 ) && 
                 (
-                    this.ProgramId == input.ProgramId ||
-                    (this.ProgramId != null &&
-                    this.ProgramId.Equals(input.ProgramId))
+                    this.ProgramId == other.ProgramId ||
+                    this.ProgramId != null &&
+                    this.ProgramId.Equals(other.ProgramId)
                 ) && 
                 (
-                    this.ModelTypeId == input.ModelTypeId ||
-                    (this.ModelTypeId != null &&
-                    this.ModelTypeId.Equals(input.ModelTypeId))
+                    this.ModelTypeId == other.ModelTypeId ||
+                    this.ModelTypeId != null &&
+                    this.ModelTypeId.Equals(other.ModelTypeId)
                 ) && 
                 (
-                    this.StationId == input.StationId ||
-                    (this.StationId != null &&
-                    this.StationId.Equals(input.StationId))
+                    this.StationId == other.StationId ||
+                    this.StationId != null &&
+                    this.StationId.Equals(other.StationId)
                 ) && 
                 (
-                    this.FieldValues == input.FieldValues ||
-                    (this.FieldValues != null &&
-                    this.FieldValues.Equals(input.FieldValues))
+                    this.FieldValues == other.FieldValues ||
+                    this.FieldValues != null &&
+                    this.FieldValues.Equals(other.FieldValues)
                 ) && 
                 (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
+                    this.Title == other.Title ||
+                    this.Title != null &&
+                    this.Title.Equals(other.Title)
                 ) && 
                 (
-                    this.Start == input.Start ||
-                    (this.Start != null &&
-                    this.Start.Equals(input.Start))
+                    this.Start == other.Start ||
+                    this.Start != null &&
+                    this.Start.Equals(other.Start)
                 ) && 
                 (
-                    this.Stop == input.Stop ||
-                    (this.Stop != null &&
-                    this.Stop.Equals(input.Stop))
+                    this.Stop == other.Stop ||
+                    this.Stop != null &&
+                    this.Stop.Equals(other.Stop)
                 ) && 
                 (
-                    this.GenreId == input.GenreId ||
-                    (this.GenreId != null &&
-                    this.GenreId.Equals(input.GenreId))
+                    this.GenreId == other.GenreId ||
+                    this.GenreId != null &&
+                    this.GenreId.Equals(other.GenreId)
                 ) && 
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
+                    this.Description == other.Description ||
+                    this.Description != null &&
+                    this.Description.Equals(other.Description)
                 ) && 
                 (
-                    this.ShortName == input.ShortName ||
-                    (this.ShortName != null &&
-                    this.ShortName.Equals(input.ShortName))
+                    this.ShortName == other.ShortName ||
+                    this.ShortName != null &&
+                    this.ShortName.Equals(other.ShortName)
                 ) && 
                 (
-                    this.MediumName == input.MediumName ||
-                    (this.MediumName != null &&
-                    this.MediumName.Equals(input.MediumName))
+                    this.MediumName == other.MediumName ||
+                    this.MediumName != null &&
+                    this.MediumName.Equals(other.MediumName)
                 ) && 
                 (
-                    this.Website == input.Website ||
-                    (this.Website != null &&
-                    this.Website.Equals(input.Website))
+                    this.Website == other.Website ||
+                    this.Website != null &&
+                    this.Website.Equals(other.Website)
                 ) && 
                 (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
+                    this.Email == other.Email ||
+                    this.Email != null &&
+                    this.Email.Equals(other.Email)
                 ) && 
                 (
-                    this.Recommended == input.Recommended ||
-                    (this.Recommended != null &&
-                    this.Recommended.Equals(input.Recommended))
+                    this.Recommended == other.Recommended ||
+                    this.Recommended != null &&
+                    this.Recommended.Equals(other.Recommended)
                 ) && 
                 (
-                    this.Language == input.Language ||
-                    (this.Language != null &&
-                    this.Language.Equals(input.Language))
+                    this.Language == other.Language ||
+                    this.Language != null &&
+                    this.Language.Equals(other.Language)
                 ) && 
                 (
-                    this.Published == input.Published ||
-                    (this.Published != null &&
-                    this.Published.Equals(input.Published))
+                    this.Published == other.Published ||
+                    this.Published != null &&
+                    this.Published.Equals(other.Published)
                 ) && 
                 (
-                    this.RepetitionUid == input.RepetitionUid ||
-                    (this.RepetitionUid != null &&
-                    this.RepetitionUid.Equals(input.RepetitionUid))
+                    this.RepetitionUid == other.RepetitionUid ||
+                    this.RepetitionUid != null &&
+                    this.RepetitionUid.Equals(other.RepetitionUid)
                 ) && 
                 (
-                    this.RepetitionType == input.RepetitionType ||
-                    (this.RepetitionType != null &&
-                    this.RepetitionType.Equals(input.RepetitionType))
+                    this.RepetitionType == other.RepetitionType ||
+                    this.RepetitionType != null &&
+                    this.RepetitionType.Equals(other.RepetitionType)
                 ) && 
                 (
-                    this.RepetitionEnd == input.RepetitionEnd ||
-                    (this.RepetitionEnd != null &&
-                    this.RepetitionEnd.Equals(input.RepetitionEnd))
+                    this.RepetitionEnd == other.RepetitionEnd ||
+                    this.RepetitionEnd != null &&
+                    this.RepetitionEnd.Equals(other.RepetitionEnd)
                 ) && 
                 (
-                    this.RepetitionStart == input.RepetitionStart ||
-                    (this.RepetitionStart != null &&
-                    this.RepetitionStart.Equals(input.RepetitionStart))
+                    this.RepetitionStart == other.RepetitionStart ||
+                    this.RepetitionStart != null &&
+                    this.RepetitionStart.Equals(other.RepetitionStart)
                 ) && 
                 (
-                    this.RepetitionDays == input.RepetitionDays ||
-                    (this.RepetitionDays != null &&
-                    this.RepetitionDays.Equals(input.RepetitionDays))
+                    this.RepetitionDays == other.RepetitionDays ||
+                    this.RepetitionDays != null &&
+                    this.RepetitionDays.Equals(other.RepetitionDays)
                 ) && 
                 (
-                    this.PtyCodeId == input.PtyCodeId ||
-                    (this.PtyCodeId != null &&
-                    this.PtyCodeId.Equals(input.PtyCodeId))
+                    this.PtyCodeId == other.PtyCodeId ||
+                    this.PtyCodeId != null &&
+                    this.PtyCodeId.Equals(other.PtyCodeId)
                 ) && 
                 (
-                    this.Items == input.Items ||
-                    (this.Items != null &&
-                    this.Items.Equals(input.Items))
+                    this.Items == other.Items ||
+                    this.Items != null &&
+                    this.Items.Equals(other.Items)
                 ) && 
                 (
-                    this.Blocks == input.Blocks ||
-                    (this.Blocks != null &&
-                    this.Blocks.Equals(input.Blocks))
+                    this.Blocks == other.Blocks ||
+                    this.Blocks != null &&
+                    this.Blocks.Equals(other.Blocks)
                 ) && 
                 (
-                    this.Program == input.Program ||
-                    (this.Program != null &&
-                    this.Program.Equals(input.Program))
+                    this.Program == other.Program ||
+                    this.Program != null &&
+                    this.Program.Equals(other.Program)
                 ) && 
                 (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
+                    this.Tags == other.Tags ||
+                    this.Tags != null &&
+                    this.Tags.Equals(other.Tags)
                 ) && 
                 (
-                    this.Presenters == input.Presenters ||
-                    (this.Presenters != null &&
-                    this.Presenters.Equals(input.Presenters))
+                    this.Presenters == other.Presenters ||
+                    this.Presenters != null &&
+                    this.Presenters.Equals(other.Presenters)
                 ) && 
                 (
-                    this.ModelType == input.ModelType ||
-                    (this.ModelType != null &&
-                    this.ModelType.Equals(input.ModelType))
+                    this.ModelType == other.ModelType ||
+                    this.ModelType != null &&
+                    this.ModelType.Equals(other.ModelType)
                 );
         }
 
@@ -618,76 +620,78 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                    hash = hash * 59 + this.Id.GetHashCode();
                 if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                    hash = hash * 59 + this.CreatedAt.GetHashCode();
                 if (this.DeletedAt != null)
-                    hashCode = hashCode * 59 + this.DeletedAt.GetHashCode();
+                    hash = hash * 59 + this.DeletedAt.GetHashCode();
                 if (this.ExternalStationId != null)
-                    hashCode = hashCode * 59 + this.ExternalStationId.GetHashCode();
+                    hash = hash * 59 + this.ExternalStationId.GetHashCode();
                 if (this.ProgramId != null)
-                    hashCode = hashCode * 59 + this.ProgramId.GetHashCode();
+                    hash = hash * 59 + this.ProgramId.GetHashCode();
                 if (this.ModelTypeId != null)
-                    hashCode = hashCode * 59 + this.ModelTypeId.GetHashCode();
+                    hash = hash * 59 + this.ModelTypeId.GetHashCode();
                 if (this.StationId != null)
-                    hashCode = hashCode * 59 + this.StationId.GetHashCode();
+                    hash = hash * 59 + this.StationId.GetHashCode();
                 if (this.FieldValues != null)
-                    hashCode = hashCode * 59 + this.FieldValues.GetHashCode();
+                    hash = hash * 59 + this.FieldValues.GetHashCode();
                 if (this.Title != null)
-                    hashCode = hashCode * 59 + this.Title.GetHashCode();
+                    hash = hash * 59 + this.Title.GetHashCode();
                 if (this.Start != null)
-                    hashCode = hashCode * 59 + this.Start.GetHashCode();
+                    hash = hash * 59 + this.Start.GetHashCode();
                 if (this.Stop != null)
-                    hashCode = hashCode * 59 + this.Stop.GetHashCode();
+                    hash = hash * 59 + this.Stop.GetHashCode();
                 if (this.GenreId != null)
-                    hashCode = hashCode * 59 + this.GenreId.GetHashCode();
+                    hash = hash * 59 + this.GenreId.GetHashCode();
                 if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                    hash = hash * 59 + this.Description.GetHashCode();
                 if (this.ShortName != null)
-                    hashCode = hashCode * 59 + this.ShortName.GetHashCode();
+                    hash = hash * 59 + this.ShortName.GetHashCode();
                 if (this.MediumName != null)
-                    hashCode = hashCode * 59 + this.MediumName.GetHashCode();
+                    hash = hash * 59 + this.MediumName.GetHashCode();
                 if (this.Website != null)
-                    hashCode = hashCode * 59 + this.Website.GetHashCode();
+                    hash = hash * 59 + this.Website.GetHashCode();
                 if (this.Email != null)
-                    hashCode = hashCode * 59 + this.Email.GetHashCode();
+                    hash = hash * 59 + this.Email.GetHashCode();
                 if (this.Recommended != null)
-                    hashCode = hashCode * 59 + this.Recommended.GetHashCode();
+                    hash = hash * 59 + this.Recommended.GetHashCode();
                 if (this.Language != null)
-                    hashCode = hashCode * 59 + this.Language.GetHashCode();
+                    hash = hash * 59 + this.Language.GetHashCode();
                 if (this.Published != null)
-                    hashCode = hashCode * 59 + this.Published.GetHashCode();
+                    hash = hash * 59 + this.Published.GetHashCode();
                 if (this.RepetitionUid != null)
-                    hashCode = hashCode * 59 + this.RepetitionUid.GetHashCode();
+                    hash = hash * 59 + this.RepetitionUid.GetHashCode();
                 if (this.RepetitionType != null)
-                    hashCode = hashCode * 59 + this.RepetitionType.GetHashCode();
+                    hash = hash * 59 + this.RepetitionType.GetHashCode();
                 if (this.RepetitionEnd != null)
-                    hashCode = hashCode * 59 + this.RepetitionEnd.GetHashCode();
+                    hash = hash * 59 + this.RepetitionEnd.GetHashCode();
                 if (this.RepetitionStart != null)
-                    hashCode = hashCode * 59 + this.RepetitionStart.GetHashCode();
+                    hash = hash * 59 + this.RepetitionStart.GetHashCode();
                 if (this.RepetitionDays != null)
-                    hashCode = hashCode * 59 + this.RepetitionDays.GetHashCode();
+                    hash = hash * 59 + this.RepetitionDays.GetHashCode();
                 if (this.PtyCodeId != null)
-                    hashCode = hashCode * 59 + this.PtyCodeId.GetHashCode();
+                    hash = hash * 59 + this.PtyCodeId.GetHashCode();
                 if (this.Items != null)
-                    hashCode = hashCode * 59 + this.Items.GetHashCode();
+                    hash = hash * 59 + this.Items.GetHashCode();
                 if (this.Blocks != null)
-                    hashCode = hashCode * 59 + this.Blocks.GetHashCode();
+                    hash = hash * 59 + this.Blocks.GetHashCode();
                 if (this.Program != null)
-                    hashCode = hashCode * 59 + this.Program.GetHashCode();
+                    hash = hash * 59 + this.Program.GetHashCode();
                 if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                    hash = hash * 59 + this.Tags.GetHashCode();
                 if (this.Presenters != null)
-                    hashCode = hashCode * 59 + this.Presenters.GetHashCode();
+                    hash = hash * 59 + this.Presenters.GetHashCode();
                 if (this.ModelType != null)
-                    hashCode = hashCode * 59 + this.ModelType.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this.ModelType.GetHashCode();
+                return hash;
             }
         }
 

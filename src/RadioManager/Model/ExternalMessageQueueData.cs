@@ -147,58 +147,60 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as ExternalMessageQueueData);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as ExternalMessageQueueData);
         }
 
         /// <summary>
         /// Returns true if ExternalMessageQueueData instances are equal
         /// </summary>
-        /// <param name="input">Instance of ExternalMessageQueueData to be compared</param>
+        /// <param name="other">Instance of ExternalMessageQueueData to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ExternalMessageQueueData input)
+        public bool Equals(ExternalMessageQueueData other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
+                    this.Message == other.Message ||
+                    this.Message != null &&
+                    this.Message.Equals(other.Message)
                 ) && 
                 (
-                    this.MessageId == input.MessageId ||
-                    (this.MessageId != null &&
-                    this.MessageId.Equals(input.MessageId))
+                    this.MessageId == other.MessageId ||
+                    this.MessageId != null &&
+                    this.MessageId.Equals(other.MessageId)
                 ) && 
                 (
-                    this.MessageDate == input.MessageDate ||
-                    (this.MessageDate != null &&
-                    this.MessageDate.Equals(input.MessageDate))
+                    this.MessageDate == other.MessageDate ||
+                    this.MessageDate != null &&
+                    this.MessageDate.Equals(other.MessageDate)
                 ) && 
                 (
-                    this.SenderName == input.SenderName ||
-                    (this.SenderName != null &&
-                    this.SenderName.Equals(input.SenderName))
+                    this.SenderName == other.SenderName ||
+                    this.SenderName != null &&
+                    this.SenderName.Equals(other.SenderName)
                 ) && 
                 (
-                    this.SenderId == input.SenderId ||
-                    (this.SenderId != null &&
-                    this.SenderId.Equals(input.SenderId))
+                    this.SenderId == other.SenderId ||
+                    this.SenderId != null &&
+                    this.SenderId.Equals(other.SenderId)
                 ) && 
                 (
-                    this.AvatarUrl == input.AvatarUrl ||
-                    (this.AvatarUrl != null &&
-                    this.AvatarUrl.Equals(input.AvatarUrl))
+                    this.AvatarUrl == other.AvatarUrl ||
+                    this.AvatarUrl != null &&
+                    this.AvatarUrl.Equals(other.AvatarUrl)
                 ) && 
                 (
-                    this.ModelTypeId == input.ModelTypeId ||
-                    (this.ModelTypeId != null &&
-                    this.ModelTypeId.Equals(input.ModelTypeId))
+                    this.ModelTypeId == other.ModelTypeId ||
+                    this.ModelTypeId != null &&
+                    this.ModelTypeId.Equals(other.ModelTypeId)
                 );
         }
 
@@ -208,24 +210,26 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                    hash = hash * 59 + this.Message.GetHashCode();
                 if (this.MessageId != null)
-                    hashCode = hashCode * 59 + this.MessageId.GetHashCode();
+                    hash = hash * 59 + this.MessageId.GetHashCode();
                 if (this.MessageDate != null)
-                    hashCode = hashCode * 59 + this.MessageDate.GetHashCode();
+                    hash = hash * 59 + this.MessageDate.GetHashCode();
                 if (this.SenderName != null)
-                    hashCode = hashCode * 59 + this.SenderName.GetHashCode();
+                    hash = hash * 59 + this.SenderName.GetHashCode();
                 if (this.SenderId != null)
-                    hashCode = hashCode * 59 + this.SenderId.GetHashCode();
+                    hash = hash * 59 + this.SenderId.GetHashCode();
                 if (this.AvatarUrl != null)
-                    hashCode = hashCode * 59 + this.AvatarUrl.GetHashCode();
+                    hash = hash * 59 + this.AvatarUrl.GetHashCode();
                 if (this.ModelTypeId != null)
-                    hashCode = hashCode * 59 + this.ModelTypeId.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this.ModelTypeId.GetHashCode();
+                return hash;
             }
         }
 

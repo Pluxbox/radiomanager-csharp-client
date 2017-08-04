@@ -97,43 +97,45 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as BlockRelationsItems);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as BlockRelationsItems);
         }
 
         /// <summary>
         /// Returns true if BlockRelationsItems instances are equal
         /// </summary>
-        /// <param name="input">Instance of BlockRelationsItems to be compared</param>
+        /// <param name="other">Instance of BlockRelationsItems to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BlockRelationsItems input)
+        public bool Equals(BlockRelationsItems other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.Href == input.Href ||
-                    (this.Href != null &&
-                    this.Href.Equals(input.Href))
+                    this.Href == other.Href ||
+                    this.Href != null &&
+                    this.Href.Equals(other.Href)
                 ) && 
                 (
-                    this.Model == input.Model ||
-                    (this.Model != null &&
-                    this.Model.Equals(input.Model))
+                    this.Model == other.Model ||
+                    this.Model != null &&
+                    this.Model.Equals(other.Model)
                 ) && 
                 (
-                    this.Operation == input.Operation ||
-                    (this.Operation != null &&
-                    this.Operation.Equals(input.Operation))
+                    this.Operation == other.Operation ||
+                    this.Operation != null &&
+                    this.Operation.Equals(other.Operation)
                 ) && 
                 (
-                    this._Params == input._Params ||
-                    (this._Params != null &&
-                    this._Params.Equals(input._Params))
+                    this._Params == other._Params ||
+                    this._Params != null &&
+                    this._Params.Equals(other._Params)
                 );
         }
 
@@ -143,18 +145,20 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.Href != null)
-                    hashCode = hashCode * 59 + this.Href.GetHashCode();
+                    hash = hash * 59 + this.Href.GetHashCode();
                 if (this.Model != null)
-                    hashCode = hashCode * 59 + this.Model.GetHashCode();
+                    hash = hash * 59 + this.Model.GetHashCode();
                 if (this.Operation != null)
-                    hashCode = hashCode * 59 + this.Operation.GetHashCode();
+                    hash = hash * 59 + this.Operation.GetHashCode();
                 if (this._Params != null)
-                    hashCode = hashCode * 59 + this._Params.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this._Params.GetHashCode();
+                return hash;
             }
         }
 

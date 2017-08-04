@@ -34,9 +34,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new PresenterApi();
             var data = new PresenterDataInput(); // PresenterDataInput | Data **(Required)**
@@ -100,9 +100,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new PresenterApi();
             var id = 789;  // long? | id of presenter
@@ -166,9 +166,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new PresenterApi();
             var id = 789;  // long? | id of Presenter
@@ -234,9 +234,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new PresenterApi();
             var page = 789;  // long? | Current page *(Optional)* (optional) 
@@ -308,9 +308,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new PresenterApi();
             var id = 789;  // long? | id of Presenter

@@ -102,33 +102,35 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as ModelReadOnly);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as ModelReadOnly);
         }
 
         /// <summary>
         /// Returns true if ModelReadOnly instances are equal
         /// </summary>
-        /// <param name="input">Instance of ModelReadOnly to be compared</param>
+        /// <param name="other">Instance of ModelReadOnly to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ModelReadOnly input)
+        public bool Equals(ModelReadOnly other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.Error == input.Error ||
-                    (this.Error != null &&
-                    this.Error.Equals(input.Error))
+                    this.Error == other.Error ||
+                    this.Error != null &&
+                    this.Error.Equals(other.Error)
                 ) && 
                 (
-                    this.StatusCode == input.StatusCode ||
-                    (this.StatusCode != null &&
-                    this.StatusCode.Equals(input.StatusCode))
+                    this.StatusCode == other.StatusCode ||
+                    this.StatusCode != null &&
+                    this.StatusCode.Equals(other.StatusCode)
                 );
         }
 
@@ -138,14 +140,16 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.Error != null)
-                    hashCode = hashCode * 59 + this.Error.GetHashCode();
+                    hash = hash * 59 + this.Error.GetHashCode();
                 if (this.StatusCode != null)
-                    hashCode = hashCode * 59 + this.StatusCode.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this.StatusCode.GetHashCode();
+                return hash;
             }
         }
 

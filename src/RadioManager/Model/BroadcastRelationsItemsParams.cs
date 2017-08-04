@@ -70,28 +70,30 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as BroadcastRelationsItemsParams);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as BroadcastRelationsItemsParams);
         }
 
         /// <summary>
         /// Returns true if BroadcastRelationsItemsParams instances are equal
         /// </summary>
-        /// <param name="input">Instance of BroadcastRelationsItemsParams to be compared</param>
+        /// <param name="other">Instance of BroadcastRelationsItemsParams to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BroadcastRelationsItemsParams input)
+        public bool Equals(BroadcastRelationsItemsParams other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.BroadcastId == input.BroadcastId ||
-                    (this.BroadcastId != null &&
-                    this.BroadcastId.Equals(input.BroadcastId))
+                    this.BroadcastId == other.BroadcastId ||
+                    this.BroadcastId != null &&
+                    this.BroadcastId.Equals(other.BroadcastId)
                 );
         }
 
@@ -101,12 +103,14 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.BroadcastId != null)
-                    hashCode = hashCode * 59 + this.BroadcastId.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this.BroadcastId.GetHashCode();
+                return hash;
             }
         }
 

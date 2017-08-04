@@ -40,9 +40,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var data = new BroadcastDataInput(); // BroadcastDataInput | Data **(Required)**
@@ -106,9 +106,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var id = 789;  // long? | ID of Broadcast **(Required)**
@@ -172,9 +172,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var id = 789;  // long? | ID of Broadcast **(Required)**
@@ -240,9 +240,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
 
@@ -302,9 +302,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var date = 2013-10-20T19:20:30+01:00;  // DateTime? | Date *(Optional)* (optional) 
@@ -368,9 +368,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var date = 2013-10-20T19:20:30+01:00;  // DateTime? | Date *(Optional)* (optional) 
@@ -434,9 +434,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
 
@@ -496,9 +496,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var date = date_example;  // string | Date *(Optional)* (optional) 
@@ -562,9 +562,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
@@ -648,9 +648,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var id = 789;  // long? | ID of Broadcast **(Required)**
@@ -720,9 +720,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var id = 789;  // long? | ID of Broadcast **(Required)**

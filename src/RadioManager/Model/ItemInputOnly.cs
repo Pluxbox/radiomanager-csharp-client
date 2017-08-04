@@ -88,38 +88,40 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as ItemInputOnly);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as ItemInputOnly);
         }
 
         /// <summary>
         /// Returns true if ItemInputOnly instances are equal
         /// </summary>
-        /// <param name="input">Instance of ItemInputOnly to be compared</param>
+        /// <param name="other">Instance of ItemInputOnly to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ItemInputOnly input)
+        public bool Equals(ItemInputOnly other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.PreviousId == input.PreviousId ||
-                    (this.PreviousId != null &&
-                    this.PreviousId.Equals(input.PreviousId))
+                    this.PreviousId == other.PreviousId ||
+                    this.PreviousId != null &&
+                    this.PreviousId.Equals(other.PreviousId)
                 ) && 
                 (
-                    this.Contacts == input.Contacts ||
-                    (this.Contacts != null &&
-                    this.Contacts.SequenceEqual(input.Contacts))
+                    this.Contacts == other.Contacts ||
+                    this.Contacts != null &&
+                    this.Contacts.SequenceEqual(other.Contacts)
                 ) && 
                 (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags))
+                    this.Tags == other.Tags ||
+                    this.Tags != null &&
+                    this.Tags.SequenceEqual(other.Tags)
                 );
         }
 
@@ -129,16 +131,18 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.PreviousId != null)
-                    hashCode = hashCode * 59 + this.PreviousId.GetHashCode();
+                    hash = hash * 59 + this.PreviousId.GetHashCode();
                 if (this.Contacts != null)
-                    hashCode = hashCode * 59 + this.Contacts.GetHashCode();
+                    hash = hash * 59 + this.Contacts.GetHashCode();
                 if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this.Tags.GetHashCode();
+                return hash;
             }
         }
 

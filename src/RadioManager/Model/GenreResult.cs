@@ -145,58 +145,60 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as GenreResult);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as GenreResult);
         }
 
         /// <summary>
         /// Returns true if GenreResult instances are equal
         /// </summary>
-        /// <param name="input">Instance of GenreResult to be compared</param>
+        /// <param name="other">Instance of GenreResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(GenreResult input)
+        public bool Equals(GenreResult other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.Id == other.Id ||
+                    this.Id != null &&
+                    this.Id.Equals(other.Id)
                 ) && 
                 (
-                    this.Urn == input.Urn ||
-                    (this.Urn != null &&
-                    this.Urn.Equals(input.Urn))
+                    this.Urn == other.Urn ||
+                    this.Urn != null &&
+                    this.Urn.Equals(other.Urn)
                 ) && 
                 (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
+                    this.ParentId == other.ParentId ||
+                    this.ParentId != null &&
+                    this.ParentId.Equals(other.ParentId)
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Name == other.Name ||
+                    this.Name != null &&
+                    this.Name.Equals(other.Name)
                 ) && 
                 (
-                    this.Broadcasts == input.Broadcasts ||
-                    (this.Broadcasts != null &&
-                    this.Broadcasts.Equals(input.Broadcasts))
+                    this.Broadcasts == other.Broadcasts ||
+                    this.Broadcasts != null &&
+                    this.Broadcasts.Equals(other.Broadcasts)
                 ) && 
                 (
-                    this.Programs == input.Programs ||
-                    (this.Programs != null &&
-                    this.Programs.Equals(input.Programs))
+                    this.Programs == other.Programs ||
+                    this.Programs != null &&
+                    this.Programs.Equals(other.Programs)
                 ) && 
                 (
-                    this.ExternalStationId == input.ExternalStationId ||
-                    (this.ExternalStationId != null &&
-                    this.ExternalStationId.Equals(input.ExternalStationId))
+                    this.ExternalStationId == other.ExternalStationId ||
+                    this.ExternalStationId != null &&
+                    this.ExternalStationId.Equals(other.ExternalStationId)
                 );
         }
 
@@ -206,24 +208,26 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                    hash = hash * 59 + this.Id.GetHashCode();
                 if (this.Urn != null)
-                    hashCode = hashCode * 59 + this.Urn.GetHashCode();
+                    hash = hash * 59 + this.Urn.GetHashCode();
                 if (this.ParentId != null)
-                    hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                    hash = hash * 59 + this.ParentId.GetHashCode();
                 if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                    hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Broadcasts != null)
-                    hashCode = hashCode * 59 + this.Broadcasts.GetHashCode();
+                    hash = hash * 59 + this.Broadcasts.GetHashCode();
                 if (this.Programs != null)
-                    hashCode = hashCode * 59 + this.Programs.GetHashCode();
+                    hash = hash * 59 + this.Programs.GetHashCode();
                 if (this.ExternalStationId != null)
-                    hashCode = hashCode * 59 + this.ExternalStationId.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this.ExternalStationId.GetHashCode();
+                return hash;
             }
         }
 

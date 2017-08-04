@@ -84,28 +84,30 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as Success);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as Success);
         }
 
         /// <summary>
         /// Returns true if Success instances are equal
         /// </summary>
-        /// <param name="input">Instance of Success to be compared</param>
+        /// <param name="other">Instance of Success to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Success input)
+        public bool Equals(Success other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this._Success == input._Success ||
-                    (this._Success != null &&
-                    this._Success.Equals(input._Success))
+                    this._Success == other._Success ||
+                    this._Success != null &&
+                    this._Success.Equals(other._Success)
                 );
         }
 
@@ -115,12 +117,14 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this._Success != null)
-                    hashCode = hashCode * 59 + this._Success.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this._Success.GetHashCode();
+                return hash;
             }
         }
 

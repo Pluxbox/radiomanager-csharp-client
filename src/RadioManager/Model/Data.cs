@@ -79,33 +79,35 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as Data);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as Data);
         }
 
         /// <summary>
         /// Returns true if Data instances are equal
         /// </summary>
-        /// <param name="input">Instance of Data to be compared</param>
+        /// <param name="other">Instance of Data to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Data input)
+        public bool Equals(Data other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.Start == input.Start ||
-                    (this.Start != null &&
-                    this.Start.Equals(input.Start))
+                    this.Start == other.Start ||
+                    this.Start != null &&
+                    this.Start.Equals(other.Start)
                 ) && 
                 (
-                    this.Items == input.Items ||
-                    (this.Items != null &&
-                    this.Items.SequenceEqual(input.Items))
+                    this.Items == other.Items ||
+                    this.Items != null &&
+                    this.Items.SequenceEqual(other.Items)
                 );
         }
 
@@ -115,14 +117,16 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.Start != null)
-                    hashCode = hashCode * 59 + this.Start.GetHashCode();
+                    hash = hash * 59 + this.Start.GetHashCode();
                 if (this.Items != null)
-                    hashCode = hashCode * 59 + this.Items.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this.Items.GetHashCode();
+                return hash;
             }
         }
 

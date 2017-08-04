@@ -500,9 +500,15 @@ namespace RadioManager.Api
         /// <returns></returns>
         public ItemApi(String basePath)
         {
-            this.Configuration = new Configuration { BasePath = basePath };
+            this.Configuration = new Configuration(new ApiClient(basePath));
 
             ExceptionFactory = RadioManager.Client.Configuration.DefaultExceptionFactory;
+
+            // ensure API client has configuration ready
+            if (Configuration.ApiClient.Configuration == null)
+            {
+                this.Configuration.ApiClient.Configuration = this.Configuration;
+            }
         }
 
         /// <summary>
@@ -519,6 +525,12 @@ namespace RadioManager.Api
                 this.Configuration = configuration;
 
             ExceptionFactory = RadioManager.Client.Configuration.DefaultExceptionFactory;
+
+            // ensure API client has configuration ready
+            if (Configuration.ApiClient.Configuration == null)
+            {
+                this.Configuration.ApiClient.Configuration = this.Configuration;
+            }
         }
 
         /// <summary>
@@ -567,9 +579,9 @@ namespace RadioManager.Api
         /// </summary>
         /// <returns>Dictionary of HTTP header</returns>
         [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<String, String> DefaultHeader()
+        public Dictionary<String, String> DefaultHeader()
         {
-            return new ReadOnlyDictionary<string, string>(this.Configuration.DefaultHeader);
+            return this.Configuration.DefaultHeader;
         }
 
         /// <summary>
@@ -607,7 +619,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -641,6 +653,7 @@ namespace RadioManager.Api
             {
                 localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
             }
+
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -684,7 +697,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -760,7 +773,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/current/structure";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -794,6 +807,7 @@ namespace RadioManager.Api
             {
                 localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
             }
+
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -837,7 +851,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/current/structure";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -913,7 +927,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/current/timing";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -947,6 +961,7 @@ namespace RadioManager.Api
             {
                 localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
             }
+
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -990,7 +1005,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/current/timing";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -1069,7 +1084,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/{id}";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -1096,6 +1111,7 @@ namespace RadioManager.Api
             {
                 localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
             }
+
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1142,7 +1158,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/{id}";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -1216,7 +1232,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/{id}";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -1237,13 +1253,14 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (externalStationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
+            if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
             {
                 localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
             }
+
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1292,7 +1309,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/{id}";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -1313,7 +1330,7 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (externalStationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
+            if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1398,7 +1415,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -1418,31 +1435,32 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
-            if (orderBy != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
-            if (orderDirection != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
-            if (startMin != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start-min", startMin)); // query parameter
-            if (startMax != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start-max", startMax)); // query parameter
-            if (durationMin != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "duration-min", durationMin)); // query parameter
-            if (durationMax != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "duration-max", durationMax)); // query parameter
-            if (status != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
-            if (modelTypeId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "model_type_id", modelTypeId)); // query parameter
-            if (programDraftId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "program_draft_id", programDraftId)); // query parameter
-            if (userDraftId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "user_draft_id", userDraftId)); // query parameter
-            if (stationDraftId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "station_draft_id", stationDraftId)); // query parameter
-            if (blockId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "block_id", blockId)); // query parameter
-            if (broadcastId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
-            if (campaignId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "campaign_id", campaignId)); // query parameter
-            if (contactId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "contact_id", contactId)); // query parameter
-            if (programId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "program_id", programId)); // query parameter
-            if (tagId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "tag_id", tagId)); // query parameter
-            if (externalStationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
+            if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
+            if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
+            if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
+            if (durationMin != null) localVarQueryParams.Add("duration-min", Configuration.ApiClient.ParameterToString(durationMin)); // query parameter
+            if (durationMax != null) localVarQueryParams.Add("duration-max", Configuration.ApiClient.ParameterToString(durationMax)); // query parameter
+            if (status != null) localVarQueryParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // query parameter
+            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
+            if (programDraftId != null) localVarQueryParams.Add("program_draft_id", Configuration.ApiClient.ParameterToString(programDraftId)); // query parameter
+            if (userDraftId != null) localVarQueryParams.Add("user_draft_id", Configuration.ApiClient.ParameterToString(userDraftId)); // query parameter
+            if (stationDraftId != null) localVarQueryParams.Add("station_draft_id", Configuration.ApiClient.ParameterToString(stationDraftId)); // query parameter
+            if (blockId != null) localVarQueryParams.Add("block_id", Configuration.ApiClient.ParameterToString(blockId)); // query parameter
+            if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
+            if (campaignId != null) localVarQueryParams.Add("campaign_id", Configuration.ApiClient.ParameterToString(campaignId)); // query parameter
+            if (contactId != null) localVarQueryParams.Add("contact_id", Configuration.ApiClient.ParameterToString(contactId)); // query parameter
+            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
+            if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
+            if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
             {
                 localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
             }
+
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1522,7 +1540,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -1542,25 +1560,25 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
-            if (orderBy != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
-            if (orderDirection != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
-            if (startMin != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start-min", startMin)); // query parameter
-            if (startMax != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "start-max", startMax)); // query parameter
-            if (durationMin != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "duration-min", durationMin)); // query parameter
-            if (durationMax != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "duration-max", durationMax)); // query parameter
-            if (status != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
-            if (modelTypeId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "model_type_id", modelTypeId)); // query parameter
-            if (programDraftId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "program_draft_id", programDraftId)); // query parameter
-            if (userDraftId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "user_draft_id", userDraftId)); // query parameter
-            if (stationDraftId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "station_draft_id", stationDraftId)); // query parameter
-            if (blockId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "block_id", blockId)); // query parameter
-            if (broadcastId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
-            if (campaignId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "campaign_id", campaignId)); // query parameter
-            if (contactId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "contact_id", contactId)); // query parameter
-            if (programId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "program_id", programId)); // query parameter
-            if (tagId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "tag_id", tagId)); // query parameter
-            if (externalStationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
+            if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
+            if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
+            if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
+            if (durationMin != null) localVarQueryParams.Add("duration-min", Configuration.ApiClient.ParameterToString(durationMin)); // query parameter
+            if (durationMax != null) localVarQueryParams.Add("duration-max", Configuration.ApiClient.ParameterToString(durationMax)); // query parameter
+            if (status != null) localVarQueryParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // query parameter
+            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
+            if (programDraftId != null) localVarQueryParams.Add("program_draft_id", Configuration.ApiClient.ParameterToString(programDraftId)); // query parameter
+            if (userDraftId != null) localVarQueryParams.Add("user_draft_id", Configuration.ApiClient.ParameterToString(userDraftId)); // query parameter
+            if (stationDraftId != null) localVarQueryParams.Add("station_draft_id", Configuration.ApiClient.ParameterToString(stationDraftId)); // query parameter
+            if (blockId != null) localVarQueryParams.Add("block_id", Configuration.ApiClient.ParameterToString(blockId)); // query parameter
+            if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
+            if (campaignId != null) localVarQueryParams.Add("campaign_id", Configuration.ApiClient.ParameterToString(campaignId)); // query parameter
+            if (contactId != null) localVarQueryParams.Add("contact_id", Configuration.ApiClient.ParameterToString(contactId)); // query parameter
+            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
+            if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
+            if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1609,7 +1627,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/playlist/structure";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -1643,6 +1661,7 @@ namespace RadioManager.Api
             {
                 localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
             }
+
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1686,7 +1705,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/playlist/structure";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -1762,7 +1781,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/playlist/timing";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -1796,6 +1815,7 @@ namespace RadioManager.Api
             {
                 localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
             }
+
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1839,7 +1859,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/playlist/timing";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -1920,7 +1940,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/{id}";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
@@ -1955,6 +1975,7 @@ namespace RadioManager.Api
             {
                 localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
             }
+
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -2003,7 +2024,7 @@ namespace RadioManager.Api
 
             var localVarPath = "/items/{id}";
             var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();

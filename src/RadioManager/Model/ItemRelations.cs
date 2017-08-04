@@ -124,58 +124,60 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as ItemRelations);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as ItemRelations);
         }
 
         /// <summary>
         /// Returns true if ItemRelations instances are equal
         /// </summary>
-        /// <param name="input">Instance of ItemRelations to be compared</param>
+        /// <param name="other">Instance of ItemRelations to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ItemRelations input)
+        public bool Equals(ItemRelations other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.Block == input.Block ||
-                    (this.Block != null &&
-                    this.Block.Equals(input.Block))
+                    this.Block == other.Block ||
+                    this.Block != null &&
+                    this.Block.Equals(other.Block)
                 ) && 
                 (
-                    this.Broadcast == input.Broadcast ||
-                    (this.Broadcast != null &&
-                    this.Broadcast.Equals(input.Broadcast))
+                    this.Broadcast == other.Broadcast ||
+                    this.Broadcast != null &&
+                    this.Broadcast.Equals(other.Broadcast)
                 ) && 
                 (
-                    this.Program == input.Program ||
-                    (this.Program != null &&
-                    this.Program.Equals(input.Program))
+                    this.Program == other.Program ||
+                    this.Program != null &&
+                    this.Program.Equals(other.Program)
                 ) && 
                 (
-                    this.Contacts == input.Contacts ||
-                    (this.Contacts != null &&
-                    this.Contacts.Equals(input.Contacts))
+                    this.Contacts == other.Contacts ||
+                    this.Contacts != null &&
+                    this.Contacts.Equals(other.Contacts)
                 ) && 
                 (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
+                    this.Tags == other.Tags ||
+                    this.Tags != null &&
+                    this.Tags.Equals(other.Tags)
                 ) && 
                 (
-                    this.Campaign == input.Campaign ||
-                    (this.Campaign != null &&
-                    this.Campaign.Equals(input.Campaign))
+                    this.Campaign == other.Campaign ||
+                    this.Campaign != null &&
+                    this.Campaign.Equals(other.Campaign)
                 ) && 
                 (
-                    this.ModelType == input.ModelType ||
-                    (this.ModelType != null &&
-                    this.ModelType.Equals(input.ModelType))
+                    this.ModelType == other.ModelType ||
+                    this.ModelType != null &&
+                    this.ModelType.Equals(other.ModelType)
                 );
         }
 
@@ -185,24 +187,26 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.Block != null)
-                    hashCode = hashCode * 59 + this.Block.GetHashCode();
+                    hash = hash * 59 + this.Block.GetHashCode();
                 if (this.Broadcast != null)
-                    hashCode = hashCode * 59 + this.Broadcast.GetHashCode();
+                    hash = hash * 59 + this.Broadcast.GetHashCode();
                 if (this.Program != null)
-                    hashCode = hashCode * 59 + this.Program.GetHashCode();
+                    hash = hash * 59 + this.Program.GetHashCode();
                 if (this.Contacts != null)
-                    hashCode = hashCode * 59 + this.Contacts.GetHashCode();
+                    hash = hash * 59 + this.Contacts.GetHashCode();
                 if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                    hash = hash * 59 + this.Tags.GetHashCode();
                 if (this.Campaign != null)
-                    hashCode = hashCode * 59 + this.Campaign.GetHashCode();
+                    hash = hash * 59 + this.Campaign.GetHashCode();
                 if (this.ModelType != null)
-                    hashCode = hashCode * 59 + this.ModelType.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this.ModelType.GetHashCode();
+                return hash;
             }
         }
 

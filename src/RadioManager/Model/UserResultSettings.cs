@@ -115,53 +115,55 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as UserResultSettings);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as UserResultSettings);
         }
 
         /// <summary>
         /// Returns true if UserResultSettings instances are equal
         /// </summary>
-        /// <param name="input">Instance of UserResultSettings to be compared</param>
+        /// <param name="other">Instance of UserResultSettings to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UserResultSettings input)
+        public bool Equals(UserResultSettings other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.ShowSideBar == input.ShowSideBar ||
-                    (this.ShowSideBar != null &&
-                    this.ShowSideBar.Equals(input.ShowSideBar))
+                    this.ShowSideBar == other.ShowSideBar ||
+                    this.ShowSideBar != null &&
+                    this.ShowSideBar.Equals(other.ShowSideBar)
                 ) && 
                 (
-                    this.ShowSocialBar == input.ShowSocialBar ||
-                    (this.ShowSocialBar != null &&
-                    this.ShowSocialBar.Equals(input.ShowSocialBar))
+                    this.ShowSocialBar == other.ShowSocialBar ||
+                    this.ShowSocialBar != null &&
+                    this.ShowSocialBar.Equals(other.ShowSocialBar)
                 ) && 
                 (
-                    this.ShowCheckboxColumn == input.ShowCheckboxColumn ||
-                    (this.ShowCheckboxColumn != null &&
-                    this.ShowCheckboxColumn.Equals(input.ShowCheckboxColumn))
+                    this.ShowCheckboxColumn == other.ShowCheckboxColumn ||
+                    this.ShowCheckboxColumn != null &&
+                    this.ShowCheckboxColumn.Equals(other.ShowCheckboxColumn)
                 ) && 
                 (
-                    this.ShowTimeColumn == input.ShowTimeColumn ||
-                    (this.ShowTimeColumn != null &&
-                    this.ShowTimeColumn.Equals(input.ShowTimeColumn))
+                    this.ShowTimeColumn == other.ShowTimeColumn ||
+                    this.ShowTimeColumn != null &&
+                    this.ShowTimeColumn.Equals(other.ShowTimeColumn)
                 ) && 
                 (
-                    this.ShowSpeechTime == input.ShowSpeechTime ||
-                    (this.ShowSpeechTime != null &&
-                    this.ShowSpeechTime.Equals(input.ShowSpeechTime))
+                    this.ShowSpeechTime == other.ShowSpeechTime ||
+                    this.ShowSpeechTime != null &&
+                    this.ShowSpeechTime.Equals(other.ShowSpeechTime)
                 ) && 
                 (
-                    this.ZoomFactor == input.ZoomFactor ||
-                    (this.ZoomFactor != null &&
-                    this.ZoomFactor.Equals(input.ZoomFactor))
+                    this.ZoomFactor == other.ZoomFactor ||
+                    this.ZoomFactor != null &&
+                    this.ZoomFactor.Equals(other.ZoomFactor)
                 );
         }
 
@@ -171,22 +173,24 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.ShowSideBar != null)
-                    hashCode = hashCode * 59 + this.ShowSideBar.GetHashCode();
+                    hash = hash * 59 + this.ShowSideBar.GetHashCode();
                 if (this.ShowSocialBar != null)
-                    hashCode = hashCode * 59 + this.ShowSocialBar.GetHashCode();
+                    hash = hash * 59 + this.ShowSocialBar.GetHashCode();
                 if (this.ShowCheckboxColumn != null)
-                    hashCode = hashCode * 59 + this.ShowCheckboxColumn.GetHashCode();
+                    hash = hash * 59 + this.ShowCheckboxColumn.GetHashCode();
                 if (this.ShowTimeColumn != null)
-                    hashCode = hashCode * 59 + this.ShowTimeColumn.GetHashCode();
+                    hash = hash * 59 + this.ShowTimeColumn.GetHashCode();
                 if (this.ShowSpeechTime != null)
-                    hashCode = hashCode * 59 + this.ShowSpeechTime.GetHashCode();
+                    hash = hash * 59 + this.ShowSpeechTime.GetHashCode();
                 if (this.ZoomFactor != null)
-                    hashCode = hashCode * 59 + this.ZoomFactor.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this.ZoomFactor.GetHashCode();
+                return hash;
             }
         }
 

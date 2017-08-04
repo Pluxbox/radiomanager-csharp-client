@@ -144,53 +144,55 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return this.Equals(input as ContactDataInput);
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as ContactDataInput);
         }
 
         /// <summary>
         /// Returns true if ContactDataInput instances are equal
         /// </summary>
-        /// <param name="input">Instance of ContactDataInput to be compared</param>
+        /// <param name="other">Instance of ContactDataInput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ContactDataInput input)
+        public bool Equals(ContactDataInput other)
         {
-            if (input == null)
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
                 return false;
 
             return 
                 (
-                    this.ModelTypeId == input.ModelTypeId ||
-                    (this.ModelTypeId != null &&
-                    this.ModelTypeId.Equals(input.ModelTypeId))
+                    this.ModelTypeId == other.ModelTypeId ||
+                    this.ModelTypeId != null &&
+                    this.ModelTypeId.Equals(other.ModelTypeId)
                 ) && 
                 (
-                    this.FieldValues == input.FieldValues ||
-                    (this.FieldValues != null &&
-                    this.FieldValues.Equals(input.FieldValues))
+                    this.FieldValues == other.FieldValues ||
+                    this.FieldValues != null &&
+                    this.FieldValues.Equals(other.FieldValues)
                 ) && 
                 (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
+                    this.Email == other.Email ||
+                    this.Email != null &&
+                    this.Email.Equals(other.Email)
                 ) && 
                 (
-                    this.Firstname == input.Firstname ||
-                    (this.Firstname != null &&
-                    this.Firstname.Equals(input.Firstname))
+                    this.Firstname == other.Firstname ||
+                    this.Firstname != null &&
+                    this.Firstname.Equals(other.Firstname)
                 ) && 
                 (
-                    this.Lastname == input.Lastname ||
-                    (this.Lastname != null &&
-                    this.Lastname.Equals(input.Lastname))
+                    this.Lastname == other.Lastname ||
+                    this.Lastname != null &&
+                    this.Lastname.Equals(other.Lastname)
                 ) && 
                 (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
+                    this.Phone == other.Phone ||
+                    this.Phone != null &&
+                    this.Phone.Equals(other.Phone)
                 );
         }
 
@@ -200,22 +202,24 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
+            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
                 if (this.ModelTypeId != null)
-                    hashCode = hashCode * 59 + this.ModelTypeId.GetHashCode();
+                    hash = hash * 59 + this.ModelTypeId.GetHashCode();
                 if (this.FieldValues != null)
-                    hashCode = hashCode * 59 + this.FieldValues.GetHashCode();
+                    hash = hash * 59 + this.FieldValues.GetHashCode();
                 if (this.Email != null)
-                    hashCode = hashCode * 59 + this.Email.GetHashCode();
+                    hash = hash * 59 + this.Email.GetHashCode();
                 if (this.Firstname != null)
-                    hashCode = hashCode * 59 + this.Firstname.GetHashCode();
+                    hash = hash * 59 + this.Firstname.GetHashCode();
                 if (this.Lastname != null)
-                    hashCode = hashCode * 59 + this.Lastname.GetHashCode();
+                    hash = hash * 59 + this.Lastname.GetHashCode();
                 if (this.Phone != null)
-                    hashCode = hashCode * 59 + this.Phone.GetHashCode();
-                return hashCode;
+                    hash = hash * 59 + this.Phone.GetHashCode();
+                return hash;
             }
         }
 
