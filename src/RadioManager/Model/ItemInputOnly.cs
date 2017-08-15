@@ -46,7 +46,7 @@ namespace RadioManager.Model
         /// <summary>
         /// Gets or Sets PreviousId
         /// </summary>
-        [DataMember(Name="previous_id", EmitDefaultValue=false)]
+        [DataMember(Name="_previous_id", EmitDefaultValue=false)]
         public long? PreviousId { get; set; }
 
         /// <summary>
