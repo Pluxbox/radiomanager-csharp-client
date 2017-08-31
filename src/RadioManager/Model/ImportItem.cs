@@ -49,7 +49,7 @@ namespace RadioManager.Model
         /// <param name="Details">Details.</param>
         /// <param name="Contacts">Contacts.</param>
         /// <param name="Tags">Tags.</param>
-        public ImportItem(long? ModelTypeId = default(long?), long? ExternalId = default(long?), ImportItemFieldValues FieldValues = default(ImportItemFieldValues), string Title = default(string), long? Duration = default(long?), DateTime? Start = default(DateTime?), bool? Recommended = default(bool?), bool? StaticStart = default(bool?), string Details = default(string), List<int?> Contacts = default(List<int?>), List<int?> Tags = default(List<int?>))
+        public ImportItem(long? ModelTypeId = default(long?), string ExternalId = default(string), ImportItemFieldValues FieldValues = default(ImportItemFieldValues), string Title = default(string), long? Duration = default(long?), DateTime? Start = default(DateTime?), bool? Recommended = default(bool?), bool? StaticStart = default(bool?), string Details = default(string), List<int?> Contacts = default(List<int?>), List<int?> Tags = default(List<int?>))
         {
             // to ensure "ModelTypeId" is required (not null)
             if (ModelTypeId == null)
@@ -90,7 +90,7 @@ namespace RadioManager.Model
         /// Gets or Sets ExternalId
         /// </summary>
         [DataMember(Name="external_id", EmitDefaultValue=false)]
-        public long? ExternalId { get; set; }
+        public string ExternalId { get; set; }
 
         /// <summary>
         /// Gets or Sets FieldValues

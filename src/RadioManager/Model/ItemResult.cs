@@ -80,7 +80,7 @@ namespace RadioManager.Model
         /// <param name="ExternalStationId">ExternalStationId.</param>
         /// <param name="ModelTypeId">ModelTypeId (required).</param>
         /// <param name="BlockId">BlockId.</param>
-        /// <param name="ExternalId">ExternalId (required).</param>
+        /// <param name="ExternalId">ExternalId.</param>
         /// <param name="FieldValues">FieldValues.</param>
         /// <param name="Title">Title.</param>
         /// <param name="Duration">Duration.</param>
@@ -101,7 +101,7 @@ namespace RadioManager.Model
         /// <param name="Tags">Tags.</param>
         /// <param name="Campaign">Campaign.</param>
         /// <param name="ModelType">ModelType.</param>
-        public ItemResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? DataModified = default(long?), long? Order = default(long?), long? TemplateblockId = default(long?), long? TemplateitemId = default(long?), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), long? BlockId = default(long?), long? ExternalId = default(long?), ImportItemFieldValues FieldValues = default(ImportItemFieldValues), string Title = default(string), long? Duration = default(long?), DateTime? Start = default(DateTime?), StatusEnum? Status = default(StatusEnum?), long? Import = default(long?), long? CampaignId = default(long?), bool? Recommended = default(bool?), long? StationDraftId = default(long?), long? ProgramDraftId = default(long?), long? UserDraftId = default(long?), bool? StaticStart = default(bool?), string Details = default(string), ItemRelationsBlock Block = default(ItemRelationsBlock), BlockRelationsBroadcast Broadcast = default(BlockRelationsBroadcast), ItemRelationsProgram Program = default(ItemRelationsProgram), ItemRelationsContacts Contacts = default(ItemRelationsContacts), ItemRelationsTags Tags = default(ItemRelationsTags), ItemRelationsCampaign Campaign = default(ItemRelationsCampaign), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
+        public ItemResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? DataModified = default(long?), long? Order = default(long?), long? TemplateblockId = default(long?), long? TemplateitemId = default(long?), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), long? BlockId = default(long?), string ExternalId = default(string), ImportItemFieldValues FieldValues = default(ImportItemFieldValues), string Title = default(string), long? Duration = default(long?), DateTime? Start = default(DateTime?), StatusEnum? Status = default(StatusEnum?), long? Import = default(long?), long? CampaignId = default(long?), bool? Recommended = default(bool?), long? StationDraftId = default(long?), long? ProgramDraftId = default(long?), long? UserDraftId = default(long?), bool? StaticStart = default(bool?), string Details = default(string), ItemRelationsBlock Block = default(ItemRelationsBlock), BlockRelationsBroadcast Broadcast = default(BlockRelationsBroadcast), ItemRelationsProgram Program = default(ItemRelationsProgram), ItemRelationsContacts Contacts = default(ItemRelationsContacts), ItemRelationsTags Tags = default(ItemRelationsTags), ItemRelationsCampaign Campaign = default(ItemRelationsCampaign), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
         {
             // to ensure "ModelTypeId" is required (not null)
             if (ModelTypeId == null)
@@ -111,15 +111,6 @@ namespace RadioManager.Model
             else
             {
                 this.ModelTypeId = ModelTypeId;
-            }
-            // to ensure "ExternalId" is required (not null)
-            if (ExternalId == null)
-            {
-                throw new InvalidDataException("ExternalId is a required property for ItemResult and cannot be null");
-            }
-            else
-            {
-                this.ExternalId = ExternalId;
             }
             this.Id = Id;
             this.UpdatedAt = UpdatedAt;
@@ -131,6 +122,7 @@ namespace RadioManager.Model
             this.TemplateitemId = TemplateitemId;
             this.ExternalStationId = ExternalStationId;
             this.BlockId = BlockId;
+            this.ExternalId = ExternalId;
             this.FieldValues = FieldValues;
             this.Title = Title;
             this.Duration = Duration;
@@ -223,7 +215,7 @@ namespace RadioManager.Model
         /// Gets or Sets ExternalId
         /// </summary>
         [DataMember(Name="external_id", EmitDefaultValue=false)]
-        public long? ExternalId { get; set; }
+        public string ExternalId { get; set; }
 
         /// <summary>
         /// Gets or Sets FieldValues

@@ -12,7 +12,7 @@ Contact: support@pluxbox.com
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{11A5E7FD-0220-43CE-B182-75CBA99781BD}</ProjectGuid>
+    <ProjectGuid>{A2B7CA60-FA9E-4762-9D0F-376D553BC562}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RadioManager</RootNamespace>

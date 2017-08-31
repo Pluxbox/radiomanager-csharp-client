@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **ExternalStationId** | **long?** |  | [optional] 
 **ModelTypeId** | **long?** |  | 
 **BlockId** | **long?** |  | [optional] 
-**ExternalId** | **long?** |  | 
+**ExternalId** | **string** |  | [optional] 
 **FieldValues** | [**ImportItemFieldValues**](ImportItemFieldValues.md) |  | [optional] 
 **Title** | **string** |  | [optional] 
 **Duration** | **long?** |  | [optional] 
