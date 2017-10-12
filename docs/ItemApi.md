@@ -1,6 +1,6 @@
 # RadioManager.Api.ItemApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 <a name="listitems"></a>
 # **ListItems**
-> ItemResults ListItems (long? page = null, string orderBy = null, string orderDirection = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? modelTypeId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? blockId = null, long? broadcastId = null, long? campaignId = null, long? contactId = null, long? programId = null, long? tagId = null, long? externalStationId = null)
+> ItemResults ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get a list of all the items currently in your station.
 
@@ -376,29 +376,30 @@ namespace Example
 
             var apiInstance = new ItemApi();
             var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
-            var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
+            var blockId = 789;  // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
+            var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
+            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
+            var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
+            var campaignId = 789;  // long? | Search on Campaign ID *(Optional)* `(Relation)` (optional) 
+            var contactId = 789;  // long? | Search on Contact ID *(Optional)* `(Relation)` (optional) 
+            var programDraftId = 789;  // long? | Search on Program Draft ID *(Optional)* (optional) 
+            var userDraftId = 789;  // long? | Search on User Draft ID *(Optional)* (optional) 
+            var stationDraftId = 789;  // long? | Search on Station Draft ID *(Optional)* (optional) 
+            var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
             var startMin = 2013-10-20T19:20:30+01:00;  // DateTime? | Minimum start date *(Optional)* (optional) 
             var startMax = 2013-10-20T19:20:30+01:00;  // DateTime? | Maximum start date *(Optional)* (optional) 
             var durationMin = 56;  // int? | Minimum duration (seconds) *(Optional)* (optional) 
             var durationMax = 56;  // int? | Maximum duration (seconds) *(Optional)* (optional) 
             var status = status_example;  // string | Play Status of item *(Optional)* (optional) 
-            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* (optional) 
-            var programDraftId = 789;  // long? | Search on Program Draft ID *(Optional)* (optional) 
-            var userDraftId = 789;  // long? | Search on User Draft ID *(Optional)* (optional) 
-            var stationDraftId = 789;  // long? | Search on Station Draft ID *(Optional)* (optional) 
-            var blockId = 789;  // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
-            var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
-            var campaignId = 789;  // long? | Search on Campaign ID *(Optional)* `(Relation)` (optional) 
-            var contactId = 789;  // long? | Search on Contact ID *(Optional)* `(Relation)` (optional) 
-            var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
-            var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
+            var limit = 789;  // long? | Results per page *(Optional)* (optional) 
+            var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
+            var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
             var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
             {
                 // Get a list of all the items currently in your station.
-                ItemResults result = apiInstance.ListItems(page, orderBy, orderDirection, startMin, startMax, durationMin, durationMax, status, modelTypeId, programDraftId, userDraftId, stationDraftId, blockId, broadcastId, campaignId, contactId, programId, tagId, externalStationId);
+                ItemResults result = apiInstance.ListItems(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -415,23 +416,24 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**| Current page *(Optional)* | [optional] 
- **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
- **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
+ **blockId** | **long?**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **campaignId** | **long?**| Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **contactId** | **long?**| Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **programDraftId** | **long?**| Search on Program Draft ID *(Optional)* | [optional] 
+ **userDraftId** | **long?**| Search on User Draft ID *(Optional)* | [optional] 
+ **stationDraftId** | **long?**| Search on Station Draft ID *(Optional)* | [optional] 
+ **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **startMin** | **DateTime?**| Minimum start date *(Optional)* | [optional] 
  **startMax** | **DateTime?**| Maximum start date *(Optional)* | [optional] 
  **durationMin** | **int?**| Minimum duration (seconds) *(Optional)* | [optional] 
  **durationMax** | **int?**| Maximum duration (seconds) *(Optional)* | [optional] 
  **status** | **string**| Play Status of item *(Optional)* | [optional] 
- **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* | [optional] 
- **programDraftId** | **long?**| Search on Program Draft ID *(Optional)* | [optional] 
- **userDraftId** | **long?**| Search on User Draft ID *(Optional)* | [optional] 
- **stationDraftId** | **long?**| Search on Station Draft ID *(Optional)* | [optional] 
- **blockId** | **long?**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **campaignId** | **long?**| Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **contactId** | **long?**| Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **limit** | **long?**| Results per page *(Optional)* | [optional] 
+ **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
+ **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
  **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

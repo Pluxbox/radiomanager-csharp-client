@@ -139,26 +139,27 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
-        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
+        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
+        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
-        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
-        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ItemResults</returns>
-        ItemResults ListItems (long? page = null, string orderBy = null, string orderDirection = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? modelTypeId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? blockId = null, long? broadcastId = null, long? campaignId = null, long? contactId = null, long? programId = null, long? tagId = null, long? externalStationId = null);
+        ItemResults ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get a list of all the items currently in your station.
@@ -168,26 +169,27 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
-        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
+        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
+        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
-        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
-        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of ItemResults</returns>
-        ApiResponse<ItemResults> ListItemsWithHttpInfo (long? page = null, string orderBy = null, string orderDirection = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? modelTypeId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? blockId = null, long? broadcastId = null, long? campaignId = null, long? contactId = null, long? programId = null, long? tagId = null, long? externalStationId = null);
+        ApiResponse<ItemResults> ListItemsWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Post a playlist, keep current structure
         /// </summary>
@@ -370,26 +372,27 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
-        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
+        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
+        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
-        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
-        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ItemResults</returns>
-        System.Threading.Tasks.Task<ItemResults> ListItemsAsync (long? page = null, string orderBy = null, string orderDirection = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? modelTypeId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? blockId = null, long? broadcastId = null, long? campaignId = null, long? contactId = null, long? programId = null, long? tagId = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<ItemResults> ListItemsAsync (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get a list of all the items currently in your station.
@@ -399,26 +402,27 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
-        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
+        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
+        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
-        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
-        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (ItemResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ItemResults>> ListItemsAsyncWithHttpInfo (long? page = null, string orderBy = null, string orderDirection = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? modelTypeId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? blockId = null, long? broadcastId = null, long? campaignId = null, long? contactId = null, long? programId = null, long? tagId = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<ApiResponse<ItemResults>> ListItemsAsyncWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Post a playlist, keep current structure
         /// </summary>
@@ -1361,28 +1365,29 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
-        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
+        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
+        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
-        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
-        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ItemResults</returns>
-        public ItemResults ListItems (long? page = null, string orderBy = null, string orderDirection = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? modelTypeId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? blockId = null, long? broadcastId = null, long? campaignId = null, long? contactId = null, long? programId = null, long? tagId = null, long? externalStationId = null)
+        public ItemResults ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<ItemResults> localVarResponse = ListItemsWithHttpInfo(page, orderBy, orderDirection, startMin, startMax, durationMin, durationMax, status, modelTypeId, programDraftId, userDraftId, stationDraftId, blockId, broadcastId, campaignId, contactId, programId, tagId, externalStationId);
+             ApiResponse<ItemResults> localVarResponse = ListItemsWithHttpInfo(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -1391,26 +1396,27 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
-        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
+        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
+        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
-        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
-        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of ItemResults</returns>
-        public ApiResponse< ItemResults > ListItemsWithHttpInfo (long? page = null, string orderBy = null, string orderDirection = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? modelTypeId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? blockId = null, long? broadcastId = null, long? campaignId = null, long? contactId = null, long? programId = null, long? tagId = null, long? externalStationId = null)
+        public ApiResponse< ItemResults > ListItemsWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/items";
@@ -1436,23 +1442,24 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
-            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
-            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
+            if (blockId != null) localVarQueryParams.Add("block_id", Configuration.ApiClient.ParameterToString(blockId)); // query parameter
+            if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
+            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
+            if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
+            if (campaignId != null) localVarQueryParams.Add("campaign_id", Configuration.ApiClient.ParameterToString(campaignId)); // query parameter
+            if (contactId != null) localVarQueryParams.Add("contact_id", Configuration.ApiClient.ParameterToString(contactId)); // query parameter
+            if (programDraftId != null) localVarQueryParams.Add("program_draft_id", Configuration.ApiClient.ParameterToString(programDraftId)); // query parameter
+            if (userDraftId != null) localVarQueryParams.Add("user_draft_id", Configuration.ApiClient.ParameterToString(userDraftId)); // query parameter
+            if (stationDraftId != null) localVarQueryParams.Add("station_draft_id", Configuration.ApiClient.ParameterToString(stationDraftId)); // query parameter
+            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
             if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
             if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
             if (durationMin != null) localVarQueryParams.Add("duration-min", Configuration.ApiClient.ParameterToString(durationMin)); // query parameter
             if (durationMax != null) localVarQueryParams.Add("duration-max", Configuration.ApiClient.ParameterToString(durationMax)); // query parameter
             if (status != null) localVarQueryParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // query parameter
-            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
-            if (programDraftId != null) localVarQueryParams.Add("program_draft_id", Configuration.ApiClient.ParameterToString(programDraftId)); // query parameter
-            if (userDraftId != null) localVarQueryParams.Add("user_draft_id", Configuration.ApiClient.ParameterToString(userDraftId)); // query parameter
-            if (stationDraftId != null) localVarQueryParams.Add("station_draft_id", Configuration.ApiClient.ParameterToString(stationDraftId)); // query parameter
-            if (blockId != null) localVarQueryParams.Add("block_id", Configuration.ApiClient.ParameterToString(blockId)); // query parameter
-            if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
-            if (campaignId != null) localVarQueryParams.Add("campaign_id", Configuration.ApiClient.ParameterToString(campaignId)); // query parameter
-            if (contactId != null) localVarQueryParams.Add("contact_id", Configuration.ApiClient.ParameterToString(contactId)); // query parameter
-            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
-            if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required
@@ -1485,28 +1492,29 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
-        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
+        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
+        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
-        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
-        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ItemResults</returns>
-        public async System.Threading.Tasks.Task<ItemResults> ListItemsAsync (long? page = null, string orderBy = null, string orderDirection = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? modelTypeId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? blockId = null, long? broadcastId = null, long? campaignId = null, long? contactId = null, long? programId = null, long? tagId = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ItemResults> ListItemsAsync (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<ItemResults> localVarResponse = await ListItemsAsyncWithHttpInfo(page, orderBy, orderDirection, startMin, startMax, durationMin, durationMax, status, modelTypeId, programDraftId, userDraftId, stationDraftId, blockId, broadcastId, campaignId, contactId, programId, tagId, externalStationId);
+             ApiResponse<ItemResults> localVarResponse = await ListItemsAsyncWithHttpInfo(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -1516,26 +1524,27 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
-        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
+        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
+        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="programDraftId">Search on Program Draft ID *(Optional)* (optional)</param>
-        /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
-        /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="campaignId">Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (ItemResults)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ItemResults>> ListItemsAsyncWithHttpInfo (long? page = null, string orderBy = null, string orderDirection = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? modelTypeId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? blockId = null, long? broadcastId = null, long? campaignId = null, long? contactId = null, long? programId = null, long? tagId = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ItemResults>> ListItemsAsyncWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/items";
@@ -1561,23 +1570,24 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
-            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
-            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
+            if (blockId != null) localVarQueryParams.Add("block_id", Configuration.ApiClient.ParameterToString(blockId)); // query parameter
+            if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
+            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
+            if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
+            if (campaignId != null) localVarQueryParams.Add("campaign_id", Configuration.ApiClient.ParameterToString(campaignId)); // query parameter
+            if (contactId != null) localVarQueryParams.Add("contact_id", Configuration.ApiClient.ParameterToString(contactId)); // query parameter
+            if (programDraftId != null) localVarQueryParams.Add("program_draft_id", Configuration.ApiClient.ParameterToString(programDraftId)); // query parameter
+            if (userDraftId != null) localVarQueryParams.Add("user_draft_id", Configuration.ApiClient.ParameterToString(userDraftId)); // query parameter
+            if (stationDraftId != null) localVarQueryParams.Add("station_draft_id", Configuration.ApiClient.ParameterToString(stationDraftId)); // query parameter
+            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
             if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
             if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
             if (durationMin != null) localVarQueryParams.Add("duration-min", Configuration.ApiClient.ParameterToString(durationMin)); // query parameter
             if (durationMax != null) localVarQueryParams.Add("duration-max", Configuration.ApiClient.ParameterToString(durationMax)); // query parameter
             if (status != null) localVarQueryParams.Add("status", Configuration.ApiClient.ParameterToString(status)); // query parameter
-            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
-            if (programDraftId != null) localVarQueryParams.Add("program_draft_id", Configuration.ApiClient.ParameterToString(programDraftId)); // query parameter
-            if (userDraftId != null) localVarQueryParams.Add("user_draft_id", Configuration.ApiClient.ParameterToString(userDraftId)); // query parameter
-            if (stationDraftId != null) localVarQueryParams.Add("station_draft_id", Configuration.ApiClient.ParameterToString(stationDraftId)); // query parameter
-            if (blockId != null) localVarQueryParams.Add("block_id", Configuration.ApiClient.ParameterToString(blockId)); // query parameter
-            if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
-            if (campaignId != null) localVarQueryParams.Add("campaign_id", Configuration.ApiClient.ParameterToString(campaignId)); // query parameter
-            if (contactId != null) localVarQueryParams.Add("contact_id", Configuration.ApiClient.ParameterToString(contactId)); // query parameter
-            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
-            if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required

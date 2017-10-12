@@ -88,8 +88,11 @@ namespace RadioManager.Test
             //long? parentId = null;
             //long? programId = null;
             //long? broadcastId = null;
+            //long? limit = null;
+            //string orderBy = null;
+            //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListGenres(page, parentId, programId, broadcastId, externalStationId);
+            //var response = instance.ListGenres(page, parentId, programId, broadcastId, limit, orderBy, orderDirection, externalStationId);
             //Assert.IsInstanceOf<GenreResults> (response, "response is GenreResults");
         }
         

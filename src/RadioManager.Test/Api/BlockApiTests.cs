@@ -107,13 +107,16 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
+            //long? broadcastId = null;
+            //long? itemId = null;
+            //long? programId = null;
             //DateTime? startMin = null;
             //DateTime? startMax = null;
-            //long? broadcastId = null;
-            //long? programId = null;
-            //long? itemId = null;
+            //long? limit = null;
+            //string orderBy = null;
+            //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListBlocks(page, startMin, startMax, broadcastId, programId, itemId, externalStationId);
+            //var response = instance.ListBlocks(page, broadcastId, itemId, programId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
             //Assert.IsInstanceOf<BlockResults> (response, "response is BlockResults");
         }
         

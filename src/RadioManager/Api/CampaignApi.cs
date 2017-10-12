@@ -97,13 +97,16 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>CampaignResults</returns>
-        CampaignResults ListCampaigns (long? page = null, long? modelTypeId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? externalStationId = null);
+        CampaignResults ListCampaigns (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all campaigns.
@@ -113,13 +116,16 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of CampaignResults</returns>
-        ApiResponse<CampaignResults> ListCampaignsWithHttpInfo (long? page = null, long? modelTypeId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? externalStationId = null);
+        ApiResponse<CampaignResults> ListCampaignsWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update campaign by id
         /// </summary>
@@ -218,13 +224,16 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of CampaignResults</returns>
-        System.Threading.Tasks.Task<CampaignResults> ListCampaignsAsync (long? page = null, long? modelTypeId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<CampaignResults> ListCampaignsAsync (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all campaigns.
@@ -234,13 +243,16 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (CampaignResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CampaignResults>> ListCampaignsAsyncWithHttpInfo (long? page = null, long? modelTypeId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<ApiResponse<CampaignResults>> ListCampaignsAsyncWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update campaign by id
         /// </summary>
@@ -839,15 +851,18 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>CampaignResults</returns>
-        public CampaignResults ListCampaigns (long? page = null, long? modelTypeId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? externalStationId = null)
+        public CampaignResults ListCampaigns (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<CampaignResults> localVarResponse = ListCampaignsWithHttpInfo(page, modelTypeId, itemId, startMin, startMax, externalStationId);
+             ApiResponse<CampaignResults> localVarResponse = ListCampaignsWithHttpInfo(page, itemId, modelTypeId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -856,13 +871,16 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of CampaignResults</returns>
-        public ApiResponse< CampaignResults > ListCampaignsWithHttpInfo (long? page = null, long? modelTypeId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? externalStationId = null)
+        public ApiResponse< CampaignResults > ListCampaignsWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/campaigns";
@@ -888,10 +906,13 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
-            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
             if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
             if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
             if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required
@@ -924,15 +945,18 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of CampaignResults</returns>
-        public async System.Threading.Tasks.Task<CampaignResults> ListCampaignsAsync (long? page = null, long? modelTypeId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<CampaignResults> ListCampaignsAsync (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<CampaignResults> localVarResponse = await ListCampaignsAsyncWithHttpInfo(page, modelTypeId, itemId, startMin, startMax, externalStationId);
+             ApiResponse<CampaignResults> localVarResponse = await ListCampaignsAsyncWithHttpInfo(page, itemId, modelTypeId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -942,13 +966,16 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (CampaignResults)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CampaignResults>> ListCampaignsAsyncWithHttpInfo (long? page = null, long? modelTypeId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CampaignResults>> ListCampaignsAsyncWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/campaigns";
@@ -974,10 +1001,13 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
-            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
             if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
             if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
             if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required

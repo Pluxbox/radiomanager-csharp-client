@@ -1,6 +1,6 @@
 # RadioManager.Api.BroadcastApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -281,7 +281,7 @@ This endpoint does not need any parameter.
 
 <a name="getdailyepg"></a>
 # **GetDailyEPG**
-> EPGBroadcast GetDailyEPG (DateTime? date = null)
+> EPGBroadcast GetDailyEPG (DateTime? date = null, bool? withunpublished = null)
 
 Get daily EPG
 
@@ -308,11 +308,12 @@ namespace Example
 
             var apiInstance = new BroadcastApi();
             var date = 2013-10-20T19:20:30+01:00;  // DateTime? | Date *(Optional)* (optional) 
+            var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
 
             try
             {
                 // Get daily EPG
-                EPGBroadcast result = apiInstance.GetDailyEPG(date);
+                EPGBroadcast result = apiInstance.GetDailyEPG(date, withunpublished);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -329,6 +330,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | **DateTime?**| Date *(Optional)* | [optional] 
+ **withunpublished** | **bool?**| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
@@ -347,7 +349,7 @@ Name | Type | Description  | Notes
 
 <a name="getepgbydate"></a>
 # **GetEPGByDate**
-> EPGBroadcast GetEPGByDate (DateTime? date = null)
+> EPGBroadcast GetEPGByDate (DateTime? date = null, bool? withunpublished = null)
 
 Get EPG by date
 
@@ -374,11 +376,12 @@ namespace Example
 
             var apiInstance = new BroadcastApi();
             var date = 2013-10-20T19:20:30+01:00;  // DateTime? | Date *(Optional)* (optional) 
+            var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
 
             try
             {
                 // Get EPG by date
-                EPGBroadcast result = apiInstance.GetEPGByDate(date);
+                EPGBroadcast result = apiInstance.GetEPGByDate(date, withunpublished);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -395,6 +398,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | **DateTime?**| Date *(Optional)* | [optional] 
+ **withunpublished** | **bool?**| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
@@ -475,7 +479,7 @@ This endpoint does not need any parameter.
 
 <a name="getweeklyepg"></a>
 # **GetWeeklyEPG**
-> EPGBroadcast GetWeeklyEPG (string date = null)
+> EPGBroadcast GetWeeklyEPG (string date = null, bool? withunpublished = null)
 
 Get weekly EPG
 
@@ -502,11 +506,12 @@ namespace Example
 
             var apiInstance = new BroadcastApi();
             var date = date_example;  // string | Date *(Optional)* (optional) 
+            var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
 
             try
             {
                 // Get weekly EPG
-                EPGBroadcast result = apiInstance.GetWeeklyEPG(date);
+                EPGBroadcast result = apiInstance.GetWeeklyEPG(date, withunpublished);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -523,6 +528,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | **string**| Date *(Optional)* | [optional] 
+ **withunpublished** | **bool?**| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
@@ -541,7 +547,7 @@ Name | Type | Description  | Notes
 
 <a name="listbroadcasts"></a>
 # **ListBroadcasts**
-> BroadcastResults ListBroadcasts (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? itemId = null, long? blockId = null, long? genreId = null, long? programId = null, long? externalStationId = null)
+> BroadcastResults ListBroadcasts (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all broadcasts.
 
@@ -568,21 +574,24 @@ namespace Example
 
             var apiInstance = new BroadcastApi();
             var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
-            var startMin = 2013-10-20T19:20:30+01:00;  // DateTime? | Minimum start date *(Optional)* (optional) 
-            var startMax = 2013-10-20T19:20:30+01:00;  // DateTime? | Maximum start date *(Optional)* (optional) 
-            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* (optional) 
+            var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
+            var blockId = 789;  // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
+            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
             var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
             var presenterId = 789;  // long? | Search on Presenter ID *(Optional)* `(Relation)` (optional) 
-            var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
-            var blockId = 789;  // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
             var genreId = 789;  // long? | Search on Genre ID *(Optional)* `(Relation)` (optional) 
-            var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
+            var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var startMin = 2013-10-20T19:20:30+01:00;  // DateTime? | Minimum start date *(Optional)* (optional) 
+            var startMax = 2013-10-20T19:20:30+01:00;  // DateTime? | Maximum start date *(Optional)* (optional) 
+            var limit = 789;  // long? | Results per page *(Optional)* (optional) 
+            var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
+            var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
             var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
             {
                 // Get all broadcasts.
-                BroadcastResults result = apiInstance.ListBroadcasts(page, startMin, startMax, modelTypeId, tagId, presenterId, itemId, blockId, genreId, programId, externalStationId);
+                BroadcastResults result = apiInstance.ListBroadcasts(page, programId, blockId, modelTypeId, tagId, presenterId, genreId, itemId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -599,15 +608,18 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
- **startMin** | **DateTime?**| Minimum start date *(Optional)* | [optional] 
- **startMax** | **DateTime?**| Maximum start date *(Optional)* | [optional] 
- **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* | [optional] 
+ **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **blockId** | **long?**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **presenterId** | **long?**| Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **blockId** | **long?**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **genreId** | **long?**| Search on Genre ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **startMin** | **DateTime?**| Minimum start date *(Optional)* | [optional] 
+ **startMax** | **DateTime?**| Maximum start date *(Optional)* | [optional] 
+ **limit** | **long?**| Results per page *(Optional)* | [optional] 
+ **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
+ **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
  **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

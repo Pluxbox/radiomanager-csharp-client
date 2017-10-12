@@ -1,6 +1,6 @@
 # RadioManager.Api.BlockApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -204,7 +204,7 @@ This endpoint does not need any parameter.
 
 <a name="listblocks"></a>
 # **ListBlocks**
-> BlockResults ListBlocks (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? broadcastId = null, long? programId = null, long? itemId = null, long? externalStationId = null)
+> BlockResults ListBlocks (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get a list of all blocks currently in your station.
 
@@ -231,17 +231,20 @@ namespace Example
 
             var apiInstance = new BlockApi();
             var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
+            var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
+            var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
             var startMin = 2013-10-20T19:20:30+01:00;  // DateTime? | Minimum start date *(Optional)* (optional) 
             var startMax = 2013-10-20T19:20:30+01:00;  // DateTime? | Maximum start date *(Optional)* (optional) 
-            var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
-            var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
-            var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var limit = 789;  // long? | Results per page *(Optional)* (optional) 
+            var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
+            var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
             var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
             {
                 // Get a list of all blocks currently in your station.
-                BlockResults result = apiInstance.ListBlocks(page, startMin, startMax, broadcastId, programId, itemId, externalStationId);
+                BlockResults result = apiInstance.ListBlocks(page, broadcastId, itemId, programId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -258,11 +261,14 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
+ **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **startMin** | **DateTime?**| Minimum start date *(Optional)* | [optional] 
  **startMax** | **DateTime?**| Maximum start date *(Optional)* | [optional] 
- **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **limit** | **long?**| Results per page *(Optional)* | [optional] 
+ **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
+ **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
  **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

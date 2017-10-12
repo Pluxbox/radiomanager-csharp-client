@@ -109,11 +109,14 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
-            //long? modelTypeId = null;
             //long? programId = null;
             //long? broadcastId = null;
+            //long? modelTypeId = null;
+            //long? limit = null;
+            //string orderBy = null;
+            //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListPresenters(page, modelTypeId, programId, broadcastId, externalStationId);
+            //var response = instance.ListPresenters(page, programId, broadcastId, modelTypeId, limit, orderBy, orderDirection, externalStationId);
             //Assert.IsInstanceOf<PresenterResults> (response, "response is PresenterResults");
         }
         

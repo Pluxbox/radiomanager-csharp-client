@@ -133,25 +133,26 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
-            //string orderBy = null;
-            //string orderDirection = null;
+            //long? blockId = null;
+            //long? broadcastId = null;
+            //long? modelTypeId = null;
+            //long? tagId = null;
+            //long? campaignId = null;
+            //long? contactId = null;
+            //long? programDraftId = null;
+            //long? userDraftId = null;
+            //long? stationDraftId = null;
+            //long? programId = null;
             //DateTime? startMin = null;
             //DateTime? startMax = null;
             //int? durationMin = null;
             //int? durationMax = null;
             //string status = null;
-            //long? modelTypeId = null;
-            //long? programDraftId = null;
-            //long? userDraftId = null;
-            //long? stationDraftId = null;
-            //long? blockId = null;
-            //long? broadcastId = null;
-            //long? campaignId = null;
-            //long? contactId = null;
-            //long? programId = null;
-            //long? tagId = null;
+            //long? limit = null;
+            //string orderBy = null;
+            //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListItems(page, orderBy, orderDirection, startMin, startMax, durationMin, durationMax, status, modelTypeId, programDraftId, userDraftId, stationDraftId, blockId, broadcastId, campaignId, contactId, programId, tagId, externalStationId);
+            //var response = instance.ListItems(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
             //Assert.IsInstanceOf<ItemResults> (response, "response is ItemResults");
         }
         

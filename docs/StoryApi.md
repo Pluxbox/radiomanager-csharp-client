@@ -1,6 +1,6 @@
 # RadioManager.Api.StoryApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 <a name="liststories"></a>
 # **ListStories**
-> StoryResults ListStories (long? page = null, long? modelTypeId = null, long? tagId = null, long? itemId = null, long? externalStationId = null)
+> StoryResults ListStories (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all stories.
 
@@ -240,15 +240,18 @@ namespace Example
 
             var apiInstance = new StoryApi();
             var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
-            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* (optional) 
-            var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
             var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
+            var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
+            var limit = 789;  // long? | Results per page *(Optional)* (optional) 
+            var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
+            var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
             var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
             {
                 // Get all stories.
-                StoryResults result = apiInstance.ListStories(page, modelTypeId, tagId, itemId, externalStationId);
+                StoryResults result = apiInstance.ListStories(page, itemId, modelTypeId, tagId, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -265,9 +268,12 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
- **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* | [optional] 
- **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **limit** | **long?**| Results per page *(Optional)* | [optional] 
+ **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
+ **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
  **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

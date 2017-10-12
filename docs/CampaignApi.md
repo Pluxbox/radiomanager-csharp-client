@@ -1,6 +1,6 @@
 # RadioManager.Api.CampaignApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 <a name="listcampaigns"></a>
 # **ListCampaigns**
-> CampaignResults ListCampaigns (long? page = null, long? modelTypeId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? externalStationId = null)
+> CampaignResults ListCampaigns (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all campaigns.
 
@@ -240,16 +240,19 @@ namespace Example
 
             var apiInstance = new CampaignApi();
             var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* (optional) 
             var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
             var startMin = 2013-10-20T19:20:30+01:00;  // DateTime? | Minimum start date *(Optional)* (optional) 
             var startMax = 2013-10-20T19:20:30+01:00;  // DateTime? | Maximum start date *(Optional)* (optional) 
+            var limit = 789;  // long? | Results per page *(Optional)* (optional) 
+            var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
+            var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
             var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
             {
                 // Get all campaigns.
-                CampaignResults result = apiInstance.ListCampaigns(page, modelTypeId, itemId, startMin, startMax, externalStationId);
+                CampaignResults result = apiInstance.ListCampaigns(page, itemId, modelTypeId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -266,10 +269,13 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**| Current page *(Optional)* | [optional] 
- **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* | [optional] 
  **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **startMin** | **DateTime?**| Minimum start date *(Optional)* | [optional] 
  **startMax** | **DateTime?**| Maximum start date *(Optional)* | [optional] 
+ **limit** | **long?**| Results per page *(Optional)* | [optional] 
+ **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
+ **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
  **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

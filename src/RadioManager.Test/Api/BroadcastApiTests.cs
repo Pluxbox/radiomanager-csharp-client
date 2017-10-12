@@ -120,7 +120,8 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //DateTime? date = null;
-            //var response = instance.GetDailyEPG(date);
+            //bool? withunpublished = null;
+            //var response = instance.GetDailyEPG(date, withunpublished);
             //Assert.IsInstanceOf<EPGBroadcast> (response, "response is EPGBroadcast");
         }
         
@@ -132,7 +133,8 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //DateTime? date = null;
-            //var response = instance.GetEPGByDate(date);
+            //bool? withunpublished = null;
+            //var response = instance.GetEPGByDate(date, withunpublished);
             //Assert.IsInstanceOf<EPGBroadcast> (response, "response is EPGBroadcast");
         }
         
@@ -155,7 +157,8 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string date = null;
-            //var response = instance.GetWeeklyEPG(date);
+            //bool? withunpublished = null;
+            //var response = instance.GetWeeklyEPG(date, withunpublished);
             //Assert.IsInstanceOf<EPGBroadcast> (response, "response is EPGBroadcast");
         }
         
@@ -167,17 +170,20 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
-            //DateTime? startMin = null;
-            //DateTime? startMax = null;
+            //long? programId = null;
+            //long? blockId = null;
             //long? modelTypeId = null;
             //long? tagId = null;
             //long? presenterId = null;
-            //long? itemId = null;
-            //long? blockId = null;
             //long? genreId = null;
-            //long? programId = null;
+            //long? itemId = null;
+            //DateTime? startMin = null;
+            //DateTime? startMax = null;
+            //long? limit = null;
+            //string orderBy = null;
+            //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListBroadcasts(page, startMin, startMax, modelTypeId, tagId, presenterId, itemId, blockId, genreId, programId, externalStationId);
+            //var response = instance.ListBroadcasts(page, programId, blockId, modelTypeId, tagId, presenterId, genreId, itemId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
             //Assert.IsInstanceOf<BroadcastResults> (response, "response is BroadcastResults");
         }
         

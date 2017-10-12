@@ -116,8 +116,9 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>EPGBroadcast</returns>
-        EPGBroadcast GetDailyEPG (DateTime? date = null);
+        EPGBroadcast GetDailyEPG (DateTime? date = null, bool? withunpublished = null);
 
         /// <summary>
         /// Get daily EPG
@@ -127,8 +128,9 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>ApiResponse of EPGBroadcast</returns>
-        ApiResponse<EPGBroadcast> GetDailyEPGWithHttpInfo (DateTime? date = null);
+        ApiResponse<EPGBroadcast> GetDailyEPGWithHttpInfo (DateTime? date = null, bool? withunpublished = null);
         /// <summary>
         /// Get EPG by date
         /// </summary>
@@ -137,8 +139,9 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>EPGBroadcast</returns>
-        EPGBroadcast GetEPGByDate (DateTime? date = null);
+        EPGBroadcast GetEPGByDate (DateTime? date = null, bool? withunpublished = null);
 
         /// <summary>
         /// Get EPG by date
@@ -148,8 +151,9 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>ApiResponse of EPGBroadcast</returns>
-        ApiResponse<EPGBroadcast> GetEPGByDateWithHttpInfo (DateTime? date = null);
+        ApiResponse<EPGBroadcast> GetEPGByDateWithHttpInfo (DateTime? date = null, bool? withunpublished = null);
         /// <summary>
         /// Get next Broadcast
         /// </summary>
@@ -177,8 +181,9 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>EPGBroadcast</returns>
-        EPGBroadcast GetWeeklyEPG (string date = null);
+        EPGBroadcast GetWeeklyEPG (string date = null, bool? withunpublished = null);
 
         /// <summary>
         /// Get weekly EPG
@@ -188,8 +193,9 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>ApiResponse of EPGBroadcast</returns>
-        ApiResponse<EPGBroadcast> GetWeeklyEPGWithHttpInfo (string date = null);
+        ApiResponse<EPGBroadcast> GetWeeklyEPGWithHttpInfo (string date = null, bool? withunpublished = null);
         /// <summary>
         /// Get all broadcasts.
         /// </summary>
@@ -198,18 +204,21 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>BroadcastResults</returns>
-        BroadcastResults ListBroadcasts (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? itemId = null, long? blockId = null, long? genreId = null, long? programId = null, long? externalStationId = null);
+        BroadcastResults ListBroadcasts (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all broadcasts.
@@ -219,18 +228,21 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of BroadcastResults</returns>
-        ApiResponse<BroadcastResults> ListBroadcastsWithHttpInfo (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? itemId = null, long? blockId = null, long? genreId = null, long? programId = null, long? externalStationId = null);
+        ApiResponse<BroadcastResults> ListBroadcastsWithHttpInfo (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Print Broadcast by id
         /// </summary>
@@ -375,8 +387,9 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>Task of EPGBroadcast</returns>
-        System.Threading.Tasks.Task<EPGBroadcast> GetDailyEPGAsync (DateTime? date = null);
+        System.Threading.Tasks.Task<EPGBroadcast> GetDailyEPGAsync (DateTime? date = null, bool? withunpublished = null);
 
         /// <summary>
         /// Get daily EPG
@@ -386,8 +399,9 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetDailyEPGAsyncWithHttpInfo (DateTime? date = null);
+        System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetDailyEPGAsyncWithHttpInfo (DateTime? date = null, bool? withunpublished = null);
         /// <summary>
         /// Get EPG by date
         /// </summary>
@@ -396,8 +410,9 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>Task of EPGBroadcast</returns>
-        System.Threading.Tasks.Task<EPGBroadcast> GetEPGByDateAsync (DateTime? date = null);
+        System.Threading.Tasks.Task<EPGBroadcast> GetEPGByDateAsync (DateTime? date = null, bool? withunpublished = null);
 
         /// <summary>
         /// Get EPG by date
@@ -407,8 +422,9 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetEPGByDateAsyncWithHttpInfo (DateTime? date = null);
+        System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetEPGByDateAsyncWithHttpInfo (DateTime? date = null, bool? withunpublished = null);
         /// <summary>
         /// Get next Broadcast
         /// </summary>
@@ -436,8 +452,9 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>Task of EPGBroadcast</returns>
-        System.Threading.Tasks.Task<EPGBroadcast> GetWeeklyEPGAsync (string date = null);
+        System.Threading.Tasks.Task<EPGBroadcast> GetWeeklyEPGAsync (string date = null, bool? withunpublished = null);
 
         /// <summary>
         /// Get weekly EPG
@@ -447,8 +464,9 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetWeeklyEPGAsyncWithHttpInfo (string date = null);
+        System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetWeeklyEPGAsyncWithHttpInfo (string date = null, bool? withunpublished = null);
         /// <summary>
         /// Get all broadcasts.
         /// </summary>
@@ -457,18 +475,21 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of BroadcastResults</returns>
-        System.Threading.Tasks.Task<BroadcastResults> ListBroadcastsAsync (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? itemId = null, long? blockId = null, long? genreId = null, long? programId = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<BroadcastResults> ListBroadcastsAsync (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all broadcasts.
@@ -478,18 +499,21 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (BroadcastResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BroadcastResults>> ListBroadcastsAsyncWithHttpInfo (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? itemId = null, long? blockId = null, long? genreId = null, long? programId = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<ApiResponse<BroadcastResults>> ListBroadcastsAsyncWithHttpInfo (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Print Broadcast by id
         /// </summary>
@@ -1249,10 +1273,11 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>EPGBroadcast</returns>
-        public EPGBroadcast GetDailyEPG (DateTime? date = null)
+        public EPGBroadcast GetDailyEPG (DateTime? date = null, bool? withunpublished = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = GetDailyEPGWithHttpInfo(date);
+             ApiResponse<EPGBroadcast> localVarResponse = GetDailyEPGWithHttpInfo(date, withunpublished);
              return localVarResponse.Data;
         }
 
@@ -1261,8 +1286,9 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>ApiResponse of EPGBroadcast</returns>
-        public ApiResponse< EPGBroadcast > GetDailyEPGWithHttpInfo (DateTime? date = null)
+        public ApiResponse< EPGBroadcast > GetDailyEPGWithHttpInfo (DateTime? date = null, bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/epg/daily";
@@ -1288,6 +1314,7 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (date != null) localVarQueryParams.Add("date", Configuration.ApiClient.ParameterToString(date)); // query parameter
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1319,10 +1346,11 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>Task of EPGBroadcast</returns>
-        public async System.Threading.Tasks.Task<EPGBroadcast> GetDailyEPGAsync (DateTime? date = null)
+        public async System.Threading.Tasks.Task<EPGBroadcast> GetDailyEPGAsync (DateTime? date = null, bool? withunpublished = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = await GetDailyEPGAsyncWithHttpInfo(date);
+             ApiResponse<EPGBroadcast> localVarResponse = await GetDailyEPGAsyncWithHttpInfo(date, withunpublished);
              return localVarResponse.Data;
 
         }
@@ -1332,8 +1360,9 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetDailyEPGAsyncWithHttpInfo (DateTime? date = null)
+        public async System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetDailyEPGAsyncWithHttpInfo (DateTime? date = null, bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/epg/daily";
@@ -1359,6 +1388,7 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (date != null) localVarQueryParams.Add("date", Configuration.ApiClient.ParameterToString(date)); // query parameter
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1389,10 +1419,11 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>EPGBroadcast</returns>
-        public EPGBroadcast GetEPGByDate (DateTime? date = null)
+        public EPGBroadcast GetEPGByDate (DateTime? date = null, bool? withunpublished = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = GetEPGByDateWithHttpInfo(date);
+             ApiResponse<EPGBroadcast> localVarResponse = GetEPGByDateWithHttpInfo(date, withunpublished);
              return localVarResponse.Data;
         }
 
@@ -1401,8 +1432,9 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>ApiResponse of EPGBroadcast</returns>
-        public ApiResponse< EPGBroadcast > GetEPGByDateWithHttpInfo (DateTime? date = null)
+        public ApiResponse< EPGBroadcast > GetEPGByDateWithHttpInfo (DateTime? date = null, bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/epg";
@@ -1428,6 +1460,7 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (date != null) localVarQueryParams.Add("date", Configuration.ApiClient.ParameterToString(date)); // query parameter
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1459,10 +1492,11 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>Task of EPGBroadcast</returns>
-        public async System.Threading.Tasks.Task<EPGBroadcast> GetEPGByDateAsync (DateTime? date = null)
+        public async System.Threading.Tasks.Task<EPGBroadcast> GetEPGByDateAsync (DateTime? date = null, bool? withunpublished = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = await GetEPGByDateAsyncWithHttpInfo(date);
+             ApiResponse<EPGBroadcast> localVarResponse = await GetEPGByDateAsyncWithHttpInfo(date, withunpublished);
              return localVarResponse.Data;
 
         }
@@ -1472,8 +1506,9 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetEPGByDateAsyncWithHttpInfo (DateTime? date = null)
+        public async System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetEPGByDateAsyncWithHttpInfo (DateTime? date = null, bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/epg";
@@ -1499,6 +1534,7 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (date != null) localVarQueryParams.Add("date", Configuration.ApiClient.ParameterToString(date)); // query parameter
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1663,10 +1699,11 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>EPGBroadcast</returns>
-        public EPGBroadcast GetWeeklyEPG (string date = null)
+        public EPGBroadcast GetWeeklyEPG (string date = null, bool? withunpublished = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = GetWeeklyEPGWithHttpInfo(date);
+             ApiResponse<EPGBroadcast> localVarResponse = GetWeeklyEPGWithHttpInfo(date, withunpublished);
              return localVarResponse.Data;
         }
 
@@ -1675,8 +1712,9 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>ApiResponse of EPGBroadcast</returns>
-        public ApiResponse< EPGBroadcast > GetWeeklyEPGWithHttpInfo (string date = null)
+        public ApiResponse< EPGBroadcast > GetWeeklyEPGWithHttpInfo (string date = null, bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/epg/weekly";
@@ -1702,6 +1740,7 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (date != null) localVarQueryParams.Add("date", Configuration.ApiClient.ParameterToString(date)); // query parameter
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1733,10 +1772,11 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>Task of EPGBroadcast</returns>
-        public async System.Threading.Tasks.Task<EPGBroadcast> GetWeeklyEPGAsync (string date = null)
+        public async System.Threading.Tasks.Task<EPGBroadcast> GetWeeklyEPGAsync (string date = null, bool? withunpublished = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = await GetWeeklyEPGAsyncWithHttpInfo(date);
+             ApiResponse<EPGBroadcast> localVarResponse = await GetWeeklyEPGAsyncWithHttpInfo(date, withunpublished);
              return localVarResponse.Data;
 
         }
@@ -1746,8 +1786,9 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetWeeklyEPGAsyncWithHttpInfo (string date = null)
+        public async System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetWeeklyEPGAsyncWithHttpInfo (string date = null, bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/epg/weekly";
@@ -1773,6 +1814,7 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (date != null) localVarQueryParams.Add("date", Configuration.ApiClient.ParameterToString(date)); // query parameter
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1803,20 +1845,23 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>BroadcastResults</returns>
-        public BroadcastResults ListBroadcasts (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? itemId = null, long? blockId = null, long? genreId = null, long? programId = null, long? externalStationId = null)
+        public BroadcastResults ListBroadcasts (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<BroadcastResults> localVarResponse = ListBroadcastsWithHttpInfo(page, startMin, startMax, modelTypeId, tagId, presenterId, itemId, blockId, genreId, programId, externalStationId);
+             ApiResponse<BroadcastResults> localVarResponse = ListBroadcastsWithHttpInfo(page, programId, blockId, modelTypeId, tagId, presenterId, genreId, itemId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -1825,18 +1870,21 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of BroadcastResults</returns>
-        public ApiResponse< BroadcastResults > ListBroadcastsWithHttpInfo (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? itemId = null, long? blockId = null, long? genreId = null, long? programId = null, long? externalStationId = null)
+        public ApiResponse< BroadcastResults > ListBroadcastsWithHttpInfo (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/broadcasts";
@@ -1862,15 +1910,18 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
-            if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
-            if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
+            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
+            if (blockId != null) localVarQueryParams.Add("block_id", Configuration.ApiClient.ParameterToString(blockId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
             if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
             if (presenterId != null) localVarQueryParams.Add("presenter_id", Configuration.ApiClient.ParameterToString(presenterId)); // query parameter
-            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
-            if (blockId != null) localVarQueryParams.Add("block_id", Configuration.ApiClient.ParameterToString(blockId)); // query parameter
             if (genreId != null) localVarQueryParams.Add("genre_id", Configuration.ApiClient.ParameterToString(genreId)); // query parameter
-            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
+            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
+            if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required
@@ -1903,20 +1954,23 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of BroadcastResults</returns>
-        public async System.Threading.Tasks.Task<BroadcastResults> ListBroadcastsAsync (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? itemId = null, long? blockId = null, long? genreId = null, long? programId = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<BroadcastResults> ListBroadcastsAsync (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<BroadcastResults> localVarResponse = await ListBroadcastsAsyncWithHttpInfo(page, startMin, startMax, modelTypeId, tagId, presenterId, itemId, blockId, genreId, programId, externalStationId);
+             ApiResponse<BroadcastResults> localVarResponse = await ListBroadcastsAsyncWithHttpInfo(page, programId, blockId, modelTypeId, tagId, presenterId, genreId, itemId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -1926,18 +1980,21 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (BroadcastResults)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BroadcastResults>> ListBroadcastsAsyncWithHttpInfo (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? itemId = null, long? blockId = null, long? genreId = null, long? programId = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BroadcastResults>> ListBroadcastsAsyncWithHttpInfo (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/broadcasts";
@@ -1963,15 +2020,18 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
-            if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
-            if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
+            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
+            if (blockId != null) localVarQueryParams.Add("block_id", Configuration.ApiClient.ParameterToString(blockId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
             if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
             if (presenterId != null) localVarQueryParams.Add("presenter_id", Configuration.ApiClient.ParameterToString(presenterId)); // query parameter
-            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
-            if (blockId != null) localVarQueryParams.Add("block_id", Configuration.ApiClient.ParameterToString(blockId)); // query parameter
             if (genreId != null) localVarQueryParams.Add("genre_id", Configuration.ApiClient.ParameterToString(genreId)); // query parameter
-            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
+            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
+            if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required

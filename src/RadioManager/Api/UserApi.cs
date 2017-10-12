@@ -96,8 +96,11 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <returns>UserResults</returns>
-        UserResults ListUsers (long? page = null, long? roleId = null);
+        UserResults ListUsers (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null);
 
         /// <summary>
         /// Get all users.
@@ -108,8 +111,11 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <returns>ApiResponse of UserResults</returns>
-        ApiResponse<UserResults> ListUsersWithHttpInfo (long? page = null, long? roleId = null);
+        ApiResponse<UserResults> ListUsersWithHttpInfo (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -184,8 +190,11 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <returns>Task of UserResults</returns>
-        System.Threading.Tasks.Task<UserResults> ListUsersAsync (long? page = null, long? roleId = null);
+        System.Threading.Tasks.Task<UserResults> ListUsersAsync (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null);
 
         /// <summary>
         /// Get all users.
@@ -196,8 +205,11 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (UserResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserResults>> ListUsersAsyncWithHttpInfo (long? page = null, long? roleId = null);
+        System.Threading.Tasks.Task<ApiResponse<UserResults>> ListUsersAsyncWithHttpInfo (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null);
         #endregion Asynchronous Operations
     }
 
@@ -768,10 +780,13 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <returns>UserResults</returns>
-        public UserResults ListUsers (long? page = null, long? roleId = null)
+        public UserResults ListUsers (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null)
         {
-             ApiResponse<UserResults> localVarResponse = ListUsersWithHttpInfo(page, roleId);
+             ApiResponse<UserResults> localVarResponse = ListUsersWithHttpInfo(page, roleId, limit, orderBy, orderDirection);
              return localVarResponse.Data;
         }
 
@@ -781,8 +796,11 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <returns>ApiResponse of UserResults</returns>
-        public ApiResponse< UserResults > ListUsersWithHttpInfo (long? page = null, long? roleId = null)
+        public ApiResponse< UserResults > ListUsersWithHttpInfo (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null)
         {
 
             var localVarPath = "/users";
@@ -809,6 +827,9 @@ namespace RadioManager.Api
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (roleId != null) localVarQueryParams.Add("role_id", Configuration.ApiClient.ParameterToString(roleId)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -841,10 +862,13 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <returns>Task of UserResults</returns>
-        public async System.Threading.Tasks.Task<UserResults> ListUsersAsync (long? page = null, long? roleId = null)
+        public async System.Threading.Tasks.Task<UserResults> ListUsersAsync (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null)
         {
-             ApiResponse<UserResults> localVarResponse = await ListUsersAsyncWithHttpInfo(page, roleId);
+             ApiResponse<UserResults> localVarResponse = await ListUsersAsyncWithHttpInfo(page, roleId, limit, orderBy, orderDirection);
              return localVarResponse.Data;
 
         }
@@ -855,8 +879,11 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (UserResults)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserResults>> ListUsersAsyncWithHttpInfo (long? page = null, long? roleId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UserResults>> ListUsersAsyncWithHttpInfo (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null)
         {
 
             var localVarPath = "/users";
@@ -883,6 +910,9 @@ namespace RadioManager.Api
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (roleId != null) localVarQueryParams.Add("role_id", Configuration.ApiClient.ParameterToString(roleId)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))

@@ -1,6 +1,6 @@
 # RadioManager.Api.UserApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 <a name="listusers"></a>
 # **ListUsers**
-> UserResults ListUsers (long? page = null, long? roleId = null)
+> UserResults ListUsers (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null)
 
 Get all users.
 
@@ -238,11 +238,14 @@ namespace Example
             var apiInstance = new UserApi();
             var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
             var roleId = 789;  // long? | Search on Role ID *(Optional)* (optional) 
+            var limit = 789;  // long? | Results per page *(Optional)* (optional) 
+            var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
+            var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
 
             try
             {
                 // Get all users.
-                UserResults result = apiInstance.ListUsers(page, roleId);
+                UserResults result = apiInstance.ListUsers(page, roleId, limit, orderBy, orderDirection);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -260,6 +263,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
  **roleId** | **long?**| Search on Role ID *(Optional)* | [optional] 
+ **limit** | **long?**| Results per page *(Optional)* | [optional] 
+ **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
+ **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
 
 ### Return type
 

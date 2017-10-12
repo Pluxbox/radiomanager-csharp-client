@@ -97,16 +97,19 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ProgramResults</returns>
-        ProgramResults ListPrograms (long? page = null, long? genreId = null, long? modelTypeId = null, long? presenterId = null, long? tagId = null, long? broadcastId = null, long? itemId = null, long? blockId = null, long? externalStationId = null);
+        ProgramResults ListPrograms (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all programs.
@@ -116,16 +119,19 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of ProgramResults</returns>
-        ApiResponse<ProgramResults> ListProgramsWithHttpInfo (long? page = null, long? genreId = null, long? modelTypeId = null, long? presenterId = null, long? tagId = null, long? broadcastId = null, long? itemId = null, long? blockId = null, long? externalStationId = null);
+        ApiResponse<ProgramResults> ListProgramsWithHttpInfo (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update program by id
         /// </summary>
@@ -224,16 +230,19 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ProgramResults</returns>
-        System.Threading.Tasks.Task<ProgramResults> ListProgramsAsync (long? page = null, long? genreId = null, long? modelTypeId = null, long? presenterId = null, long? tagId = null, long? broadcastId = null, long? itemId = null, long? blockId = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<ProgramResults> ListProgramsAsync (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all programs.
@@ -243,16 +252,19 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (ProgramResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProgramResults>> ListProgramsAsyncWithHttpInfo (long? page = null, long? genreId = null, long? modelTypeId = null, long? presenterId = null, long? tagId = null, long? broadcastId = null, long? itemId = null, long? blockId = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<ApiResponse<ProgramResults>> ListProgramsAsyncWithHttpInfo (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update program by id
         /// </summary>
@@ -851,18 +863,21 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ProgramResults</returns>
-        public ProgramResults ListPrograms (long? page = null, long? genreId = null, long? modelTypeId = null, long? presenterId = null, long? tagId = null, long? broadcastId = null, long? itemId = null, long? blockId = null, long? externalStationId = null)
+        public ProgramResults ListPrograms (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<ProgramResults> localVarResponse = ListProgramsWithHttpInfo(page, genreId, modelTypeId, presenterId, tagId, broadcastId, itemId, blockId, externalStationId);
+             ApiResponse<ProgramResults> localVarResponse = ListProgramsWithHttpInfo(page, broadcastId, modelTypeId, tagId, presenterId, genreId, blockId, itemId, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -871,16 +886,19 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of ProgramResults</returns>
-        public ApiResponse< ProgramResults > ListProgramsWithHttpInfo (long? page = null, long? genreId = null, long? modelTypeId = null, long? presenterId = null, long? tagId = null, long? broadcastId = null, long? itemId = null, long? blockId = null, long? externalStationId = null)
+        public ApiResponse< ProgramResults > ListProgramsWithHttpInfo (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/programs";
@@ -906,13 +924,16 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
-            if (genreId != null) localVarQueryParams.Add("genre_id", Configuration.ApiClient.ParameterToString(genreId)); // query parameter
-            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
-            if (presenterId != null) localVarQueryParams.Add("presenter_id", Configuration.ApiClient.ParameterToString(presenterId)); // query parameter
-            if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
             if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
-            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
+            if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
+            if (presenterId != null) localVarQueryParams.Add("presenter_id", Configuration.ApiClient.ParameterToString(presenterId)); // query parameter
+            if (genreId != null) localVarQueryParams.Add("genre_id", Configuration.ApiClient.ParameterToString(genreId)); // query parameter
             if (blockId != null) localVarQueryParams.Add("block_id", Configuration.ApiClient.ParameterToString(blockId)); // query parameter
+            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required
@@ -945,18 +966,21 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ProgramResults</returns>
-        public async System.Threading.Tasks.Task<ProgramResults> ListProgramsAsync (long? page = null, long? genreId = null, long? modelTypeId = null, long? presenterId = null, long? tagId = null, long? broadcastId = null, long? itemId = null, long? blockId = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ProgramResults> ListProgramsAsync (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<ProgramResults> localVarResponse = await ListProgramsAsyncWithHttpInfo(page, genreId, modelTypeId, presenterId, tagId, broadcastId, itemId, blockId, externalStationId);
+             ApiResponse<ProgramResults> localVarResponse = await ListProgramsAsyncWithHttpInfo(page, broadcastId, modelTypeId, tagId, presenterId, genreId, blockId, itemId, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -966,16 +990,19 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (ProgramResults)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ProgramResults>> ListProgramsAsyncWithHttpInfo (long? page = null, long? genreId = null, long? modelTypeId = null, long? presenterId = null, long? tagId = null, long? broadcastId = null, long? itemId = null, long? blockId = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ProgramResults>> ListProgramsAsyncWithHttpInfo (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/programs";
@@ -1001,13 +1028,16 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
-            if (genreId != null) localVarQueryParams.Add("genre_id", Configuration.ApiClient.ParameterToString(genreId)); // query parameter
-            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
-            if (presenterId != null) localVarQueryParams.Add("presenter_id", Configuration.ApiClient.ParameterToString(presenterId)); // query parameter
-            if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
             if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
-            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
+            if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
+            if (presenterId != null) localVarQueryParams.Add("presenter_id", Configuration.ApiClient.ParameterToString(presenterId)); // query parameter
+            if (genreId != null) localVarQueryParams.Add("genre_id", Configuration.ApiClient.ParameterToString(genreId)); // query parameter
             if (blockId != null) localVarQueryParams.Add("block_id", Configuration.ApiClient.ParameterToString(blockId)); // query parameter
+            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required

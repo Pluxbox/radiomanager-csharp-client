@@ -109,11 +109,14 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
+            //long? itemId = null;
             //long? modelTypeId = null;
             //long? tagId = null;
-            //long? itemId = null;
+            //long? limit = null;
+            //string orderBy = null;
+            //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListStories(page, modelTypeId, tagId, itemId, externalStationId);
+            //var response = instance.ListStories(page, itemId, modelTypeId, tagId, limit, orderBy, orderDirection, externalStationId);
             //Assert.IsInstanceOf<StoryResults> (response, "response is StoryResults");
         }
         

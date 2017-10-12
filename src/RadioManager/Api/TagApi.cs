@@ -101,9 +101,12 @@ namespace RadioManager.Api
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>TagResults</returns>
-        TagResults ListTags (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? externalStationId = null);
+        TagResults ListTags (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get a list of all the tags currently in your station.
@@ -117,9 +120,12 @@ namespace RadioManager.Api
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of TagResults</returns>
-        ApiResponse<TagResults> ListTagsWithHttpInfo (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? externalStationId = null);
+        ApiResponse<TagResults> ListTagsWithHttpInfo (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update tag by id
         /// </summary>
@@ -222,9 +228,12 @@ namespace RadioManager.Api
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of TagResults</returns>
-        System.Threading.Tasks.Task<TagResults> ListTagsAsync (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<TagResults> ListTagsAsync (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get a list of all the tags currently in your station.
@@ -238,9 +247,12 @@ namespace RadioManager.Api
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (TagResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TagResults>> ListTagsAsyncWithHttpInfo (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<ApiResponse<TagResults>> ListTagsAsyncWithHttpInfo (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update tag by id
         /// </summary>
@@ -843,11 +855,14 @@ namespace RadioManager.Api
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>TagResults</returns>
-        public TagResults ListTags (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? externalStationId = null)
+        public TagResults ListTags (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<TagResults> localVarResponse = ListTagsWithHttpInfo(page, programId, itemId, broadcastId, contactId, externalStationId);
+             ApiResponse<TagResults> localVarResponse = ListTagsWithHttpInfo(page, programId, itemId, broadcastId, contactId, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -860,9 +875,12 @@ namespace RadioManager.Api
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of TagResults</returns>
-        public ApiResponse< TagResults > ListTagsWithHttpInfo (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? externalStationId = null)
+        public ApiResponse< TagResults > ListTagsWithHttpInfo (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/tags";
@@ -892,6 +910,9 @@ namespace RadioManager.Api
             if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
             if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
             if (contactId != null) localVarQueryParams.Add("contact_id", Configuration.ApiClient.ParameterToString(contactId)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required
@@ -928,11 +949,14 @@ namespace RadioManager.Api
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of TagResults</returns>
-        public async System.Threading.Tasks.Task<TagResults> ListTagsAsync (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<TagResults> ListTagsAsync (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<TagResults> localVarResponse = await ListTagsAsyncWithHttpInfo(page, programId, itemId, broadcastId, contactId, externalStationId);
+             ApiResponse<TagResults> localVarResponse = await ListTagsAsyncWithHttpInfo(page, programId, itemId, broadcastId, contactId, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -946,9 +970,12 @@ namespace RadioManager.Api
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (TagResults)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TagResults>> ListTagsAsyncWithHttpInfo (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<TagResults>> ListTagsAsyncWithHttpInfo (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/tags";
@@ -978,6 +1005,9 @@ namespace RadioManager.Api
             if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
             if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
             if (contactId != null) localVarQueryParams.Add("contact_id", Configuration.ApiClient.ParameterToString(contactId)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required

@@ -85,15 +85,18 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
-            //string model = null;
             //long? programId = null;
             //long? broadcastId = null;
             //long? itemId = null;
             //long? campaignId = null;
             //long? presenterId = null;
             //long? contactId = null;
+            //string model = null;
+            //long? limit = null;
+            //string orderBy = null;
+            //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListModelTypes(page, model, programId, broadcastId, itemId, campaignId, presenterId, contactId, externalStationId);
+            //var response = instance.ListModelTypes(page, programId, broadcastId, itemId, campaignId, presenterId, contactId, model, limit, orderBy, orderDirection, externalStationId);
             //Assert.IsInstanceOf<ModelTypeResults> (response, "response is ModelTypeResults");
         }
         

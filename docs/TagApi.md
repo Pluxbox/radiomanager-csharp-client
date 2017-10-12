@@ -1,6 +1,6 @@
 # RadioManager.Api.TagApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 <a name="listtags"></a>
 # **ListTags**
-> TagResults ListTags (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? externalStationId = null)
+> TagResults ListTags (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get a list of all the tags currently in your station.
 
@@ -244,12 +244,15 @@ namespace Example
             var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
             var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
             var contactId = 789;  // long? | Search on Contact ID *(Optional)* `(Relation)` (optional) 
+            var limit = 789;  // long? | Results per page *(Optional)* (optional) 
+            var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
+            var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
             var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
             {
                 // Get a list of all the tags currently in your station.
-                TagResults result = apiInstance.ListTags(page, programId, itemId, broadcastId, contactId, externalStationId);
+                TagResults result = apiInstance.ListTags(page, programId, itemId, broadcastId, contactId, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -270,6 +273,9 @@ Name | Type | Description  | Notes
  **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **contactId** | **long?**| Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **limit** | **long?**| Results per page *(Optional)* | [optional] 
+ **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
+ **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
  **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

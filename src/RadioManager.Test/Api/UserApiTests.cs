@@ -109,7 +109,10 @@ namespace RadioManager.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? roleId = null;
-            //var response = instance.ListUsers(page, roleId);
+            //long? limit = null;
+            //string orderBy = null;
+            //string orderDirection = null;
+            //var response = instance.ListUsers(page, roleId, limit, orderBy, orderDirection);
             //Assert.IsInstanceOf<UserResults> (response, "response is UserResults");
         }
         

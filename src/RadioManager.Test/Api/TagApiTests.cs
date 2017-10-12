@@ -113,8 +113,11 @@ namespace RadioManager.Test
             //long? itemId = null;
             //long? broadcastId = null;
             //long? contactId = null;
+            //long? limit = null;
+            //string orderBy = null;
+            //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListTags(page, programId, itemId, broadcastId, contactId, externalStationId);
+            //var response = instance.ListTags(page, programId, itemId, broadcastId, contactId, limit, orderBy, orderDirection, externalStationId);
             //Assert.IsInstanceOf<TagResults> (response, "response is TagResults");
         }
         

@@ -93,14 +93,17 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>BlockResults</returns>
-        BlockResults ListBlocks (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? broadcastId = null, long? programId = null, long? itemId = null, long? externalStationId = null);
+        BlockResults ListBlocks (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get a list of all blocks currently in your station.
@@ -110,14 +113,17 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of BlockResults</returns>
-        ApiResponse<BlockResults> ListBlocksWithHttpInfo (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? broadcastId = null, long? programId = null, long? itemId = null, long? externalStationId = null);
+        ApiResponse<BlockResults> ListBlocksWithHttpInfo (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -189,14 +195,17 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of BlockResults</returns>
-        System.Threading.Tasks.Task<BlockResults> ListBlocksAsync (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? broadcastId = null, long? programId = null, long? itemId = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<BlockResults> ListBlocksAsync (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get a list of all blocks currently in your station.
@@ -206,14 +215,17 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (BlockResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BlockResults>> ListBlocksAsyncWithHttpInfo (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? broadcastId = null, long? programId = null, long? itemId = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<ApiResponse<BlockResults>> ListBlocksAsyncWithHttpInfo (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         #endregion Asynchronous Operations
     }
 
@@ -751,16 +763,19 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>BlockResults</returns>
-        public BlockResults ListBlocks (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? broadcastId = null, long? programId = null, long? itemId = null, long? externalStationId = null)
+        public BlockResults ListBlocks (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<BlockResults> localVarResponse = ListBlocksWithHttpInfo(page, startMin, startMax, broadcastId, programId, itemId, externalStationId);
+             ApiResponse<BlockResults> localVarResponse = ListBlocksWithHttpInfo(page, broadcastId, itemId, programId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -769,14 +784,17 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of BlockResults</returns>
-        public ApiResponse< BlockResults > ListBlocksWithHttpInfo (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? broadcastId = null, long? programId = null, long? itemId = null, long? externalStationId = null)
+        public ApiResponse< BlockResults > ListBlocksWithHttpInfo (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/blocks";
@@ -802,11 +820,14 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
+            if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
+            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
             if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
             if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
-            if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
-            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
-            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required
@@ -839,16 +860,19 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of BlockResults</returns>
-        public async System.Threading.Tasks.Task<BlockResults> ListBlocksAsync (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? broadcastId = null, long? programId = null, long? itemId = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<BlockResults> ListBlocksAsync (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<BlockResults> localVarResponse = await ListBlocksAsyncWithHttpInfo(page, startMin, startMax, broadcastId, programId, itemId, externalStationId);
+             ApiResponse<BlockResults> localVarResponse = await ListBlocksAsyncWithHttpInfo(page, broadcastId, itemId, programId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -858,14 +882,17 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
+        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (BlockResults)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BlockResults>> ListBlocksAsyncWithHttpInfo (long? page = null, DateTime? startMin = null, DateTime? startMax = null, long? broadcastId = null, long? programId = null, long? itemId = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BlockResults>> ListBlocksAsyncWithHttpInfo (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/blocks";
@@ -891,11 +918,14 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
+            if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
+            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
             if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
             if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
-            if (broadcastId != null) localVarQueryParams.Add("broadcast_id", Configuration.ApiClient.ParameterToString(broadcastId)); // query parameter
-            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
-            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required

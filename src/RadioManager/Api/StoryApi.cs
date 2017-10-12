@@ -97,12 +97,15 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>StoryResults</returns>
-        StoryResults ListStories (long? page = null, long? modelTypeId = null, long? tagId = null, long? itemId = null, long? externalStationId = null);
+        StoryResults ListStories (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all stories.
@@ -112,12 +115,15 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of StoryResults</returns>
-        ApiResponse<StoryResults> ListStoriesWithHttpInfo (long? page = null, long? modelTypeId = null, long? tagId = null, long? itemId = null, long? externalStationId = null);
+        ApiResponse<StoryResults> ListStoriesWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update story by id
         /// </summary>
@@ -216,12 +222,15 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of StoryResults</returns>
-        System.Threading.Tasks.Task<StoryResults> ListStoriesAsync (long? page = null, long? modelTypeId = null, long? tagId = null, long? itemId = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<StoryResults> ListStoriesAsync (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all stories.
@@ -231,12 +240,15 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (StoryResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StoryResults>> ListStoriesAsyncWithHttpInfo (long? page = null, long? modelTypeId = null, long? tagId = null, long? itemId = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<ApiResponse<StoryResults>> ListStoriesAsyncWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update story by id
         /// </summary>
@@ -835,14 +847,17 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>StoryResults</returns>
-        public StoryResults ListStories (long? page = null, long? modelTypeId = null, long? tagId = null, long? itemId = null, long? externalStationId = null)
+        public StoryResults ListStories (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<StoryResults> localVarResponse = ListStoriesWithHttpInfo(page, modelTypeId, tagId, itemId, externalStationId);
+             ApiResponse<StoryResults> localVarResponse = ListStoriesWithHttpInfo(page, itemId, modelTypeId, tagId, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -851,12 +866,15 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of StoryResults</returns>
-        public ApiResponse< StoryResults > ListStoriesWithHttpInfo (long? page = null, long? modelTypeId = null, long? tagId = null, long? itemId = null, long? externalStationId = null)
+        public ApiResponse< StoryResults > ListStoriesWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/stories";
@@ -882,9 +900,12 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
+            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
             if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
-            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required
@@ -917,14 +938,17 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of StoryResults</returns>
-        public async System.Threading.Tasks.Task<StoryResults> ListStoriesAsync (long? page = null, long? modelTypeId = null, long? tagId = null, long? itemId = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<StoryResults> ListStoriesAsync (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<StoryResults> localVarResponse = await ListStoriesAsyncWithHttpInfo(page, modelTypeId, tagId, itemId, externalStationId);
+             ApiResponse<StoryResults> localVarResponse = await ListStoriesAsyncWithHttpInfo(page, itemId, modelTypeId, tagId, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -934,12 +958,15 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
-        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="limit">Results per page *(Optional)* (optional)</param>
+        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (StoryResults)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<StoryResults>> ListStoriesAsyncWithHttpInfo (long? page = null, long? modelTypeId = null, long? tagId = null, long? itemId = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<StoryResults>> ListStoriesAsyncWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/stories";
@@ -965,9 +992,12 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
+            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.Add("model_type_id", Configuration.ApiClient.ParameterToString(modelTypeId)); // query parameter
             if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
-            if (itemId != null) localVarQueryParams.Add("item_id", Configuration.ApiClient.ParameterToString(itemId)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (orderBy != null) localVarQueryParams.Add("order-by", Configuration.ApiClient.ParameterToString(orderBy)); // query parameter
+            if (orderDirection != null) localVarQueryParams.Add("order-direction", Configuration.ApiClient.ParameterToString(orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.Add("_external_station_id", Configuration.ApiClient.ParameterToString(externalStationId)); // query parameter
 
             // authentication (API Key) required

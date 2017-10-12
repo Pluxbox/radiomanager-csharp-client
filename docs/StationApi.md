@@ -1,19 +1,19 @@
-# RadioManager.Api.VisualSlideApi
+# RadioManager.Api.StationApi
 
 All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetVisualSlide**](VisualSlideApi.md#getvisualslide) | **GET** /visual | Get Visual Slide Image as Base64
+[**GetStation**](StationApi.md#getstation) | **GET** /station | Get own station only
 
 
-<a name="getvisualslide"></a>
-# **GetVisualSlide**
-> VisualResult GetVisualSlide ()
+<a name="getstation"></a>
+# **GetStation**
+> StationResult GetStation ()
 
-Get Visual Slide Image as Base64
+Get own station only
 
-Get Visual Slide Image as Base64
+Get own station only
 
 ### Example
 ```csharp
@@ -25,7 +25,7 @@ using RadioManager.Model;
 
 namespace Example
 {
-    public class GetVisualSlideExample
+    public class GetStationExample
     {
         public void main()
         {
@@ -34,17 +34,17 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
-            var apiInstance = new VisualSlideApi();
+            var apiInstance = new StationApi();
 
             try
             {
-                // Get Visual Slide Image as Base64
-                VisualResult result = apiInstance.GetVisualSlide();
+                // Get own station only
+                StationResult result = apiInstance.GetStation();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling VisualSlideApi.GetVisualSlide: " + e.Message );
+                Debug.Print("Exception when calling StationApi.GetStation: " + e.Message );
             }
         }
     }
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VisualResult**](VisualResult.md)
+[**StationResult**](StationResult.md)
 
 ### Authorization
 

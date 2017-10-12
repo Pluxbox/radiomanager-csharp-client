@@ -43,7 +43,8 @@ namespace RadioManager.Model
         /// <param name="FieldValues">FieldValues.</param>
         /// <param name="Name">Name (required).</param>
         /// <param name="Description">Description.</param>
-        public StoryDataInput(long? ModelTypeId = default(long?), bool? Recommended = default(bool?), Object FieldValues = default(Object), string Name = default(string), string Description = default(string))
+        /// <param name="Tags">Tags.</param>
+        public StoryDataInput(long? ModelTypeId = default(long?), bool? Recommended = default(bool?), Object FieldValues = default(Object), string Name = default(string), string Description = default(string), List<int?> Tags = default(List<int?>))
         {
             // to ensure "ModelTypeId" is required (not null)
             if (ModelTypeId == null)
@@ -66,6 +67,7 @@ namespace RadioManager.Model
             this.Recommended = Recommended;
             this.FieldValues = FieldValues;
             this.Description = Description;
+            this.Tags = Tags;
         }
         
         /// <summary>
@@ -99,6 +101,12 @@ namespace RadioManager.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// Gets or Sets Tags
+        /// </summary>
+        [DataMember(Name="tags", EmitDefaultValue=false)]
+        public List<int?> Tags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -111,6 +119,7 @@ namespace RadioManager.Model
             sb.Append("  FieldValues: ").Append(FieldValues).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -171,6 +180,11 @@ namespace RadioManager.Model
                     this.Description == other.Description ||
                     this.Description != null &&
                     this.Description.Equals(other.Description)
+                ) && 
+                (
+                    this.Tags == other.Tags ||
+                    this.Tags != null &&
+                    this.Tags.SequenceEqual(other.Tags)
                 );
         }
 
@@ -195,6 +209,8 @@ namespace RadioManager.Model
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hash = hash * 59 + this.Description.GetHashCode();
+                if (this.Tags != null)
+                    hash = hash * 59 + this.Tags.GetHashCode();
                 return hash;
             }
         }

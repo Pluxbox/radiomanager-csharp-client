@@ -1,6 +1,6 @@
 # RadioManager.Api.PresenterApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 <a name="listpresenters"></a>
 # **ListPresenters**
-> PresenterResults ListPresenters (long? page = null, long? modelTypeId = null, long? programId = null, long? broadcastId = null, long? externalStationId = null)
+> PresenterResults ListPresenters (long? page = null, long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all presenters.
 
@@ -240,15 +240,18 @@ namespace Example
 
             var apiInstance = new PresenterApi();
             var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var modelTypeId = 789;  // long? | Search on ModelType ID (Optional) (optional) 
             var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
             var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
+            var modelTypeId = 789;  // long? | Search on ModelType ID (Optional) (optional) 
+            var limit = 789;  // long? | Results per page *(Optional)* (optional) 
+            var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
+            var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
             var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
             {
                 // Get all presenters.
-                PresenterResults result = apiInstance.ListPresenters(page, modelTypeId, programId, broadcastId, externalStationId);
+                PresenterResults result = apiInstance.ListPresenters(page, programId, broadcastId, modelTypeId, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -265,9 +268,12 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**| Current page *(Optional)* | [optional] 
- **modelTypeId** | **long?**| Search on ModelType ID (Optional) | [optional] 
  **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **modelTypeId** | **long?**| Search on ModelType ID (Optional) | [optional] 
+ **limit** | **long?**| Results per page *(Optional)* | [optional] 
+ **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
+ **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
  **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

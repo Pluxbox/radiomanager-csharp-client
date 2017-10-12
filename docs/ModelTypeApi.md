@@ -1,6 +1,6 @@
 # RadioManager.Api.ModelTypeApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 <a name="listmodeltypes"></a>
 # **ListModelTypes**
-> ModelTypeResults ListModelTypes (long? page = null, string model = null, long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, long? externalStationId = null)
+> ModelTypeResults ListModelTypes (long? page = null, long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all modelTypes.
 
@@ -105,19 +105,22 @@ namespace Example
 
             var apiInstance = new ModelTypeApi();
             var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var model = model_example;  // string |  (optional) 
             var programId = 789;  // long? | Search on Program ID *(Optional)* (optional) 
             var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* (optional) 
             var itemId = 789;  // long? | Search on Item ID *(Optional)* (optional) 
             var campaignId = 789;  // long? | Search on Campaign ID *(Optional)* (optional) 
             var presenterId = 789;  // long? | Search on Presenter ID *(Optional)* (optional) 
             var contactId = 789;  // long? | Search on Contact ID *(Optional)* (optional) 
+            var model = model_example;  // string | Search Modeltypes for certain Model *(Optional)* (optional) 
+            var limit = 789;  // long? | Results per page *(Optional)* (optional) 
+            var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
+            var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
             var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
             {
                 // Get all modelTypes.
-                ModelTypeResults result = apiInstance.ListModelTypes(page, model, programId, broadcastId, itemId, campaignId, presenterId, contactId, externalStationId);
+                ModelTypeResults result = apiInstance.ListModelTypes(page, programId, broadcastId, itemId, campaignId, presenterId, contactId, model, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -134,13 +137,16 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**| Current page *(Optional)* | [optional] 
- **model** | **string**|  | [optional] 
  **programId** | **long?**| Search on Program ID *(Optional)* | [optional] 
  **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* | [optional] 
  **itemId** | **long?**| Search on Item ID *(Optional)* | [optional] 
  **campaignId** | **long?**| Search on Campaign ID *(Optional)* | [optional] 
  **presenterId** | **long?**| Search on Presenter ID *(Optional)* | [optional] 
  **contactId** | **long?**| Search on Contact ID *(Optional)* | [optional] 
+ **model** | **string**| Search Modeltypes for certain Model *(Optional)* | [optional] 
+ **limit** | **long?**| Results per page *(Optional)* | [optional] 
+ **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
+ **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
  **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

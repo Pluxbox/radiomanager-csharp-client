@@ -1,6 +1,6 @@
 # RadioManager.Api.ProgramApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 <a name="listprograms"></a>
 # **ListPrograms**
-> ProgramResults ListPrograms (long? page = null, long? genreId = null, long? modelTypeId = null, long? presenterId = null, long? tagId = null, long? broadcastId = null, long? itemId = null, long? blockId = null, long? externalStationId = null)
+> ProgramResults ListPrograms (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all programs.
 
@@ -240,19 +240,22 @@ namespace Example
 
             var apiInstance = new ProgramApi();
             var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var genreId = 789;  // long? | Search on Genre ID *(Optional)* (optional) 
-            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* (optional) 
-            var presenterId = 789;  // long? | Search on Presenter ID *(Optional)* `(Relation)` (optional) 
-            var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
             var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
-            var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
+            var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
+            var presenterId = 789;  // long? | Search on Presenter ID *(Optional)* `(Relation)` (optional) 
+            var genreId = 789;  // long? | Search on Genre ID *(Optional)* (optional) 
             var blockId = 789;  // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
+            var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var limit = 789;  // long? | Results per page *(Optional)* (optional) 
+            var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
+            var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
             var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
             {
                 // Get all programs.
-                ProgramResults result = apiInstance.ListPrograms(page, genreId, modelTypeId, presenterId, tagId, broadcastId, itemId, blockId, externalStationId);
+                ProgramResults result = apiInstance.ListPrograms(page, broadcastId, modelTypeId, tagId, presenterId, genreId, blockId, itemId, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -269,13 +272,16 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**| Current page *(Optional)* | [optional] 
- **genreId** | **long?**| Search on Genre ID *(Optional)* | [optional] 
- **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* | [optional] 
- **presenterId** | **long?**| Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **presenterId** | **long?**| Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **genreId** | **long?**| Search on Genre ID *(Optional)* | [optional] 
  **blockId** | **long?**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **limit** | **long?**| Results per page *(Optional)* | [optional] 
+ **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
+ **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
  **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type
