@@ -25,37 +25,37 @@ using SwaggerDateConverter = RadioManager.Client.SwaggerDateConverter;
 namespace RadioManager.Model
 {
     /// <summary>
-    /// EPGBroadcast
+    /// EPGResults
     /// </summary>
     [DataContract]
-    public partial class EPGBroadcast :  IEquatable<EPGBroadcast>, IValidatableObject
+    public partial class EPGResults :  IEquatable<EPGResults>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EPGBroadcast" /> class.
+        /// Initializes a new instance of the <see cref="EPGResults" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected EPGBroadcast() { }
+        protected EPGResults() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="EPGBroadcast" /> class.
+        /// Initializes a new instance of the <see cref="EPGResults" /> class.
         /// </summary>
-        /// <param name="_20160111">_20160111 (required).</param>
-        /// <param name="NextPageUrl">NextPageUrl (required) (default to &quot;https://raidiomanager.pluxbox.com/api/v1/broadcasts/epg/{identifier}/2016-01-12&quot;).</param>
-        /// <param name="PrevPageUrl">PrevPageUrl (required) (default to &quot;https://raidiomanager.pluxbox.com/pb/api/v1/broadcasts/epg/{identifier}/2016-01-10&quot;).</param>
-        public EPGBroadcast(List<BroadcastResult> _20160111 = default(List<BroadcastResult>), string NextPageUrl = "https://raidiomanager.pluxbox.com/api/v1/broadcasts/epg/{identifier}/2016-01-12", string PrevPageUrl = "https://raidiomanager.pluxbox.com/pb/api/v1/broadcasts/epg/{identifier}/2016-01-10")
+        /// <param name="Days">Days (required).</param>
+        /// <param name="NextPageUrl">NextPageUrl (required).</param>
+        /// <param name="PrevPageUrl">PrevPageUrl (required).</param>
+        public EPGResults(List<BroadcastEPGDay> Days = default(List<BroadcastEPGDay>), string NextPageUrl = default(string), string PrevPageUrl = default(string))
         {
-            // to ensure "_20160111" is required (not null)
-            if (_20160111 == null)
+            // to ensure "Days" is required (not null)
+            if (Days == null)
             {
-                throw new InvalidDataException("_20160111 is a required property for EPGBroadcast and cannot be null");
+                throw new InvalidDataException("Days is a required property for EPGResults and cannot be null");
             }
             else
             {
-                this._20160111 = _20160111;
+                this.Days = Days;
             }
             // to ensure "NextPageUrl" is required (not null)
             if (NextPageUrl == null)
             {
-                throw new InvalidDataException("NextPageUrl is a required property for EPGBroadcast and cannot be null");
+                throw new InvalidDataException("NextPageUrl is a required property for EPGResults and cannot be null");
             }
             else
             {
@@ -64,7 +64,7 @@ namespace RadioManager.Model
             // to ensure "PrevPageUrl" is required (not null)
             if (PrevPageUrl == null)
             {
-                throw new InvalidDataException("PrevPageUrl is a required property for EPGBroadcast and cannot be null");
+                throw new InvalidDataException("PrevPageUrl is a required property for EPGResults and cannot be null");
             }
             else
             {
@@ -73,10 +73,10 @@ namespace RadioManager.Model
         }
         
         /// <summary>
-        /// Gets or Sets _20160111
+        /// Gets or Sets Days
         /// </summary>
-        [DataMember(Name="2016-01-11", EmitDefaultValue=false)]
-        public List<BroadcastResult> _20160111 { get; set; }
+        [DataMember(Name="days", EmitDefaultValue=false)]
+        public List<BroadcastEPGDay> Days { get; set; }
 
         /// <summary>
         /// Gets or Sets NextPageUrl
@@ -97,8 +97,8 @@ namespace RadioManager.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class EPGBroadcast {\n");
-            sb.Append("  _20160111: ").Append(_20160111).Append("\n");
+            sb.Append("class EPGResults {\n");
+            sb.Append("  Days: ").Append(Days).Append("\n");
             sb.Append("  NextPageUrl: ").Append(NextPageUrl).Append("\n");
             sb.Append("  PrevPageUrl: ").Append(PrevPageUrl).Append("\n");
             sb.Append("}\n");
@@ -122,15 +122,15 @@ namespace RadioManager.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as EPGBroadcast);
+            return this.Equals(obj as EPGResults);
         }
 
         /// <summary>
-        /// Returns true if EPGBroadcast instances are equal
+        /// Returns true if EPGResults instances are equal
         /// </summary>
-        /// <param name="other">Instance of EPGBroadcast to be compared</param>
+        /// <param name="other">Instance of EPGResults to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(EPGBroadcast other)
+        public bool Equals(EPGResults other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -138,9 +138,9 @@ namespace RadioManager.Model
 
             return 
                 (
-                    this._20160111 == other._20160111 ||
-                    this._20160111 != null &&
-                    this._20160111.SequenceEqual(other._20160111)
+                    this.Days == other.Days ||
+                    this.Days != null &&
+                    this.Days.SequenceEqual(other.Days)
                 ) && 
                 (
                     this.NextPageUrl == other.NextPageUrl ||
@@ -165,8 +165,8 @@ namespace RadioManager.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this._20160111 != null)
-                    hash = hash * 59 + this._20160111.GetHashCode();
+                if (this.Days != null)
+                    hash = hash * 59 + this.Days.GetHashCode();
                 if (this.NextPageUrl != null)
                     hash = hash * 59 + this.NextPageUrl.GetHashCode();
                 if (this.PrevPageUrl != null)

@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **PtyCode** | **int?** |  | [optional] 
 **PtyType** | **string** |  | [optional] 
 **StationKey** | **string** |  | [optional] 
+**Timezone** | **string** |  | [optional] 
 **TrialDate** | **DateTime?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
