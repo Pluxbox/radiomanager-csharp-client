@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **DeletedAt** | **DateTime?** |  | 
 **ExternalStationId** | **long?** |  | [optional] 
 **ModelTypeId** | **long?** |  | 
-**FieldValues** | **List&lt;Object&gt;** |  | [optional] 
+**FieldValues** | **Object** |  | [optional] 
 **Firstname** | **string** |  | [optional] 
 **Lastname** | **string** |  | [optional] 
 **Active** | **bool?** |  | [optional] 

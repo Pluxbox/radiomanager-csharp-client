@@ -44,7 +44,7 @@ namespace RadioManager.Model
         /// <param name="Lastname">Lastname.</param>
         /// <param name="Active">Active.</param>
         /// <param name="Name">Name.</param>
-        public Presenter(long? ModelTypeId = default(long?), List<Object> FieldValues = default(List<Object>), string Firstname = default(string), string Lastname = default(string), bool? Active = default(bool?), string Name = default(string))
+        public Presenter(long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Firstname = default(string), string Lastname = default(string), bool? Active = default(bool?), string Name = default(string))
         {
             // to ensure "ModelTypeId" is required (not null)
             if (ModelTypeId == null)
@@ -72,7 +72,7 @@ namespace RadioManager.Model
         /// Gets or Sets FieldValues
         /// </summary>
         [DataMember(Name="field_values", EmitDefaultValue=false)]
-        public List<Object> FieldValues { get; set; }
+        public Object FieldValues { get; set; }
 
         /// <summary>
         /// Gets or Sets Firstname
@@ -156,7 +156,7 @@ namespace RadioManager.Model
                 (
                     this.FieldValues == other.FieldValues ||
                     this.FieldValues != null &&
-                    this.FieldValues.SequenceEqual(other.FieldValues)
+                    this.FieldValues.Equals(other.FieldValues)
                 ) && 
                 (
                     this.Firstname == other.Firstname ||

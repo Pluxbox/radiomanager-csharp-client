@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **ModelTypeId** | **long?** |  | 
 **BlockId** | **long?** |  | [optional] 
 **ExternalId** | **string** |  | [optional] 
-**FieldValues** | [**ImportItemFieldValues**](ImportItemFieldValues.md) |  | [optional] 
+**FieldValues** | **Object** |  | [optional] 
 **Title** | **string** |  | [optional] 
 **Duration** | **long?** |  | [optional] 
 **Start** | **DateTime?** |  | [optional] 

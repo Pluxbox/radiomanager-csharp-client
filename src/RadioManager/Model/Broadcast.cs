@@ -92,7 +92,7 @@ namespace RadioManager.Model
         /// <param name="RepetitionStart">RepetitionStart.</param>
         /// <param name="RepetitionDays">RepetitionDays.</param>
         /// <param name="PtyCodeId">PtyCodeId.</param>
-        public Broadcast(long? ProgramId = default(long?), long? ModelTypeId = default(long?), long? StationId = default(long?), BroadcastFieldValues FieldValues = default(BroadcastFieldValues), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), bool? Published = default(bool?), string RepetitionUid = default(string), RepetitionTypeEnum? RepetitionType = default(RepetitionTypeEnum?), DateTime? RepetitionEnd = default(DateTime?), DateTime? RepetitionStart = default(DateTime?), string RepetitionDays = default(string), long? PtyCodeId = default(long?))
+        public Broadcast(long? ProgramId = default(long?), long? ModelTypeId = default(long?), long? StationId = default(long?), Object FieldValues = default(Object), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), bool? Published = default(bool?), string RepetitionUid = default(string), RepetitionTypeEnum? RepetitionType = default(RepetitionTypeEnum?), DateTime? RepetitionEnd = default(DateTime?), DateTime? RepetitionStart = default(DateTime?), string RepetitionDays = default(string), long? PtyCodeId = default(long?))
         {
             this.ProgramId = ProgramId;
             this.ModelTypeId = ModelTypeId;
@@ -140,7 +140,7 @@ namespace RadioManager.Model
         /// Gets or Sets FieldValues
         /// </summary>
         [DataMember(Name="field_values", EmitDefaultValue=false)]
-        public BroadcastFieldValues FieldValues { get; set; }
+        public Object FieldValues { get; set; }
 
         /// <summary>
         /// Gets or Sets Title

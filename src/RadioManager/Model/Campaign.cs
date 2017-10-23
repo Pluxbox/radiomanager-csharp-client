@@ -45,7 +45,7 @@ namespace RadioManager.Model
         /// <param name="Stop">Stop (required).</param>
         /// <param name="Recommended">Recommended.</param>
         /// <param name="Description">Description.</param>
-        public Campaign(long? ModelTypeId = default(long?), List<Object> FieldValues = default(List<Object>), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), bool? Recommended = default(bool?), string Description = default(string))
+        public Campaign(long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), bool? Recommended = default(bool?), string Description = default(string))
         {
             // to ensure "ModelTypeId" is required (not null)
             if (ModelTypeId == null)
@@ -90,7 +90,7 @@ namespace RadioManager.Model
         /// Gets or Sets FieldValues
         /// </summary>
         [DataMember(Name="field_values", EmitDefaultValue=false)]
-        public List<Object> FieldValues { get; set; }
+        public Object FieldValues { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
@@ -181,7 +181,7 @@ namespace RadioManager.Model
                 (
                     this.FieldValues == other.FieldValues ||
                     this.FieldValues != null &&
-                    this.FieldValues.SequenceEqual(other.FieldValues)
+                    this.FieldValues.Equals(other.FieldValues)
                 ) && 
                 (
                     this.Title == other.Title ||

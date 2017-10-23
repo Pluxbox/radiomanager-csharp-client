@@ -53,7 +53,7 @@ namespace RadioManager.Model
         /// <param name="PtyCodeId">PtyCodeId.</param>
         /// <param name="Tags">Tags.</param>
         /// <param name="Presenters">Presenters.</param>
-        public ProgramDataInput(long? ModelTypeId = default(long?), ProgramFieldValues FieldValues = default(ProgramFieldValues), string Title = default(string), bool? Disabled = default(bool?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), long? PtyCodeId = default(long?), List<int?> Tags = default(List<int?>), List<int?> Presenters = default(List<int?>))
+        public ProgramDataInput(long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Title = default(string), bool? Disabled = default(bool?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), long? PtyCodeId = default(long?), List<int?> Tags = default(List<int?>), List<int?> Presenters = default(List<int?>))
         {
             // to ensure "ModelTypeId" is required (not null)
             if (ModelTypeId == null)
@@ -98,7 +98,7 @@ namespace RadioManager.Model
         /// Gets or Sets FieldValues
         /// </summary>
         [DataMember(Name="field_values", EmitDefaultValue=false)]
-        public ProgramFieldValues FieldValues { get; set; }
+        public Object FieldValues { get; set; }
 
         /// <summary>
         /// Gets or Sets Title

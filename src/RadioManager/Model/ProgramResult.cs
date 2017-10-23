@@ -62,7 +62,7 @@ namespace RadioManager.Model
         /// <param name="Presenters">Presenters.</param>
         /// <param name="Tags">Tags.</param>
         /// <param name="ModelType">ModelType.</param>
-        public ProgramResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), ProgramFieldValues FieldValues = default(ProgramFieldValues), string Title = default(string), bool? Disabled = default(bool?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), long? PtyCodeId = default(long?), ProgramRelationsItems Items = default(ProgramRelationsItems), ProgramRelationsBlocks Blocks = default(ProgramRelationsBlocks), ProgramRelationsBroadcasts Broadcasts = default(ProgramRelationsBroadcasts), ProgramRelationsPresenters Presenters = default(ProgramRelationsPresenters), ProgramRelationsTags Tags = default(ProgramRelationsTags), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
+        public ProgramResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Title = default(string), bool? Disabled = default(bool?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), long? PtyCodeId = default(long?), ProgramRelationsItems Items = default(ProgramRelationsItems), ProgramRelationsBlocks Blocks = default(ProgramRelationsBlocks), ProgramRelationsBroadcasts Broadcasts = default(ProgramRelationsBroadcasts), ProgramRelationsPresenters Presenters = default(ProgramRelationsPresenters), ProgramRelationsTags Tags = default(ProgramRelationsTags), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -178,7 +178,7 @@ namespace RadioManager.Model
         /// Gets or Sets FieldValues
         /// </summary>
         [DataMember(Name="field_values", EmitDefaultValue=false)]
-        public ProgramFieldValues FieldValues { get; set; }
+        public Object FieldValues { get; set; }
 
         /// <summary>
         /// Gets or Sets Title

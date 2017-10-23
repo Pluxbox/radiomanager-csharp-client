@@ -88,7 +88,7 @@ namespace RadioManager.Model
         /// <param name="PreviousId">PreviousId.</param>
         /// <param name="Contacts">Contacts.</param>
         /// <param name="Tags">Tags.</param>
-        public ItemDataInput(long? ModelTypeId = default(long?), long? BlockId = default(long?), string ExternalId = default(string), ImportItemFieldValues FieldValues = default(ImportItemFieldValues), string Title = default(string), long? Duration = default(long?), DateTime? Start = default(DateTime?), StatusEnum? Status = default(StatusEnum?), long? Import = default(long?), long? CampaignId = default(long?), bool? Recommended = default(bool?), long? StationDraftId = default(long?), long? ProgramDraftId = default(long?), long? UserDraftId = default(long?), bool? StaticStart = default(bool?), string Details = default(string), long? PreviousId = default(long?), List<int?> Contacts = default(List<int?>), List<int?> Tags = default(List<int?>))
+        public ItemDataInput(long? ModelTypeId = default(long?), long? BlockId = default(long?), string ExternalId = default(string), Object FieldValues = default(Object), string Title = default(string), long? Duration = default(long?), DateTime? Start = default(DateTime?), StatusEnum? Status = default(StatusEnum?), long? Import = default(long?), long? CampaignId = default(long?), bool? Recommended = default(bool?), long? StationDraftId = default(long?), long? ProgramDraftId = default(long?), long? UserDraftId = default(long?), bool? StaticStart = default(bool?), string Details = default(string), long? PreviousId = default(long?), List<int?> Contacts = default(List<int?>), List<int?> Tags = default(List<int?>))
         {
             // to ensure "ModelTypeId" is required (not null)
             if (ModelTypeId == null)
@@ -141,7 +141,7 @@ namespace RadioManager.Model
         /// Gets or Sets FieldValues
         /// </summary>
         [DataMember(Name="field_values", EmitDefaultValue=false)]
-        public ImportItemFieldValues FieldValues { get; set; }
+        public Object FieldValues { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
