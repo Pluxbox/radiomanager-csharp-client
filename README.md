@@ -1,9 +1,11 @@
-# Pluxbox RadioManager Client
+# RadioManager - the C# library for the RadioManager
 
-Pluxbox RadioManager gives you the power, flexibility and speed you always wanted in a lightweight and easy-to-use web-based radio solution. With Pluxbox RadioManager you can organise your radio workflow and automate your omnichannel communication with your listeners. We offer wide range specialised services for the radio and connections like Hybrid Radio, Visual Radio, your website and social media without losing focus on your broadcast. For more information visit https://pluxbox.com
+Pluxbox RadioManager gives you the power, flexibility and speed you always wanted in a lightweight and easy-to-use web-based radio solution. With Pluxbox RadioManager you can organise your radio workflow and automate your omnichannel communication with your listeners. We offer wide range specialised services for the radio and connections like Hybrid Radio, Visual Radio, your website and social media without losing focus on your broadcast. For more information visit: pluxbox.com
 
 - API version: 2.0
-- For more information, please visit [https://pluxbox.com](https://pluxbox.com)
+- SDK version: 1.1.1
+- Build package: io.swagger.codegen.languages.CSharpClientCodegen
+    For more information, please visit [https://pluxbox.com](https://pluxbox.com)
 
 <a name="frameworks-supported"></a>
 ## Frameworks supported
@@ -93,7 +95,7 @@ namespace Example
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -122,7 +124,6 @@ Class | Method | HTTP request | Description
 *ContactApi* | [**GetContactById**](docs/ContactApi.md#getcontactbyid) | **GET** /contacts/{id} | Get contact by id
 *ContactApi* | [**ListContacts**](docs/ContactApi.md#listcontacts) | **GET** /contacts | Get all contacts.
 *ContactApi* | [**UpdateContactByID**](docs/ContactApi.md#updatecontactbyid) | **PATCH** /contacts/{id} | Update contact by id
-*ExternalMessageApi* | [**QueueExternalMessage**](docs/ExternalMessageApi.md#queueexternalmessage) | **POST** /externalmessagequeue | Queue External Message.
 *GenreApi* | [**GetGenreById**](docs/GenreApi.md#getgenrebyid) | **GET** /genres/{id} | Get genre by id
 *GenreApi* | [**ListGenres**](docs/GenreApi.md#listgenres) | **GET** /genres | List all genres.
 *ItemApi* | [**CreateItem**](docs/ItemApi.md#createitem) | **POST** /items | Create an new item.
@@ -146,6 +147,12 @@ Class | Method | HTTP request | Description
 *ProgramApi* | [**GetProgramById**](docs/ProgramApi.md#getprogrambyid) | **GET** /programs/{id} | Get program by id
 *ProgramApi* | [**ListPrograms**](docs/ProgramApi.md#listprograms) | **GET** /programs | Get all programs.
 *ProgramApi* | [**UpdateProgramByID**](docs/ProgramApi.md#updateprogrambyid) | **PATCH** /programs/{id} | Update program by id
+*StationApi* | [**GetStation**](docs/StationApi.md#getstation) | **GET** /station | Get own station only
+*StoryApi* | [**CreateStory**](docs/StoryApi.md#createstory) | **POST** /stories | Create story.
+*StoryApi* | [**DeleteStoryById**](docs/StoryApi.md#deletestorybyid) | **DELETE** /stories/{id} | Delete story by id
+*StoryApi* | [**GetStoryById**](docs/StoryApi.md#getstorybyid) | **GET** /stories/{id} | Get story by id
+*StoryApi* | [**ListStories**](docs/StoryApi.md#liststories) | **GET** /stories | Get all stories.
+*StoryApi* | [**UpdateStoryByID**](docs/StoryApi.md#updatestorybyid) | **PATCH** /stories/{id} | Update story by id
 *StringApi* | [**GetStringsByName**](docs/StringApi.md#getstringsbyname) | **GET** /strings/{name} | Get Strings (formatted)
 *TagApi* | [**CreateTag**](docs/TagApi.md#createtag) | **POST** /tags | Create tag.
 *TagApi* | [**DeleteTagById**](docs/TagApi.md#deletetagbyid) | **DELETE** /tags/{id} | Delete tag by id
@@ -156,7 +163,6 @@ Class | Method | HTTP request | Description
 *UserApi* | [**GetUserById**](docs/UserApi.md#getuserbyid) | **GET** /users/{id} | Get user by id
 *UserApi* | [**InviteUserByMail**](docs/UserApi.md#inviteuserbymail) | **POST** /users/invite | Invite user by mail
 *UserApi* | [**ListUsers**](docs/UserApi.md#listusers) | **GET** /users | Get all users.
-*VisualSlideApi* | [**DownloadVisualSlide**](docs/VisualSlideApi.md#downloadvisualslide) | **GET** /visual/image | Get Visual Slide Image as JPEG
 *VisualSlideApi* | [**GetVisualSlide**](docs/VisualSlideApi.md#getvisualslide) | **GET** /visual | Get Visual Slide Image as Base64
 
 
@@ -172,7 +178,8 @@ Class | Method | HTTP request | Description
  - [Model.BlockRelationsProgram](docs/BlockRelationsProgram.md)
  - [Model.BlockResults](docs/BlockResults.md)
  - [Model.Broadcast](docs/Broadcast.md)
- - [Model.BroadcastFieldValues](docs/BroadcastFieldValues.md)
+ - [Model.BroadcastEPGDay](docs/BroadcastEPGDay.md)
+ - [Model.BroadcastEPGRelations](docs/BroadcastEPGRelations.md)
  - [Model.BroadcastInputOnly](docs/BroadcastInputOnly.md)
  - [Model.BroadcastOutputOnly](docs/BroadcastOutputOnly.md)
  - [Model.BroadcastRelations](docs/BroadcastRelations.md)
@@ -190,7 +197,6 @@ Class | Method | HTTP request | Description
  - [Model.CampaignRelationsItemsParams](docs/CampaignRelationsItemsParams.md)
  - [Model.CampaignResults](docs/CampaignResults.md)
  - [Model.Contact](docs/Contact.md)
- - [Model.ContactFieldValues](docs/ContactFieldValues.md)
  - [Model.ContactOutputOnly](docs/ContactOutputOnly.md)
  - [Model.ContactRelations](docs/ContactRelations.md)
  - [Model.ContactRelationsItems](docs/ContactRelationsItems.md)
@@ -199,8 +205,7 @@ Class | Method | HTTP request | Description
  - [Model.ContactResults](docs/ContactResults.md)
  - [Model.Data](docs/Data.md)
  - [Model.Data1](docs/Data1.md)
- - [Model.EPGBroadcast](docs/EPGBroadcast.md)
- - [Model.ExternalMessageQueueData](docs/ExternalMessageQueueData.md)
+ - [Model.EPGResults](docs/EPGResults.md)
  - [Model.Forbidden](docs/Forbidden.md)
  - [Model.Genre](docs/Genre.md)
  - [Model.GenreOutputOnly](docs/GenreOutputOnly.md)
@@ -210,7 +215,6 @@ Class | Method | HTTP request | Description
  - [Model.GenreRelationsPrograms](docs/GenreRelationsPrograms.md)
  - [Model.GenreResults](docs/GenreResults.md)
  - [Model.ImportItem](docs/ImportItem.md)
- - [Model.ImportItemFieldValues](docs/ImportItemFieldValues.md)
  - [Model.InlineResponse202](docs/InlineResponse202.md)
  - [Model.InternalServerError](docs/InternalServerError.md)
  - [Model.InviteUserData](docs/InviteUserData.md)
@@ -249,7 +253,6 @@ Class | Method | HTTP request | Description
  - [Model.PresenterRelationsProgramsParams](docs/PresenterRelationsProgramsParams.md)
  - [Model.PresenterResults](docs/PresenterResults.md)
  - [Model.Program](docs/Program.md)
- - [Model.ProgramFieldValues](docs/ProgramFieldValues.md)
  - [Model.ProgramInputOnly](docs/ProgramInputOnly.md)
  - [Model.ProgramOutputOnly](docs/ProgramOutputOnly.md)
  - [Model.ProgramRelations](docs/ProgramRelations.md)
@@ -261,6 +264,16 @@ Class | Method | HTTP request | Description
  - [Model.ProgramRelationsTags](docs/ProgramRelationsTags.md)
  - [Model.ProgramResults](docs/ProgramResults.md)
  - [Model.RelationsPlaceholder](docs/RelationsPlaceholder.md)
+ - [Model.StationResult](docs/StationResult.md)
+ - [Model.StationResultStation](docs/StationResultStation.md)
+ - [Model.Story](docs/Story.md)
+ - [Model.StoryInputOnly](docs/StoryInputOnly.md)
+ - [Model.StoryOutputOnly](docs/StoryOutputOnly.md)
+ - [Model.StoryRelations](docs/StoryRelations.md)
+ - [Model.StoryRelationsItems](docs/StoryRelationsItems.md)
+ - [Model.StoryRelationsTags](docs/StoryRelationsTags.md)
+ - [Model.StoryRelationsTagsParams](docs/StoryRelationsTagsParams.md)
+ - [Model.StoryResults](docs/StoryResults.md)
  - [Model.Success](docs/Success.md)
  - [Model.Tag](docs/Tag.md)
  - [Model.TagOutputOnly](docs/TagOutputOnly.md)
@@ -280,6 +293,7 @@ Class | Method | HTTP request | Description
  - [Model.VisualResult](docs/VisualResult.md)
  - [Model.BlockResult](docs/BlockResult.md)
  - [Model.BroadcastDataInput](docs/BroadcastDataInput.md)
+ - [Model.BroadcastEPGResult](docs/BroadcastEPGResult.md)
  - [Model.BroadcastResult](docs/BroadcastResult.md)
  - [Model.CampaignDataInput](docs/CampaignDataInput.md)
  - [Model.CampaignResult](docs/CampaignResult.md)
@@ -290,9 +304,12 @@ Class | Method | HTTP request | Description
  - [Model.ItemResult](docs/ItemResult.md)
  - [Model.ModelTypeResult](docs/ModelTypeResult.md)
  - [Model.PresenterDataInput](docs/PresenterDataInput.md)
+ - [Model.PresenterEPGResult](docs/PresenterEPGResult.md)
  - [Model.PresenterResult](docs/PresenterResult.md)
  - [Model.ProgramDataInput](docs/ProgramDataInput.md)
  - [Model.ProgramResult](docs/ProgramResult.md)
+ - [Model.StoryDataInput](docs/StoryDataInput.md)
+ - [Model.StoryResult](docs/StoryResult.md)
  - [Model.TagDataInput](docs/TagDataInput.md)
  - [Model.TagResult](docs/TagResult.md)
 
