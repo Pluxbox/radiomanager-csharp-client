@@ -122,7 +122,7 @@ namespace RadioManager.Test
             //DateTime? date = null;
             //bool? withunpublished = null;
             //var response = instance.GetDailyEPG(date, withunpublished);
-            //Assert.IsInstanceOf<EPGBroadcast> (response, "response is EPGBroadcast");
+            //Assert.IsInstanceOf<EPGResults> (response, "response is EPGResults");
         }
         
         /// <summary>
@@ -135,7 +135,7 @@ namespace RadioManager.Test
             //DateTime? date = null;
             //bool? withunpublished = null;
             //var response = instance.GetEPGByDate(date, withunpublished);
-            //Assert.IsInstanceOf<EPGBroadcast> (response, "response is EPGBroadcast");
+            //Assert.IsInstanceOf<EPGResults> (response, "response is EPGResults");
         }
         
         /// <summary>
@@ -159,7 +159,7 @@ namespace RadioManager.Test
             //string date = null;
             //bool? withunpublished = null;
             //var response = instance.GetWeeklyEPG(date, withunpublished);
-            //Assert.IsInstanceOf<EPGBroadcast> (response, "response is EPGBroadcast");
+            //Assert.IsInstanceOf<EPGResults> (response, "response is EPGResults");
         }
         
         /// <summary>
@@ -199,7 +199,7 @@ namespace RadioManager.Test
             //long? presenterId = null;
             //long? tagId = null;
             //var response = instance.PrintBroadcastById(id, programId, presenterId, tagId);
-            //Assert.IsInstanceOf<EPGBroadcast> (response, "response is EPGBroadcast");
+            //Assert.IsInstanceOf<EPGResults> (response, "response is EPGResults");
         }
         
         /// <summary>

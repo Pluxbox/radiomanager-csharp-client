@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **DeletedAt** | **DateTime?** |  | 
 **ExternalStationId** | **long?** |  | [optional] 
 **ModelTypeId** | **long?** |  | 
-**FieldValues** | [**ProgramFieldValues**](ProgramFieldValues.md) |  | [optional] 
+**FieldValues** | **Object** |  | [optional] 
 **Title** | **string** |  | 
 **Disabled** | **bool?** |  | [optional] 
 **GenreId** | **long?** |  | [optional] 

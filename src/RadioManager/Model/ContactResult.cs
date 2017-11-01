@@ -52,7 +52,7 @@ namespace RadioManager.Model
         /// <param name="Tags">Tags.</param>
         /// <param name="Items">Items.</param>
         /// <param name="ModelType">ModelType.</param>
-        public ContactResult(long? Id = default(long?), DateTime? CreatedAt = default(DateTime?), DateTime? UpdatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), ContactFieldValues FieldValues = default(ContactFieldValues), string Email = default(string), string Firstname = default(string), string Lastname = default(string), string Phone = default(string), ContactRelationsTags Tags = default(ContactRelationsTags), ContactRelationsItems Items = default(ContactRelationsItems), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
+        public ContactResult(long? Id = default(long?), DateTime? CreatedAt = default(DateTime?), DateTime? UpdatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Email = default(string), string Firstname = default(string), string Lastname = default(string), string Phone = default(string), ContactRelationsTags Tags = default(ContactRelationsTags), ContactRelationsItems Items = default(ContactRelationsItems), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
         {
             // to ensure "ModelTypeId" is required (not null)
             if (ModelTypeId == null)
@@ -134,7 +134,7 @@ namespace RadioManager.Model
         /// Gets or Sets FieldValues
         /// </summary>
         [DataMember(Name="field_values", EmitDefaultValue=false)]
-        public ContactFieldValues FieldValues { get; set; }
+        public Object FieldValues { get; set; }
 
         /// <summary>
         /// Gets or Sets Email

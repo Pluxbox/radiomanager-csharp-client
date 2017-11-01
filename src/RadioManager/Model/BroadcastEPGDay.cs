@@ -25,25 +25,47 @@ using SwaggerDateConverter = RadioManager.Client.SwaggerDateConverter;
 namespace RadioManager.Model
 {
     /// <summary>
-    /// ContactFieldValues
+    /// BroadcastEPGDay
     /// </summary>
     [DataContract]
-    public partial class ContactFieldValues :  IEquatable<ContactFieldValues>, IValidatableObject
+    public partial class BroadcastEPGDay :  IEquatable<BroadcastEPGDay>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ContactFieldValues" /> class.
+        /// Initializes a new instance of the <see cref="BroadcastEPGDay" /> class.
         /// </summary>
-        /// <param name="Description">Description.</param>
-        public ContactFieldValues(string Description = default(string))
+        [JsonConstructorAttribute]
+        protected BroadcastEPGDay() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BroadcastEPGDay" /> class.
+        /// </summary>
+        /// <param name="Day">Day.</param>
+        /// <param name="Results">Results (required).</param>
+        public BroadcastEPGDay(DateTime? Day = default(DateTime?), List<BroadcastEPGResult> Results = default(List<BroadcastEPGResult>))
         {
-            this.Description = Description;
+            // to ensure "Results" is required (not null)
+            if (Results == null)
+            {
+                throw new InvalidDataException("Results is a required property for BroadcastEPGDay and cannot be null");
+            }
+            else
+            {
+                this.Results = Results;
+            }
+            this.Day = Day;
         }
         
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or Sets Day
         /// </summary>
-        [DataMember(Name="description", EmitDefaultValue=false)]
-        public string Description { get; set; }
+        [DataMember(Name="day", EmitDefaultValue=false)]
+        [JsonConverter(typeof(SwaggerDateConverter))]
+        public DateTime? Day { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Results
+        /// </summary>
+        [DataMember(Name="results", EmitDefaultValue=false)]
+        public List<BroadcastEPGResult> Results { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -52,8 +74,9 @@ namespace RadioManager.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ContactFieldValues {\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("class BroadcastEPGDay {\n");
+            sb.Append("  Day: ").Append(Day).Append("\n");
+            sb.Append("  Results: ").Append(Results).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,15 +98,15 @@ namespace RadioManager.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ContactFieldValues);
+            return this.Equals(obj as BroadcastEPGDay);
         }
 
         /// <summary>
-        /// Returns true if ContactFieldValues instances are equal
+        /// Returns true if BroadcastEPGDay instances are equal
         /// </summary>
-        /// <param name="other">Instance of ContactFieldValues to be compared</param>
+        /// <param name="other">Instance of BroadcastEPGDay to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ContactFieldValues other)
+        public bool Equals(BroadcastEPGDay other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -91,9 +114,14 @@ namespace RadioManager.Model
 
             return 
                 (
-                    this.Description == other.Description ||
-                    this.Description != null &&
-                    this.Description.Equals(other.Description)
+                    this.Day == other.Day ||
+                    this.Day != null &&
+                    this.Day.Equals(other.Day)
+                ) && 
+                (
+                    this.Results == other.Results ||
+                    this.Results != null &&
+                    this.Results.SequenceEqual(other.Results)
                 );
         }
 
@@ -108,8 +136,10 @@ namespace RadioManager.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Description != null)
-                    hash = hash * 59 + this.Description.GetHashCode();
+                if (this.Day != null)
+                    hash = hash * 59 + this.Day.GetHashCode();
+                if (this.Results != null)
+                    hash = hash * 59 + this.Results.GetHashCode();
                 return hash;
             }
         }

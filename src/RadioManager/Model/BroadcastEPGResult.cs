@@ -25,10 +25,10 @@ using SwaggerDateConverter = RadioManager.Client.SwaggerDateConverter;
 namespace RadioManager.Model
 {
     /// <summary>
-    /// BroadcastResult
+    /// BroadcastEPGResult
     /// </summary>
     [DataContract]
-    public partial class BroadcastResult :  IEquatable<BroadcastResult>, IValidatableObject
+    public partial class BroadcastEPGResult :  IEquatable<BroadcastEPGResult>, IValidatableObject
     {
         /// <summary>
         /// Gets or Sets RepetitionType
@@ -68,12 +68,12 @@ namespace RadioManager.Model
         [DataMember(Name="repetition_type", EmitDefaultValue=false)]
         public RepetitionTypeEnum? RepetitionType { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="BroadcastResult" /> class.
+        /// Initializes a new instance of the <see cref="BroadcastEPGResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected BroadcastResult() { }
+        protected BroadcastEPGResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="BroadcastResult" /> class.
+        /// Initializes a new instance of the <see cref="BroadcastEPGResult" /> class.
         /// </summary>
         /// <param name="Id">Id (required).</param>
         /// <param name="UpdatedAt">UpdatedAt (required).</param>
@@ -108,12 +108,12 @@ namespace RadioManager.Model
         /// <param name="Tags">Tags.</param>
         /// <param name="Presenters">Presenters.</param>
         /// <param name="ModelType">ModelType.</param>
-        public BroadcastResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?), long? ProgramId = default(long?), long? ModelTypeId = default(long?), long? StationId = default(long?), Object FieldValues = default(Object), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), bool? Published = default(bool?), string RepetitionUid = default(string), RepetitionTypeEnum? RepetitionType = default(RepetitionTypeEnum?), DateTime? RepetitionEnd = default(DateTime?), DateTime? RepetitionStart = default(DateTime?), string RepetitionDays = default(string), long? PtyCodeId = default(long?), BroadcastRelationsItems Items = default(BroadcastRelationsItems), BroadcastRelationsBlocks Blocks = default(BroadcastRelationsBlocks), BlockRelationsProgram Program = default(BlockRelationsProgram), BroadcastRelationsTags Tags = default(BroadcastRelationsTags), BroadcastRelationsPresenters Presenters = default(BroadcastRelationsPresenters), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
+        public BroadcastEPGResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?), long? ProgramId = default(long?), long? ModelTypeId = default(long?), long? StationId = default(long?), Object FieldValues = default(Object), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), bool? Published = default(bool?), string RepetitionUid = default(string), RepetitionTypeEnum? RepetitionType = default(RepetitionTypeEnum?), DateTime? RepetitionEnd = default(DateTime?), DateTime? RepetitionStart = default(DateTime?), string RepetitionDays = default(string), long? PtyCodeId = default(long?), BroadcastRelationsItems Items = default(BroadcastRelationsItems), BroadcastRelationsBlocks Blocks = default(BroadcastRelationsBlocks), BlockRelationsProgram Program = default(BlockRelationsProgram), BroadcastRelationsTags Tags = default(BroadcastRelationsTags), List<PresenterEPGResult> Presenters = default(List<PresenterEPGResult>), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
             {
-                throw new InvalidDataException("Id is a required property for BroadcastResult and cannot be null");
+                throw new InvalidDataException("Id is a required property for BroadcastEPGResult and cannot be null");
             }
             else
             {
@@ -122,7 +122,7 @@ namespace RadioManager.Model
             // to ensure "UpdatedAt" is required (not null)
             if (UpdatedAt == null)
             {
-                throw new InvalidDataException("UpdatedAt is a required property for BroadcastResult and cannot be null");
+                throw new InvalidDataException("UpdatedAt is a required property for BroadcastEPGResult and cannot be null");
             }
             else
             {
@@ -131,7 +131,7 @@ namespace RadioManager.Model
             // to ensure "CreatedAt" is required (not null)
             if (CreatedAt == null)
             {
-                throw new InvalidDataException("CreatedAt is a required property for BroadcastResult and cannot be null");
+                throw new InvalidDataException("CreatedAt is a required property for BroadcastEPGResult and cannot be null");
             }
             else
             {
@@ -140,7 +140,7 @@ namespace RadioManager.Model
             // to ensure "DeletedAt" is required (not null)
             if (DeletedAt == null)
             {
-                throw new InvalidDataException("DeletedAt is a required property for BroadcastResult and cannot be null");
+                throw new InvalidDataException("DeletedAt is a required property for BroadcastEPGResult and cannot be null");
             }
             else
             {
@@ -362,7 +362,7 @@ namespace RadioManager.Model
         /// Gets or Sets Presenters
         /// </summary>
         [DataMember(Name="presenters", EmitDefaultValue=false)]
-        public BroadcastRelationsPresenters Presenters { get; set; }
+        public List<PresenterEPGResult> Presenters { get; set; }
 
         /// <summary>
         /// Gets or Sets ModelType
@@ -377,7 +377,7 @@ namespace RadioManager.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BroadcastResult {\n");
+            sb.Append("class BroadcastEPGResult {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
@@ -432,15 +432,15 @@ namespace RadioManager.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as BroadcastResult);
+            return this.Equals(obj as BroadcastEPGResult);
         }
 
         /// <summary>
-        /// Returns true if BroadcastResult instances are equal
+        /// Returns true if BroadcastEPGResult instances are equal
         /// </summary>
-        /// <param name="other">Instance of BroadcastResult to be compared</param>
+        /// <param name="other">Instance of BroadcastEPGResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BroadcastResult other)
+        public bool Equals(BroadcastEPGResult other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -605,7 +605,7 @@ namespace RadioManager.Model
                 (
                     this.Presenters == other.Presenters ||
                     this.Presenters != null &&
-                    this.Presenters.Equals(other.Presenters)
+                    this.Presenters.SequenceEqual(other.Presenters)
                 ) && 
                 (
                     this.ModelType == other.ModelType ||

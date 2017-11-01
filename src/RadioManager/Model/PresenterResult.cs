@@ -52,7 +52,7 @@ namespace RadioManager.Model
         /// <param name="Programs">Programs.</param>
         /// <param name="Broadcasts">Broadcasts.</param>
         /// <param name="ModelType">ModelType.</param>
-        public PresenterResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), List<Object> FieldValues = default(List<Object>), string Firstname = default(string), string Lastname = default(string), bool? Active = default(bool?), string Name = default(string), PresenterRelationsPrograms Programs = default(PresenterRelationsPrograms), PresenterRelationsBroadcasts Broadcasts = default(PresenterRelationsBroadcasts), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
+        public PresenterResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Firstname = default(string), string Lastname = default(string), bool? Active = default(bool?), string Name = default(string), PresenterRelationsPrograms Programs = default(PresenterRelationsPrograms), PresenterRelationsBroadcasts Broadcasts = default(PresenterRelationsBroadcasts), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -150,7 +150,7 @@ namespace RadioManager.Model
         /// Gets or Sets FieldValues
         /// </summary>
         [DataMember(Name="field_values", EmitDefaultValue=false)]
-        public List<Object> FieldValues { get; set; }
+        public Object FieldValues { get; set; }
 
         /// <summary>
         /// Gets or Sets Firstname
@@ -285,7 +285,7 @@ namespace RadioManager.Model
                 (
                     this.FieldValues == other.FieldValues ||
                     this.FieldValues != null &&
-                    this.FieldValues.SequenceEqual(other.FieldValues)
+                    this.FieldValues.Equals(other.FieldValues)
                 ) && 
                 (
                     this.Firstname == other.Firstname ||

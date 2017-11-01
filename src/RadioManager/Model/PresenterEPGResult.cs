@@ -25,18 +25,18 @@ using SwaggerDateConverter = RadioManager.Client.SwaggerDateConverter;
 namespace RadioManager.Model
 {
     /// <summary>
-    /// Presenter
+    /// PresenterEPGResult
     /// </summary>
     [DataContract]
-    public partial class Presenter :  IEquatable<Presenter>, IValidatableObject
+    public partial class PresenterEPGResult :  IEquatable<PresenterEPGResult>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Presenter" /> class.
+        /// Initializes a new instance of the <see cref="PresenterEPGResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected Presenter() { }
+        protected PresenterEPGResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="Presenter" /> class.
+        /// Initializes a new instance of the <see cref="PresenterEPGResult" /> class.
         /// </summary>
         /// <param name="ModelTypeId">ModelTypeId (required).</param>
         /// <param name="FieldValues">FieldValues.</param>
@@ -44,22 +44,64 @@ namespace RadioManager.Model
         /// <param name="Lastname">Lastname.</param>
         /// <param name="Active">Active.</param>
         /// <param name="Name">Name.</param>
-        public Presenter(long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Firstname = default(string), string Lastname = default(string), bool? Active = default(bool?), string Name = default(string))
+        /// <param name="Id">Id (required).</param>
+        /// <param name="UpdatedAt">UpdatedAt (required).</param>
+        /// <param name="CreatedAt">CreatedAt (required).</param>
+        /// <param name="DeletedAt">DeletedAt (required).</param>
+        /// <param name="ExternalStationId">ExternalStationId.</param>
+        public PresenterEPGResult(long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Firstname = default(string), string Lastname = default(string), bool? Active = default(bool?), string Name = default(string), long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?))
         {
             // to ensure "ModelTypeId" is required (not null)
             if (ModelTypeId == null)
             {
-                throw new InvalidDataException("ModelTypeId is a required property for Presenter and cannot be null");
+                throw new InvalidDataException("ModelTypeId is a required property for PresenterEPGResult and cannot be null");
             }
             else
             {
                 this.ModelTypeId = ModelTypeId;
+            }
+            // to ensure "Id" is required (not null)
+            if (Id == null)
+            {
+                throw new InvalidDataException("Id is a required property for PresenterEPGResult and cannot be null");
+            }
+            else
+            {
+                this.Id = Id;
+            }
+            // to ensure "UpdatedAt" is required (not null)
+            if (UpdatedAt == null)
+            {
+                throw new InvalidDataException("UpdatedAt is a required property for PresenterEPGResult and cannot be null");
+            }
+            else
+            {
+                this.UpdatedAt = UpdatedAt;
+            }
+            // to ensure "CreatedAt" is required (not null)
+            if (CreatedAt == null)
+            {
+                throw new InvalidDataException("CreatedAt is a required property for PresenterEPGResult and cannot be null");
+            }
+            else
+            {
+                this.CreatedAt = CreatedAt;
+            }
+            // to ensure "DeletedAt" is required (not null)
+            if (DeletedAt == null)
+            {
+                throw new InvalidDataException("DeletedAt is a required property for PresenterEPGResult and cannot be null");
+            }
+            else
+            {
+                this.DeletedAt = DeletedAt;
             }
             this.FieldValues = FieldValues;
             this.Firstname = Firstname;
             this.Lastname = Lastname;
             this.Active = Active;
             this.Name = Name;
+            this.ExternalStationId = ExternalStationId;
         }
         
         /// <summary>
@@ -99,19 +141,54 @@ namespace RadioManager.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name="id", EmitDefaultValue=false)]
+        public long? Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdatedAt
+        /// </summary>
+        [DataMember(Name="updated_at", EmitDefaultValue=false)]
+        public DateTime? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedAt
+        /// </summary>
+        [DataMember(Name="created_at", EmitDefaultValue=false)]
+        public DateTime? CreatedAt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DeletedAt
+        /// </summary>
+        [DataMember(Name="deleted_at", EmitDefaultValue=false)]
+        public DateTime? DeletedAt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExternalStationId
+        /// </summary>
+        [DataMember(Name="_external_station_id", EmitDefaultValue=false)]
+        public long? ExternalStationId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Presenter {\n");
+            sb.Append("class PresenterEPGResult {\n");
             sb.Append("  ModelTypeId: ").Append(ModelTypeId).Append("\n");
             sb.Append("  FieldValues: ").Append(FieldValues).Append("\n");
             sb.Append("  Firstname: ").Append(Firstname).Append("\n");
             sb.Append("  Lastname: ").Append(Lastname).Append("\n");
             sb.Append("  Active: ").Append(Active).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  DeletedAt: ").Append(DeletedAt).Append("\n");
+            sb.Append("  ExternalStationId: ").Append(ExternalStationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -133,15 +210,15 @@ namespace RadioManager.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as Presenter);
+            return this.Equals(obj as PresenterEPGResult);
         }
 
         /// <summary>
-        /// Returns true if Presenter instances are equal
+        /// Returns true if PresenterEPGResult instances are equal
         /// </summary>
-        /// <param name="other">Instance of Presenter to be compared</param>
+        /// <param name="other">Instance of PresenterEPGResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Presenter other)
+        public bool Equals(PresenterEPGResult other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -177,6 +254,31 @@ namespace RadioManager.Model
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
+                ) && 
+                (
+                    this.Id == other.Id ||
+                    this.Id != null &&
+                    this.Id.Equals(other.Id)
+                ) && 
+                (
+                    this.UpdatedAt == other.UpdatedAt ||
+                    this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(other.UpdatedAt)
+                ) && 
+                (
+                    this.CreatedAt == other.CreatedAt ||
+                    this.CreatedAt != null &&
+                    this.CreatedAt.Equals(other.CreatedAt)
+                ) && 
+                (
+                    this.DeletedAt == other.DeletedAt ||
+                    this.DeletedAt != null &&
+                    this.DeletedAt.Equals(other.DeletedAt)
+                ) && 
+                (
+                    this.ExternalStationId == other.ExternalStationId ||
+                    this.ExternalStationId != null &&
+                    this.ExternalStationId.Equals(other.ExternalStationId)
                 );
         }
 
@@ -203,6 +305,16 @@ namespace RadioManager.Model
                     hash = hash * 59 + this.Active.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.Id != null)
+                    hash = hash * 59 + this.Id.GetHashCode();
+                if (this.UpdatedAt != null)
+                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
+                if (this.CreatedAt != null)
+                    hash = hash * 59 + this.CreatedAt.GetHashCode();
+                if (this.DeletedAt != null)
+                    hash = hash * 59 + this.DeletedAt.GetHashCode();
+                if (this.ExternalStationId != null)
+                    hash = hash * 59 + this.ExternalStationId.GetHashCode();
                 return hash;
             }
         }

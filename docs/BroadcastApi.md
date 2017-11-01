@@ -1,6 +1,6 @@
 # RadioManager.Api.BroadcastApi
 
-All URIs are relative to *https://radiomanager.pb/api/v2*
+All URIs are relative to *https://staging.radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 <a name="getcurrentbroadcast"></a>
 # **GetCurrentBroadcast**
-> Broadcast GetCurrentBroadcast ()
+> BroadcastResult GetCurrentBroadcast (bool? withunpublished = null)
 
 Get current Broadcast
 
@@ -245,11 +245,12 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
+            var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
 
             try
             {
                 // Get current Broadcast
-                Broadcast result = apiInstance.GetCurrentBroadcast();
+                BroadcastResult result = apiInstance.GetCurrentBroadcast(withunpublished);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -262,11 +263,14 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **withunpublished** | **bool?**| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
-[**Broadcast**](Broadcast.md)
+[**BroadcastResult**](BroadcastResult.md)
 
 ### Authorization
 
@@ -281,7 +285,7 @@ This endpoint does not need any parameter.
 
 <a name="getdailyepg"></a>
 # **GetDailyEPG**
-> EPGBroadcast GetDailyEPG (DateTime? date = null, bool? withunpublished = null)
+> EPGResults GetDailyEPG (DateTime? date = null, bool? withunpublished = null)
 
 Get daily EPG
 
@@ -313,7 +317,7 @@ namespace Example
             try
             {
                 // Get daily EPG
-                EPGBroadcast result = apiInstance.GetDailyEPG(date, withunpublished);
+                EPGResults result = apiInstance.GetDailyEPG(date, withunpublished);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -334,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EPGBroadcast**](EPGBroadcast.md)
+[**EPGResults**](EPGResults.md)
 
 ### Authorization
 
@@ -349,7 +353,7 @@ Name | Type | Description  | Notes
 
 <a name="getepgbydate"></a>
 # **GetEPGByDate**
-> EPGBroadcast GetEPGByDate (DateTime? date = null, bool? withunpublished = null)
+> EPGResults GetEPGByDate (DateTime? date = null, bool? withunpublished = null)
 
 Get EPG by date
 
@@ -381,7 +385,7 @@ namespace Example
             try
             {
                 // Get EPG by date
-                EPGBroadcast result = apiInstance.GetEPGByDate(date, withunpublished);
+                EPGResults result = apiInstance.GetEPGByDate(date, withunpublished);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -402,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EPGBroadcast**](EPGBroadcast.md)
+[**EPGResults**](EPGResults.md)
 
 ### Authorization
 
@@ -417,7 +421,7 @@ Name | Type | Description  | Notes
 
 <a name="getnextbroadcast"></a>
 # **GetNextBroadcast**
-> Broadcast GetNextBroadcast ()
+> BroadcastResult GetNextBroadcast (bool? withunpublished = null)
 
 Get next Broadcast
 
@@ -443,11 +447,12 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
+            var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
 
             try
             {
                 // Get next Broadcast
-                Broadcast result = apiInstance.GetNextBroadcast();
+                BroadcastResult result = apiInstance.GetNextBroadcast(withunpublished);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -460,11 +465,14 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **withunpublished** | **bool?**| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
-[**Broadcast**](Broadcast.md)
+[**BroadcastResult**](BroadcastResult.md)
 
 ### Authorization
 
@@ -479,7 +487,7 @@ This endpoint does not need any parameter.
 
 <a name="getweeklyepg"></a>
 # **GetWeeklyEPG**
-> EPGBroadcast GetWeeklyEPG (string date = null, bool? withunpublished = null)
+> EPGResults GetWeeklyEPG (string date = null, bool? withunpublished = null)
 
 Get weekly EPG
 
@@ -511,7 +519,7 @@ namespace Example
             try
             {
                 // Get weekly EPG
-                EPGBroadcast result = apiInstance.GetWeeklyEPG(date, withunpublished);
+                EPGResults result = apiInstance.GetWeeklyEPG(date, withunpublished);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -532,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EPGBroadcast**](EPGBroadcast.md)
+[**EPGResults**](EPGResults.md)
 
 ### Authorization
 
@@ -639,7 +647,7 @@ Name | Type | Description  | Notes
 
 <a name="printbroadcastbyid"></a>
 # **PrintBroadcastById**
-> EPGBroadcast PrintBroadcastById (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
+> EPGResults PrintBroadcastById (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
 
 Print Broadcast by id
 
@@ -673,7 +681,7 @@ namespace Example
             try
             {
                 // Print Broadcast by id
-                EPGBroadcast result = apiInstance.PrintBroadcastById(id, programId, presenterId, tagId);
+                EPGResults result = apiInstance.PrintBroadcastById(id, programId, presenterId, tagId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -696,7 +704,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EPGBroadcast**](EPGBroadcast.md)
+[**EPGResults**](EPGResults.md)
 
 ### Authorization
 

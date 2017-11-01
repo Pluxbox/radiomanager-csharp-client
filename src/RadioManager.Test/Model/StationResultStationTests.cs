@@ -257,6 +257,14 @@ namespace RadioManager.Test
             // TODO unit test for the property 'StationKey'
         }
         /// <summary>
+        /// Test the property 'Timezone'
+        /// </summary>
+        [Test]
+        public void TimezoneTest()
+        {
+            // TODO unit test for the property 'Timezone'
+        }
+        /// <summary>
         /// Test the property 'TrialDate'
         /// </summary>
         [Test]

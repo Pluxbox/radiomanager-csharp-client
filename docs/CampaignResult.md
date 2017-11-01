@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Item** | [**List&lt;Item&gt;**](Item.md) |  | [optional] 
 **ExternalStationId** | **long?** |  | [optional] 
 **ModelTypeId** | **long?** |  | 
-**FieldValues** | **List&lt;Object&gt;** |  | [optional] 
+**FieldValues** | **Object** |  | [optional] 
 **Title** | **string** |  | [optional] 
 **Start** | **DateTime?** |  | 
 **Stop** | **DateTime?** |  | 

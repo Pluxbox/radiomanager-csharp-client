@@ -101,7 +101,7 @@ namespace RadioManager.Model
         /// <param name="Tags">Tags.</param>
         /// <param name="Campaign">Campaign.</param>
         /// <param name="ModelType">ModelType.</param>
-        public ItemResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? DataModified = default(long?), long? Order = default(long?), long? TemplateblockId = default(long?), long? TemplateitemId = default(long?), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), long? BlockId = default(long?), string ExternalId = default(string), ImportItemFieldValues FieldValues = default(ImportItemFieldValues), string Title = default(string), long? Duration = default(long?), DateTime? Start = default(DateTime?), StatusEnum? Status = default(StatusEnum?), long? Import = default(long?), long? CampaignId = default(long?), bool? Recommended = default(bool?), long? StationDraftId = default(long?), long? ProgramDraftId = default(long?), long? UserDraftId = default(long?), bool? StaticStart = default(bool?), string Details = default(string), ItemRelationsBlock Block = default(ItemRelationsBlock), BlockRelationsBroadcast Broadcast = default(BlockRelationsBroadcast), ItemRelationsProgram Program = default(ItemRelationsProgram), ItemRelationsContacts Contacts = default(ItemRelationsContacts), ItemRelationsTags Tags = default(ItemRelationsTags), ItemRelationsCampaign Campaign = default(ItemRelationsCampaign), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
+        public ItemResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? DataModified = default(long?), long? Order = default(long?), long? TemplateblockId = default(long?), long? TemplateitemId = default(long?), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), long? BlockId = default(long?), string ExternalId = default(string), Object FieldValues = default(Object), string Title = default(string), long? Duration = default(long?), DateTime? Start = default(DateTime?), StatusEnum? Status = default(StatusEnum?), long? Import = default(long?), long? CampaignId = default(long?), bool? Recommended = default(bool?), long? StationDraftId = default(long?), long? ProgramDraftId = default(long?), long? UserDraftId = default(long?), bool? StaticStart = default(bool?), string Details = default(string), ItemRelationsBlock Block = default(ItemRelationsBlock), BlockRelationsBroadcast Broadcast = default(BlockRelationsBroadcast), ItemRelationsProgram Program = default(ItemRelationsProgram), ItemRelationsContacts Contacts = default(ItemRelationsContacts), ItemRelationsTags Tags = default(ItemRelationsTags), ItemRelationsCampaign Campaign = default(ItemRelationsCampaign), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
         {
             // to ensure "ModelTypeId" is required (not null)
             if (ModelTypeId == null)
@@ -221,7 +221,7 @@ namespace RadioManager.Model
         /// Gets or Sets FieldValues
         /// </summary>
         [DataMember(Name="field_values", EmitDefaultValue=false)]
-        public ImportItemFieldValues FieldValues { get; set; }
+        public Object FieldValues { get; set; }
 
         /// <summary>
         /// Gets or Sets Title

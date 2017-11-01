@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **MediumName** | **string** |  | [optional] 
 **Website** | **string** |  | [optional] 
 **Email** | **string** |  | [optional] 
-**Keywords** | **string** |  | [optional] 
+**Keywords** | **List&lt;string&gt;** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **Sms** | **string** |  | [optional] 
 **Telephone** | **string** |  | [optional] 
@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **PtyCode** | **int?** |  | [optional] 
 **PtyType** | **string** |  | [optional] 
 **StationKey** | **string** |  | [optional] 
+**Timezone** | **string** |  | [optional] 
 **TrialDate** | **DateTime?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

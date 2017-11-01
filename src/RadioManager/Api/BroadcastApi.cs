@@ -96,8 +96,9 @@ namespace RadioManager.Api
         /// Get current Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Broadcast</returns>
-        Broadcast GetCurrentBroadcast ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>BroadcastResult</returns>
+        BroadcastResult GetCurrentBroadcast (bool? withunpublished = null);
 
         /// <summary>
         /// Get current Broadcast
@@ -106,8 +107,9 @@ namespace RadioManager.Api
         /// Get current Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Broadcast</returns>
-        ApiResponse<Broadcast> GetCurrentBroadcastWithHttpInfo ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>ApiResponse of BroadcastResult</returns>
+        ApiResponse<BroadcastResult> GetCurrentBroadcastWithHttpInfo (bool? withunpublished = null);
         /// <summary>
         /// Get daily EPG
         /// </summary>
@@ -117,8 +119,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>EPGBroadcast</returns>
-        EPGBroadcast GetDailyEPG (DateTime? date = null, bool? withunpublished = null);
+        /// <returns>EPGResults</returns>
+        EPGResults GetDailyEPG (DateTime? date = null, bool? withunpublished = null);
 
         /// <summary>
         /// Get daily EPG
@@ -129,8 +131,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of EPGBroadcast</returns>
-        ApiResponse<EPGBroadcast> GetDailyEPGWithHttpInfo (DateTime? date = null, bool? withunpublished = null);
+        /// <returns>ApiResponse of EPGResults</returns>
+        ApiResponse<EPGResults> GetDailyEPGWithHttpInfo (DateTime? date = null, bool? withunpublished = null);
         /// <summary>
         /// Get EPG by date
         /// </summary>
@@ -140,8 +142,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>EPGBroadcast</returns>
-        EPGBroadcast GetEPGByDate (DateTime? date = null, bool? withunpublished = null);
+        /// <returns>EPGResults</returns>
+        EPGResults GetEPGByDate (DateTime? date = null, bool? withunpublished = null);
 
         /// <summary>
         /// Get EPG by date
@@ -152,8 +154,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of EPGBroadcast</returns>
-        ApiResponse<EPGBroadcast> GetEPGByDateWithHttpInfo (DateTime? date = null, bool? withunpublished = null);
+        /// <returns>ApiResponse of EPGResults</returns>
+        ApiResponse<EPGResults> GetEPGByDateWithHttpInfo (DateTime? date = null, bool? withunpublished = null);
         /// <summary>
         /// Get next Broadcast
         /// </summary>
@@ -161,8 +163,9 @@ namespace RadioManager.Api
         /// Get next Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Broadcast</returns>
-        Broadcast GetNextBroadcast ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>BroadcastResult</returns>
+        BroadcastResult GetNextBroadcast (bool? withunpublished = null);
 
         /// <summary>
         /// Get next Broadcast
@@ -171,8 +174,9 @@ namespace RadioManager.Api
         /// Get next Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Broadcast</returns>
-        ApiResponse<Broadcast> GetNextBroadcastWithHttpInfo ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>ApiResponse of BroadcastResult</returns>
+        ApiResponse<BroadcastResult> GetNextBroadcastWithHttpInfo (bool? withunpublished = null);
         /// <summary>
         /// Get weekly EPG
         /// </summary>
@@ -182,8 +186,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>EPGBroadcast</returns>
-        EPGBroadcast GetWeeklyEPG (string date = null, bool? withunpublished = null);
+        /// <returns>EPGResults</returns>
+        EPGResults GetWeeklyEPG (string date = null, bool? withunpublished = null);
 
         /// <summary>
         /// Get weekly EPG
@@ -194,8 +198,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of EPGBroadcast</returns>
-        ApiResponse<EPGBroadcast> GetWeeklyEPGWithHttpInfo (string date = null, bool? withunpublished = null);
+        /// <returns>ApiResponse of EPGResults</returns>
+        ApiResponse<EPGResults> GetWeeklyEPGWithHttpInfo (string date = null, bool? withunpublished = null);
         /// <summary>
         /// Get all broadcasts.
         /// </summary>
@@ -254,8 +258,8 @@ namespace RadioManager.Api
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <returns>EPGBroadcast</returns>
-        EPGBroadcast PrintBroadcastById (long? id, long? programId = null, long? presenterId = null, long? tagId = null);
+        /// <returns>EPGResults</returns>
+        EPGResults PrintBroadcastById (long? id, long? programId = null, long? presenterId = null, long? tagId = null);
 
         /// <summary>
         /// Print Broadcast by id
@@ -268,8 +272,8 @@ namespace RadioManager.Api
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <returns>ApiResponse of EPGBroadcast</returns>
-        ApiResponse<EPGBroadcast> PrintBroadcastByIdWithHttpInfo (long? id, long? programId = null, long? presenterId = null, long? tagId = null);
+        /// <returns>ApiResponse of EPGResults</returns>
+        ApiResponse<EPGResults> PrintBroadcastByIdWithHttpInfo (long? id, long? programId = null, long? presenterId = null, long? tagId = null);
         /// <summary>
         /// Update broadcast by id
         /// </summary>
@@ -367,8 +371,9 @@ namespace RadioManager.Api
         /// Get current Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Broadcast</returns>
-        System.Threading.Tasks.Task<Broadcast> GetCurrentBroadcastAsync ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of BroadcastResult</returns>
+        System.Threading.Tasks.Task<BroadcastResult> GetCurrentBroadcastAsync (bool? withunpublished = null);
 
         /// <summary>
         /// Get current Broadcast
@@ -377,8 +382,9 @@ namespace RadioManager.Api
         /// Get current Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Broadcast)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Broadcast>> GetCurrentBroadcastAsyncWithHttpInfo ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (BroadcastResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BroadcastResult>> GetCurrentBroadcastAsyncWithHttpInfo (bool? withunpublished = null);
         /// <summary>
         /// Get daily EPG
         /// </summary>
@@ -388,8 +394,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>Task of EPGBroadcast</returns>
-        System.Threading.Tasks.Task<EPGBroadcast> GetDailyEPGAsync (DateTime? date = null, bool? withunpublished = null);
+        /// <returns>Task of EPGResults</returns>
+        System.Threading.Tasks.Task<EPGResults> GetDailyEPGAsync (DateTime? date = null, bool? withunpublished = null);
 
         /// <summary>
         /// Get daily EPG
@@ -400,8 +406,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetDailyEPGAsyncWithHttpInfo (DateTime? date = null, bool? withunpublished = null);
+        /// <returns>Task of ApiResponse (EPGResults)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EPGResults>> GetDailyEPGAsyncWithHttpInfo (DateTime? date = null, bool? withunpublished = null);
         /// <summary>
         /// Get EPG by date
         /// </summary>
@@ -411,8 +417,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>Task of EPGBroadcast</returns>
-        System.Threading.Tasks.Task<EPGBroadcast> GetEPGByDateAsync (DateTime? date = null, bool? withunpublished = null);
+        /// <returns>Task of EPGResults</returns>
+        System.Threading.Tasks.Task<EPGResults> GetEPGByDateAsync (DateTime? date = null, bool? withunpublished = null);
 
         /// <summary>
         /// Get EPG by date
@@ -423,8 +429,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetEPGByDateAsyncWithHttpInfo (DateTime? date = null, bool? withunpublished = null);
+        /// <returns>Task of ApiResponse (EPGResults)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EPGResults>> GetEPGByDateAsyncWithHttpInfo (DateTime? date = null, bool? withunpublished = null);
         /// <summary>
         /// Get next Broadcast
         /// </summary>
@@ -432,8 +438,9 @@ namespace RadioManager.Api
         /// Get next Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Broadcast</returns>
-        System.Threading.Tasks.Task<Broadcast> GetNextBroadcastAsync ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of BroadcastResult</returns>
+        System.Threading.Tasks.Task<BroadcastResult> GetNextBroadcastAsync (bool? withunpublished = null);
 
         /// <summary>
         /// Get next Broadcast
@@ -442,8 +449,9 @@ namespace RadioManager.Api
         /// Get next Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Broadcast)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Broadcast>> GetNextBroadcastAsyncWithHttpInfo ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (BroadcastResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BroadcastResult>> GetNextBroadcastAsyncWithHttpInfo (bool? withunpublished = null);
         /// <summary>
         /// Get weekly EPG
         /// </summary>
@@ -453,8 +461,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>Task of EPGBroadcast</returns>
-        System.Threading.Tasks.Task<EPGBroadcast> GetWeeklyEPGAsync (string date = null, bool? withunpublished = null);
+        /// <returns>Task of EPGResults</returns>
+        System.Threading.Tasks.Task<EPGResults> GetWeeklyEPGAsync (string date = null, bool? withunpublished = null);
 
         /// <summary>
         /// Get weekly EPG
@@ -465,8 +473,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetWeeklyEPGAsyncWithHttpInfo (string date = null, bool? withunpublished = null);
+        /// <returns>Task of ApiResponse (EPGResults)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EPGResults>> GetWeeklyEPGAsyncWithHttpInfo (string date = null, bool? withunpublished = null);
         /// <summary>
         /// Get all broadcasts.
         /// </summary>
@@ -525,8 +533,8 @@ namespace RadioManager.Api
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <returns>Task of EPGBroadcast</returns>
-        System.Threading.Tasks.Task<EPGBroadcast> PrintBroadcastByIdAsync (long? id, long? programId = null, long? presenterId = null, long? tagId = null);
+        /// <returns>Task of EPGResults</returns>
+        System.Threading.Tasks.Task<EPGResults> PrintBroadcastByIdAsync (long? id, long? programId = null, long? presenterId = null, long? tagId = null);
 
         /// <summary>
         /// Print Broadcast by id
@@ -539,8 +547,8 @@ namespace RadioManager.Api
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> PrintBroadcastByIdAsyncWithHttpInfo (long? id, long? programId = null, long? presenterId = null, long? tagId = null);
+        /// <returns>Task of ApiResponse (EPGResults)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EPGResults>> PrintBroadcastByIdAsyncWithHttpInfo (long? id, long? programId = null, long? presenterId = null, long? tagId = null);
         /// <summary>
         /// Update broadcast by id
         /// </summary>
@@ -1138,10 +1146,11 @@ namespace RadioManager.Api
         /// Get current Broadcast Get current Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Broadcast</returns>
-        public Broadcast GetCurrentBroadcast ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>BroadcastResult</returns>
+        public BroadcastResult GetCurrentBroadcast (bool? withunpublished = null)
         {
-             ApiResponse<Broadcast> localVarResponse = GetCurrentBroadcastWithHttpInfo();
+             ApiResponse<BroadcastResult> localVarResponse = GetCurrentBroadcastWithHttpInfo(withunpublished);
              return localVarResponse.Data;
         }
 
@@ -1149,8 +1158,9 @@ namespace RadioManager.Api
         /// Get current Broadcast Get current Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Broadcast</returns>
-        public ApiResponse< Broadcast > GetCurrentBroadcastWithHttpInfo ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>ApiResponse of BroadcastResult</returns>
+        public ApiResponse< BroadcastResult > GetCurrentBroadcastWithHttpInfo (bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/current";
@@ -1175,6 +1185,7 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1196,19 +1207,20 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Broadcast>(localVarStatusCode,
+            return new ApiResponse<BroadcastResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Broadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Broadcast)));
+                (BroadcastResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BroadcastResult)));
         }
 
         /// <summary>
         /// Get current Broadcast Get current Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Broadcast</returns>
-        public async System.Threading.Tasks.Task<Broadcast> GetCurrentBroadcastAsync ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of BroadcastResult</returns>
+        public async System.Threading.Tasks.Task<BroadcastResult> GetCurrentBroadcastAsync (bool? withunpublished = null)
         {
-             ApiResponse<Broadcast> localVarResponse = await GetCurrentBroadcastAsyncWithHttpInfo();
+             ApiResponse<BroadcastResult> localVarResponse = await GetCurrentBroadcastAsyncWithHttpInfo(withunpublished);
              return localVarResponse.Data;
 
         }
@@ -1217,8 +1229,9 @@ namespace RadioManager.Api
         /// Get current Broadcast Get current Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Broadcast)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Broadcast>> GetCurrentBroadcastAsyncWithHttpInfo ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (BroadcastResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BroadcastResult>> GetCurrentBroadcastAsyncWithHttpInfo (bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/current";
@@ -1243,6 +1256,7 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1263,9 +1277,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Broadcast>(localVarStatusCode,
+            return new ApiResponse<BroadcastResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Broadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Broadcast)));
+                (BroadcastResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BroadcastResult)));
         }
 
         /// <summary>
@@ -1274,10 +1288,10 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>EPGBroadcast</returns>
-        public EPGBroadcast GetDailyEPG (DateTime? date = null, bool? withunpublished = null)
+        /// <returns>EPGResults</returns>
+        public EPGResults GetDailyEPG (DateTime? date = null, bool? withunpublished = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = GetDailyEPGWithHttpInfo(date, withunpublished);
+             ApiResponse<EPGResults> localVarResponse = GetDailyEPGWithHttpInfo(date, withunpublished);
              return localVarResponse.Data;
         }
 
@@ -1287,8 +1301,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of EPGBroadcast</returns>
-        public ApiResponse< EPGBroadcast > GetDailyEPGWithHttpInfo (DateTime? date = null, bool? withunpublished = null)
+        /// <returns>ApiResponse of EPGResults</returns>
+        public ApiResponse< EPGResults > GetDailyEPGWithHttpInfo (DateTime? date = null, bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/epg/daily";
@@ -1336,9 +1350,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<EPGBroadcast>(localVarStatusCode,
+            return new ApiResponse<EPGResults>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EPGBroadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGBroadcast)));
+                (EPGResults) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGResults)));
         }
 
         /// <summary>
@@ -1347,10 +1361,10 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>Task of EPGBroadcast</returns>
-        public async System.Threading.Tasks.Task<EPGBroadcast> GetDailyEPGAsync (DateTime? date = null, bool? withunpublished = null)
+        /// <returns>Task of EPGResults</returns>
+        public async System.Threading.Tasks.Task<EPGResults> GetDailyEPGAsync (DateTime? date = null, bool? withunpublished = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = await GetDailyEPGAsyncWithHttpInfo(date, withunpublished);
+             ApiResponse<EPGResults> localVarResponse = await GetDailyEPGAsyncWithHttpInfo(date, withunpublished);
              return localVarResponse.Data;
 
         }
@@ -1361,8 +1375,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetDailyEPGAsyncWithHttpInfo (DateTime? date = null, bool? withunpublished = null)
+        /// <returns>Task of ApiResponse (EPGResults)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EPGResults>> GetDailyEPGAsyncWithHttpInfo (DateTime? date = null, bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/epg/daily";
@@ -1409,9 +1423,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<EPGBroadcast>(localVarStatusCode,
+            return new ApiResponse<EPGResults>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EPGBroadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGBroadcast)));
+                (EPGResults) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGResults)));
         }
 
         /// <summary>
@@ -1420,10 +1434,10 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>EPGBroadcast</returns>
-        public EPGBroadcast GetEPGByDate (DateTime? date = null, bool? withunpublished = null)
+        /// <returns>EPGResults</returns>
+        public EPGResults GetEPGByDate (DateTime? date = null, bool? withunpublished = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = GetEPGByDateWithHttpInfo(date, withunpublished);
+             ApiResponse<EPGResults> localVarResponse = GetEPGByDateWithHttpInfo(date, withunpublished);
              return localVarResponse.Data;
         }
 
@@ -1433,8 +1447,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of EPGBroadcast</returns>
-        public ApiResponse< EPGBroadcast > GetEPGByDateWithHttpInfo (DateTime? date = null, bool? withunpublished = null)
+        /// <returns>ApiResponse of EPGResults</returns>
+        public ApiResponse< EPGResults > GetEPGByDateWithHttpInfo (DateTime? date = null, bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/epg";
@@ -1482,9 +1496,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<EPGBroadcast>(localVarStatusCode,
+            return new ApiResponse<EPGResults>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EPGBroadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGBroadcast)));
+                (EPGResults) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGResults)));
         }
 
         /// <summary>
@@ -1493,10 +1507,10 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>Task of EPGBroadcast</returns>
-        public async System.Threading.Tasks.Task<EPGBroadcast> GetEPGByDateAsync (DateTime? date = null, bool? withunpublished = null)
+        /// <returns>Task of EPGResults</returns>
+        public async System.Threading.Tasks.Task<EPGResults> GetEPGByDateAsync (DateTime? date = null, bool? withunpublished = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = await GetEPGByDateAsyncWithHttpInfo(date, withunpublished);
+             ApiResponse<EPGResults> localVarResponse = await GetEPGByDateAsyncWithHttpInfo(date, withunpublished);
              return localVarResponse.Data;
 
         }
@@ -1507,8 +1521,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetEPGByDateAsyncWithHttpInfo (DateTime? date = null, bool? withunpublished = null)
+        /// <returns>Task of ApiResponse (EPGResults)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EPGResults>> GetEPGByDateAsyncWithHttpInfo (DateTime? date = null, bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/epg";
@@ -1555,19 +1569,20 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<EPGBroadcast>(localVarStatusCode,
+            return new ApiResponse<EPGResults>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EPGBroadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGBroadcast)));
+                (EPGResults) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGResults)));
         }
 
         /// <summary>
         /// Get next Broadcast Get next Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Broadcast</returns>
-        public Broadcast GetNextBroadcast ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>BroadcastResult</returns>
+        public BroadcastResult GetNextBroadcast (bool? withunpublished = null)
         {
-             ApiResponse<Broadcast> localVarResponse = GetNextBroadcastWithHttpInfo();
+             ApiResponse<BroadcastResult> localVarResponse = GetNextBroadcastWithHttpInfo(withunpublished);
              return localVarResponse.Data;
         }
 
@@ -1575,8 +1590,9 @@ namespace RadioManager.Api
         /// Get next Broadcast Get next Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Broadcast</returns>
-        public ApiResponse< Broadcast > GetNextBroadcastWithHttpInfo ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>ApiResponse of BroadcastResult</returns>
+        public ApiResponse< BroadcastResult > GetNextBroadcastWithHttpInfo (bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/next";
@@ -1601,6 +1617,7 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1622,19 +1639,20 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Broadcast>(localVarStatusCode,
+            return new ApiResponse<BroadcastResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Broadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Broadcast)));
+                (BroadcastResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BroadcastResult)));
         }
 
         /// <summary>
         /// Get next Broadcast Get next Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Broadcast</returns>
-        public async System.Threading.Tasks.Task<Broadcast> GetNextBroadcastAsync ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of BroadcastResult</returns>
+        public async System.Threading.Tasks.Task<BroadcastResult> GetNextBroadcastAsync (bool? withunpublished = null)
         {
-             ApiResponse<Broadcast> localVarResponse = await GetNextBroadcastAsyncWithHttpInfo();
+             ApiResponse<BroadcastResult> localVarResponse = await GetNextBroadcastAsyncWithHttpInfo(withunpublished);
              return localVarResponse.Data;
 
         }
@@ -1643,8 +1661,9 @@ namespace RadioManager.Api
         /// Get next Broadcast Get next Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Broadcast)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Broadcast>> GetNextBroadcastAsyncWithHttpInfo ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (BroadcastResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BroadcastResult>> GetNextBroadcastAsyncWithHttpInfo (bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/next";
@@ -1669,6 +1688,7 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1689,9 +1709,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Broadcast>(localVarStatusCode,
+            return new ApiResponse<BroadcastResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Broadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Broadcast)));
+                (BroadcastResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BroadcastResult)));
         }
 
         /// <summary>
@@ -1700,10 +1720,10 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>EPGBroadcast</returns>
-        public EPGBroadcast GetWeeklyEPG (string date = null, bool? withunpublished = null)
+        /// <returns>EPGResults</returns>
+        public EPGResults GetWeeklyEPG (string date = null, bool? withunpublished = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = GetWeeklyEPGWithHttpInfo(date, withunpublished);
+             ApiResponse<EPGResults> localVarResponse = GetWeeklyEPGWithHttpInfo(date, withunpublished);
              return localVarResponse.Data;
         }
 
@@ -1713,8 +1733,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of EPGBroadcast</returns>
-        public ApiResponse< EPGBroadcast > GetWeeklyEPGWithHttpInfo (string date = null, bool? withunpublished = null)
+        /// <returns>ApiResponse of EPGResults</returns>
+        public ApiResponse< EPGResults > GetWeeklyEPGWithHttpInfo (string date = null, bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/epg/weekly";
@@ -1762,9 +1782,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<EPGBroadcast>(localVarStatusCode,
+            return new ApiResponse<EPGResults>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EPGBroadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGBroadcast)));
+                (EPGResults) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGResults)));
         }
 
         /// <summary>
@@ -1773,10 +1793,10 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>Task of EPGBroadcast</returns>
-        public async System.Threading.Tasks.Task<EPGBroadcast> GetWeeklyEPGAsync (string date = null, bool? withunpublished = null)
+        /// <returns>Task of EPGResults</returns>
+        public async System.Threading.Tasks.Task<EPGResults> GetWeeklyEPGAsync (string date = null, bool? withunpublished = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = await GetWeeklyEPGAsyncWithHttpInfo(date, withunpublished);
+             ApiResponse<EPGResults> localVarResponse = await GetWeeklyEPGAsyncWithHttpInfo(date, withunpublished);
              return localVarResponse.Data;
 
         }
@@ -1787,8 +1807,8 @@ namespace RadioManager.Api
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="date">Date *(Optional)* (optional)</param>
         /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> GetWeeklyEPGAsyncWithHttpInfo (string date = null, bool? withunpublished = null)
+        /// <returns>Task of ApiResponse (EPGResults)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EPGResults>> GetWeeklyEPGAsyncWithHttpInfo (string date = null, bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/epg/weekly";
@@ -1835,9 +1855,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<EPGBroadcast>(localVarStatusCode,
+            return new ApiResponse<EPGResults>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EPGBroadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGBroadcast)));
+                (EPGResults) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGResults)));
         }
 
         /// <summary>
@@ -2066,10 +2086,10 @@ namespace RadioManager.Api
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <returns>EPGBroadcast</returns>
-        public EPGBroadcast PrintBroadcastById (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
+        /// <returns>EPGResults</returns>
+        public EPGResults PrintBroadcastById (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = PrintBroadcastByIdWithHttpInfo(id, programId, presenterId, tagId);
+             ApiResponse<EPGResults> localVarResponse = PrintBroadcastByIdWithHttpInfo(id, programId, presenterId, tagId);
              return localVarResponse.Data;
         }
 
@@ -2081,8 +2101,8 @@ namespace RadioManager.Api
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <returns>ApiResponse of EPGBroadcast</returns>
-        public ApiResponse< EPGBroadcast > PrintBroadcastByIdWithHttpInfo (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
+        /// <returns>ApiResponse of EPGResults</returns>
+        public ApiResponse< EPGResults > PrintBroadcastByIdWithHttpInfo (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2135,9 +2155,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<EPGBroadcast>(localVarStatusCode,
+            return new ApiResponse<EPGResults>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EPGBroadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGBroadcast)));
+                (EPGResults) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGResults)));
         }
 
         /// <summary>
@@ -2148,10 +2168,10 @@ namespace RadioManager.Api
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <returns>Task of EPGBroadcast</returns>
-        public async System.Threading.Tasks.Task<EPGBroadcast> PrintBroadcastByIdAsync (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
+        /// <returns>Task of EPGResults</returns>
+        public async System.Threading.Tasks.Task<EPGResults> PrintBroadcastByIdAsync (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
         {
-             ApiResponse<EPGBroadcast> localVarResponse = await PrintBroadcastByIdAsyncWithHttpInfo(id, programId, presenterId, tagId);
+             ApiResponse<EPGResults> localVarResponse = await PrintBroadcastByIdAsyncWithHttpInfo(id, programId, presenterId, tagId);
              return localVarResponse.Data;
 
         }
@@ -2164,8 +2184,8 @@ namespace RadioManager.Api
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <returns>Task of ApiResponse (EPGBroadcast)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EPGBroadcast>> PrintBroadcastByIdAsyncWithHttpInfo (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
+        /// <returns>Task of ApiResponse (EPGResults)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EPGResults>> PrintBroadcastByIdAsyncWithHttpInfo (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2217,9 +2237,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<EPGBroadcast>(localVarStatusCode,
+            return new ApiResponse<EPGResults>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EPGBroadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGBroadcast)));
+                (EPGResults) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EPGResults)));
         }
 
         /// <summary>

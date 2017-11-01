@@ -44,7 +44,7 @@ namespace RadioManager.Model
         /// <param name="Firstname">Firstname (required).</param>
         /// <param name="Lastname">Lastname (required).</param>
         /// <param name="Phone">Phone.</param>
-        public ContactDataInput(long? ModelTypeId = default(long?), ContactFieldValues FieldValues = default(ContactFieldValues), string Email = default(string), string Firstname = default(string), string Lastname = default(string), string Phone = default(string))
+        public ContactDataInput(long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Email = default(string), string Firstname = default(string), string Lastname = default(string), string Phone = default(string))
         {
             // to ensure "ModelTypeId" is required (not null)
             if (ModelTypeId == null)
@@ -88,7 +88,7 @@ namespace RadioManager.Model
         /// Gets or Sets FieldValues
         /// </summary>
         [DataMember(Name="field_values", EmitDefaultValue=false)]
-        public ContactFieldValues FieldValues { get; set; }
+        public Object FieldValues { get; set; }
 
         /// <summary>
         /// Gets or Sets Email

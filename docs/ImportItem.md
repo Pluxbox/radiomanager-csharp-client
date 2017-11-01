@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ModelTypeId** | **long?** |  | 
 **ExternalId** | **string** |  | 
-**FieldValues** | [**ImportItemFieldValues**](ImportItemFieldValues.md) |  | [optional] 
+**FieldValues** | **Object** |  | [optional] 
 **Title** | **string** |  | [optional] 
 **Duration** | **long?** |  | [optional] 
 **Start** | **DateTime?** |  | [optional] 
