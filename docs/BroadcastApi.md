@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 <a name="getcurrentbroadcast"></a>
 # **GetCurrentBroadcast**
-> Broadcast GetCurrentBroadcast ()
+> BroadcastResult GetCurrentBroadcast (bool? withunpublished = null)
 
 Get current Broadcast
 
@@ -245,11 +245,12 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
+            var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
 
             try
             {
                 // Get current Broadcast
-                Broadcast result = apiInstance.GetCurrentBroadcast();
+                BroadcastResult result = apiInstance.GetCurrentBroadcast(withunpublished);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -262,11 +263,14 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **withunpublished** | **bool?**| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
-[**Broadcast**](Broadcast.md)
+[**BroadcastResult**](BroadcastResult.md)
 
 ### Authorization
 
@@ -417,7 +421,7 @@ Name | Type | Description  | Notes
 
 <a name="getnextbroadcast"></a>
 # **GetNextBroadcast**
-> Broadcast GetNextBroadcast ()
+> BroadcastResult GetNextBroadcast (bool? withunpublished = null)
 
 Get next Broadcast
 
@@ -443,11 +447,12 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
+            var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
 
             try
             {
                 // Get next Broadcast
-                Broadcast result = apiInstance.GetNextBroadcast();
+                BroadcastResult result = apiInstance.GetNextBroadcast(withunpublished);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -460,11 +465,14 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **withunpublished** | **bool?**| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
-[**Broadcast**](Broadcast.md)
+[**BroadcastResult**](BroadcastResult.md)
 
 ### Authorization
 

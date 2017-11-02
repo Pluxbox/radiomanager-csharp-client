@@ -96,8 +96,9 @@ namespace RadioManager.Api
         /// Get current Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Broadcast</returns>
-        Broadcast GetCurrentBroadcast ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>BroadcastResult</returns>
+        BroadcastResult GetCurrentBroadcast (bool? withunpublished = null);
 
         /// <summary>
         /// Get current Broadcast
@@ -106,8 +107,9 @@ namespace RadioManager.Api
         /// Get current Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Broadcast</returns>
-        ApiResponse<Broadcast> GetCurrentBroadcastWithHttpInfo ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>ApiResponse of BroadcastResult</returns>
+        ApiResponse<BroadcastResult> GetCurrentBroadcastWithHttpInfo (bool? withunpublished = null);
         /// <summary>
         /// Get daily EPG
         /// </summary>
@@ -161,8 +163,9 @@ namespace RadioManager.Api
         /// Get next Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Broadcast</returns>
-        Broadcast GetNextBroadcast ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>BroadcastResult</returns>
+        BroadcastResult GetNextBroadcast (bool? withunpublished = null);
 
         /// <summary>
         /// Get next Broadcast
@@ -171,8 +174,9 @@ namespace RadioManager.Api
         /// Get next Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Broadcast</returns>
-        ApiResponse<Broadcast> GetNextBroadcastWithHttpInfo ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>ApiResponse of BroadcastResult</returns>
+        ApiResponse<BroadcastResult> GetNextBroadcastWithHttpInfo (bool? withunpublished = null);
         /// <summary>
         /// Get weekly EPG
         /// </summary>
@@ -367,8 +371,9 @@ namespace RadioManager.Api
         /// Get current Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Broadcast</returns>
-        System.Threading.Tasks.Task<Broadcast> GetCurrentBroadcastAsync ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of BroadcastResult</returns>
+        System.Threading.Tasks.Task<BroadcastResult> GetCurrentBroadcastAsync (bool? withunpublished = null);
 
         /// <summary>
         /// Get current Broadcast
@@ -377,8 +382,9 @@ namespace RadioManager.Api
         /// Get current Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Broadcast)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Broadcast>> GetCurrentBroadcastAsyncWithHttpInfo ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (BroadcastResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BroadcastResult>> GetCurrentBroadcastAsyncWithHttpInfo (bool? withunpublished = null);
         /// <summary>
         /// Get daily EPG
         /// </summary>
@@ -432,8 +438,9 @@ namespace RadioManager.Api
         /// Get next Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Broadcast</returns>
-        System.Threading.Tasks.Task<Broadcast> GetNextBroadcastAsync ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of BroadcastResult</returns>
+        System.Threading.Tasks.Task<BroadcastResult> GetNextBroadcastAsync (bool? withunpublished = null);
 
         /// <summary>
         /// Get next Broadcast
@@ -442,8 +449,9 @@ namespace RadioManager.Api
         /// Get next Broadcast
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Broadcast)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Broadcast>> GetNextBroadcastAsyncWithHttpInfo ();
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (BroadcastResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BroadcastResult>> GetNextBroadcastAsyncWithHttpInfo (bool? withunpublished = null);
         /// <summary>
         /// Get weekly EPG
         /// </summary>
@@ -1138,10 +1146,11 @@ namespace RadioManager.Api
         /// Get current Broadcast Get current Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Broadcast</returns>
-        public Broadcast GetCurrentBroadcast ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>BroadcastResult</returns>
+        public BroadcastResult GetCurrentBroadcast (bool? withunpublished = null)
         {
-             ApiResponse<Broadcast> localVarResponse = GetCurrentBroadcastWithHttpInfo();
+             ApiResponse<BroadcastResult> localVarResponse = GetCurrentBroadcastWithHttpInfo(withunpublished);
              return localVarResponse.Data;
         }
 
@@ -1149,8 +1158,9 @@ namespace RadioManager.Api
         /// Get current Broadcast Get current Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Broadcast</returns>
-        public ApiResponse< Broadcast > GetCurrentBroadcastWithHttpInfo ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>ApiResponse of BroadcastResult</returns>
+        public ApiResponse< BroadcastResult > GetCurrentBroadcastWithHttpInfo (bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/current";
@@ -1175,6 +1185,7 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1196,19 +1207,20 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Broadcast>(localVarStatusCode,
+            return new ApiResponse<BroadcastResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Broadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Broadcast)));
+                (BroadcastResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BroadcastResult)));
         }
 
         /// <summary>
         /// Get current Broadcast Get current Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Broadcast</returns>
-        public async System.Threading.Tasks.Task<Broadcast> GetCurrentBroadcastAsync ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of BroadcastResult</returns>
+        public async System.Threading.Tasks.Task<BroadcastResult> GetCurrentBroadcastAsync (bool? withunpublished = null)
         {
-             ApiResponse<Broadcast> localVarResponse = await GetCurrentBroadcastAsyncWithHttpInfo();
+             ApiResponse<BroadcastResult> localVarResponse = await GetCurrentBroadcastAsyncWithHttpInfo(withunpublished);
              return localVarResponse.Data;
 
         }
@@ -1217,8 +1229,9 @@ namespace RadioManager.Api
         /// Get current Broadcast Get current Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Broadcast)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Broadcast>> GetCurrentBroadcastAsyncWithHttpInfo ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (BroadcastResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BroadcastResult>> GetCurrentBroadcastAsyncWithHttpInfo (bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/current";
@@ -1243,6 +1256,7 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1263,9 +1277,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Broadcast>(localVarStatusCode,
+            return new ApiResponse<BroadcastResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Broadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Broadcast)));
+                (BroadcastResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BroadcastResult)));
         }
 
         /// <summary>
@@ -1564,10 +1578,11 @@ namespace RadioManager.Api
         /// Get next Broadcast Get next Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Broadcast</returns>
-        public Broadcast GetNextBroadcast ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>BroadcastResult</returns>
+        public BroadcastResult GetNextBroadcast (bool? withunpublished = null)
         {
-             ApiResponse<Broadcast> localVarResponse = GetNextBroadcastWithHttpInfo();
+             ApiResponse<BroadcastResult> localVarResponse = GetNextBroadcastWithHttpInfo(withunpublished);
              return localVarResponse.Data;
         }
 
@@ -1575,8 +1590,9 @@ namespace RadioManager.Api
         /// Get next Broadcast Get next Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Broadcast</returns>
-        public ApiResponse< Broadcast > GetNextBroadcastWithHttpInfo ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>ApiResponse of BroadcastResult</returns>
+        public ApiResponse< BroadcastResult > GetNextBroadcastWithHttpInfo (bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/next";
@@ -1601,6 +1617,7 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1622,19 +1639,20 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Broadcast>(localVarStatusCode,
+            return new ApiResponse<BroadcastResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Broadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Broadcast)));
+                (BroadcastResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BroadcastResult)));
         }
 
         /// <summary>
         /// Get next Broadcast Get next Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Broadcast</returns>
-        public async System.Threading.Tasks.Task<Broadcast> GetNextBroadcastAsync ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of BroadcastResult</returns>
+        public async System.Threading.Tasks.Task<BroadcastResult> GetNextBroadcastAsync (bool? withunpublished = null)
         {
-             ApiResponse<Broadcast> localVarResponse = await GetNextBroadcastAsyncWithHttpInfo();
+             ApiResponse<BroadcastResult> localVarResponse = await GetNextBroadcastAsyncWithHttpInfo(withunpublished);
              return localVarResponse.Data;
 
         }
@@ -1643,8 +1661,9 @@ namespace RadioManager.Api
         /// Get next Broadcast Get next Broadcast
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Broadcast)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Broadcast>> GetNextBroadcastAsyncWithHttpInfo ()
+        /// <param name="withunpublished">Show Unpublished *(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (BroadcastResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BroadcastResult>> GetNextBroadcastAsyncWithHttpInfo (bool? withunpublished = null)
         {
 
             var localVarPath = "/broadcasts/next";
@@ -1669,6 +1688,7 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (withunpublished != null) localVarQueryParams.Add("withunpublished", Configuration.ApiClient.ParameterToString(withunpublished)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -1689,9 +1709,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Broadcast>(localVarStatusCode,
+            return new ApiResponse<BroadcastResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Broadcast) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Broadcast)));
+                (BroadcastResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BroadcastResult)));
         }
 
         /// <summary>

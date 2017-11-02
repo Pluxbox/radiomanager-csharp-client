@@ -59,7 +59,7 @@ namespace RadioManager.Model
         /// <param name="StationKey">StationKey.</param>
         /// <param name="Timezone">Timezone.</param>
         /// <param name="TrialDate">TrialDate.</param>
-        public StationResultStation(int? Id = default(int?), string Name = default(string), DateTime? CreatedAt = default(DateTime?), DateTime? UpdatedAt = default(DateTime?), string SystemName = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), string Keywords = default(string), string Description = default(string), string Sms = default(string), string Telephone = default(string), int? GenreId = default(int?), string Language = default(string), bool? Active = default(bool?), string LogoRectangle = default(string), string Logo128x128 = default(string), string Logo320x320 = default(string), string Logo600x600 = default(string), string PayOff = default(string), int? PtyCode = default(int?), string PtyType = default(string), string StationKey = default(string), string Timezone = default(string), DateTime? TrialDate = default(DateTime?))
+        public StationResultStation(int? Id = default(int?), string Name = default(string), DateTime? CreatedAt = default(DateTime?), DateTime? UpdatedAt = default(DateTime?), string SystemName = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), List<string> Keywords = default(List<string>), string Description = default(string), string Sms = default(string), string Telephone = default(string), int? GenreId = default(int?), string Language = default(string), bool? Active = default(bool?), string LogoRectangle = default(string), string Logo128x128 = default(string), string Logo320x320 = default(string), string Logo600x600 = default(string), string PayOff = default(string), int? PtyCode = default(int?), string PtyType = default(string), string StationKey = default(string), string Timezone = default(string), DateTime? TrialDate = default(DateTime?))
         {
             this.Id = Id;
             this.Name = Name;
@@ -147,7 +147,7 @@ namespace RadioManager.Model
         /// Gets or Sets Keywords
         /// </summary>
         [DataMember(Name="keywords", EmitDefaultValue=false)]
-        public string Keywords { get; set; }
+        public List<string> Keywords { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
@@ -363,7 +363,7 @@ namespace RadioManager.Model
                 (
                     this.Keywords == other.Keywords ||
                     this.Keywords != null &&
-                    this.Keywords.Equals(other.Keywords)
+                    this.Keywords.SequenceEqual(other.Keywords)
                 ) && 
                 (
                     this.Description == other.Description ||

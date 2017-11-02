@@ -3,7 +3,7 @@
 Pluxbox RadioManager gives you the power, flexibility and speed you always wanted in a lightweight and easy-to-use web-based radio solution. With Pluxbox RadioManager you can organise your radio workflow and automate your omnichannel communication with your listeners. We offer wide range specialised services for the radio and connections like Hybrid Radio, Visual Radio, your website and social media without losing focus on your broadcast. For more information visit: pluxbox.com
 
 - API version: 2.0
-- SDK version: 1.1.1
+- SDK version: 1.1.2
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
     For more information, please visit [https://pluxbox.com](https://pluxbox.com)
 
