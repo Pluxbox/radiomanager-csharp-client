@@ -58,8 +58,7 @@ namespace RadioManager.Model
         /// <param name="PtyType">PtyType.</param>
         /// <param name="StationKey">StationKey.</param>
         /// <param name="Timezone">Timezone.</param>
-        /// <param name="TrialDate">TrialDate.</param>
-        public StationResultStation(int? Id = default(int?), string Name = default(string), DateTime? CreatedAt = default(DateTime?), DateTime? UpdatedAt = default(DateTime?), string SystemName = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), List<string> Keywords = default(List<string>), string Description = default(string), string Sms = default(string), string Telephone = default(string), int? GenreId = default(int?), string Language = default(string), bool? Active = default(bool?), string LogoRectangle = default(string), string Logo128x128 = default(string), string Logo320x320 = default(string), string Logo600x600 = default(string), string PayOff = default(string), int? PtyCode = default(int?), string PtyType = default(string), string StationKey = default(string), string Timezone = default(string), DateTime? TrialDate = default(DateTime?))
+        public StationResultStation(int? Id = default(int?), string Name = default(string), DateTime? CreatedAt = default(DateTime?), DateTime? UpdatedAt = default(DateTime?), string SystemName = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), List<string> Keywords = default(List<string>), string Description = default(string), string Sms = default(string), string Telephone = default(string), int? GenreId = default(int?), string Language = default(string), bool? Active = default(bool?), string LogoRectangle = default(string), string Logo128x128 = default(string), string Logo320x320 = default(string), string Logo600x600 = default(string), string PayOff = default(string), int? PtyCode = default(int?), string PtyType = default(string), string StationKey = default(string), string Timezone = default(string))
         {
             this.Id = Id;
             this.Name = Name;
@@ -86,7 +85,6 @@ namespace RadioManager.Model
             this.PtyType = PtyType;
             this.StationKey = StationKey;
             this.Timezone = Timezone;
-            this.TrialDate = TrialDate;
         }
         
         /// <summary>
@@ -240,12 +238,6 @@ namespace RadioManager.Model
         public string Timezone { get; set; }
 
         /// <summary>
-        /// Gets or Sets TrialDate
-        /// </summary>
-        [DataMember(Name="trial_date", EmitDefaultValue=false)]
-        public DateTime? TrialDate { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -278,7 +270,6 @@ namespace RadioManager.Model
             sb.Append("  PtyType: ").Append(PtyType).Append("\n");
             sb.Append("  StationKey: ").Append(StationKey).Append("\n");
             sb.Append("  Timezone: ").Append(Timezone).Append("\n");
-            sb.Append("  TrialDate: ").Append(TrialDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -439,11 +430,6 @@ namespace RadioManager.Model
                     this.Timezone == other.Timezone ||
                     this.Timezone != null &&
                     this.Timezone.Equals(other.Timezone)
-                ) && 
-                (
-                    this.TrialDate == other.TrialDate ||
-                    this.TrialDate != null &&
-                    this.TrialDate.Equals(other.TrialDate)
                 );
         }
 
@@ -508,8 +494,6 @@ namespace RadioManager.Model
                     hash = hash * 59 + this.StationKey.GetHashCode();
                 if (this.Timezone != null)
                     hash = hash * 59 + this.Timezone.GetHashCode();
-                if (this.TrialDate != null)
-                    hash = hash * 59 + this.TrialDate.GetHashCode();
                 return hash;
             }
         }
