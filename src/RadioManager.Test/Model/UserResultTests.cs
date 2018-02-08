@@ -153,12 +153,12 @@ namespace RadioManager.Test
             // TODO unit test for the property 'ActiveExternalStationId'
         }
         /// <summary>
-        /// Test the property 'RoleId'
+        /// Test the property 'Roles'
         /// </summary>
         [Test]
-        public void RoleIdTest()
+        public void RolesTest()
         {
-            // TODO unit test for the property 'RoleId'
+            // TODO unit test for the property 'Roles'
         }
 
     }

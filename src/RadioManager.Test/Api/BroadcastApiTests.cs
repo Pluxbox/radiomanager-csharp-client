@@ -108,8 +108,9 @@ namespace RadioManager.Test
         public void GetCurrentBroadcastTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetCurrentBroadcast();
-            //Assert.IsInstanceOf<Broadcast> (response, "response is Broadcast");
+            //bool? withunpublished = null;
+            //var response = instance.GetCurrentBroadcast(withunpublished);
+            //Assert.IsInstanceOf<BroadcastResult> (response, "response is BroadcastResult");
         }
         
         /// <summary>
@@ -145,8 +146,9 @@ namespace RadioManager.Test
         public void GetNextBroadcastTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetNextBroadcast();
-            //Assert.IsInstanceOf<Broadcast> (response, "response is Broadcast");
+            //bool? withunpublished = null;
+            //var response = instance.GetNextBroadcast(withunpublished);
+            //Assert.IsInstanceOf<BroadcastResult> (response, "response is BroadcastResult");
         }
         
         /// <summary>

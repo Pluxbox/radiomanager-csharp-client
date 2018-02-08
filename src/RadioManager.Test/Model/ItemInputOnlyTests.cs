@@ -73,6 +73,14 @@ namespace RadioManager.Test
             // TODO unit test for the property 'PreviousId'
         }
         /// <summary>
+        /// Test the property 'BeforeId'
+        /// </summary>
+        [Test]
+        public void BeforeIdTest()
+        {
+            // TODO unit test for the property 'BeforeId'
+        }
+        /// <summary>
         /// Test the property 'Contacts'
         /// </summary>
         [Test]
