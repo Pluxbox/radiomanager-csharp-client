@@ -34,11 +34,13 @@ namespace RadioManager.Model
         /// Initializes a new instance of the <see cref="ItemInputOnly" /> class.
         /// </summary>
         /// <param name="PreviousId">PreviousId.</param>
+        /// <param name="BeforeId">BeforeId.</param>
         /// <param name="Contacts">Contacts.</param>
         /// <param name="Tags">Tags.</param>
-        public ItemInputOnly(long? PreviousId = default(long?), List<int?> Contacts = default(List<int?>), List<int?> Tags = default(List<int?>))
+        public ItemInputOnly(long? PreviousId = default(long?), long? BeforeId = default(long?), List<int?> Contacts = default(List<int?>), List<int?> Tags = default(List<int?>))
         {
             this.PreviousId = PreviousId;
+            this.BeforeId = BeforeId;
             this.Contacts = Contacts;
             this.Tags = Tags;
         }
@@ -48,6 +50,12 @@ namespace RadioManager.Model
         /// </summary>
         [DataMember(Name="_previous_id", EmitDefaultValue=false)]
         public long? PreviousId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets BeforeId
+        /// </summary>
+        [DataMember(Name="_before_id", EmitDefaultValue=false)]
+        public long? BeforeId { get; set; }
 
         /// <summary>
         /// Gets or Sets Contacts
@@ -70,6 +78,7 @@ namespace RadioManager.Model
             var sb = new StringBuilder();
             sb.Append("class ItemInputOnly {\n");
             sb.Append("  PreviousId: ").Append(PreviousId).Append("\n");
+            sb.Append("  BeforeId: ").Append(BeforeId).Append("\n");
             sb.Append("  Contacts: ").Append(Contacts).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
@@ -114,6 +123,11 @@ namespace RadioManager.Model
                     this.PreviousId.Equals(other.PreviousId)
                 ) && 
                 (
+                    this.BeforeId == other.BeforeId ||
+                    this.BeforeId != null &&
+                    this.BeforeId.Equals(other.BeforeId)
+                ) && 
+                (
                     this.Contacts == other.Contacts ||
                     this.Contacts != null &&
                     this.Contacts.SequenceEqual(other.Contacts)
@@ -138,6 +152,8 @@ namespace RadioManager.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.PreviousId != null)
                     hash = hash * 59 + this.PreviousId.GetHashCode();
+                if (this.BeforeId != null)
+                    hash = hash * 59 + this.BeforeId.GetHashCode();
                 if (this.Contacts != null)
                     hash = hash * 59 + this.Contacts.GetHashCode();
                 if (this.Tags != null)

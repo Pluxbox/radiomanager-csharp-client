@@ -188,7 +188,7 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //Item data = null;
+            //ItemDataInput data = null;
             //var response = instance.UpdateItemById(id, data);
             //Assert.IsInstanceOf<Success> (response, "response is Success");
         }

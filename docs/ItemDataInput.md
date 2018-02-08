@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **StaticStart** | **bool?** |  | [optional] 
 **Details** | **string** |  | [optional] 
 **PreviousId** | **long?** |  | [optional] 
+**BeforeId** | **long?** |  | [optional] 
 **Contacts** | **List&lt;int?&gt;** |  | [optional] 
 **Tags** | **List&lt;int?&gt;** |  | [optional] 
 

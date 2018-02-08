@@ -3,7 +3,7 @@
 Pluxbox RadioManager gives you the power, flexibility and speed you always wanted in a lightweight and easy-to-use web-based radio solution. With Pluxbox RadioManager you can organise your radio workflow and automate your omnichannel communication with your listeners. We offer wide range specialised services for the radio and connections like Hybrid Radio, Visual Radio, your website and social media without losing focus on your broadcast. For more information visit: pluxbox.com
 
 - API version: 2.0
-- SDK version: 1.1.2
+- SDK version: 1.1.6
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
     For more information, please visit [https://pluxbox.com](https://pluxbox.com)
 
@@ -101,7 +101,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BlockApi* | [**GetBlockById**](docs/BlockApi.md#getblockbyid) | **GET** /blocks/{id} | Get block by id
 *BlockApi* | [**GetCurrentBlock**](docs/BlockApi.md#getcurrentblock) | **GET** /blocks/current | Get current Block
-*BlockApi* | [**GetNextBlock**](docs/BlockApi.md#getnextblock) | **GET** /blocks/next | Get next Block
+*BlockApi* | [**GetNextBlock**](docs/BlockApi.md#getnextblock) | **GET** /blocks/next | Get upcoming Block
 *BlockApi* | [**ListBlocks**](docs/BlockApi.md#listblocks) | **GET** /blocks | Get a list of all blocks currently in your station.
 *BroadcastApi* | [**CreateBroadcast**](docs/BroadcastApi.md#createbroadcast) | **POST** /broadcasts | Create broadcast.
 *BroadcastApi* | [**DeleteBroadcastById**](docs/BroadcastApi.md#deletebroadcastbyid) | **DELETE** /broadcasts/{id} | Delete broadcast by id
@@ -288,6 +288,7 @@ Class | Method | HTTP request | Description
  - [Model.TooManyRequests](docs/TooManyRequests.md)
  - [Model.UnprocessableEntity](docs/UnprocessableEntity.md)
  - [Model.UserResult](docs/UserResult.md)
+ - [Model.UserResultRoles](docs/UserResultRoles.md)
  - [Model.UserResultSettings](docs/UserResultSettings.md)
  - [Model.UserResults](docs/UserResults.md)
  - [Model.VisualResult](docs/VisualResult.md)

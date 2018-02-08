@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Settings** | [**UserResultSettings**](UserResultSettings.md) |  | [optional] 
 **Language** | **bool?** |  | [optional] 
 **ActiveExternalStationId** | **long?** |  | [optional] 
-**RoleId** | **long?** |  | [optional] 
+**Roles** | [**List&lt;UserResultRoles&gt;**](UserResultRoles.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

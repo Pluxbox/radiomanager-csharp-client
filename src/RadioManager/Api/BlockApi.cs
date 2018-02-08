@@ -67,20 +67,20 @@ namespace RadioManager.Api
         /// <returns>ApiResponse of BlockResult</returns>
         ApiResponse<BlockResult> GetCurrentBlockWithHttpInfo ();
         /// <summary>
-        /// Get next Block
+        /// Get upcoming Block
         /// </summary>
         /// <remarks>
-        /// Get next Block
+        /// Get upcoming Block
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>BlockResult</returns>
         BlockResult GetNextBlock ();
 
         /// <summary>
-        /// Get next Block
+        /// Get upcoming Block
         /// </summary>
         /// <remarks>
-        /// Get next Block
+        /// Get upcoming Block
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of BlockResult</returns>
@@ -169,20 +169,20 @@ namespace RadioManager.Api
         /// <returns>Task of ApiResponse (BlockResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<BlockResult>> GetCurrentBlockAsyncWithHttpInfo ();
         /// <summary>
-        /// Get next Block
+        /// Get upcoming Block
         /// </summary>
         /// <remarks>
-        /// Get next Block
+        /// Get upcoming Block
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of BlockResult</returns>
         System.Threading.Tasks.Task<BlockResult> GetNextBlockAsync ();
 
         /// <summary>
-        /// Get next Block
+        /// Get upcoming Block
         /// </summary>
         /// <remarks>
-        /// Get next Block
+        /// Get upcoming Block
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (BlockResult)</returns>
@@ -625,7 +625,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get next Block Get next Block
+        /// Get upcoming Block Get upcoming Block
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>BlockResult</returns>
@@ -636,7 +636,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get next Block Get next Block
+        /// Get upcoming Block Get upcoming Block
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of BlockResult</returns>
@@ -692,7 +692,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get next Block Get next Block
+        /// Get upcoming Block Get upcoming Block
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of BlockResult</returns>
@@ -704,7 +704,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get next Block Get next Block
+        /// Get upcoming Block Get upcoming Block
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (BlockResult)</returns>

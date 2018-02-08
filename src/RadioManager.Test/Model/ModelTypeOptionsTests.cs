@@ -72,6 +72,14 @@ namespace RadioManager.Test
         {
             // TODO unit test for the property 'Color'
         }
+        /// <summary>
+        /// Test the property 'SubBroadcast'
+        /// </summary>
+        [Test]
+        public void SubBroadcastTest()
+        {
+            // TODO unit test for the property 'SubBroadcast'
+        }
 
     }
 

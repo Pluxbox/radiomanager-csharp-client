@@ -75,7 +75,7 @@ Contact: support@pluxbox.com
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\RadioManager\RadioManager.csproj">
-          <Project>{0E762FF3-9CE3-4BBE-A18B-399CC3C0F502}</Project>
+          <Project>{E02A2845-C420-453A-8601-1404CE52DE9C}</Project>
           <Name>RadioManager</Name>
       </ProjectReference>
   </ItemGroup>

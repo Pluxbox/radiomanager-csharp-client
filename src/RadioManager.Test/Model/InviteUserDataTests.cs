@@ -73,12 +73,12 @@ namespace RadioManager.Test
             // TODO unit test for the property 'Email'
         }
         /// <summary>
-        /// Test the property 'RoleId'
+        /// Test the property 'RoleIds'
         /// </summary>
         [Test]
-        public void RoleIdTest()
+        public void RoleIdsTest()
         {
-            // TODO unit test for the property 'RoleId'
+            // TODO unit test for the property 'RoleIds'
         }
 
     }

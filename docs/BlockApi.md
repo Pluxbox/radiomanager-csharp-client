@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetBlockById**](BlockApi.md#getblockbyid) | **GET** /blocks/{id} | Get block by id
 [**GetCurrentBlock**](BlockApi.md#getcurrentblock) | **GET** /blocks/current | Get current Block
-[**GetNextBlock**](BlockApi.md#getnextblock) | **GET** /blocks/next | Get next Block
+[**GetNextBlock**](BlockApi.md#getnextblock) | **GET** /blocks/next | Get upcoming Block
 [**ListBlocks**](BlockApi.md#listblocks) | **GET** /blocks | Get a list of all blocks currently in your station.
 
 
@@ -144,9 +144,9 @@ This endpoint does not need any parameter.
 # **GetNextBlock**
 > BlockResult GetNextBlock ()
 
-Get next Block
+Get upcoming Block
 
-Get next Block
+Get upcoming Block
 
 ### Example
 ```csharp
@@ -171,7 +171,7 @@ namespace Example
 
             try
             {
-                // Get next Block
+                // Get upcoming Block
                 BlockResult result = apiInstance.GetNextBlock();
                 Debug.WriteLine(result);
             }
