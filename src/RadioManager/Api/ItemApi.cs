@@ -242,7 +242,7 @@ namespace RadioManager.Api
         /// <param name="id">ID of Item **(Required)**</param>
         /// <param name="data">Data *(Optional)* (optional)</param>
         /// <returns>Success</returns>
-        Success UpdateItemById (long? id, Item data = null);
+        Success UpdateItemById (long? id, ItemDataInput data = null);
 
         /// <summary>
         /// Update extended item details by ID.
@@ -254,7 +254,7 @@ namespace RadioManager.Api
         /// <param name="id">ID of Item **(Required)**</param>
         /// <param name="data">Data *(Optional)* (optional)</param>
         /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> UpdateItemByIdWithHttpInfo (long? id, Item data = null);
+        ApiResponse<Success> UpdateItemByIdWithHttpInfo (long? id, ItemDataInput data = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -475,7 +475,7 @@ namespace RadioManager.Api
         /// <param name="id">ID of Item **(Required)**</param>
         /// <param name="data">Data *(Optional)* (optional)</param>
         /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> UpdateItemByIdAsync (long? id, Item data = null);
+        System.Threading.Tasks.Task<Success> UpdateItemByIdAsync (long? id, ItemDataInput data = null);
 
         /// <summary>
         /// Update extended item details by ID.
@@ -487,7 +487,7 @@ namespace RadioManager.Api
         /// <param name="id">ID of Item **(Required)**</param>
         /// <param name="data">Data *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> UpdateItemByIdAsyncWithHttpInfo (long? id, Item data = null);
+        System.Threading.Tasks.Task<ApiResponse<Success>> UpdateItemByIdAsyncWithHttpInfo (long? id, ItemDataInput data = null);
         #endregion Asynchronous Operations
     }
 
@@ -1929,7 +1929,7 @@ namespace RadioManager.Api
         /// <param name="id">ID of Item **(Required)**</param>
         /// <param name="data">Data *(Optional)* (optional)</param>
         /// <returns>Success</returns>
-        public Success UpdateItemById (long? id, Item data = null)
+        public Success UpdateItemById (long? id, ItemDataInput data = null)
         {
              ApiResponse<Success> localVarResponse = UpdateItemByIdWithHttpInfo(id, data);
              return localVarResponse.Data;
@@ -1942,7 +1942,7 @@ namespace RadioManager.Api
         /// <param name="id">ID of Item **(Required)**</param>
         /// <param name="data">Data *(Optional)* (optional)</param>
         /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > UpdateItemByIdWithHttpInfo (long? id, Item data = null)
+        public ApiResponse< Success > UpdateItemByIdWithHttpInfo (long? id, ItemDataInput data = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2012,7 +2012,7 @@ namespace RadioManager.Api
         /// <param name="id">ID of Item **(Required)**</param>
         /// <param name="data">Data *(Optional)* (optional)</param>
         /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> UpdateItemByIdAsync (long? id, Item data = null)
+        public async System.Threading.Tasks.Task<Success> UpdateItemByIdAsync (long? id, ItemDataInput data = null)
         {
              ApiResponse<Success> localVarResponse = await UpdateItemByIdAsyncWithHttpInfo(id, data);
              return localVarResponse.Data;
@@ -2026,7 +2026,7 @@ namespace RadioManager.Api
         /// <param name="id">ID of Item **(Required)**</param>
         /// <param name="data">Data *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> UpdateItemByIdAsyncWithHttpInfo (long? id, Item data = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Success>> UpdateItemByIdAsyncWithHttpInfo (long? id, ItemDataInput data = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)

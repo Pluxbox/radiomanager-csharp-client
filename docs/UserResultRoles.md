@@ -1,12 +1,12 @@
-# RadioManager.Model.ItemInputOnly
+# RadioManager.Model.UserResultRoles
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PreviousId** | **long?** |  | [optional] 
-**BeforeId** | **long?** |  | [optional] 
-**Contacts** | **List&lt;int?&gt;** |  | [optional] 
-**Tags** | **List&lt;int?&gt;** |  | [optional] 
+**Href** | **string** |  | [optional] 
+**Model** | **string** |  | [optional] 
+**Operation** | **string** |  | [optional] 
+**_Params** | **long?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

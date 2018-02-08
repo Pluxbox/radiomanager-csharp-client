@@ -49,8 +49,8 @@ namespace RadioManager.Model
         /// <param name="Settings">Settings.</param>
         /// <param name="Language">Language.</param>
         /// <param name="ActiveExternalStationId">ActiveExternalStationId.</param>
-        /// <param name="RoleId">RoleId.</param>
-        public UserResult(long? Id = default(long?), string Email = default(string), string Firstname = default(string), string Lastname = default(string), string Phone = default(string), DateTime? CreatedAt = default(DateTime?), DateTime? UpdatedAt = default(DateTime?), bool? Active = default(bool?), UserResultSettings Settings = default(UserResultSettings), bool? Language = default(bool?), long? ActiveExternalStationId = default(long?), long? RoleId = default(long?))
+        /// <param name="Roles">Roles.</param>
+        public UserResult(long? Id = default(long?), string Email = default(string), string Firstname = default(string), string Lastname = default(string), string Phone = default(string), DateTime? CreatedAt = default(DateTime?), DateTime? UpdatedAt = default(DateTime?), bool? Active = default(bool?), UserResultSettings Settings = default(UserResultSettings), bool? Language = default(bool?), long? ActiveExternalStationId = default(long?), List<UserResultRoles> Roles = default(List<UserResultRoles>))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -95,7 +95,7 @@ namespace RadioManager.Model
             this.Settings = Settings;
             this.Language = Language;
             this.ActiveExternalStationId = ActiveExternalStationId;
-            this.RoleId = RoleId;
+            this.Roles = Roles;
         }
         
         /// <summary>
@@ -165,10 +165,10 @@ namespace RadioManager.Model
         public long? ActiveExternalStationId { get; set; }
 
         /// <summary>
-        /// Gets or Sets RoleId
+        /// Gets or Sets Roles
         /// </summary>
-        [DataMember(Name="role_id", EmitDefaultValue=false)]
-        public long? RoleId { get; set; }
+        [DataMember(Name="roles", EmitDefaultValue=false)]
+        public List<UserResultRoles> Roles { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -189,7 +189,7 @@ namespace RadioManager.Model
             sb.Append("  Settings: ").Append(Settings).Append("\n");
             sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  ActiveExternalStationId: ").Append(ActiveExternalStationId).Append("\n");
-            sb.Append("  RoleId: ").Append(RoleId).Append("\n");
+            sb.Append("  Roles: ").Append(Roles).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -282,9 +282,9 @@ namespace RadioManager.Model
                     this.ActiveExternalStationId.Equals(other.ActiveExternalStationId)
                 ) && 
                 (
-                    this.RoleId == other.RoleId ||
-                    this.RoleId != null &&
-                    this.RoleId.Equals(other.RoleId)
+                    this.Roles == other.Roles ||
+                    this.Roles != null &&
+                    this.Roles.SequenceEqual(other.Roles)
                 );
         }
 
@@ -321,8 +321,8 @@ namespace RadioManager.Model
                     hash = hash * 59 + this.Language.GetHashCode();
                 if (this.ActiveExternalStationId != null)
                     hash = hash * 59 + this.ActiveExternalStationId.GetHashCode();
-                if (this.RoleId != null)
-                    hash = hash * 59 + this.RoleId.GetHashCode();
+                if (this.Roles != null)
+                    hash = hash * 59 + this.Roles.GetHashCode();
                 return hash;
             }
         }

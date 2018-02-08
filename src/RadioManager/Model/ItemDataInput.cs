@@ -86,9 +86,10 @@ namespace RadioManager.Model
         /// <param name="StaticStart">StaticStart.</param>
         /// <param name="Details">Details.</param>
         /// <param name="PreviousId">PreviousId.</param>
+        /// <param name="BeforeId">BeforeId.</param>
         /// <param name="Contacts">Contacts.</param>
         /// <param name="Tags">Tags.</param>
-        public ItemDataInput(long? ModelTypeId = default(long?), long? BlockId = default(long?), string ExternalId = default(string), Object FieldValues = default(Object), string Title = default(string), long? Duration = default(long?), DateTime? Start = default(DateTime?), StatusEnum? Status = default(StatusEnum?), long? Import = default(long?), long? CampaignId = default(long?), bool? Recommended = default(bool?), long? StationDraftId = default(long?), long? ProgramDraftId = default(long?), long? UserDraftId = default(long?), bool? StaticStart = default(bool?), string Details = default(string), long? PreviousId = default(long?), List<int?> Contacts = default(List<int?>), List<int?> Tags = default(List<int?>))
+        public ItemDataInput(long? ModelTypeId = default(long?), long? BlockId = default(long?), string ExternalId = default(string), Object FieldValues = default(Object), string Title = default(string), long? Duration = default(long?), DateTime? Start = default(DateTime?), StatusEnum? Status = default(StatusEnum?), long? Import = default(long?), long? CampaignId = default(long?), bool? Recommended = default(bool?), long? StationDraftId = default(long?), long? ProgramDraftId = default(long?), long? UserDraftId = default(long?), bool? StaticStart = default(bool?), string Details = default(string), long? PreviousId = default(long?), long? BeforeId = default(long?), List<int?> Contacts = default(List<int?>), List<int?> Tags = default(List<int?>))
         {
             // to ensure "ModelTypeId" is required (not null)
             if (ModelTypeId == null)
@@ -115,6 +116,7 @@ namespace RadioManager.Model
             this.StaticStart = StaticStart;
             this.Details = Details;
             this.PreviousId = PreviousId;
+            this.BeforeId = BeforeId;
             this.Contacts = Contacts;
             this.Tags = Tags;
         }
@@ -217,6 +219,12 @@ namespace RadioManager.Model
         public long? PreviousId { get; set; }
 
         /// <summary>
+        /// Gets or Sets BeforeId
+        /// </summary>
+        [DataMember(Name="_before_id", EmitDefaultValue=false)]
+        public long? BeforeId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Contacts
         /// </summary>
         [DataMember(Name="contacts", EmitDefaultValue=false)]
@@ -253,6 +261,7 @@ namespace RadioManager.Model
             sb.Append("  StaticStart: ").Append(StaticStart).Append("\n");
             sb.Append("  Details: ").Append(Details).Append("\n");
             sb.Append("  PreviousId: ").Append(PreviousId).Append("\n");
+            sb.Append("  BeforeId: ").Append(BeforeId).Append("\n");
             sb.Append("  Contacts: ").Append(Contacts).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
@@ -377,6 +386,11 @@ namespace RadioManager.Model
                     this.PreviousId.Equals(other.PreviousId)
                 ) && 
                 (
+                    this.BeforeId == other.BeforeId ||
+                    this.BeforeId != null &&
+                    this.BeforeId.Equals(other.BeforeId)
+                ) && 
+                (
                     this.Contacts == other.Contacts ||
                     this.Contacts != null &&
                     this.Contacts.SequenceEqual(other.Contacts)
@@ -433,6 +447,8 @@ namespace RadioManager.Model
                     hash = hash * 59 + this.Details.GetHashCode();
                 if (this.PreviousId != null)
                     hash = hash * 59 + this.PreviousId.GetHashCode();
+                if (this.BeforeId != null)
+                    hash = hash * 59 + this.BeforeId.GetHashCode();
                 if (this.Contacts != null)
                     hash = hash * 59 + this.Contacts.GetHashCode();
                 if (this.Tags != null)

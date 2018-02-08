@@ -585,7 +585,7 @@ Name | Type | Description  | Notes
 
 <a name="updateitembyid"></a>
 # **UpdateItemById**
-> Success UpdateItemById (long? id, Item data = null)
+> Success UpdateItemById (long? id, ItemDataInput data = null)
 
 Update extended item details by ID.
 
@@ -612,7 +612,7 @@ namespace Example
 
             var apiInstance = new ItemApi();
             var id = 789;  // long? | ID of Item **(Required)**
-            var data = new Item(); // Item | Data *(Optional)* (optional) 
+            var data = new ItemDataInput(); // ItemDataInput | Data *(Optional)* (optional) 
 
             try
             {
@@ -634,7 +634,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of Item **(Required)** | 
- **data** | [**Item**](Item.md)| Data *(Optional)* | [optional] 
+ **data** | [**ItemDataInput**](ItemDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 

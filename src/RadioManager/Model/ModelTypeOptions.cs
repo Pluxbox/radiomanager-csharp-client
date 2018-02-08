@@ -34,9 +34,11 @@ namespace RadioManager.Model
         /// Initializes a new instance of the <see cref="ModelTypeOptions" /> class.
         /// </summary>
         /// <param name="Color">Color.</param>
-        public ModelTypeOptions(string Color = default(string))
+        /// <param name="SubBroadcast">SubBroadcast.</param>
+        public ModelTypeOptions(string Color = default(string), bool? SubBroadcast = default(bool?))
         {
             this.Color = Color;
+            this.SubBroadcast = SubBroadcast;
         }
         
         /// <summary>
@@ -44,6 +46,12 @@ namespace RadioManager.Model
         /// </summary>
         [DataMember(Name="color", EmitDefaultValue=false)]
         public string Color { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SubBroadcast
+        /// </summary>
+        [DataMember(Name="subBroadcast", EmitDefaultValue=false)]
+        public bool? SubBroadcast { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,6 +62,7 @@ namespace RadioManager.Model
             var sb = new StringBuilder();
             sb.Append("class ModelTypeOptions {\n");
             sb.Append("  Color: ").Append(Color).Append("\n");
+            sb.Append("  SubBroadcast: ").Append(SubBroadcast).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,6 +103,11 @@ namespace RadioManager.Model
                     this.Color == other.Color ||
                     this.Color != null &&
                     this.Color.Equals(other.Color)
+                ) && 
+                (
+                    this.SubBroadcast == other.SubBroadcast ||
+                    this.SubBroadcast != null &&
+                    this.SubBroadcast.Equals(other.SubBroadcast)
                 );
         }
 
@@ -110,6 +124,8 @@ namespace RadioManager.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Color != null)
                     hash = hash * 59 + this.Color.GetHashCode();
+                if (this.SubBroadcast != null)
+                    hash = hash * 59 + this.SubBroadcast.GetHashCode();
                 return hash;
             }
         }

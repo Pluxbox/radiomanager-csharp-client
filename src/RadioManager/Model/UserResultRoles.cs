@@ -25,54 +25,49 @@ using SwaggerDateConverter = RadioManager.Client.SwaggerDateConverter;
 namespace RadioManager.Model
 {
     /// <summary>
-    /// InviteUserData
+    /// UserResultRoles
     /// </summary>
     [DataContract]
-    public partial class InviteUserData :  IEquatable<InviteUserData>, IValidatableObject
+    public partial class UserResultRoles :  IEquatable<UserResultRoles>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InviteUserData" /> class.
+        /// Initializes a new instance of the <see cref="UserResultRoles" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InviteUserData() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InviteUserData" /> class.
-        /// </summary>
-        /// <param name="Email">Email (required).</param>
-        /// <param name="RoleIds">RoleIds (required).</param>
-        public InviteUserData(string Email = default(string), List<int?> RoleIds = default(List<int?>))
+        /// <param name="Href">Href.</param>
+        /// <param name="Model">Model.</param>
+        /// <param name="Operation">Operation.</param>
+        /// <param name="_Params">_Params.</param>
+        public UserResultRoles(string Href = default(string), string Model = default(string), string Operation = default(string), long? _Params = default(long?))
         {
-            // to ensure "Email" is required (not null)
-            if (Email == null)
-            {
-                throw new InvalidDataException("Email is a required property for InviteUserData and cannot be null");
-            }
-            else
-            {
-                this.Email = Email;
-            }
-            // to ensure "RoleIds" is required (not null)
-            if (RoleIds == null)
-            {
-                throw new InvalidDataException("RoleIds is a required property for InviteUserData and cannot be null");
-            }
-            else
-            {
-                this.RoleIds = RoleIds;
-            }
+            this.Href = Href;
+            this.Model = Model;
+            this.Operation = Operation;
+            this._Params = _Params;
         }
         
         /// <summary>
-        /// Gets or Sets Email
+        /// Gets or Sets Href
         /// </summary>
-        [DataMember(Name="email", EmitDefaultValue=false)]
-        public string Email { get; set; }
+        [DataMember(Name="href", EmitDefaultValue=false)]
+        public string Href { get; set; }
 
         /// <summary>
-        /// Gets or Sets RoleIds
+        /// Gets or Sets Model
         /// </summary>
-        [DataMember(Name="role_ids", EmitDefaultValue=false)]
-        public List<int?> RoleIds { get; set; }
+        [DataMember(Name="model", EmitDefaultValue=false)]
+        public string Model { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Operation
+        /// </summary>
+        [DataMember(Name="operation", EmitDefaultValue=false)]
+        public string Operation { get; set; }
+
+        /// <summary>
+        /// Gets or Sets _Params
+        /// </summary>
+        [DataMember(Name="params", EmitDefaultValue=false)]
+        public long? _Params { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -81,9 +76,11 @@ namespace RadioManager.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InviteUserData {\n");
-            sb.Append("  Email: ").Append(Email).Append("\n");
-            sb.Append("  RoleIds: ").Append(RoleIds).Append("\n");
+            sb.Append("class UserResultRoles {\n");
+            sb.Append("  Href: ").Append(Href).Append("\n");
+            sb.Append("  Model: ").Append(Model).Append("\n");
+            sb.Append("  Operation: ").Append(Operation).Append("\n");
+            sb.Append("  _Params: ").Append(_Params).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,15 +102,15 @@ namespace RadioManager.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as InviteUserData);
+            return this.Equals(obj as UserResultRoles);
         }
 
         /// <summary>
-        /// Returns true if InviteUserData instances are equal
+        /// Returns true if UserResultRoles instances are equal
         /// </summary>
-        /// <param name="other">Instance of InviteUserData to be compared</param>
+        /// <param name="other">Instance of UserResultRoles to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InviteUserData other)
+        public bool Equals(UserResultRoles other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -121,14 +118,24 @@ namespace RadioManager.Model
 
             return 
                 (
-                    this.Email == other.Email ||
-                    this.Email != null &&
-                    this.Email.Equals(other.Email)
+                    this.Href == other.Href ||
+                    this.Href != null &&
+                    this.Href.Equals(other.Href)
                 ) && 
                 (
-                    this.RoleIds == other.RoleIds ||
-                    this.RoleIds != null &&
-                    this.RoleIds.SequenceEqual(other.RoleIds)
+                    this.Model == other.Model ||
+                    this.Model != null &&
+                    this.Model.Equals(other.Model)
+                ) && 
+                (
+                    this.Operation == other.Operation ||
+                    this.Operation != null &&
+                    this.Operation.Equals(other.Operation)
+                ) && 
+                (
+                    this._Params == other._Params ||
+                    this._Params != null &&
+                    this._Params.Equals(other._Params)
                 );
         }
 
@@ -143,10 +150,14 @@ namespace RadioManager.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Email != null)
-                    hash = hash * 59 + this.Email.GetHashCode();
-                if (this.RoleIds != null)
-                    hash = hash * 59 + this.RoleIds.GetHashCode();
+                if (this.Href != null)
+                    hash = hash * 59 + this.Href.GetHashCode();
+                if (this.Model != null)
+                    hash = hash * 59 + this.Model.GetHashCode();
+                if (this.Operation != null)
+                    hash = hash * 59 + this.Operation.GetHashCode();
+                if (this._Params != null)
+                    hash = hash * 59 + this._Params.GetHashCode();
                 return hash;
             }
         }
