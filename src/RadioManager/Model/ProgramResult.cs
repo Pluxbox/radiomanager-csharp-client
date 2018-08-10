@@ -56,13 +56,14 @@ namespace RadioManager.Model
         /// <param name="Recommended">Recommended.</param>
         /// <param name="Language">Language.</param>
         /// <param name="PtyCodeId">PtyCodeId.</param>
+        /// <param name="Genre">Genre.</param>
         /// <param name="Items">Items.</param>
         /// <param name="Blocks">Blocks.</param>
         /// <param name="Broadcasts">Broadcasts.</param>
         /// <param name="Presenters">Presenters.</param>
         /// <param name="Tags">Tags.</param>
         /// <param name="ModelType">ModelType.</param>
-        public ProgramResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Title = default(string), bool? Disabled = default(bool?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), long? PtyCodeId = default(long?), ProgramRelationsItems Items = default(ProgramRelationsItems), ProgramRelationsBlocks Blocks = default(ProgramRelationsBlocks), ProgramRelationsBroadcasts Broadcasts = default(ProgramRelationsBroadcasts), ProgramRelationsPresenters Presenters = default(ProgramRelationsPresenters), ProgramRelationsTags Tags = default(ProgramRelationsTags), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
+        public ProgramResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Title = default(string), bool? Disabled = default(bool?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), long? PtyCodeId = default(long?), BroadcastRelationsGenre Genre = default(BroadcastRelationsGenre), ProgramRelationsItems Items = default(ProgramRelationsItems), ProgramRelationsBlocks Blocks = default(ProgramRelationsBlocks), ProgramRelationsBroadcasts Broadcasts = default(ProgramRelationsBroadcasts), ProgramRelationsPresenters Presenters = default(ProgramRelationsPresenters), ProgramRelationsTags Tags = default(ProgramRelationsTags), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -130,6 +131,7 @@ namespace RadioManager.Model
             this.Recommended = Recommended;
             this.Language = Language;
             this.PtyCodeId = PtyCodeId;
+            this.Genre = Genre;
             this.Items = Items;
             this.Blocks = Blocks;
             this.Broadcasts = Broadcasts;
@@ -247,6 +249,12 @@ namespace RadioManager.Model
         public long? PtyCodeId { get; set; }
 
         /// <summary>
+        /// Gets or Sets Genre
+        /// </summary>
+        [DataMember(Name="genre", EmitDefaultValue=false)]
+        public BroadcastRelationsGenre Genre { get; set; }
+
+        /// <summary>
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items", EmitDefaultValue=false)]
@@ -308,6 +316,7 @@ namespace RadioManager.Model
             sb.Append("  Recommended: ").Append(Recommended).Append("\n");
             sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  PtyCodeId: ").Append(PtyCodeId).Append("\n");
+            sb.Append("  Genre: ").Append(Genre).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  Blocks: ").Append(Blocks).Append("\n");
             sb.Append("  Broadcasts: ").Append(Broadcasts).Append("\n");
@@ -441,6 +450,11 @@ namespace RadioManager.Model
                     this.PtyCodeId.Equals(other.PtyCodeId)
                 ) && 
                 (
+                    this.Genre == other.Genre ||
+                    this.Genre != null &&
+                    this.Genre.Equals(other.Genre)
+                ) && 
+                (
                     this.Items == other.Items ||
                     this.Items != null &&
                     this.Items.Equals(other.Items)
@@ -519,6 +533,8 @@ namespace RadioManager.Model
                     hash = hash * 59 + this.Language.GetHashCode();
                 if (this.PtyCodeId != null)
                     hash = hash * 59 + this.PtyCodeId.GetHashCode();
+                if (this.Genre != null)
+                    hash = hash * 59 + this.Genre.GetHashCode();
                 if (this.Items != null)
                     hash = hash * 59 + this.Items.GetHashCode();
                 if (this.Blocks != null)

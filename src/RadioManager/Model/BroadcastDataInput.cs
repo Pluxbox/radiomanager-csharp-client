@@ -521,12 +521,6 @@ namespace RadioManager.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // PtyCodeId (long?) minimum
-            if(this.PtyCodeId < (long?)1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PtyCodeId, must be a value greater than or equal to 1.", new [] { "PtyCodeId" });
-            }
-
             yield break;
         }
     }

@@ -33,14 +33,16 @@ namespace RadioManager.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProgramRelations" /> class.
         /// </summary>
+        /// <param name="Genre">Genre.</param>
         /// <param name="Items">Items.</param>
         /// <param name="Blocks">Blocks.</param>
         /// <param name="Broadcasts">Broadcasts.</param>
         /// <param name="Presenters">Presenters.</param>
         /// <param name="Tags">Tags.</param>
         /// <param name="ModelType">ModelType.</param>
-        public ProgramRelations(ProgramRelationsItems Items = default(ProgramRelationsItems), ProgramRelationsBlocks Blocks = default(ProgramRelationsBlocks), ProgramRelationsBroadcasts Broadcasts = default(ProgramRelationsBroadcasts), ProgramRelationsPresenters Presenters = default(ProgramRelationsPresenters), ProgramRelationsTags Tags = default(ProgramRelationsTags), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
+        public ProgramRelations(BroadcastRelationsGenre Genre = default(BroadcastRelationsGenre), ProgramRelationsItems Items = default(ProgramRelationsItems), ProgramRelationsBlocks Blocks = default(ProgramRelationsBlocks), ProgramRelationsBroadcasts Broadcasts = default(ProgramRelationsBroadcasts), ProgramRelationsPresenters Presenters = default(ProgramRelationsPresenters), ProgramRelationsTags Tags = default(ProgramRelationsTags), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
         {
+            this.Genre = Genre;
             this.Items = Items;
             this.Blocks = Blocks;
             this.Broadcasts = Broadcasts;
@@ -49,6 +51,12 @@ namespace RadioManager.Model
             this.ModelType = ModelType;
         }
         
+        /// <summary>
+        /// Gets or Sets Genre
+        /// </summary>
+        [DataMember(Name="genre", EmitDefaultValue=false)]
+        public BroadcastRelationsGenre Genre { get; set; }
+
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
@@ -93,6 +101,7 @@ namespace RadioManager.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ProgramRelations {\n");
+            sb.Append("  Genre: ").Append(Genre).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  Blocks: ").Append(Blocks).Append("\n");
             sb.Append("  Broadcasts: ").Append(Broadcasts).Append("\n");
@@ -136,6 +145,11 @@ namespace RadioManager.Model
 
             return 
                 (
+                    this.Genre == other.Genre ||
+                    this.Genre != null &&
+                    this.Genre.Equals(other.Genre)
+                ) && 
+                (
                     this.Items == other.Items ||
                     this.Items != null &&
                     this.Items.Equals(other.Items)
@@ -178,6 +192,8 @@ namespace RadioManager.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Genre != null)
+                    hash = hash * 59 + this.Genre.GetHashCode();
                 if (this.Items != null)
                     hash = hash * 59 + this.Items.GetHashCode();
                 if (this.Blocks != null)

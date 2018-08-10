@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Genre** | [**BroadcastRelationsGenre**](BroadcastRelationsGenre.md) |  | [optional] 
 **Items** | [**BroadcastRelationsItems**](BroadcastRelationsItems.md) |  | [optional] 
 **Blocks** | [**BroadcastRelationsBlocks**](BroadcastRelationsBlocks.md) |  | [optional] 
 **Program** | [**BlockRelationsProgram**](BlockRelationsProgram.md) |  | [optional] 

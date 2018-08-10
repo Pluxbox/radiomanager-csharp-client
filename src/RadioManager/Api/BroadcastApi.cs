@@ -248,32 +248,28 @@ namespace RadioManager.Api
         /// <returns>ApiResponse of BroadcastResults</returns>
         ApiResponse<BroadcastResults> ListBroadcastsWithHttpInfo (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
-        /// Print Broadcast by id
+        /// Print broadcast by id with template
         /// </summary>
         /// <remarks>
-        /// Print Broadcast by id
+        /// Print broadcast by id with template
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Broadcast **(Required)**</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="templateId">Search on template ID *(Optional)* (optional)</param>
         /// <returns>EPGResults</returns>
-        EPGResults PrintBroadcastById (long? id, long? programId = null, long? presenterId = null, long? tagId = null);
+        EPGResults PrintBroadcastById (long? id, long? templateId = null);
 
         /// <summary>
-        /// Print Broadcast by id
+        /// Print broadcast by id with template
         /// </summary>
         /// <remarks>
-        /// Print Broadcast by id
+        /// Print broadcast by id with template
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Broadcast **(Required)**</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="templateId">Search on template ID *(Optional)* (optional)</param>
         /// <returns>ApiResponse of EPGResults</returns>
-        ApiResponse<EPGResults> PrintBroadcastByIdWithHttpInfo (long? id, long? programId = null, long? presenterId = null, long? tagId = null);
+        ApiResponse<EPGResults> PrintBroadcastByIdWithHttpInfo (long? id, long? templateId = null);
         /// <summary>
         /// Update broadcast by id
         /// </summary>
@@ -523,32 +519,28 @@ namespace RadioManager.Api
         /// <returns>Task of ApiResponse (BroadcastResults)</returns>
         System.Threading.Tasks.Task<ApiResponse<BroadcastResults>> ListBroadcastsAsyncWithHttpInfo (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
-        /// Print Broadcast by id
+        /// Print broadcast by id with template
         /// </summary>
         /// <remarks>
-        /// Print Broadcast by id
+        /// Print broadcast by id with template
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Broadcast **(Required)**</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="templateId">Search on template ID *(Optional)* (optional)</param>
         /// <returns>Task of EPGResults</returns>
-        System.Threading.Tasks.Task<EPGResults> PrintBroadcastByIdAsync (long? id, long? programId = null, long? presenterId = null, long? tagId = null);
+        System.Threading.Tasks.Task<EPGResults> PrintBroadcastByIdAsync (long? id, long? templateId = null);
 
         /// <summary>
-        /// Print Broadcast by id
+        /// Print broadcast by id with template
         /// </summary>
         /// <remarks>
-        /// Print Broadcast by id
+        /// Print broadcast by id with template
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Broadcast **(Required)**</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="templateId">Search on template ID *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (EPGResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EPGResults>> PrintBroadcastByIdAsyncWithHttpInfo (long? id, long? programId = null, long? presenterId = null, long? tagId = null);
+        System.Threading.Tasks.Task<ApiResponse<EPGResults>> PrintBroadcastByIdAsyncWithHttpInfo (long? id, long? templateId = null);
         /// <summary>
         /// Update broadcast by id
         /// </summary>
@@ -2079,30 +2071,26 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Print Broadcast by id Print Broadcast by id
+        /// Print broadcast by id with template Print broadcast by id with template
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Broadcast **(Required)**</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="templateId">Search on template ID *(Optional)* (optional)</param>
         /// <returns>EPGResults</returns>
-        public EPGResults PrintBroadcastById (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
+        public EPGResults PrintBroadcastById (long? id, long? templateId = null)
         {
-             ApiResponse<EPGResults> localVarResponse = PrintBroadcastByIdWithHttpInfo(id, programId, presenterId, tagId);
+             ApiResponse<EPGResults> localVarResponse = PrintBroadcastByIdWithHttpInfo(id, templateId);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Print Broadcast by id Print Broadcast by id
+        /// Print broadcast by id with template Print broadcast by id with template
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Broadcast **(Required)**</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="templateId">Search on template ID *(Optional)* (optional)</param>
         /// <returns>ApiResponse of EPGResults</returns>
-        public ApiResponse< EPGResults > PrintBroadcastByIdWithHttpInfo (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
+        public ApiResponse< EPGResults > PrintBroadcastByIdWithHttpInfo (long? id, long? templateId = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2131,9 +2119,7 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
-            if (presenterId != null) localVarQueryParams.Add("presenter_id", Configuration.ApiClient.ParameterToString(presenterId)); // query parameter
-            if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
+            if (templateId != null) localVarQueryParams.Add("template_id", Configuration.ApiClient.ParameterToString(templateId)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
@@ -2161,31 +2147,27 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Print Broadcast by id Print Broadcast by id
+        /// Print broadcast by id with template Print broadcast by id with template
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Broadcast **(Required)**</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="templateId">Search on template ID *(Optional)* (optional)</param>
         /// <returns>Task of EPGResults</returns>
-        public async System.Threading.Tasks.Task<EPGResults> PrintBroadcastByIdAsync (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
+        public async System.Threading.Tasks.Task<EPGResults> PrintBroadcastByIdAsync (long? id, long? templateId = null)
         {
-             ApiResponse<EPGResults> localVarResponse = await PrintBroadcastByIdAsyncWithHttpInfo(id, programId, presenterId, tagId);
+             ApiResponse<EPGResults> localVarResponse = await PrintBroadcastByIdAsyncWithHttpInfo(id, templateId);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Print Broadcast by id Print Broadcast by id
+        /// Print broadcast by id with template Print broadcast by id with template
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Broadcast **(Required)**</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="templateId">Search on template ID *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (EPGResults)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EPGResults>> PrintBroadcastByIdAsyncWithHttpInfo (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<EPGResults>> PrintBroadcastByIdAsyncWithHttpInfo (long? id, long? templateId = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2214,9 +2196,7 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
-            if (presenterId != null) localVarQueryParams.Add("presenter_id", Configuration.ApiClient.ParameterToString(presenterId)); // query parameter
-            if (tagId != null) localVarQueryParams.Add("tag_id", Configuration.ApiClient.ParameterToString(tagId)); // query parameter
+            if (templateId != null) localVarQueryParams.Add("template_id", Configuration.ApiClient.ParameterToString(templateId)); // query parameter
 
             // authentication (API Key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))

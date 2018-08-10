@@ -102,13 +102,14 @@ namespace RadioManager.Model
         /// <param name="RepetitionStart">RepetitionStart.</param>
         /// <param name="RepetitionDays">RepetitionDays.</param>
         /// <param name="PtyCodeId">PtyCodeId.</param>
+        /// <param name="Genre">Genre.</param>
         /// <param name="Items">Items.</param>
         /// <param name="Blocks">Blocks.</param>
         /// <param name="Program">Program.</param>
         /// <param name="Tags">Tags.</param>
         /// <param name="Presenters">Presenters.</param>
         /// <param name="ModelType">ModelType.</param>
-        public BroadcastResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?), long? ProgramId = default(long?), long? ModelTypeId = default(long?), long? StationId = default(long?), Object FieldValues = default(Object), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), bool? Published = default(bool?), string RepetitionUid = default(string), RepetitionTypeEnum? RepetitionType = default(RepetitionTypeEnum?), DateTime? RepetitionEnd = default(DateTime?), DateTime? RepetitionStart = default(DateTime?), string RepetitionDays = default(string), long? PtyCodeId = default(long?), BroadcastRelationsItems Items = default(BroadcastRelationsItems), BroadcastRelationsBlocks Blocks = default(BroadcastRelationsBlocks), BlockRelationsProgram Program = default(BlockRelationsProgram), BroadcastRelationsTags Tags = default(BroadcastRelationsTags), BroadcastRelationsPresenters Presenters = default(BroadcastRelationsPresenters), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
+        public BroadcastResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?), long? ProgramId = default(long?), long? ModelTypeId = default(long?), long? StationId = default(long?), Object FieldValues = default(Object), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), long? GenreId = default(long?), string Description = default(string), string ShortName = default(string), string MediumName = default(string), string Website = default(string), string Email = default(string), bool? Recommended = default(bool?), string Language = default(string), bool? Published = default(bool?), string RepetitionUid = default(string), RepetitionTypeEnum? RepetitionType = default(RepetitionTypeEnum?), DateTime? RepetitionEnd = default(DateTime?), DateTime? RepetitionStart = default(DateTime?), string RepetitionDays = default(string), long? PtyCodeId = default(long?), BroadcastRelationsGenre Genre = default(BroadcastRelationsGenre), BroadcastRelationsItems Items = default(BroadcastRelationsItems), BroadcastRelationsBlocks Blocks = default(BroadcastRelationsBlocks), BlockRelationsProgram Program = default(BlockRelationsProgram), BroadcastRelationsTags Tags = default(BroadcastRelationsTags), BroadcastRelationsPresenters Presenters = default(BroadcastRelationsPresenters), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -169,6 +170,7 @@ namespace RadioManager.Model
             this.RepetitionStart = RepetitionStart;
             this.RepetitionDays = RepetitionDays;
             this.PtyCodeId = PtyCodeId;
+            this.Genre = Genre;
             this.Items = Items;
             this.Blocks = Blocks;
             this.Program = Program;
@@ -335,6 +337,12 @@ namespace RadioManager.Model
         public long? PtyCodeId { get; set; }
 
         /// <summary>
+        /// Gets or Sets Genre
+        /// </summary>
+        [DataMember(Name="genre", EmitDefaultValue=false)]
+        public BroadcastRelationsGenre Genre { get; set; }
+
+        /// <summary>
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items", EmitDefaultValue=false)]
@@ -405,6 +413,7 @@ namespace RadioManager.Model
             sb.Append("  RepetitionStart: ").Append(RepetitionStart).Append("\n");
             sb.Append("  RepetitionDays: ").Append(RepetitionDays).Append("\n");
             sb.Append("  PtyCodeId: ").Append(PtyCodeId).Append("\n");
+            sb.Append("  Genre: ").Append(Genre).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  Blocks: ").Append(Blocks).Append("\n");
             sb.Append("  Program: ").Append(Program).Append("\n");
@@ -583,6 +592,11 @@ namespace RadioManager.Model
                     this.PtyCodeId.Equals(other.PtyCodeId)
                 ) && 
                 (
+                    this.Genre == other.Genre ||
+                    this.Genre != null &&
+                    this.Genre.Equals(other.Genre)
+                ) && 
+                (
                     this.Items == other.Items ||
                     this.Items != null &&
                     this.Items.Equals(other.Items)
@@ -679,6 +693,8 @@ namespace RadioManager.Model
                     hash = hash * 59 + this.RepetitionDays.GetHashCode();
                 if (this.PtyCodeId != null)
                     hash = hash * 59 + this.PtyCodeId.GetHashCode();
+                if (this.Genre != null)
+                    hash = hash * 59 + this.Genre.GetHashCode();
                 if (this.Items != null)
                     hash = hash * 59 + this.Items.GetHashCode();
                 if (this.Blocks != null)
@@ -702,12 +718,6 @@ namespace RadioManager.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // PtyCodeId (long?) minimum
-            if(this.PtyCodeId < (long?)1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PtyCodeId, must be a value greater than or equal to 1.", new [] { "PtyCodeId" });
-            }
-
             yield break;
         }
     }

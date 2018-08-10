@@ -109,6 +109,27 @@ namespace RadioManager.Api
         /// <returns>ApiResponse of Success</returns>
         ApiResponse<Success> DeleteItemByIdWithHttpInfo (long? id);
         /// <summary>
+        /// Get current Item
+        /// </summary>
+        /// <remarks>
+        /// Get current Item
+        /// </remarks>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="lastplayed">Show last played item if there is no current item*(Optional)* (optional)</param>
+        /// <returns>ItemResult</returns>
+        ItemResult GetCurrentItem (bool? lastplayed = null);
+
+        /// <summary>
+        /// Get current Item
+        /// </summary>
+        /// <remarks>
+        /// Get current Item
+        /// </remarks>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="lastplayed">Show last played item if there is no current item*(Optional)* (optional)</param>
+        /// <returns>ApiResponse of ItemResult</returns>
+        ApiResponse<ItemResult> GetCurrentItemWithHttpInfo (bool? lastplayed = null);
+        /// <summary>
         /// Get extended item details by ID.
         /// </summary>
         /// <remarks>
@@ -149,6 +170,7 @@ namespace RadioManager.Api
         /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
@@ -159,7 +181,7 @@ namespace RadioManager.Api
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ItemResults</returns>
-        ItemResults ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        ItemResults ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get a list of all the items currently in your station.
@@ -179,6 +201,7 @@ namespace RadioManager.Api
         /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
@@ -189,7 +212,7 @@ namespace RadioManager.Api
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of ItemResults</returns>
-        ApiResponse<ItemResults> ListItemsWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        ApiResponse<ItemResults> ListItemsWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Post a playlist, keep current structure
         /// </summary>
@@ -342,6 +365,27 @@ namespace RadioManager.Api
         /// <returns>Task of ApiResponse (Success)</returns>
         System.Threading.Tasks.Task<ApiResponse<Success>> DeleteItemByIdAsyncWithHttpInfo (long? id);
         /// <summary>
+        /// Get current Item
+        /// </summary>
+        /// <remarks>
+        /// Get current Item
+        /// </remarks>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="lastplayed">Show last played item if there is no current item*(Optional)* (optional)</param>
+        /// <returns>Task of ItemResult</returns>
+        System.Threading.Tasks.Task<ItemResult> GetCurrentItemAsync (bool? lastplayed = null);
+
+        /// <summary>
+        /// Get current Item
+        /// </summary>
+        /// <remarks>
+        /// Get current Item
+        /// </remarks>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="lastplayed">Show last played item if there is no current item*(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (ItemResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ItemResult>> GetCurrentItemAsyncWithHttpInfo (bool? lastplayed = null);
+        /// <summary>
         /// Get extended item details by ID.
         /// </summary>
         /// <remarks>
@@ -382,6 +426,7 @@ namespace RadioManager.Api
         /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
@@ -392,7 +437,7 @@ namespace RadioManager.Api
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ItemResults</returns>
-        System.Threading.Tasks.Task<ItemResults> ListItemsAsync (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<ItemResults> ListItemsAsync (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get a list of all the items currently in your station.
@@ -412,6 +457,7 @@ namespace RadioManager.Api
         /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
@@ -422,7 +468,7 @@ namespace RadioManager.Api
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (ItemResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ItemResults>> ListItemsAsyncWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        System.Threading.Tasks.Task<ApiResponse<ItemResults>> ListItemsAsyncWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Post a playlist, keep current structure
         /// </summary>
@@ -1209,6 +1255,146 @@ namespace RadioManager.Api
         }
 
         /// <summary>
+        /// Get current Item Get current Item
+        /// </summary>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="lastplayed">Show last played item if there is no current item*(Optional)* (optional)</param>
+        /// <returns>ItemResult</returns>
+        public ItemResult GetCurrentItem (bool? lastplayed = null)
+        {
+             ApiResponse<ItemResult> localVarResponse = GetCurrentItemWithHttpInfo(lastplayed);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get current Item Get current Item
+        /// </summary>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="lastplayed">Show last played item if there is no current item*(Optional)* (optional)</param>
+        /// <returns>ApiResponse of ItemResult</returns>
+        public ApiResponse< ItemResult > GetCurrentItemWithHttpInfo (bool? lastplayed = null)
+        {
+
+            var localVarPath = "/items/current";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (lastplayed != null) localVarQueryParams.Add("lastplayed", Configuration.ApiClient.ParameterToString(lastplayed)); // query parameter
+
+            // authentication (API Key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
+            {
+                localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetCurrentItem", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ItemResult>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ItemResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ItemResult)));
+        }
+
+        /// <summary>
+        /// Get current Item Get current Item
+        /// </summary>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="lastplayed">Show last played item if there is no current item*(Optional)* (optional)</param>
+        /// <returns>Task of ItemResult</returns>
+        public async System.Threading.Tasks.Task<ItemResult> GetCurrentItemAsync (bool? lastplayed = null)
+        {
+             ApiResponse<ItemResult> localVarResponse = await GetCurrentItemAsyncWithHttpInfo(lastplayed);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get current Item Get current Item
+        /// </summary>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="lastplayed">Show last played item if there is no current item*(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (ItemResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ItemResult>> GetCurrentItemAsyncWithHttpInfo (bool? lastplayed = null)
+        {
+
+            var localVarPath = "/items/current";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (lastplayed != null) localVarQueryParams.Add("lastplayed", Configuration.ApiClient.ParameterToString(lastplayed)); // query parameter
+
+            // authentication (API Key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
+            {
+                localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetCurrentItem", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ItemResult>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ItemResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ItemResult)));
+        }
+
+        /// <summary>
         /// Get extended item details by ID. Read item by id.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1375,6 +1561,7 @@ namespace RadioManager.Api
         /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
@@ -1385,9 +1572,9 @@ namespace RadioManager.Api
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ItemResults</returns>
-        public ItemResults ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        public ItemResults ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<ItemResults> localVarResponse = ListItemsWithHttpInfo(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<ItemResults> localVarResponse = ListItemsWithHttpInfo(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, externalId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -1406,6 +1593,7 @@ namespace RadioManager.Api
         /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
@@ -1416,7 +1604,7 @@ namespace RadioManager.Api
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of ItemResults</returns>
-        public ApiResponse< ItemResults > ListItemsWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        public ApiResponse< ItemResults > ListItemsWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/items";
@@ -1452,6 +1640,7 @@ namespace RadioManager.Api
             if (userDraftId != null) localVarQueryParams.Add("user_draft_id", Configuration.ApiClient.ParameterToString(userDraftId)); // query parameter
             if (stationDraftId != null) localVarQueryParams.Add("station_draft_id", Configuration.ApiClient.ParameterToString(stationDraftId)); // query parameter
             if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
+            if (externalId != null) localVarQueryParams.Add("external_id", Configuration.ApiClient.ParameterToString(externalId)); // query parameter
             if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
             if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
             if (durationMin != null) localVarQueryParams.Add("duration-min", Configuration.ApiClient.ParameterToString(durationMin)); // query parameter
@@ -1502,6 +1691,7 @@ namespace RadioManager.Api
         /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
@@ -1512,9 +1702,9 @@ namespace RadioManager.Api
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ItemResults</returns>
-        public async System.Threading.Tasks.Task<ItemResults> ListItemsAsync (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ItemResults> ListItemsAsync (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<ItemResults> localVarResponse = await ListItemsAsyncWithHttpInfo(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<ItemResults> localVarResponse = await ListItemsAsyncWithHttpInfo(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, externalId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -1534,6 +1724,7 @@ namespace RadioManager.Api
         /// <param name="userDraftId">Search on User Draft ID *(Optional)* (optional)</param>
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
@@ -1544,7 +1735,7 @@ namespace RadioManager.Api
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (ItemResults)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ItemResults>> ListItemsAsyncWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ItemResults>> ListItemsAsyncWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/items";
@@ -1580,6 +1771,7 @@ namespace RadioManager.Api
             if (userDraftId != null) localVarQueryParams.Add("user_draft_id", Configuration.ApiClient.ParameterToString(userDraftId)); // query parameter
             if (stationDraftId != null) localVarQueryParams.Add("station_draft_id", Configuration.ApiClient.ParameterToString(stationDraftId)); // query parameter
             if (programId != null) localVarQueryParams.Add("program_id", Configuration.ApiClient.ParameterToString(programId)); // query parameter
+            if (externalId != null) localVarQueryParams.Add("external_id", Configuration.ApiClient.ParameterToString(externalId)); // query parameter
             if (startMin != null) localVarQueryParams.Add("start-min", Configuration.ApiClient.ParameterToString(startMin)); // query parameter
             if (startMax != null) localVarQueryParams.Add("start-max", Configuration.ApiClient.ParameterToString(startMax)); // query parameter
             if (durationMin != null) localVarQueryParams.Add("duration-min", Configuration.ApiClient.ParameterToString(durationMin)); // query parameter
