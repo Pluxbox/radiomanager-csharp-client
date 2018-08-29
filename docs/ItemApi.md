@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**CurrentItemPostStructure**](ItemApi.md#currentitempoststructure) | **POST** /items/current/structure | Post a current playing item, keep structure
 [**CurrentItemPostTiming**](ItemApi.md#currentitemposttiming) | **POST** /items/current/timing | Post a current playing item
 [**DeleteItemById**](ItemApi.md#deleteitembyid) | **DELETE** /items/{id} | Delete item by ID.
+[**GetCurrentItem**](ItemApi.md#getcurrentitem) | **GET** /items/current | Get current Item
 [**GetItemById**](ItemApi.md#getitembyid) | **GET** /items/{id} | Get extended item details by ID.
 [**ListItems**](ItemApi.md#listitems) | **GET** /items | Get a list of all the items currently in your station.
 [**PlaylistPostStructure**](ItemApi.md#playlistpoststructure) | **POST** /items/playlist/structure | Post a playlist, keep current structure
@@ -279,6 +280,72 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getcurrentitem"></a>
+# **GetCurrentItem**
+> ItemResult GetCurrentItem (bool? lastplayed = null)
+
+Get current Item
+
+Get current Item
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using RadioManager.Api;
+using RadioManager.Client;
+using RadioManager.Model;
+
+namespace Example
+{
+    public class GetCurrentItemExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: API Key
+            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+
+            var apiInstance = new ItemApi();
+            var lastplayed = true;  // bool? | Show last played item if there is no current item*(Optional)* (optional) 
+
+            try
+            {
+                // Get current Item
+                ItemResult result = apiInstance.GetCurrentItem(lastplayed);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ItemApi.GetCurrentItem: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **lastplayed** | **bool?**| Show last played item if there is no current item*(Optional)* | [optional] 
+
+### Return type
+
+[**ItemResult**](ItemResult.md)
+
+### Authorization
+
+[API Key](../README.md#API Key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="getitembyid"></a>
 # **GetItemById**
 > ItemResult GetItemById (long? id, long? externalStationId = null)
@@ -349,7 +416,7 @@ Name | Type | Description  | Notes
 
 <a name="listitems"></a>
 # **ListItems**
-> ItemResults ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> ItemResults ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get a list of all the items currently in your station.
 
@@ -386,6 +453,7 @@ namespace Example
             var userDraftId = 789;  // long? | Search on User Draft ID *(Optional)* (optional) 
             var stationDraftId = 789;  // long? | Search on Station Draft ID *(Optional)* (optional) 
             var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
+            var externalId = externalId_example;  // string | Search on External ID *(Optional)* (optional) 
             var startMin = 2013-10-20T19:20:30+01:00;  // DateTime? | Minimum start date *(Optional)* (optional) 
             var startMax = 2013-10-20T19:20:30+01:00;  // DateTime? | Maximum start date *(Optional)* (optional) 
             var durationMin = 56;  // int? | Minimum duration (seconds) *(Optional)* (optional) 
@@ -399,7 +467,7 @@ namespace Example
             try
             {
                 // Get a list of all the items currently in your station.
-                ItemResults result = apiInstance.ListItems(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
+                ItemResults result = apiInstance.ListItems(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, externalId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -426,6 +494,7 @@ Name | Type | Description  | Notes
  **userDraftId** | **long?**| Search on User Draft ID *(Optional)* | [optional] 
  **stationDraftId** | **long?**| Search on Station Draft ID *(Optional)* | [optional] 
  **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **externalId** | **string**| Search on External ID *(Optional)* | [optional] 
  **startMin** | **DateTime?**| Minimum start date *(Optional)* | [optional] 
  **startMax** | **DateTime?**| Maximum start date *(Optional)* | [optional] 
  **durationMin** | **int?**| Minimum duration (seconds) *(Optional)* | [optional] 

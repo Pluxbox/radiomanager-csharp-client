@@ -3,7 +3,7 @@
 Pluxbox RadioManager gives you the power, flexibility and speed you always wanted in a lightweight and easy-to-use web-based radio solution. With Pluxbox RadioManager you can organise your radio workflow and automate your omnichannel communication with your listeners. We offer wide range specialised services for the radio and connections like Hybrid Radio, Visual Radio, your website and social media without losing focus on your broadcast. For more information visit: pluxbox.com
 
 - API version: 2.0
-- SDK version: 1.1.6
+- SDK version: 1.1.7
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
     For more information, please visit [https://pluxbox.com](https://pluxbox.com)
 
@@ -130,6 +130,7 @@ Class | Method | HTTP request | Description
 *ItemApi* | [**CurrentItemPostStructure**](docs/ItemApi.md#currentitempoststructure) | **POST** /items/current/structure | Post a current playing item, keep structure
 *ItemApi* | [**CurrentItemPostTiming**](docs/ItemApi.md#currentitemposttiming) | **POST** /items/current/timing | Post a current playing item
 *ItemApi* | [**DeleteItemById**](docs/ItemApi.md#deleteitembyid) | **DELETE** /items/{id} | Delete item by ID.
+*ItemApi* | [**GetCurrentItem**](docs/ItemApi.md#getcurrentitem) | **GET** /items/current | Get current Item
 *ItemApi* | [**GetItemById**](docs/ItemApi.md#getitembyid) | **GET** /items/{id} | Get extended item details by ID.
 *ItemApi* | [**ListItems**](docs/ItemApi.md#listitems) | **GET** /items | Get a list of all the items currently in your station.
 *ItemApi* | [**PlaylistPostStructure**](docs/ItemApi.md#playlistpoststructure) | **POST** /items/playlist/structure | Post a playlist, keep current structure
