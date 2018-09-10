@@ -70,30 +70,28 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ContactRelationsTagsParams);
+            return this.Equals(input as ContactRelationsTagsParams);
         }
 
         /// <summary>
         /// Returns true if ContactRelationsTagsParams instances are equal
         /// </summary>
-        /// <param name="other">Instance of ContactRelationsTagsParams to be compared</param>
+        /// <param name="input">Instance of ContactRelationsTagsParams to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ContactRelationsTagsParams other)
+        public bool Equals(ContactRelationsTagsParams input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.ContactId == other.ContactId ||
-                    this.ContactId != null &&
-                    this.ContactId.Equals(other.ContactId)
+                    this.ContactId == input.ContactId ||
+                    (this.ContactId != null &&
+                    this.ContactId.Equals(input.ContactId))
                 );
         }
 
@@ -103,14 +101,12 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.ContactId != null)
-                    hash = hash * 59 + this.ContactId.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.ContactId.GetHashCode();
+                return hashCode;
             }
         }
 

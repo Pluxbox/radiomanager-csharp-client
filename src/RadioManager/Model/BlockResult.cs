@@ -228,80 +228,78 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as BlockResult);
+            return this.Equals(input as BlockResult);
         }
 
         /// <summary>
         /// Returns true if BlockResult instances are equal
         /// </summary>
-        /// <param name="other">Instance of BlockResult to be compared</param>
+        /// <param name="input">Instance of BlockResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BlockResult other)
+        public bool Equals(BlockResult input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.BroadcastId == other.BroadcastId ||
-                    this.BroadcastId != null &&
-                    this.BroadcastId.Equals(other.BroadcastId)
+                    this.BroadcastId == input.BroadcastId ||
+                    (this.BroadcastId != null &&
+                    this.BroadcastId.Equals(input.BroadcastId))
                 ) && 
                 (
-                    this.Start == other.Start ||
-                    this.Start != null &&
-                    this.Start.Equals(other.Start)
+                    this.Start == input.Start ||
+                    (this.Start != null &&
+                    this.Start.Equals(input.Start))
                 ) && 
                 (
-                    this.Stop == other.Stop ||
-                    this.Stop != null &&
-                    this.Stop.Equals(other.Stop)
+                    this.Stop == input.Stop ||
+                    (this.Stop != null &&
+                    this.Stop.Equals(input.Stop))
                 ) && 
                 (
-                    this.CreatedAt == other.CreatedAt ||
-                    this.CreatedAt != null &&
-                    this.CreatedAt.Equals(other.CreatedAt)
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
-                    this.UpdatedAt == other.UpdatedAt ||
-                    this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(other.UpdatedAt)
+                    this.UpdatedAt == input.UpdatedAt ||
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
-                    this.DeletedAt == other.DeletedAt ||
-                    this.DeletedAt != null &&
-                    this.DeletedAt.Equals(other.DeletedAt)
+                    this.DeletedAt == input.DeletedAt ||
+                    (this.DeletedAt != null &&
+                    this.DeletedAt.Equals(input.DeletedAt))
                 ) && 
                 (
-                    this.ExternalStationId == other.ExternalStationId ||
-                    this.ExternalStationId != null &&
-                    this.ExternalStationId.Equals(other.ExternalStationId)
+                    this.ExternalStationId == input.ExternalStationId ||
+                    (this.ExternalStationId != null &&
+                    this.ExternalStationId.Equals(input.ExternalStationId))
                 ) && 
                 (
-                    this.Items == other.Items ||
-                    this.Items != null &&
-                    this.Items.Equals(other.Items)
+                    this.Items == input.Items ||
+                    (this.Items != null &&
+                    this.Items.Equals(input.Items))
                 ) && 
                 (
-                    this.Broadcast == other.Broadcast ||
-                    this.Broadcast != null &&
-                    this.Broadcast.Equals(other.Broadcast)
+                    this.Broadcast == input.Broadcast ||
+                    (this.Broadcast != null &&
+                    this.Broadcast.Equals(input.Broadcast))
                 ) && 
                 (
-                    this.Program == other.Program ||
-                    this.Program != null &&
-                    this.Program.Equals(other.Program)
+                    this.Program == input.Program ||
+                    (this.Program != null &&
+                    this.Program.Equals(input.Program))
                 );
         }
 
@@ -311,34 +309,32 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.BroadcastId != null)
-                    hash = hash * 59 + this.BroadcastId.GetHashCode();
+                    hashCode = hashCode * 59 + this.BroadcastId.GetHashCode();
                 if (this.Start != null)
-                    hash = hash * 59 + this.Start.GetHashCode();
+                    hashCode = hashCode * 59 + this.Start.GetHashCode();
                 if (this.Stop != null)
-                    hash = hash * 59 + this.Stop.GetHashCode();
+                    hashCode = hashCode * 59 + this.Stop.GetHashCode();
                 if (this.CreatedAt != null)
-                    hash = hash * 59 + this.CreatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null)
-                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.DeletedAt != null)
-                    hash = hash * 59 + this.DeletedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.DeletedAt.GetHashCode();
                 if (this.ExternalStationId != null)
-                    hash = hash * 59 + this.ExternalStationId.GetHashCode();
+                    hashCode = hashCode * 59 + this.ExternalStationId.GetHashCode();
                 if (this.Items != null)
-                    hash = hash * 59 + this.Items.GetHashCode();
+                    hashCode = hashCode * 59 + this.Items.GetHashCode();
                 if (this.Broadcast != null)
-                    hash = hash * 59 + this.Broadcast.GetHashCode();
+                    hashCode = hashCode * 59 + this.Broadcast.GetHashCode();
                 if (this.Program != null)
-                    hash = hash * 59 + this.Program.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.Program.GetHashCode();
+                return hashCode;
             }
         }
 

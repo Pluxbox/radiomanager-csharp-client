@@ -142,70 +142,68 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ItemOutputOnly);
+            return this.Equals(input as ItemOutputOnly);
         }
 
         /// <summary>
         /// Returns true if ItemOutputOnly instances are equal
         /// </summary>
-        /// <param name="other">Instance of ItemOutputOnly to be compared</param>
+        /// <param name="input">Instance of ItemOutputOnly to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ItemOutputOnly other)
+        public bool Equals(ItemOutputOnly input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.UpdatedAt == other.UpdatedAt ||
-                    this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(other.UpdatedAt)
+                    this.UpdatedAt == input.UpdatedAt ||
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
-                    this.CreatedAt == other.CreatedAt ||
-                    this.CreatedAt != null &&
-                    this.CreatedAt.Equals(other.CreatedAt)
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
-                    this.DeletedAt == other.DeletedAt ||
-                    this.DeletedAt != null &&
-                    this.DeletedAt.Equals(other.DeletedAt)
+                    this.DeletedAt == input.DeletedAt ||
+                    (this.DeletedAt != null &&
+                    this.DeletedAt.Equals(input.DeletedAt))
                 ) && 
                 (
-                    this.DataModified == other.DataModified ||
-                    this.DataModified != null &&
-                    this.DataModified.Equals(other.DataModified)
+                    this.DataModified == input.DataModified ||
+                    (this.DataModified != null &&
+                    this.DataModified.Equals(input.DataModified))
                 ) && 
                 (
-                    this.Order == other.Order ||
-                    this.Order != null &&
-                    this.Order.Equals(other.Order)
+                    this.Order == input.Order ||
+                    (this.Order != null &&
+                    this.Order.Equals(input.Order))
                 ) && 
                 (
-                    this.TemplateblockId == other.TemplateblockId ||
-                    this.TemplateblockId != null &&
-                    this.TemplateblockId.Equals(other.TemplateblockId)
+                    this.TemplateblockId == input.TemplateblockId ||
+                    (this.TemplateblockId != null &&
+                    this.TemplateblockId.Equals(input.TemplateblockId))
                 ) && 
                 (
-                    this.TemplateitemId == other.TemplateitemId ||
-                    this.TemplateitemId != null &&
-                    this.TemplateitemId.Equals(other.TemplateitemId)
+                    this.TemplateitemId == input.TemplateitemId ||
+                    (this.TemplateitemId != null &&
+                    this.TemplateitemId.Equals(input.TemplateitemId))
                 ) && 
                 (
-                    this.ExternalStationId == other.ExternalStationId ||
-                    this.ExternalStationId != null &&
-                    this.ExternalStationId.Equals(other.ExternalStationId)
+                    this.ExternalStationId == input.ExternalStationId ||
+                    (this.ExternalStationId != null &&
+                    this.ExternalStationId.Equals(input.ExternalStationId))
                 );
         }
 
@@ -215,30 +213,28 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.UpdatedAt != null)
-                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.CreatedAt != null)
-                    hash = hash * 59 + this.CreatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.DeletedAt != null)
-                    hash = hash * 59 + this.DeletedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.DeletedAt.GetHashCode();
                 if (this.DataModified != null)
-                    hash = hash * 59 + this.DataModified.GetHashCode();
+                    hashCode = hashCode * 59 + this.DataModified.GetHashCode();
                 if (this.Order != null)
-                    hash = hash * 59 + this.Order.GetHashCode();
+                    hashCode = hashCode * 59 + this.Order.GetHashCode();
                 if (this.TemplateblockId != null)
-                    hash = hash * 59 + this.TemplateblockId.GetHashCode();
+                    hashCode = hashCode * 59 + this.TemplateblockId.GetHashCode();
                 if (this.TemplateitemId != null)
-                    hash = hash * 59 + this.TemplateitemId.GetHashCode();
+                    hashCode = hashCode * 59 + this.TemplateitemId.GetHashCode();
                 if (this.ExternalStationId != null)
-                    hash = hash * 59 + this.ExternalStationId.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.ExternalStationId.GetHashCode();
+                return hashCode;
             }
         }
 

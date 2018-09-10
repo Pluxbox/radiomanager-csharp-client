@@ -295,155 +295,153 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as StationResultStation);
+            return this.Equals(input as StationResultStation);
         }
 
         /// <summary>
         /// Returns true if StationResultStation instances are equal
         /// </summary>
-        /// <param name="other">Instance of StationResultStation to be compared</param>
+        /// <param name="input">Instance of StationResultStation to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(StationResultStation other)
+        public bool Equals(StationResultStation input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Name == other.Name ||
-                    this.Name != null &&
-                    this.Name.Equals(other.Name)
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.CreatedAt == other.CreatedAt ||
-                    this.CreatedAt != null &&
-                    this.CreatedAt.Equals(other.CreatedAt)
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
-                    this.UpdatedAt == other.UpdatedAt ||
-                    this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(other.UpdatedAt)
+                    this.UpdatedAt == input.UpdatedAt ||
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
-                    this.SystemName == other.SystemName ||
-                    this.SystemName != null &&
-                    this.SystemName.Equals(other.SystemName)
+                    this.SystemName == input.SystemName ||
+                    (this.SystemName != null &&
+                    this.SystemName.Equals(input.SystemName))
                 ) && 
                 (
-                    this.ShortName == other.ShortName ||
-                    this.ShortName != null &&
-                    this.ShortName.Equals(other.ShortName)
+                    this.ShortName == input.ShortName ||
+                    (this.ShortName != null &&
+                    this.ShortName.Equals(input.ShortName))
                 ) && 
                 (
-                    this.MediumName == other.MediumName ||
-                    this.MediumName != null &&
-                    this.MediumName.Equals(other.MediumName)
+                    this.MediumName == input.MediumName ||
+                    (this.MediumName != null &&
+                    this.MediumName.Equals(input.MediumName))
                 ) && 
                 (
-                    this.Website == other.Website ||
-                    this.Website != null &&
-                    this.Website.Equals(other.Website)
+                    this.Website == input.Website ||
+                    (this.Website != null &&
+                    this.Website.Equals(input.Website))
                 ) && 
                 (
-                    this.Email == other.Email ||
-                    this.Email != null &&
-                    this.Email.Equals(other.Email)
+                    this.Email == input.Email ||
+                    (this.Email != null &&
+                    this.Email.Equals(input.Email))
                 ) && 
                 (
-                    this.Keywords == other.Keywords ||
+                    this.Keywords == input.Keywords ||
                     this.Keywords != null &&
-                    this.Keywords.SequenceEqual(other.Keywords)
+                    this.Keywords.SequenceEqual(input.Keywords)
                 ) && 
                 (
-                    this.Description == other.Description ||
-                    this.Description != null &&
-                    this.Description.Equals(other.Description)
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 ) && 
                 (
-                    this.Sms == other.Sms ||
-                    this.Sms != null &&
-                    this.Sms.Equals(other.Sms)
+                    this.Sms == input.Sms ||
+                    (this.Sms != null &&
+                    this.Sms.Equals(input.Sms))
                 ) && 
                 (
-                    this.Telephone == other.Telephone ||
-                    this.Telephone != null &&
-                    this.Telephone.Equals(other.Telephone)
+                    this.Telephone == input.Telephone ||
+                    (this.Telephone != null &&
+                    this.Telephone.Equals(input.Telephone))
                 ) && 
                 (
-                    this.GenreId == other.GenreId ||
-                    this.GenreId != null &&
-                    this.GenreId.Equals(other.GenreId)
+                    this.GenreId == input.GenreId ||
+                    (this.GenreId != null &&
+                    this.GenreId.Equals(input.GenreId))
                 ) && 
                 (
-                    this.Language == other.Language ||
-                    this.Language != null &&
-                    this.Language.Equals(other.Language)
+                    this.Language == input.Language ||
+                    (this.Language != null &&
+                    this.Language.Equals(input.Language))
                 ) && 
                 (
-                    this.Active == other.Active ||
-                    this.Active != null &&
-                    this.Active.Equals(other.Active)
+                    this.Active == input.Active ||
+                    (this.Active != null &&
+                    this.Active.Equals(input.Active))
                 ) && 
                 (
-                    this.LogoRectangle == other.LogoRectangle ||
-                    this.LogoRectangle != null &&
-                    this.LogoRectangle.Equals(other.LogoRectangle)
+                    this.LogoRectangle == input.LogoRectangle ||
+                    (this.LogoRectangle != null &&
+                    this.LogoRectangle.Equals(input.LogoRectangle))
                 ) && 
                 (
-                    this.Logo128x128 == other.Logo128x128 ||
-                    this.Logo128x128 != null &&
-                    this.Logo128x128.Equals(other.Logo128x128)
+                    this.Logo128x128 == input.Logo128x128 ||
+                    (this.Logo128x128 != null &&
+                    this.Logo128x128.Equals(input.Logo128x128))
                 ) && 
                 (
-                    this.Logo320x320 == other.Logo320x320 ||
-                    this.Logo320x320 != null &&
-                    this.Logo320x320.Equals(other.Logo320x320)
+                    this.Logo320x320 == input.Logo320x320 ||
+                    (this.Logo320x320 != null &&
+                    this.Logo320x320.Equals(input.Logo320x320))
                 ) && 
                 (
-                    this.Logo600x600 == other.Logo600x600 ||
-                    this.Logo600x600 != null &&
-                    this.Logo600x600.Equals(other.Logo600x600)
+                    this.Logo600x600 == input.Logo600x600 ||
+                    (this.Logo600x600 != null &&
+                    this.Logo600x600.Equals(input.Logo600x600))
                 ) && 
                 (
-                    this.PayOff == other.PayOff ||
-                    this.PayOff != null &&
-                    this.PayOff.Equals(other.PayOff)
+                    this.PayOff == input.PayOff ||
+                    (this.PayOff != null &&
+                    this.PayOff.Equals(input.PayOff))
                 ) && 
                 (
-                    this.PtyCode == other.PtyCode ||
-                    this.PtyCode != null &&
-                    this.PtyCode.Equals(other.PtyCode)
+                    this.PtyCode == input.PtyCode ||
+                    (this.PtyCode != null &&
+                    this.PtyCode.Equals(input.PtyCode))
                 ) && 
                 (
-                    this.PtyType == other.PtyType ||
-                    this.PtyType != null &&
-                    this.PtyType.Equals(other.PtyType)
+                    this.PtyType == input.PtyType ||
+                    (this.PtyType != null &&
+                    this.PtyType.Equals(input.PtyType))
                 ) && 
                 (
-                    this.StationKey == other.StationKey ||
-                    this.StationKey != null &&
-                    this.StationKey.Equals(other.StationKey)
+                    this.StationKey == input.StationKey ||
+                    (this.StationKey != null &&
+                    this.StationKey.Equals(input.StationKey))
                 ) && 
                 (
-                    this.Timezone == other.Timezone ||
-                    this.Timezone != null &&
-                    this.Timezone.Equals(other.Timezone)
+                    this.Timezone == input.Timezone ||
+                    (this.Timezone != null &&
+                    this.Timezone.Equals(input.Timezone))
                 ) && 
                 (
-                    this.StartDays == other.StartDays ||
-                    this.StartDays != null &&
-                    this.StartDays.Equals(other.StartDays)
+                    this.StartDays == input.StartDays ||
+                    (this.StartDays != null &&
+                    this.StartDays.Equals(input.StartDays))
                 );
         }
 
@@ -453,64 +451,62 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
-                    hash = hash * 59 + this.Name.GetHashCode();
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.CreatedAt != null)
-                    hash = hash * 59 + this.CreatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null)
-                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.SystemName != null)
-                    hash = hash * 59 + this.SystemName.GetHashCode();
+                    hashCode = hashCode * 59 + this.SystemName.GetHashCode();
                 if (this.ShortName != null)
-                    hash = hash * 59 + this.ShortName.GetHashCode();
+                    hashCode = hashCode * 59 + this.ShortName.GetHashCode();
                 if (this.MediumName != null)
-                    hash = hash * 59 + this.MediumName.GetHashCode();
+                    hashCode = hashCode * 59 + this.MediumName.GetHashCode();
                 if (this.Website != null)
-                    hash = hash * 59 + this.Website.GetHashCode();
+                    hashCode = hashCode * 59 + this.Website.GetHashCode();
                 if (this.Email != null)
-                    hash = hash * 59 + this.Email.GetHashCode();
+                    hashCode = hashCode * 59 + this.Email.GetHashCode();
                 if (this.Keywords != null)
-                    hash = hash * 59 + this.Keywords.GetHashCode();
+                    hashCode = hashCode * 59 + this.Keywords.GetHashCode();
                 if (this.Description != null)
-                    hash = hash * 59 + this.Description.GetHashCode();
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Sms != null)
-                    hash = hash * 59 + this.Sms.GetHashCode();
+                    hashCode = hashCode * 59 + this.Sms.GetHashCode();
                 if (this.Telephone != null)
-                    hash = hash * 59 + this.Telephone.GetHashCode();
+                    hashCode = hashCode * 59 + this.Telephone.GetHashCode();
                 if (this.GenreId != null)
-                    hash = hash * 59 + this.GenreId.GetHashCode();
+                    hashCode = hashCode * 59 + this.GenreId.GetHashCode();
                 if (this.Language != null)
-                    hash = hash * 59 + this.Language.GetHashCode();
+                    hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.Active != null)
-                    hash = hash * 59 + this.Active.GetHashCode();
+                    hashCode = hashCode * 59 + this.Active.GetHashCode();
                 if (this.LogoRectangle != null)
-                    hash = hash * 59 + this.LogoRectangle.GetHashCode();
+                    hashCode = hashCode * 59 + this.LogoRectangle.GetHashCode();
                 if (this.Logo128x128 != null)
-                    hash = hash * 59 + this.Logo128x128.GetHashCode();
+                    hashCode = hashCode * 59 + this.Logo128x128.GetHashCode();
                 if (this.Logo320x320 != null)
-                    hash = hash * 59 + this.Logo320x320.GetHashCode();
+                    hashCode = hashCode * 59 + this.Logo320x320.GetHashCode();
                 if (this.Logo600x600 != null)
-                    hash = hash * 59 + this.Logo600x600.GetHashCode();
+                    hashCode = hashCode * 59 + this.Logo600x600.GetHashCode();
                 if (this.PayOff != null)
-                    hash = hash * 59 + this.PayOff.GetHashCode();
+                    hashCode = hashCode * 59 + this.PayOff.GetHashCode();
                 if (this.PtyCode != null)
-                    hash = hash * 59 + this.PtyCode.GetHashCode();
+                    hashCode = hashCode * 59 + this.PtyCode.GetHashCode();
                 if (this.PtyType != null)
-                    hash = hash * 59 + this.PtyType.GetHashCode();
+                    hashCode = hashCode * 59 + this.PtyType.GetHashCode();
                 if (this.StationKey != null)
-                    hash = hash * 59 + this.StationKey.GetHashCode();
+                    hashCode = hashCode * 59 + this.StationKey.GetHashCode();
                 if (this.Timezone != null)
-                    hash = hash * 59 + this.Timezone.GetHashCode();
+                    hashCode = hashCode * 59 + this.Timezone.GetHashCode();
                 if (this.StartDays != null)
-                    hash = hash * 59 + this.StartDays.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.StartDays.GetHashCode();
+                return hashCode;
             }
         }
 

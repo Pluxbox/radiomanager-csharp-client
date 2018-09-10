@@ -33,12 +33,25 @@ namespace RadioManager.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="StoryRelations" /> class.
         /// </summary>
-        /// <param name="Tags">Tags.</param>
+        [JsonConstructorAttribute]
+        protected StoryRelations() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StoryRelations" /> class.
+        /// </summary>
+        /// <param name="Tags">Tags (required).</param>
         /// <param name="Items">Items.</param>
         /// <param name="ModelType">ModelType.</param>
         public StoryRelations(StoryRelationsTags Tags = default(StoryRelationsTags), StoryRelationsItems Items = default(StoryRelationsItems), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
         {
-            this.Tags = Tags;
+            // to ensure "Tags" is required (not null)
+            if (Tags == null)
+            {
+                throw new InvalidDataException("Tags is a required property for StoryRelations and cannot be null");
+            }
+            else
+            {
+                this.Tags = Tags;
+            }
             this.Items = Items;
             this.ModelType = ModelType;
         }
@@ -88,40 +101,38 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as StoryRelations);
+            return this.Equals(input as StoryRelations);
         }
 
         /// <summary>
         /// Returns true if StoryRelations instances are equal
         /// </summary>
-        /// <param name="other">Instance of StoryRelations to be compared</param>
+        /// <param name="input">Instance of StoryRelations to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(StoryRelations other)
+        public bool Equals(StoryRelations input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.Tags == other.Tags ||
-                    this.Tags != null &&
-                    this.Tags.Equals(other.Tags)
+                    this.Tags == input.Tags ||
+                    (this.Tags != null &&
+                    this.Tags.Equals(input.Tags))
                 ) && 
                 (
-                    this.Items == other.Items ||
-                    this.Items != null &&
-                    this.Items.Equals(other.Items)
+                    this.Items == input.Items ||
+                    (this.Items != null &&
+                    this.Items.Equals(input.Items))
                 ) && 
                 (
-                    this.ModelType == other.ModelType ||
-                    this.ModelType != null &&
-                    this.ModelType.Equals(other.ModelType)
+                    this.ModelType == input.ModelType ||
+                    (this.ModelType != null &&
+                    this.ModelType.Equals(input.ModelType))
                 );
         }
 
@@ -131,18 +142,16 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.Tags != null)
-                    hash = hash * 59 + this.Tags.GetHashCode();
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Items != null)
-                    hash = hash * 59 + this.Items.GetHashCode();
+                    hashCode = hashCode * 59 + this.Items.GetHashCode();
                 if (this.ModelType != null)
-                    hash = hash * 59 + this.ModelType.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.ModelType.GetHashCode();
+                return hashCode;
             }
         }
 

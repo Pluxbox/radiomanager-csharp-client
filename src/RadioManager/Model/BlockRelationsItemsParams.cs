@@ -70,30 +70,28 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as BlockRelationsItemsParams);
+            return this.Equals(input as BlockRelationsItemsParams);
         }
 
         /// <summary>
         /// Returns true if BlockRelationsItemsParams instances are equal
         /// </summary>
-        /// <param name="other">Instance of BlockRelationsItemsParams to be compared</param>
+        /// <param name="input">Instance of BlockRelationsItemsParams to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BlockRelationsItemsParams other)
+        public bool Equals(BlockRelationsItemsParams input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.BlockId == other.BlockId ||
-                    this.BlockId != null &&
-                    this.BlockId.Equals(other.BlockId)
+                    this.BlockId == input.BlockId ||
+                    (this.BlockId != null &&
+                    this.BlockId.Equals(input.BlockId))
                 );
         }
 
@@ -103,14 +101,12 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.BlockId != null)
-                    hash = hash * 59 + this.BlockId.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.BlockId.GetHashCode();
+                return hashCode;
             }
         }
 

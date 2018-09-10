@@ -41,19 +41,19 @@ namespace RadioManager.Model
             /// Enum Scheduled for "scheduled"
             /// </summary>
             [EnumMember(Value = "scheduled")]
-            Scheduled,
+            Scheduled = 1,
             
             /// <summary>
             /// Enum Playing for "playing"
             /// </summary>
             [EnumMember(Value = "playing")]
-            Playing,
+            Playing = 2,
             
             /// <summary>
             /// Enum Played for "played"
             /// </summary>
             [EnumMember(Value = "played")]
-            Played
+            Played = 3
         }
 
         /// <summary>
@@ -280,125 +280,123 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ItemDataInput);
+            return this.Equals(input as ItemDataInput);
         }
 
         /// <summary>
         /// Returns true if ItemDataInput instances are equal
         /// </summary>
-        /// <param name="other">Instance of ItemDataInput to be compared</param>
+        /// <param name="input">Instance of ItemDataInput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ItemDataInput other)
+        public bool Equals(ItemDataInput input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.ModelTypeId == other.ModelTypeId ||
-                    this.ModelTypeId != null &&
-                    this.ModelTypeId.Equals(other.ModelTypeId)
+                    this.ModelTypeId == input.ModelTypeId ||
+                    (this.ModelTypeId != null &&
+                    this.ModelTypeId.Equals(input.ModelTypeId))
                 ) && 
                 (
-                    this.BlockId == other.BlockId ||
-                    this.BlockId != null &&
-                    this.BlockId.Equals(other.BlockId)
+                    this.BlockId == input.BlockId ||
+                    (this.BlockId != null &&
+                    this.BlockId.Equals(input.BlockId))
                 ) && 
                 (
-                    this.ExternalId == other.ExternalId ||
-                    this.ExternalId != null &&
-                    this.ExternalId.Equals(other.ExternalId)
+                    this.ExternalId == input.ExternalId ||
+                    (this.ExternalId != null &&
+                    this.ExternalId.Equals(input.ExternalId))
                 ) && 
                 (
-                    this.FieldValues == other.FieldValues ||
-                    this.FieldValues != null &&
-                    this.FieldValues.Equals(other.FieldValues)
+                    this.FieldValues == input.FieldValues ||
+                    (this.FieldValues != null &&
+                    this.FieldValues.Equals(input.FieldValues))
                 ) && 
                 (
-                    this.Title == other.Title ||
-                    this.Title != null &&
-                    this.Title.Equals(other.Title)
+                    this.Title == input.Title ||
+                    (this.Title != null &&
+                    this.Title.Equals(input.Title))
                 ) && 
                 (
-                    this.Duration == other.Duration ||
-                    this.Duration != null &&
-                    this.Duration.Equals(other.Duration)
+                    this.Duration == input.Duration ||
+                    (this.Duration != null &&
+                    this.Duration.Equals(input.Duration))
                 ) && 
                 (
-                    this.Start == other.Start ||
-                    this.Start != null &&
-                    this.Start.Equals(other.Start)
+                    this.Start == input.Start ||
+                    (this.Start != null &&
+                    this.Start.Equals(input.Start))
                 ) && 
                 (
-                    this.Status == other.Status ||
-                    this.Status != null &&
-                    this.Status.Equals(other.Status)
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
                 ) && 
                 (
-                    this.Import == other.Import ||
-                    this.Import != null &&
-                    this.Import.Equals(other.Import)
+                    this.Import == input.Import ||
+                    (this.Import != null &&
+                    this.Import.Equals(input.Import))
                 ) && 
                 (
-                    this.CampaignId == other.CampaignId ||
-                    this.CampaignId != null &&
-                    this.CampaignId.Equals(other.CampaignId)
+                    this.CampaignId == input.CampaignId ||
+                    (this.CampaignId != null &&
+                    this.CampaignId.Equals(input.CampaignId))
                 ) && 
                 (
-                    this.Recommended == other.Recommended ||
-                    this.Recommended != null &&
-                    this.Recommended.Equals(other.Recommended)
+                    this.Recommended == input.Recommended ||
+                    (this.Recommended != null &&
+                    this.Recommended.Equals(input.Recommended))
                 ) && 
                 (
-                    this.StationDraftId == other.StationDraftId ||
-                    this.StationDraftId != null &&
-                    this.StationDraftId.Equals(other.StationDraftId)
+                    this.StationDraftId == input.StationDraftId ||
+                    (this.StationDraftId != null &&
+                    this.StationDraftId.Equals(input.StationDraftId))
                 ) && 
                 (
-                    this.ProgramDraftId == other.ProgramDraftId ||
-                    this.ProgramDraftId != null &&
-                    this.ProgramDraftId.Equals(other.ProgramDraftId)
+                    this.ProgramDraftId == input.ProgramDraftId ||
+                    (this.ProgramDraftId != null &&
+                    this.ProgramDraftId.Equals(input.ProgramDraftId))
                 ) && 
                 (
-                    this.UserDraftId == other.UserDraftId ||
-                    this.UserDraftId != null &&
-                    this.UserDraftId.Equals(other.UserDraftId)
+                    this.UserDraftId == input.UserDraftId ||
+                    (this.UserDraftId != null &&
+                    this.UserDraftId.Equals(input.UserDraftId))
                 ) && 
                 (
-                    this.StaticStart == other.StaticStart ||
-                    this.StaticStart != null &&
-                    this.StaticStart.Equals(other.StaticStart)
+                    this.StaticStart == input.StaticStart ||
+                    (this.StaticStart != null &&
+                    this.StaticStart.Equals(input.StaticStart))
                 ) && 
                 (
-                    this.Details == other.Details ||
-                    this.Details != null &&
-                    this.Details.Equals(other.Details)
+                    this.Details == input.Details ||
+                    (this.Details != null &&
+                    this.Details.Equals(input.Details))
                 ) && 
                 (
-                    this.PreviousId == other.PreviousId ||
-                    this.PreviousId != null &&
-                    this.PreviousId.Equals(other.PreviousId)
+                    this.PreviousId == input.PreviousId ||
+                    (this.PreviousId != null &&
+                    this.PreviousId.Equals(input.PreviousId))
                 ) && 
                 (
-                    this.BeforeId == other.BeforeId ||
-                    this.BeforeId != null &&
-                    this.BeforeId.Equals(other.BeforeId)
+                    this.BeforeId == input.BeforeId ||
+                    (this.BeforeId != null &&
+                    this.BeforeId.Equals(input.BeforeId))
                 ) && 
                 (
-                    this.Contacts == other.Contacts ||
+                    this.Contacts == input.Contacts ||
                     this.Contacts != null &&
-                    this.Contacts.SequenceEqual(other.Contacts)
+                    this.Contacts.SequenceEqual(input.Contacts)
                 ) && 
                 (
-                    this.Tags == other.Tags ||
+                    this.Tags == input.Tags ||
                     this.Tags != null &&
-                    this.Tags.SequenceEqual(other.Tags)
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -408,52 +406,50 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.ModelTypeId != null)
-                    hash = hash * 59 + this.ModelTypeId.GetHashCode();
+                    hashCode = hashCode * 59 + this.ModelTypeId.GetHashCode();
                 if (this.BlockId != null)
-                    hash = hash * 59 + this.BlockId.GetHashCode();
+                    hashCode = hashCode * 59 + this.BlockId.GetHashCode();
                 if (this.ExternalId != null)
-                    hash = hash * 59 + this.ExternalId.GetHashCode();
+                    hashCode = hashCode * 59 + this.ExternalId.GetHashCode();
                 if (this.FieldValues != null)
-                    hash = hash * 59 + this.FieldValues.GetHashCode();
+                    hashCode = hashCode * 59 + this.FieldValues.GetHashCode();
                 if (this.Title != null)
-                    hash = hash * 59 + this.Title.GetHashCode();
+                    hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.Duration != null)
-                    hash = hash * 59 + this.Duration.GetHashCode();
+                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 if (this.Start != null)
-                    hash = hash * 59 + this.Start.GetHashCode();
+                    hashCode = hashCode * 59 + this.Start.GetHashCode();
                 if (this.Status != null)
-                    hash = hash * 59 + this.Status.GetHashCode();
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Import != null)
-                    hash = hash * 59 + this.Import.GetHashCode();
+                    hashCode = hashCode * 59 + this.Import.GetHashCode();
                 if (this.CampaignId != null)
-                    hash = hash * 59 + this.CampaignId.GetHashCode();
+                    hashCode = hashCode * 59 + this.CampaignId.GetHashCode();
                 if (this.Recommended != null)
-                    hash = hash * 59 + this.Recommended.GetHashCode();
+                    hashCode = hashCode * 59 + this.Recommended.GetHashCode();
                 if (this.StationDraftId != null)
-                    hash = hash * 59 + this.StationDraftId.GetHashCode();
+                    hashCode = hashCode * 59 + this.StationDraftId.GetHashCode();
                 if (this.ProgramDraftId != null)
-                    hash = hash * 59 + this.ProgramDraftId.GetHashCode();
+                    hashCode = hashCode * 59 + this.ProgramDraftId.GetHashCode();
                 if (this.UserDraftId != null)
-                    hash = hash * 59 + this.UserDraftId.GetHashCode();
+                    hashCode = hashCode * 59 + this.UserDraftId.GetHashCode();
                 if (this.StaticStart != null)
-                    hash = hash * 59 + this.StaticStart.GetHashCode();
+                    hashCode = hashCode * 59 + this.StaticStart.GetHashCode();
                 if (this.Details != null)
-                    hash = hash * 59 + this.Details.GetHashCode();
+                    hashCode = hashCode * 59 + this.Details.GetHashCode();
                 if (this.PreviousId != null)
-                    hash = hash * 59 + this.PreviousId.GetHashCode();
+                    hashCode = hashCode * 59 + this.PreviousId.GetHashCode();
                 if (this.BeforeId != null)
-                    hash = hash * 59 + this.BeforeId.GetHashCode();
+                    hashCode = hashCode * 59 + this.BeforeId.GetHashCode();
                 if (this.Contacts != null)
-                    hash = hash * 59 + this.Contacts.GetHashCode();
+                    hashCode = hashCode * 59 + this.Contacts.GetHashCode();
                 if (this.Tags != null)
-                    hash = hash * 59 + this.Tags.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                return hashCode;
             }
         }
 

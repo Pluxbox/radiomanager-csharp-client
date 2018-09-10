@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Tags** | [**ContactRelationsTags**](ContactRelationsTags.md) |  | [optional] 
+**Tags** | [**ContactRelationsTags**](ContactRelationsTags.md) |  | 
 **Items** | [**ContactRelationsItems**](ContactRelationsItems.md) |  | [optional] 
 **ModelType** | [**BroadcastRelationsModelType**](BroadcastRelationsModelType.md) |  | [optional] 
 
