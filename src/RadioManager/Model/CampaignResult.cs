@@ -53,7 +53,7 @@ namespace RadioManager.Model
         /// <param name="Description">Description.</param>
         /// <param name="Items">Items.</param>
         /// <param name="ModelType">ModelType.</param>
-        public CampaignResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), List<Item> Item = default(List<Item>), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), bool? Recommended = default(bool?), string Description = default(string), CampaignRelationsItems Items = default(CampaignRelationsItems), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
+        public CampaignResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), Item Item = default(Item), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), bool? Recommended = default(bool?), string Description = default(string), CampaignRelationsItems Items = default(CampaignRelationsItems), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -156,7 +156,7 @@ namespace RadioManager.Model
         /// Gets or Sets Item
         /// </summary>
         [DataMember(Name="item", EmitDefaultValue=false)]
-        public List<Item> Item { get; set; }
+        public Item Item { get; set; }
 
         /// <summary>
         /// Gets or Sets ExternalStationId
@@ -297,8 +297,8 @@ namespace RadioManager.Model
                 ) && 
                 (
                     this.Item == input.Item ||
-                    this.Item != null &&
-                    this.Item.SequenceEqual(input.Item)
+                    (this.Item != null &&
+                    this.Item.Equals(input.Item))
                 ) && 
                 (
                     this.ExternalStationId == input.ExternalStationId ||

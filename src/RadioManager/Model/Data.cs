@@ -34,10 +34,12 @@ namespace RadioManager.Model
         /// Initializes a new instance of the <see cref="Data" /> class.
         /// </summary>
         /// <param name="Start">Start.</param>
+        /// <param name="AllowPlaylistPast">AllowPlaylistPast.</param>
         /// <param name="Items">Items.</param>
-        public Data(DateTime? Start = default(DateTime?), List<ImportItem> Items = default(List<ImportItem>))
+        public Data(DateTime? Start = default(DateTime?), int? AllowPlaylistPast = default(int?), List<ImportItem> Items = default(List<ImportItem>))
         {
             this.Start = Start;
+            this.AllowPlaylistPast = AllowPlaylistPast;
             this.Items = Items;
         }
         
@@ -46,6 +48,12 @@ namespace RadioManager.Model
         /// </summary>
         [DataMember(Name="start", EmitDefaultValue=false)]
         public DateTime? Start { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AllowPlaylistPast
+        /// </summary>
+        [DataMember(Name="allow_playlist_past", EmitDefaultValue=false)]
+        public int? AllowPlaylistPast { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
@@ -62,6 +70,7 @@ namespace RadioManager.Model
             var sb = new StringBuilder();
             sb.Append("class Data {\n");
             sb.Append("  Start: ").Append(Start).Append("\n");
+            sb.Append("  AllowPlaylistPast: ").Append(AllowPlaylistPast).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -103,6 +112,11 @@ namespace RadioManager.Model
                     this.Start.Equals(input.Start))
                 ) && 
                 (
+                    this.AllowPlaylistPast == input.AllowPlaylistPast ||
+                    (this.AllowPlaylistPast != null &&
+                    this.AllowPlaylistPast.Equals(input.AllowPlaylistPast))
+                ) && 
+                (
                     this.Items == input.Items ||
                     this.Items != null &&
                     this.Items.SequenceEqual(input.Items)
@@ -120,6 +134,8 @@ namespace RadioManager.Model
                 int hashCode = 41;
                 if (this.Start != null)
                     hashCode = hashCode * 59 + this.Start.GetHashCode();
+                if (this.AllowPlaylistPast != null)
+                    hashCode = hashCode * 59 + this.AllowPlaylistPast.GetHashCode();
                 if (this.Items != null)
                     hashCode = hashCode * 59 + this.Items.GetHashCode();
                 return hashCode;

@@ -44,7 +44,7 @@ namespace RadioManager.Model
         /// <param name="DeletedAt">DeletedAt (required).</param>
         /// <param name="Item">Item.</param>
         /// <param name="ExternalStationId">ExternalStationId.</param>
-        public CampaignOutputOnly(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), List<Item> Item = default(List<Item>), long? ExternalStationId = default(long?))
+        public CampaignOutputOnly(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), Item Item = default(Item), long? ExternalStationId = default(long?))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -114,7 +114,7 @@ namespace RadioManager.Model
         /// Gets or Sets Item
         /// </summary>
         [DataMember(Name="item", EmitDefaultValue=false)]
-        public List<Item> Item { get; set; }
+        public Item Item { get; set; }
 
         /// <summary>
         /// Gets or Sets ExternalStationId
@@ -192,8 +192,8 @@ namespace RadioManager.Model
                 ) && 
                 (
                     this.Item == input.Item ||
-                    this.Item != null &&
-                    this.Item.SequenceEqual(input.Item)
+                    (this.Item != null &&
+                    this.Item.Equals(input.Item))
                 ) && 
                 (
                     this.ExternalStationId == input.ExternalStationId ||
