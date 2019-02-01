@@ -214,6 +214,27 @@ namespace RadioManager.Api
         /// <returns>ApiResponse of ItemResults</returns>
         ApiResponse<ItemResults> ListItemsWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
+        /// Post a playlist, do not remove previously imported items
+        /// </summary>
+        /// <remarks>
+        /// Post a playlist, do not remove previously imported items
+        /// </remarks>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>InlineResponse202</returns>
+        InlineResponse202 PlaylistPostMerge (Data2 data = null);
+
+        /// <summary>
+        /// Post a playlist, do not remove previously imported items
+        /// </summary>
+        /// <remarks>
+        /// Post a playlist, do not remove previously imported items
+        /// </remarks>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        ApiResponse<InlineResponse202> PlaylistPostMergeWithHttpInfo (Data2 data = null);
+        /// <summary>
         /// Post a playlist, keep current structure
         /// </summary>
         /// <remarks>
@@ -255,6 +276,27 @@ namespace RadioManager.Api
         /// <param name="data">Data *(Optional)* (optional)</param>
         /// <returns>ApiResponse of InlineResponse202</returns>
         ApiResponse<InlineResponse202> PlaylistPostTimingWithHttpInfo (Data data = null);
+        /// <summary>
+        /// Stop an Item
+        /// </summary>
+        /// <remarks>
+        /// Set a current playing or specific item on played
+        /// </remarks>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>Success</returns>
+        Success StopCurrentItem (Data3 data = null);
+
+        /// <summary>
+        /// Stop an Item
+        /// </summary>
+        /// <remarks>
+        /// Set a current playing or specific item on played
+        /// </remarks>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>ApiResponse of Success</returns>
+        ApiResponse<Success> StopCurrentItemWithHttpInfo (Data3 data = null);
         /// <summary>
         /// Update extended item details by ID.
         /// </summary>
@@ -470,6 +512,27 @@ namespace RadioManager.Api
         /// <returns>Task of ApiResponse (ItemResults)</returns>
         System.Threading.Tasks.Task<ApiResponse<ItemResults>> ListItemsAsyncWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
+        /// Post a playlist, do not remove previously imported items
+        /// </summary>
+        /// <remarks>
+        /// Post a playlist, do not remove previously imported items
+        /// </remarks>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>Task of InlineResponse202</returns>
+        System.Threading.Tasks.Task<InlineResponse202> PlaylistPostMergeAsync (Data2 data = null);
+
+        /// <summary>
+        /// Post a playlist, do not remove previously imported items
+        /// </summary>
+        /// <remarks>
+        /// Post a playlist, do not remove previously imported items
+        /// </remarks>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> PlaylistPostMergeAsyncWithHttpInfo (Data2 data = null);
+        /// <summary>
         /// Post a playlist, keep current structure
         /// </summary>
         /// <remarks>
@@ -511,6 +574,27 @@ namespace RadioManager.Api
         /// <param name="data">Data *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse202)</returns>
         System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> PlaylistPostTimingAsyncWithHttpInfo (Data data = null);
+        /// <summary>
+        /// Stop an Item
+        /// </summary>
+        /// <remarks>
+        /// Set a current playing or specific item on played
+        /// </remarks>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>Task of Success</returns>
+        System.Threading.Tasks.Task<Success> StopCurrentItemAsync (Data3 data = null);
+
+        /// <summary>
+        /// Stop an Item
+        /// </summary>
+        /// <remarks>
+        /// Set a current playing or specific item on played
+        /// </remarks>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (Success)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Success>> StopCurrentItemAsyncWithHttpInfo (Data3 data = null);
         /// <summary>
         /// Update extended item details by ID.
         /// </summary>
@@ -1788,6 +1872,159 @@ namespace RadioManager.Api
         }
 
         /// <summary>
+        /// Post a playlist, do not remove previously imported items Post a playlist, do not remove previously imported items
+        /// </summary>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>InlineResponse202</returns>
+        public InlineResponse202 PlaylistPostMerge (Data2 data = null)
+        {
+             ApiResponse<InlineResponse202> localVarResponse = PlaylistPostMergeWithHttpInfo(data);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Post a playlist, do not remove previously imported items Post a playlist, do not remove previously imported items
+        /// </summary>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        public ApiResponse< InlineResponse202 > PlaylistPostMergeWithHttpInfo (Data2 data = null)
+        {
+
+            var localVarPath = "/items/playlist/merge";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+            // authentication (API Key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
+            {
+                localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PlaylistPostMerge", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse202) Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
+        }
+
+        /// <summary>
+        /// Post a playlist, do not remove previously imported items Post a playlist, do not remove previously imported items
+        /// </summary>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>Task of InlineResponse202</returns>
+        public async System.Threading.Tasks.Task<InlineResponse202> PlaylistPostMergeAsync (Data2 data = null)
+        {
+             ApiResponse<InlineResponse202> localVarResponse = await PlaylistPostMergeAsyncWithHttpInfo(data);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Post a playlist, do not remove previously imported items Post a playlist, do not remove previously imported items
+        /// </summary>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> PlaylistPostMergeAsyncWithHttpInfo (Data2 data = null)
+        {
+
+            var localVarPath = "/items/playlist/merge";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+            // authentication (API Key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
+            {
+                localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PlaylistPostMerge", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse202) Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
+        }
+
+        /// <summary>
         /// Post a playlist, keep current structure Post a playlist, keep current structure
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
@@ -2091,6 +2328,159 @@ namespace RadioManager.Api
             return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (InlineResponse202) Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
+        }
+
+        /// <summary>
+        /// Stop an Item Set a current playing or specific item on played
+        /// </summary>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>Success</returns>
+        public Success StopCurrentItem (Data3 data = null)
+        {
+             ApiResponse<Success> localVarResponse = StopCurrentItemWithHttpInfo(data);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Stop an Item Set a current playing or specific item on played
+        /// </summary>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>ApiResponse of Success</returns>
+        public ApiResponse< Success > StopCurrentItemWithHttpInfo (Data3 data = null)
+        {
+
+            var localVarPath = "/items/stopcurrent";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+            // authentication (API Key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
+            {
+                localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("StopCurrentItem", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Success>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Success) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+        }
+
+        /// <summary>
+        /// Stop an Item Set a current playing or specific item on played
+        /// </summary>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>Task of Success</returns>
+        public async System.Threading.Tasks.Task<Success> StopCurrentItemAsync (Data3 data = null)
+        {
+             ApiResponse<Success> localVarResponse = await StopCurrentItemAsyncWithHttpInfo(data);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Stop an Item Set a current playing or specific item on played
+        /// </summary>
+        /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data">Data *(Optional)* (optional)</param>
+        /// <returns>Task of ApiResponse (Success)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Success>> StopCurrentItemAsyncWithHttpInfo (Data3 data = null)
+        {
+
+            var localVarPath = "/items/stopcurrent";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+            // authentication (API Key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api-key")))
+            {
+                localVarHeaderParams["api-key"] = Configuration.GetApiKeyWithPrefix("api-key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("StopCurrentItem", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Success>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Success) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
         }
 
         /// <summary>

@@ -11,8 +11,10 @@ Method | HTTP request | Description
 [**GetCurrentItem**](ItemApi.md#getcurrentitem) | **GET** /items/current | Get current Item
 [**GetItemById**](ItemApi.md#getitembyid) | **GET** /items/{id} | Get extended item details by ID.
 [**ListItems**](ItemApi.md#listitems) | **GET** /items | Get a list of all the items currently in your station.
+[**PlaylistPostMerge**](ItemApi.md#playlistpostmerge) | **POST** /items/playlist/merge | Post a playlist, do not remove previously imported items
 [**PlaylistPostStructure**](ItemApi.md#playlistpoststructure) | **POST** /items/playlist/structure | Post a playlist, keep current structure
 [**PlaylistPostTiming**](ItemApi.md#playlistposttiming) | **POST** /items/playlist/timing | Post a playlist
+[**StopCurrentItem**](ItemApi.md#stopcurrentitem) | **POST** /items/stopcurrent | Stop an Item
 [**UpdateItemById**](ItemApi.md#updateitembyid) | **PATCH** /items/{id} | Update extended item details by ID.
 
 
@@ -520,6 +522,72 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="playlistpostmerge"></a>
+# **PlaylistPostMerge**
+> InlineResponse202 PlaylistPostMerge (Data2 data = null)
+
+Post a playlist, do not remove previously imported items
+
+Post a playlist, do not remove previously imported items
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using RadioManager.Api;
+using RadioManager.Client;
+using RadioManager.Model;
+
+namespace Example
+{
+    public class PlaylistPostMergeExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: API Key
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+
+            var apiInstance = new ItemApi();
+            var data = new Data2(); // Data2 | Data *(Optional)* (optional) 
+
+            try
+            {
+                // Post a playlist, do not remove previously imported items
+                InlineResponse202 result = apiInstance.PlaylistPostMerge(data);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ItemApi.PlaylistPostMerge: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**Data2**](Data2.md)| Data *(Optional)* | [optional] 
+
+### Return type
+
+[**InlineResponse202**](InlineResponse202.md)
+
+### Authorization
+
+[API Key](../README.md#API Key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="playlistpoststructure"></a>
 # **PlaylistPostStructure**
 > InlineResponse202 PlaylistPostStructure (Data1 data = null)
@@ -640,6 +708,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse202**](InlineResponse202.md)
+
+### Authorization
+
+[API Key](../README.md#API Key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="stopcurrentitem"></a>
+# **StopCurrentItem**
+> Success StopCurrentItem (Data3 data = null)
+
+Stop an Item
+
+Set a current playing or specific item on played
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using RadioManager.Api;
+using RadioManager.Client;
+using RadioManager.Model;
+
+namespace Example
+{
+    public class StopCurrentItemExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: API Key
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
+
+            var apiInstance = new ItemApi();
+            var data = new Data3(); // Data3 | Data *(Optional)* (optional) 
+
+            try
+            {
+                // Stop an Item
+                Success result = apiInstance.StopCurrentItem(data);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ItemApi.StopCurrentItem: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**Data3**](Data3.md)| Data *(Optional)* | [optional] 
+
+### Return type
+
+[**Success**](Success.md)
 
 ### Authorization
 
