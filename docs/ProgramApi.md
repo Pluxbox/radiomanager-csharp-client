@@ -34,9 +34,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ProgramApi();
             var data = new ProgramDataInput(); // ProgramDataInput | Data **(Required)**
@@ -100,9 +100,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ProgramApi();
             var id = 789;  // long? | ID of program **(Required)**
@@ -166,9 +166,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ProgramApi();
             var id = 789;  // long? | ID of Program **(Required)**
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 <a name="listprograms"></a>
 # **ListPrograms**
-> ProgramResults ListPrograms (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> ProgramResults ListPrograms (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all programs.
 
@@ -234,9 +234,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ProgramApi();
             var page = 789;  // long? | Current page *(Optional)* (optional) 
@@ -247,6 +247,7 @@ namespace Example
             var genreId = 789;  // long? | Search on Genre ID *(Optional)* (optional) 
             var blockId = 789;  // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
             var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var disabled = 56;  // int? | Search on Disabled status *(Optional)* (optional) 
             var limit = 789;  // long? | Results per page *(Optional)* (optional) 
             var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
             var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
@@ -255,7 +256,7 @@ namespace Example
             try
             {
                 // Get all programs.
-                ProgramResults result = apiInstance.ListPrograms(page, broadcastId, modelTypeId, tagId, presenterId, genreId, blockId, itemId, limit, orderBy, orderDirection, externalStationId);
+                ProgramResults result = apiInstance.ListPrograms(page, broadcastId, modelTypeId, tagId, presenterId, genreId, blockId, itemId, disabled, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -279,6 +280,7 @@ Name | Type | Description  | Notes
  **genreId** | **long?**| Search on Genre ID *(Optional)* | [optional] 
  **blockId** | **long?**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **disabled** | **int?**| Search on Disabled status *(Optional)* | [optional] 
  **limit** | **long?**| Results per page *(Optional)* | [optional] 
  **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
  **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
@@ -322,9 +324,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ProgramApi();
             var id = 789;  // long? | ID of Program **(Required)**

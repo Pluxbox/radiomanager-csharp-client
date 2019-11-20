@@ -19,6 +19,7 @@ using RadioManager.Api;
 using RadioManager.Model;
 using RadioManager.Client;
 using System.Reflection;
+using Newtonsoft.Json;
 
 namespace RadioManager.Test
 {
@@ -63,6 +64,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test "IsInstanceOfType" StationResultStation
             //Assert.IsInstanceOfType<StationResultStation> (instance, "variable 'instance' is a StationResultStation");
         }
+
 
         /// <summary>
         /// Test the property 'Id'
@@ -263,6 +265,30 @@ namespace RadioManager.Test
         public void TimezoneTest()
         {
             // TODO unit test for the property 'Timezone'
+        }
+        /// <summary>
+        /// Test the property 'MetadataradioOrganisation'
+        /// </summary>
+        [Test]
+        public void MetadataradioOrganisationTest()
+        {
+            // TODO unit test for the property 'MetadataradioOrganisation'
+        }
+        /// <summary>
+        /// Test the property 'MetadataradioStationId'
+        /// </summary>
+        [Test]
+        public void MetadataradioStationIdTest()
+        {
+            // TODO unit test for the property 'MetadataradioStationId'
+        }
+        /// <summary>
+        /// Test the property 'StartDays'
+        /// </summary>
+        [Test]
+        public void StartDaysTest()
+        {
+            // TODO unit test for the property 'StartDays'
         }
 
     }

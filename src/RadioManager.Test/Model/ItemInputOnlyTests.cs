@@ -19,6 +19,7 @@ using RadioManager.Api;
 using RadioManager.Model;
 using RadioManager.Client;
 using System.Reflection;
+using Newtonsoft.Json;
 
 namespace RadioManager.Test
 {
@@ -63,6 +64,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test "IsInstanceOfType" ItemInputOnly
             //Assert.IsInstanceOfType<ItemInputOnly> (instance, "variable 'instance' is a ItemInputOnly");
         }
+
 
         /// <summary>
         /// Test the property 'PreviousId'

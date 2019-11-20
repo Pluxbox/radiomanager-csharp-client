@@ -3,7 +3,7 @@
 Pluxbox RadioManager gives you the power, flexibility and speed you always wanted in a lightweight and easy-to-use web-based radio solution. With Pluxbox RadioManager you can organise your radio workflow and automate your omnichannel communication with your listeners. We offer wide range specialised services for the radio and connections like Hybrid Radio, Visual Radio, your website and social media without losing focus on your broadcast. For more information visit: pluxbox.com
 
 - API version: 2.0
-- SDK version: 1.1.7
+- SDK version: 1.1.12
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
     For more information, please visit [https://pluxbox.com](https://pluxbox.com)
 
@@ -16,11 +16,13 @@ Pluxbox RadioManager gives you the power, flexibility and speed you always wante
 ## Dependencies
 - [RestSharp](https://www.nuget.org/packages/RestSharp) - 105.1.0 or later
 - [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) - 7.0.0 or later
+- [JsonSubTypes](https://www.nuget.org/packages/JsonSubTypes/) - 1.2.0 or later
 
 The DLLs included in the package may not be the latest version. We recommend using [NuGet] (https://docs.nuget.org/consume/installing-nuget) to obtain the latest version of the packages:
 ```
 Install-Package RestSharp
 Install-Package Newtonsoft.Json
+Install-Package JsonSubTypes
 ```
 
 NOTE: RestSharp versions greater than 105.1.0 have a bug which causes file uploads to fail. See [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)
@@ -112,7 +114,7 @@ Class | Method | HTTP request | Description
 *BroadcastApi* | [**GetNextBroadcast**](docs/BroadcastApi.md#getnextbroadcast) | **GET** /broadcasts/next | Get next Broadcast
 *BroadcastApi* | [**GetWeeklyEPG**](docs/BroadcastApi.md#getweeklyepg) | **GET** /broadcasts/epg/weekly | Get weekly EPG
 *BroadcastApi* | [**ListBroadcasts**](docs/BroadcastApi.md#listbroadcasts) | **GET** /broadcasts | Get all broadcasts.
-*BroadcastApi* | [**PrintBroadcastById**](docs/BroadcastApi.md#printbroadcastbyid) | **GET** /broadcasts/print/{id} | Print Broadcast by id
+*BroadcastApi* | [**PrintBroadcastById**](docs/BroadcastApi.md#printbroadcastbyid) | **GET** /broadcasts/print/{id} | Print broadcast by id with template
 *BroadcastApi* | [**UpdateBroadcastByID**](docs/BroadcastApi.md#updatebroadcastbyid) | **PATCH** /broadcasts/{id} | Update broadcast by id
 *CampaignApi* | [**CreateCampaign**](docs/CampaignApi.md#createcampaign) | **POST** /campaigns | Create campaign.
 *CampaignApi* | [**DeleteCampaignById**](docs/CampaignApi.md#deletecampaignbyid) | **DELETE** /campaigns/{id} | Delete campaign by id
@@ -133,8 +135,10 @@ Class | Method | HTTP request | Description
 *ItemApi* | [**GetCurrentItem**](docs/ItemApi.md#getcurrentitem) | **GET** /items/current | Get current Item
 *ItemApi* | [**GetItemById**](docs/ItemApi.md#getitembyid) | **GET** /items/{id} | Get extended item details by ID.
 *ItemApi* | [**ListItems**](docs/ItemApi.md#listitems) | **GET** /items | Get a list of all the items currently in your station.
+*ItemApi* | [**PlaylistPostMerge**](docs/ItemApi.md#playlistpostmerge) | **POST** /items/playlist/merge | Post a playlist, do not remove previously imported items
 *ItemApi* | [**PlaylistPostStructure**](docs/ItemApi.md#playlistpoststructure) | **POST** /items/playlist/structure | Post a playlist, keep current structure
 *ItemApi* | [**PlaylistPostTiming**](docs/ItemApi.md#playlistposttiming) | **POST** /items/playlist/timing | Post a playlist
+*ItemApi* | [**StopCurrentItem**](docs/ItemApi.md#stopcurrentitem) | **POST** /items/stopcurrent | Stop an Item
 *ItemApi* | [**UpdateItemById**](docs/ItemApi.md#updateitembyid) | **PATCH** /items/{id} | Update extended item details by ID.
 *ModelTypeApi* | [**GetModelTypeById**](docs/ModelTypeApi.md#getmodeltypebyid) | **GET** /model_types/{id} | Get modelType by id
 *ModelTypeApi* | [**ListModelTypes**](docs/ModelTypeApi.md#listmodeltypes) | **GET** /model_types | Get all modelTypes.
@@ -185,6 +189,7 @@ Class | Method | HTTP request | Description
  - [Model.BroadcastOutputOnly](docs/BroadcastOutputOnly.md)
  - [Model.BroadcastRelations](docs/BroadcastRelations.md)
  - [Model.BroadcastRelationsBlocks](docs/BroadcastRelationsBlocks.md)
+ - [Model.BroadcastRelationsGenre](docs/BroadcastRelationsGenre.md)
  - [Model.BroadcastRelationsItems](docs/BroadcastRelationsItems.md)
  - [Model.BroadcastRelationsItemsParams](docs/BroadcastRelationsItemsParams.md)
  - [Model.BroadcastRelationsModelType](docs/BroadcastRelationsModelType.md)
@@ -197,6 +202,7 @@ Class | Method | HTTP request | Description
  - [Model.CampaignRelationsItems](docs/CampaignRelationsItems.md)
  - [Model.CampaignRelationsItemsParams](docs/CampaignRelationsItemsParams.md)
  - [Model.CampaignResults](docs/CampaignResults.md)
+ - [Model.CampaignTemplateItem](docs/CampaignTemplateItem.md)
  - [Model.Contact](docs/Contact.md)
  - [Model.ContactOutputOnly](docs/ContactOutputOnly.md)
  - [Model.ContactRelations](docs/ContactRelations.md)
@@ -206,6 +212,8 @@ Class | Method | HTTP request | Description
  - [Model.ContactResults](docs/ContactResults.md)
  - [Model.Data](docs/Data.md)
  - [Model.Data1](docs/Data1.md)
+ - [Model.Data2](docs/Data2.md)
+ - [Model.Data3](docs/Data3.md)
  - [Model.EPGResults](docs/EPGResults.md)
  - [Model.Forbidden](docs/Forbidden.md)
  - [Model.Genre](docs/Genre.md)
@@ -267,6 +275,7 @@ Class | Method | HTTP request | Description
  - [Model.RelationsPlaceholder](docs/RelationsPlaceholder.md)
  - [Model.StationResult](docs/StationResult.md)
  - [Model.StationResultStation](docs/StationResultStation.md)
+ - [Model.StationResultStationStartDays](docs/StationResultStationStartDays.md)
  - [Model.Story](docs/Story.md)
  - [Model.StoryInputOnly](docs/StoryInputOnly.md)
  - [Model.StoryOutputOnly](docs/StoryOutputOnly.md)

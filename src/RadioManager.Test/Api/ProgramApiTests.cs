@@ -116,11 +116,12 @@ namespace RadioManager.Test
             //long? genreId = null;
             //long? blockId = null;
             //long? itemId = null;
+            //int? disabled = null;
             //long? limit = null;
             //string orderBy = null;
             //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListPrograms(page, broadcastId, modelTypeId, tagId, presenterId, genreId, blockId, itemId, limit, orderBy, orderDirection, externalStationId);
+            //var response = instance.ListPrograms(page, broadcastId, modelTypeId, tagId, presenterId, genreId, blockId, itemId, disabled, limit, orderBy, orderDirection, externalStationId);
             //Assert.IsInstanceOf<ProgramResults> (response, "response is ProgramResults");
         }
         

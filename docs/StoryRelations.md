@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Tags** | [**StoryRelationsTags**](StoryRelationsTags.md) |  | [optional] 
+**Tags** | [**StoryRelationsTags**](StoryRelationsTags.md) |  | 
 **Items** | [**StoryRelationsItems**](StoryRelationsItems.md) |  | [optional] 
 **ModelType** | [**BroadcastRelationsModelType**](BroadcastRelationsModelType.md) |  | [optional] 
 

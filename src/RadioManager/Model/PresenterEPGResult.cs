@@ -205,80 +205,78 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as PresenterEPGResult);
+            return this.Equals(input as PresenterEPGResult);
         }
 
         /// <summary>
         /// Returns true if PresenterEPGResult instances are equal
         /// </summary>
-        /// <param name="other">Instance of PresenterEPGResult to be compared</param>
+        /// <param name="input">Instance of PresenterEPGResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PresenterEPGResult other)
+        public bool Equals(PresenterEPGResult input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.ModelTypeId == other.ModelTypeId ||
-                    this.ModelTypeId != null &&
-                    this.ModelTypeId.Equals(other.ModelTypeId)
+                    this.ModelTypeId == input.ModelTypeId ||
+                    (this.ModelTypeId != null &&
+                    this.ModelTypeId.Equals(input.ModelTypeId))
                 ) && 
                 (
-                    this.FieldValues == other.FieldValues ||
-                    this.FieldValues != null &&
-                    this.FieldValues.Equals(other.FieldValues)
+                    this.FieldValues == input.FieldValues ||
+                    (this.FieldValues != null &&
+                    this.FieldValues.Equals(input.FieldValues))
                 ) && 
                 (
-                    this.Firstname == other.Firstname ||
-                    this.Firstname != null &&
-                    this.Firstname.Equals(other.Firstname)
+                    this.Firstname == input.Firstname ||
+                    (this.Firstname != null &&
+                    this.Firstname.Equals(input.Firstname))
                 ) && 
                 (
-                    this.Lastname == other.Lastname ||
-                    this.Lastname != null &&
-                    this.Lastname.Equals(other.Lastname)
+                    this.Lastname == input.Lastname ||
+                    (this.Lastname != null &&
+                    this.Lastname.Equals(input.Lastname))
                 ) && 
                 (
-                    this.Active == other.Active ||
-                    this.Active != null &&
-                    this.Active.Equals(other.Active)
+                    this.Active == input.Active ||
+                    (this.Active != null &&
+                    this.Active.Equals(input.Active))
                 ) && 
                 (
-                    this.Name == other.Name ||
-                    this.Name != null &&
-                    this.Name.Equals(other.Name)
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.UpdatedAt == other.UpdatedAt ||
-                    this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(other.UpdatedAt)
+                    this.UpdatedAt == input.UpdatedAt ||
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
-                    this.CreatedAt == other.CreatedAt ||
-                    this.CreatedAt != null &&
-                    this.CreatedAt.Equals(other.CreatedAt)
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
-                    this.DeletedAt == other.DeletedAt ||
-                    this.DeletedAt != null &&
-                    this.DeletedAt.Equals(other.DeletedAt)
+                    this.DeletedAt == input.DeletedAt ||
+                    (this.DeletedAt != null &&
+                    this.DeletedAt.Equals(input.DeletedAt))
                 ) && 
                 (
-                    this.ExternalStationId == other.ExternalStationId ||
-                    this.ExternalStationId != null &&
-                    this.ExternalStationId.Equals(other.ExternalStationId)
+                    this.ExternalStationId == input.ExternalStationId ||
+                    (this.ExternalStationId != null &&
+                    this.ExternalStationId.Equals(input.ExternalStationId))
                 );
         }
 
@@ -288,34 +286,32 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.ModelTypeId != null)
-                    hash = hash * 59 + this.ModelTypeId.GetHashCode();
+                    hashCode = hashCode * 59 + this.ModelTypeId.GetHashCode();
                 if (this.FieldValues != null)
-                    hash = hash * 59 + this.FieldValues.GetHashCode();
+                    hashCode = hashCode * 59 + this.FieldValues.GetHashCode();
                 if (this.Firstname != null)
-                    hash = hash * 59 + this.Firstname.GetHashCode();
+                    hashCode = hashCode * 59 + this.Firstname.GetHashCode();
                 if (this.Lastname != null)
-                    hash = hash * 59 + this.Lastname.GetHashCode();
+                    hashCode = hashCode * 59 + this.Lastname.GetHashCode();
                 if (this.Active != null)
-                    hash = hash * 59 + this.Active.GetHashCode();
+                    hashCode = hashCode * 59 + this.Active.GetHashCode();
                 if (this.Name != null)
-                    hash = hash * 59 + this.Name.GetHashCode();
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.UpdatedAt != null)
-                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.CreatedAt != null)
-                    hash = hash * 59 + this.CreatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.DeletedAt != null)
-                    hash = hash * 59 + this.DeletedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.DeletedAt.GetHashCode();
                 if (this.ExternalStationId != null)
-                    hash = hash * 59 + this.ExternalStationId.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.ExternalStationId.GetHashCode();
+                return hashCode;
             }
         }
 

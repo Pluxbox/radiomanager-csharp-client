@@ -88,40 +88,38 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as BlockRelations);
+            return this.Equals(input as BlockRelations);
         }
 
         /// <summary>
         /// Returns true if BlockRelations instances are equal
         /// </summary>
-        /// <param name="other">Instance of BlockRelations to be compared</param>
+        /// <param name="input">Instance of BlockRelations to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BlockRelations other)
+        public bool Equals(BlockRelations input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.Items == other.Items ||
-                    this.Items != null &&
-                    this.Items.Equals(other.Items)
+                    this.Items == input.Items ||
+                    (this.Items != null &&
+                    this.Items.Equals(input.Items))
                 ) && 
                 (
-                    this.Broadcast == other.Broadcast ||
-                    this.Broadcast != null &&
-                    this.Broadcast.Equals(other.Broadcast)
+                    this.Broadcast == input.Broadcast ||
+                    (this.Broadcast != null &&
+                    this.Broadcast.Equals(input.Broadcast))
                 ) && 
                 (
-                    this.Program == other.Program ||
-                    this.Program != null &&
-                    this.Program.Equals(other.Program)
+                    this.Program == input.Program ||
+                    (this.Program != null &&
+                    this.Program.Equals(input.Program))
                 );
         }
 
@@ -131,18 +129,16 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.Items != null)
-                    hash = hash * 59 + this.Items.GetHashCode();
+                    hashCode = hashCode * 59 + this.Items.GetHashCode();
                 if (this.Broadcast != null)
-                    hash = hash * 59 + this.Broadcast.GetHashCode();
+                    hashCode = hashCode * 59 + this.Broadcast.GetHashCode();
                 if (this.Program != null)
-                    hash = hash * 59 + this.Program.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.Program.GetHashCode();
+                return hashCode;
             }
         }
 

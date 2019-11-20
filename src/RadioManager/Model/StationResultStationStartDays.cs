@@ -124,60 +124,58 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as StationResultStationStartDays);
+            return this.Equals(input as StationResultStationStartDays);
         }
 
         /// <summary>
         /// Returns true if StationResultStationStartDays instances are equal
         /// </summary>
-        /// <param name="other">Instance of StationResultStationStartDays to be compared</param>
+        /// <param name="input">Instance of StationResultStationStartDays to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(StationResultStationStartDays other)
+        public bool Equals(StationResultStationStartDays input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.Monday == other.Monday ||
-                    this.Monday != null &&
-                    this.Monday.Equals(other.Monday)
+                    this.Monday == input.Monday ||
+                    (this.Monday != null &&
+                    this.Monday.Equals(input.Monday))
                 ) && 
                 (
-                    this.Tuesday == other.Tuesday ||
-                    this.Tuesday != null &&
-                    this.Tuesday.Equals(other.Tuesday)
+                    this.Tuesday == input.Tuesday ||
+                    (this.Tuesday != null &&
+                    this.Tuesday.Equals(input.Tuesday))
                 ) && 
                 (
-                    this.Wednesday == other.Wednesday ||
-                    this.Wednesday != null &&
-                    this.Wednesday.Equals(other.Wednesday)
+                    this.Wednesday == input.Wednesday ||
+                    (this.Wednesday != null &&
+                    this.Wednesday.Equals(input.Wednesday))
                 ) && 
                 (
-                    this.Thursday == other.Thursday ||
-                    this.Thursday != null &&
-                    this.Thursday.Equals(other.Thursday)
+                    this.Thursday == input.Thursday ||
+                    (this.Thursday != null &&
+                    this.Thursday.Equals(input.Thursday))
                 ) && 
                 (
-                    this.Friday == other.Friday ||
-                    this.Friday != null &&
-                    this.Friday.Equals(other.Friday)
+                    this.Friday == input.Friday ||
+                    (this.Friday != null &&
+                    this.Friday.Equals(input.Friday))
                 ) && 
                 (
-                    this.Saturday == other.Saturday ||
-                    this.Saturday != null &&
-                    this.Saturday.Equals(other.Saturday)
+                    this.Saturday == input.Saturday ||
+                    (this.Saturday != null &&
+                    this.Saturday.Equals(input.Saturday))
                 ) && 
                 (
-                    this.Sunday == other.Sunday ||
-                    this.Sunday != null &&
-                    this.Sunday.Equals(other.Sunday)
+                    this.Sunday == input.Sunday ||
+                    (this.Sunday != null &&
+                    this.Sunday.Equals(input.Sunday))
                 );
         }
 
@@ -187,26 +185,24 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.Monday != null)
-                    hash = hash * 59 + this.Monday.GetHashCode();
+                    hashCode = hashCode * 59 + this.Monday.GetHashCode();
                 if (this.Tuesday != null)
-                    hash = hash * 59 + this.Tuesday.GetHashCode();
+                    hashCode = hashCode * 59 + this.Tuesday.GetHashCode();
                 if (this.Wednesday != null)
-                    hash = hash * 59 + this.Wednesday.GetHashCode();
+                    hashCode = hashCode * 59 + this.Wednesday.GetHashCode();
                 if (this.Thursday != null)
-                    hash = hash * 59 + this.Thursday.GetHashCode();
+                    hashCode = hashCode * 59 + this.Thursday.GetHashCode();
                 if (this.Friday != null)
-                    hash = hash * 59 + this.Friday.GetHashCode();
+                    hashCode = hashCode * 59 + this.Friday.GetHashCode();
                 if (this.Saturday != null)
-                    hash = hash * 59 + this.Saturday.GetHashCode();
+                    hashCode = hashCode * 59 + this.Saturday.GetHashCode();
                 if (this.Sunday != null)
-                    hash = hash * 59 + this.Sunday.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.Sunday.GetHashCode();
+                return hashCode;
             }
         }
 

@@ -48,7 +48,7 @@ namespace RadioManager.Model
         /// <param name="FieldValues">FieldValues.</param>
         /// <param name="Name">Name (required).</param>
         /// <param name="Description">Description.</param>
-        /// <param name="Tags">Tags.</param>
+        /// <param name="Tags">Tags (required).</param>
         /// <param name="Items">Items.</param>
         /// <param name="ModelType">ModelType.</param>
         public StoryResult(long? Id = default(long?), DateTime? CreatedAt = default(DateTime?), DateTime? UpdatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), bool? Recommended = default(bool?), Object FieldValues = default(Object), string Name = default(string), string Description = default(string), StoryRelationsTags Tags = default(StoryRelationsTags), StoryRelationsItems Items = default(StoryRelationsItems), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
@@ -71,6 +71,15 @@ namespace RadioManager.Model
             {
                 this.Name = Name;
             }
+            // to ensure "Tags" is required (not null)
+            if (Tags == null)
+            {
+                throw new InvalidDataException("Tags is a required property for StoryResult and cannot be null");
+            }
+            else
+            {
+                this.Tags = Tags;
+            }
             this.Id = Id;
             this.CreatedAt = CreatedAt;
             this.UpdatedAt = UpdatedAt;
@@ -79,7 +88,6 @@ namespace RadioManager.Model
             this.Recommended = Recommended;
             this.FieldValues = FieldValues;
             this.Description = Description;
-            this.Tags = Tags;
             this.Items = Items;
             this.ModelType = ModelType;
         }
@@ -199,90 +207,88 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as StoryResult);
+            return this.Equals(input as StoryResult);
         }
 
         /// <summary>
         /// Returns true if StoryResult instances are equal
         /// </summary>
-        /// <param name="other">Instance of StoryResult to be compared</param>
+        /// <param name="input">Instance of StoryResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(StoryResult other)
+        public bool Equals(StoryResult input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.CreatedAt == other.CreatedAt ||
-                    this.CreatedAt != null &&
-                    this.CreatedAt.Equals(other.CreatedAt)
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
-                    this.UpdatedAt == other.UpdatedAt ||
-                    this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(other.UpdatedAt)
+                    this.UpdatedAt == input.UpdatedAt ||
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
-                    this.DeletedAt == other.DeletedAt ||
-                    this.DeletedAt != null &&
-                    this.DeletedAt.Equals(other.DeletedAt)
+                    this.DeletedAt == input.DeletedAt ||
+                    (this.DeletedAt != null &&
+                    this.DeletedAt.Equals(input.DeletedAt))
                 ) && 
                 (
-                    this.ExternalStationId == other.ExternalStationId ||
-                    this.ExternalStationId != null &&
-                    this.ExternalStationId.Equals(other.ExternalStationId)
+                    this.ExternalStationId == input.ExternalStationId ||
+                    (this.ExternalStationId != null &&
+                    this.ExternalStationId.Equals(input.ExternalStationId))
                 ) && 
                 (
-                    this.ModelTypeId == other.ModelTypeId ||
-                    this.ModelTypeId != null &&
-                    this.ModelTypeId.Equals(other.ModelTypeId)
+                    this.ModelTypeId == input.ModelTypeId ||
+                    (this.ModelTypeId != null &&
+                    this.ModelTypeId.Equals(input.ModelTypeId))
                 ) && 
                 (
-                    this.Recommended == other.Recommended ||
-                    this.Recommended != null &&
-                    this.Recommended.Equals(other.Recommended)
+                    this.Recommended == input.Recommended ||
+                    (this.Recommended != null &&
+                    this.Recommended.Equals(input.Recommended))
                 ) && 
                 (
-                    this.FieldValues == other.FieldValues ||
-                    this.FieldValues != null &&
-                    this.FieldValues.Equals(other.FieldValues)
+                    this.FieldValues == input.FieldValues ||
+                    (this.FieldValues != null &&
+                    this.FieldValues.Equals(input.FieldValues))
                 ) && 
                 (
-                    this.Name == other.Name ||
-                    this.Name != null &&
-                    this.Name.Equals(other.Name)
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Description == other.Description ||
-                    this.Description != null &&
-                    this.Description.Equals(other.Description)
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 ) && 
                 (
-                    this.Tags == other.Tags ||
-                    this.Tags != null &&
-                    this.Tags.Equals(other.Tags)
+                    this.Tags == input.Tags ||
+                    (this.Tags != null &&
+                    this.Tags.Equals(input.Tags))
                 ) && 
                 (
-                    this.Items == other.Items ||
-                    this.Items != null &&
-                    this.Items.Equals(other.Items)
+                    this.Items == input.Items ||
+                    (this.Items != null &&
+                    this.Items.Equals(input.Items))
                 ) && 
                 (
-                    this.ModelType == other.ModelType ||
-                    this.ModelType != null &&
-                    this.ModelType.Equals(other.ModelType)
+                    this.ModelType == input.ModelType ||
+                    (this.ModelType != null &&
+                    this.ModelType.Equals(input.ModelType))
                 );
         }
 
@@ -292,38 +298,36 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.CreatedAt != null)
-                    hash = hash * 59 + this.CreatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null)
-                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.DeletedAt != null)
-                    hash = hash * 59 + this.DeletedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.DeletedAt.GetHashCode();
                 if (this.ExternalStationId != null)
-                    hash = hash * 59 + this.ExternalStationId.GetHashCode();
+                    hashCode = hashCode * 59 + this.ExternalStationId.GetHashCode();
                 if (this.ModelTypeId != null)
-                    hash = hash * 59 + this.ModelTypeId.GetHashCode();
+                    hashCode = hashCode * 59 + this.ModelTypeId.GetHashCode();
                 if (this.Recommended != null)
-                    hash = hash * 59 + this.Recommended.GetHashCode();
+                    hashCode = hashCode * 59 + this.Recommended.GetHashCode();
                 if (this.FieldValues != null)
-                    hash = hash * 59 + this.FieldValues.GetHashCode();
+                    hashCode = hashCode * 59 + this.FieldValues.GetHashCode();
                 if (this.Name != null)
-                    hash = hash * 59 + this.Name.GetHashCode();
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
-                    hash = hash * 59 + this.Description.GetHashCode();
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Tags != null)
-                    hash = hash * 59 + this.Tags.GetHashCode();
+                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Items != null)
-                    hash = hash * 59 + this.Items.GetHashCode();
+                    hashCode = hashCode * 59 + this.Items.GetHashCode();
                 if (this.ModelType != null)
-                    hash = hash * 59 + this.ModelType.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.ModelType.GetHashCode();
+                return hashCode;
             }
         }
 

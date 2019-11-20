@@ -44,7 +44,7 @@ namespace RadioManager.Model
         /// <param name="DeletedAt">DeletedAt (required).</param>
         /// <param name="Item">Item.</param>
         /// <param name="ExternalStationId">ExternalStationId.</param>
-        public CampaignOutputOnly(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), List<Item> Item = default(List<Item>), long? ExternalStationId = default(long?))
+        public CampaignOutputOnly(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), CampaignTemplateItem Item = default(CampaignTemplateItem), long? ExternalStationId = default(long?))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -114,7 +114,7 @@ namespace RadioManager.Model
         /// Gets or Sets Item
         /// </summary>
         [DataMember(Name="item", EmitDefaultValue=false)]
-        public List<Item> Item { get; set; }
+        public CampaignTemplateItem Item { get; set; }
 
         /// <summary>
         /// Gets or Sets ExternalStationId
@@ -152,55 +152,53 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as CampaignOutputOnly);
+            return this.Equals(input as CampaignOutputOnly);
         }
 
         /// <summary>
         /// Returns true if CampaignOutputOnly instances are equal
         /// </summary>
-        /// <param name="other">Instance of CampaignOutputOnly to be compared</param>
+        /// <param name="input">Instance of CampaignOutputOnly to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CampaignOutputOnly other)
+        public bool Equals(CampaignOutputOnly input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.UpdatedAt == other.UpdatedAt ||
-                    this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(other.UpdatedAt)
+                    this.UpdatedAt == input.UpdatedAt ||
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
-                    this.CreatedAt == other.CreatedAt ||
-                    this.CreatedAt != null &&
-                    this.CreatedAt.Equals(other.CreatedAt)
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
-                    this.DeletedAt == other.DeletedAt ||
-                    this.DeletedAt != null &&
-                    this.DeletedAt.Equals(other.DeletedAt)
+                    this.DeletedAt == input.DeletedAt ||
+                    (this.DeletedAt != null &&
+                    this.DeletedAt.Equals(input.DeletedAt))
                 ) && 
                 (
-                    this.Item == other.Item ||
-                    this.Item != null &&
-                    this.Item.SequenceEqual(other.Item)
+                    this.Item == input.Item ||
+                    (this.Item != null &&
+                    this.Item.Equals(input.Item))
                 ) && 
                 (
-                    this.ExternalStationId == other.ExternalStationId ||
-                    this.ExternalStationId != null &&
-                    this.ExternalStationId.Equals(other.ExternalStationId)
+                    this.ExternalStationId == input.ExternalStationId ||
+                    (this.ExternalStationId != null &&
+                    this.ExternalStationId.Equals(input.ExternalStationId))
                 );
         }
 
@@ -210,24 +208,22 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.UpdatedAt != null)
-                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.CreatedAt != null)
-                    hash = hash * 59 + this.CreatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.DeletedAt != null)
-                    hash = hash * 59 + this.DeletedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.DeletedAt.GetHashCode();
                 if (this.Item != null)
-                    hash = hash * 59 + this.Item.GetHashCode();
+                    hashCode = hashCode * 59 + this.Item.GetHashCode();
                 if (this.ExternalStationId != null)
-                    hash = hash * 59 + this.ExternalStationId.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.ExternalStationId.GetHashCode();
+                return hashCode;
             }
         }
 

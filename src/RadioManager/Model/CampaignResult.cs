@@ -53,7 +53,7 @@ namespace RadioManager.Model
         /// <param name="Description">Description.</param>
         /// <param name="Items">Items.</param>
         /// <param name="ModelType">ModelType.</param>
-        public CampaignResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), List<Item> Item = default(List<Item>), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), bool? Recommended = default(bool?), string Description = default(string), CampaignRelationsItems Items = default(CampaignRelationsItems), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
+        public CampaignResult(long? Id = default(long?), DateTime? UpdatedAt = default(DateTime?), DateTime? CreatedAt = default(DateTime?), DateTime? DeletedAt = default(DateTime?), CampaignTemplateItem Item = default(CampaignTemplateItem), long? ExternalStationId = default(long?), long? ModelTypeId = default(long?), Object FieldValues = default(Object), string Title = default(string), DateTime? Start = default(DateTime?), DateTime? Stop = default(DateTime?), bool? Recommended = default(bool?), string Description = default(string), CampaignRelationsItems Items = default(CampaignRelationsItems), BroadcastRelationsModelType ModelType = default(BroadcastRelationsModelType))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -156,7 +156,7 @@ namespace RadioManager.Model
         /// Gets or Sets Item
         /// </summary>
         [DataMember(Name="item", EmitDefaultValue=false)]
-        public List<Item> Item { get; set; }
+        public CampaignTemplateItem Item { get; set; }
 
         /// <summary>
         /// Gets or Sets ExternalStationId
@@ -257,100 +257,98 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as CampaignResult);
+            return this.Equals(input as CampaignResult);
         }
 
         /// <summary>
         /// Returns true if CampaignResult instances are equal
         /// </summary>
-        /// <param name="other">Instance of CampaignResult to be compared</param>
+        /// <param name="input">Instance of CampaignResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CampaignResult other)
+        public bool Equals(CampaignResult input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.UpdatedAt == other.UpdatedAt ||
-                    this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(other.UpdatedAt)
+                    this.UpdatedAt == input.UpdatedAt ||
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
-                    this.CreatedAt == other.CreatedAt ||
-                    this.CreatedAt != null &&
-                    this.CreatedAt.Equals(other.CreatedAt)
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
-                    this.DeletedAt == other.DeletedAt ||
-                    this.DeletedAt != null &&
-                    this.DeletedAt.Equals(other.DeletedAt)
+                    this.DeletedAt == input.DeletedAt ||
+                    (this.DeletedAt != null &&
+                    this.DeletedAt.Equals(input.DeletedAt))
                 ) && 
                 (
-                    this.Item == other.Item ||
-                    this.Item != null &&
-                    this.Item.SequenceEqual(other.Item)
+                    this.Item == input.Item ||
+                    (this.Item != null &&
+                    this.Item.Equals(input.Item))
                 ) && 
                 (
-                    this.ExternalStationId == other.ExternalStationId ||
-                    this.ExternalStationId != null &&
-                    this.ExternalStationId.Equals(other.ExternalStationId)
+                    this.ExternalStationId == input.ExternalStationId ||
+                    (this.ExternalStationId != null &&
+                    this.ExternalStationId.Equals(input.ExternalStationId))
                 ) && 
                 (
-                    this.ModelTypeId == other.ModelTypeId ||
-                    this.ModelTypeId != null &&
-                    this.ModelTypeId.Equals(other.ModelTypeId)
+                    this.ModelTypeId == input.ModelTypeId ||
+                    (this.ModelTypeId != null &&
+                    this.ModelTypeId.Equals(input.ModelTypeId))
                 ) && 
                 (
-                    this.FieldValues == other.FieldValues ||
-                    this.FieldValues != null &&
-                    this.FieldValues.Equals(other.FieldValues)
+                    this.FieldValues == input.FieldValues ||
+                    (this.FieldValues != null &&
+                    this.FieldValues.Equals(input.FieldValues))
                 ) && 
                 (
-                    this.Title == other.Title ||
-                    this.Title != null &&
-                    this.Title.Equals(other.Title)
+                    this.Title == input.Title ||
+                    (this.Title != null &&
+                    this.Title.Equals(input.Title))
                 ) && 
                 (
-                    this.Start == other.Start ||
-                    this.Start != null &&
-                    this.Start.Equals(other.Start)
+                    this.Start == input.Start ||
+                    (this.Start != null &&
+                    this.Start.Equals(input.Start))
                 ) && 
                 (
-                    this.Stop == other.Stop ||
-                    this.Stop != null &&
-                    this.Stop.Equals(other.Stop)
+                    this.Stop == input.Stop ||
+                    (this.Stop != null &&
+                    this.Stop.Equals(input.Stop))
                 ) && 
                 (
-                    this.Recommended == other.Recommended ||
-                    this.Recommended != null &&
-                    this.Recommended.Equals(other.Recommended)
+                    this.Recommended == input.Recommended ||
+                    (this.Recommended != null &&
+                    this.Recommended.Equals(input.Recommended))
                 ) && 
                 (
-                    this.Description == other.Description ||
-                    this.Description != null &&
-                    this.Description.Equals(other.Description)
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 ) && 
                 (
-                    this.Items == other.Items ||
-                    this.Items != null &&
-                    this.Items.Equals(other.Items)
+                    this.Items == input.Items ||
+                    (this.Items != null &&
+                    this.Items.Equals(input.Items))
                 ) && 
                 (
-                    this.ModelType == other.ModelType ||
-                    this.ModelType != null &&
-                    this.ModelType.Equals(other.ModelType)
+                    this.ModelType == input.ModelType ||
+                    (this.ModelType != null &&
+                    this.ModelType.Equals(input.ModelType))
                 );
         }
 
@@ -360,42 +358,40 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.UpdatedAt != null)
-                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.CreatedAt != null)
-                    hash = hash * 59 + this.CreatedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.DeletedAt != null)
-                    hash = hash * 59 + this.DeletedAt.GetHashCode();
+                    hashCode = hashCode * 59 + this.DeletedAt.GetHashCode();
                 if (this.Item != null)
-                    hash = hash * 59 + this.Item.GetHashCode();
+                    hashCode = hashCode * 59 + this.Item.GetHashCode();
                 if (this.ExternalStationId != null)
-                    hash = hash * 59 + this.ExternalStationId.GetHashCode();
+                    hashCode = hashCode * 59 + this.ExternalStationId.GetHashCode();
                 if (this.ModelTypeId != null)
-                    hash = hash * 59 + this.ModelTypeId.GetHashCode();
+                    hashCode = hashCode * 59 + this.ModelTypeId.GetHashCode();
                 if (this.FieldValues != null)
-                    hash = hash * 59 + this.FieldValues.GetHashCode();
+                    hashCode = hashCode * 59 + this.FieldValues.GetHashCode();
                 if (this.Title != null)
-                    hash = hash * 59 + this.Title.GetHashCode();
+                    hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.Start != null)
-                    hash = hash * 59 + this.Start.GetHashCode();
+                    hashCode = hashCode * 59 + this.Start.GetHashCode();
                 if (this.Stop != null)
-                    hash = hash * 59 + this.Stop.GetHashCode();
+                    hashCode = hashCode * 59 + this.Stop.GetHashCode();
                 if (this.Recommended != null)
-                    hash = hash * 59 + this.Recommended.GetHashCode();
+                    hashCode = hashCode * 59 + this.Recommended.GetHashCode();
                 if (this.Description != null)
-                    hash = hash * 59 + this.Description.GetHashCode();
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Items != null)
-                    hash = hash * 59 + this.Items.GetHashCode();
+                    hashCode = hashCode * 59 + this.Items.GetHashCode();
                 if (this.ModelType != null)
-                    hash = hash * 59 + this.ModelType.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.ModelType.GetHashCode();
+                return hashCode;
             }
         }
 

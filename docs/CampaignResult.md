@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **UpdatedAt** | **DateTime?** |  | 
 **CreatedAt** | **DateTime?** |  | 
 **DeletedAt** | **DateTime?** |  | 
-**Item** | [**List&lt;Item&gt;**](Item.md) |  | [optional] 
+**Item** | [**CampaignTemplateItem**](CampaignTemplateItem.md) |  | [optional] 
 **ExternalStationId** | **long?** |  | [optional] 
 **ModelTypeId** | **long?** |  | 
 **FieldValues** | **Object** |  | [optional] 

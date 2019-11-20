@@ -19,6 +19,7 @@ using RadioManager.Api;
 using RadioManager.Model;
 using RadioManager.Client;
 using System.Reflection;
+using Newtonsoft.Json;
 
 namespace RadioManager.Test
 {
@@ -63,6 +64,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test "IsInstanceOfType" GenreRelationsPrograms
             //Assert.IsInstanceOfType<GenreRelationsPrograms> (instance, "variable 'instance' is a GenreRelationsPrograms");
         }
+
 
         /// <summary>
         /// Test the property 'Href'

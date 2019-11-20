@@ -118,45 +118,43 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as Genre);
+            return this.Equals(input as Genre);
         }
 
         /// <summary>
         /// Returns true if Genre instances are equal
         /// </summary>
-        /// <param name="other">Instance of Genre to be compared</param>
+        /// <param name="input">Instance of Genre to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Genre other)
+        public bool Equals(Genre input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Urn == other.Urn ||
-                    this.Urn != null &&
-                    this.Urn.Equals(other.Urn)
+                    this.Urn == input.Urn ||
+                    (this.Urn != null &&
+                    this.Urn.Equals(input.Urn))
                 ) && 
                 (
-                    this.ParentId == other.ParentId ||
-                    this.ParentId != null &&
-                    this.ParentId.Equals(other.ParentId)
+                    this.ParentId == input.ParentId ||
+                    (this.ParentId != null &&
+                    this.ParentId.Equals(input.ParentId))
                 ) && 
                 (
-                    this.Name == other.Name ||
-                    this.Name != null &&
-                    this.Name.Equals(other.Name)
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -166,20 +164,18 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Urn != null)
-                    hash = hash * 59 + this.Urn.GetHashCode();
+                    hashCode = hashCode * 59 + this.Urn.GetHashCode();
                 if (this.ParentId != null)
-                    hash = hash * 59 + this.ParentId.GetHashCode();
+                    hashCode = hashCode * 59 + this.ParentId.GetHashCode();
                 if (this.Name != null)
-                    hash = hash * 59 + this.Name.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                return hashCode;
             }
         }
 

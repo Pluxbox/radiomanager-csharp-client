@@ -197,11 +197,9 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //long? programId = null;
-            //long? presenterId = null;
-            //long? tagId = null;
-            //var response = instance.PrintBroadcastById(id, programId, presenterId, tagId);
-            //Assert.IsInstanceOf<EPGResults> (response, "response is EPGResults");
+            //long? templateId = null;
+            //var response = instance.PrintBroadcastById(id, templateId);
+            //Assert.IsInstanceOf<string> (response, "response is string");
         }
         
         /// <summary>

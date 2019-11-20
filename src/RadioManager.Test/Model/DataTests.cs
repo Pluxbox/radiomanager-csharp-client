@@ -19,6 +19,7 @@ using RadioManager.Api;
 using RadioManager.Model;
 using RadioManager.Client;
 using System.Reflection;
+using Newtonsoft.Json;
 
 namespace RadioManager.Test
 {
@@ -64,6 +65,7 @@ namespace RadioManager.Test
             //Assert.IsInstanceOfType<Data> (instance, "variable 'instance' is a Data");
         }
 
+
         /// <summary>
         /// Test the property 'Start'
         /// </summary>
@@ -71,6 +73,14 @@ namespace RadioManager.Test
         public void StartTest()
         {
             // TODO unit test for the property 'Start'
+        }
+        /// <summary>
+        /// Test the property 'AllowPlaylistPast'
+        /// </summary>
+        [Test]
+        public void AllowPlaylistPastTest()
+        {
+            // TODO unit test for the property 'AllowPlaylistPast'
         }
         /// <summary>
         /// Test the property 'Items'

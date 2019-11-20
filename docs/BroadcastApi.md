@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**GetNextBroadcast**](BroadcastApi.md#getnextbroadcast) | **GET** /broadcasts/next | Get next Broadcast
 [**GetWeeklyEPG**](BroadcastApi.md#getweeklyepg) | **GET** /broadcasts/epg/weekly | Get weekly EPG
 [**ListBroadcasts**](BroadcastApi.md#listbroadcasts) | **GET** /broadcasts | Get all broadcasts.
-[**PrintBroadcastById**](BroadcastApi.md#printbroadcastbyid) | **GET** /broadcasts/print/{id} | Print Broadcast by id
+[**PrintBroadcastById**](BroadcastApi.md#printbroadcastbyid) | **GET** /broadcasts/print/{id} | Print broadcast by id with template
 [**UpdateBroadcastByID**](BroadcastApi.md#updatebroadcastbyid) | **PATCH** /broadcasts/{id} | Update broadcast by id
 
 
@@ -40,9 +40,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var data = new BroadcastDataInput(); // BroadcastDataInput | Data **(Required)**
@@ -106,9 +106,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var id = 789;  // long? | ID of Broadcast **(Required)**
@@ -172,9 +172,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var id = 789;  // long? | ID of Broadcast **(Required)**
@@ -240,9 +240,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
@@ -306,9 +306,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var date = 2013-10-20T19:20:30+01:00;  // DateTime? | Date *(Optional)* (optional) 
@@ -374,9 +374,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var date = 2013-10-20T19:20:30+01:00;  // DateTime? | Date *(Optional)* (optional) 
@@ -442,9 +442,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
@@ -508,9 +508,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var date = date_example;  // string | Date *(Optional)* (optional) 
@@ -576,9 +576,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
@@ -647,11 +647,11 @@ Name | Type | Description  | Notes
 
 <a name="printbroadcastbyid"></a>
 # **PrintBroadcastById**
-> EPGResults PrintBroadcastById (long? id, long? programId = null, long? presenterId = null, long? tagId = null)
+> string PrintBroadcastById (long? id, long? templateId = null)
 
-Print Broadcast by id
+Print broadcast by id with template
 
-Print Broadcast by id
+Print broadcast by id with template
 
 ### Example
 ```csharp
@@ -668,20 +668,18 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var id = 789;  // long? | ID of Broadcast **(Required)**
-            var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
-            var presenterId = 789;  // long? | Search on Presenter ID *(Optional)* `(Relation)` (optional) 
-            var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
+            var templateId = 789;  // long? | Search on template ID *(Optional)* (optional) 
 
             try
             {
-                // Print Broadcast by id
-                EPGResults result = apiInstance.PrintBroadcastById(id, programId, presenterId, tagId);
+                // Print broadcast by id with template
+                string result = apiInstance.PrintBroadcastById(id, templateId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -698,13 +696,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of Broadcast **(Required)** | 
- **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **presenterId** | **long?**| Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **templateId** | **long?**| Search on template ID *(Optional)* | [optional] 
 
 ### Return type
 
-[**EPGResults**](EPGResults.md)
+**string**
 
 ### Authorization
 
@@ -740,9 +736,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: API Key
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var id = 789;  // long? | ID of Broadcast **(Required)**

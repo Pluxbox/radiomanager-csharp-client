@@ -19,6 +19,7 @@ using RadioManager.Api;
 using RadioManager.Model;
 using RadioManager.Client;
 using System.Reflection;
+using Newtonsoft.Json;
 
 namespace RadioManager.Test
 {
@@ -64,6 +65,15 @@ namespace RadioManager.Test
             //Assert.IsInstanceOfType<BroadcastRelations> (instance, "variable 'instance' is a BroadcastRelations");
         }
 
+
+        /// <summary>
+        /// Test the property 'Genre'
+        /// </summary>
+        [Test]
+        public void GenreTest()
+        {
+            // TODO unit test for the property 'Genre'
+        }
         /// <summary>
         /// Test the property 'Items'
         /// </summary>

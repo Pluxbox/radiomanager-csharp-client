@@ -151,75 +151,73 @@ namespace RadioManager.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ContactResults);
+            return this.Equals(input as ContactResults);
         }
 
         /// <summary>
         /// Returns true if ContactResults instances are equal
         /// </summary>
-        /// <param name="other">Instance of ContactResults to be compared</param>
+        /// <param name="input">Instance of ContactResults to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ContactResults other)
+        public bool Equals(ContactResults input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.CurrentPage == other.CurrentPage ||
-                    this.CurrentPage != null &&
-                    this.CurrentPage.Equals(other.CurrentPage)
+                    this.CurrentPage == input.CurrentPage ||
+                    (this.CurrentPage != null &&
+                    this.CurrentPage.Equals(input.CurrentPage))
                 ) && 
                 (
-                    this.From == other.From ||
-                    this.From != null &&
-                    this.From.Equals(other.From)
+                    this.From == input.From ||
+                    (this.From != null &&
+                    this.From.Equals(input.From))
                 ) && 
                 (
-                    this.LastPage == other.LastPage ||
-                    this.LastPage != null &&
-                    this.LastPage.Equals(other.LastPage)
+                    this.LastPage == input.LastPage ||
+                    (this.LastPage != null &&
+                    this.LastPage.Equals(input.LastPage))
                 ) && 
                 (
-                    this.NextPageUrl == other.NextPageUrl ||
-                    this.NextPageUrl != null &&
-                    this.NextPageUrl.Equals(other.NextPageUrl)
+                    this.NextPageUrl == input.NextPageUrl ||
+                    (this.NextPageUrl != null &&
+                    this.NextPageUrl.Equals(input.NextPageUrl))
                 ) && 
                 (
-                    this.Path == other.Path ||
-                    this.Path != null &&
-                    this.Path.Equals(other.Path)
+                    this.Path == input.Path ||
+                    (this.Path != null &&
+                    this.Path.Equals(input.Path))
                 ) && 
                 (
-                    this.PerPage == other.PerPage ||
-                    this.PerPage != null &&
-                    this.PerPage.Equals(other.PerPage)
+                    this.PerPage == input.PerPage ||
+                    (this.PerPage != null &&
+                    this.PerPage.Equals(input.PerPage))
                 ) && 
                 (
-                    this.PrevPageUrl == other.PrevPageUrl ||
-                    this.PrevPageUrl != null &&
-                    this.PrevPageUrl.Equals(other.PrevPageUrl)
+                    this.PrevPageUrl == input.PrevPageUrl ||
+                    (this.PrevPageUrl != null &&
+                    this.PrevPageUrl.Equals(input.PrevPageUrl))
                 ) && 
                 (
-                    this.To == other.To ||
-                    this.To != null &&
-                    this.To.Equals(other.To)
+                    this.To == input.To ||
+                    (this.To != null &&
+                    this.To.Equals(input.To))
                 ) && 
                 (
-                    this.Total == other.Total ||
-                    this.Total != null &&
-                    this.Total.Equals(other.Total)
+                    this.Total == input.Total ||
+                    (this.Total != null &&
+                    this.Total.Equals(input.Total))
                 ) && 
                 (
-                    this.Results == other.Results ||
+                    this.Results == input.Results ||
                     this.Results != null &&
-                    this.Results.SequenceEqual(other.Results)
+                    this.Results.SequenceEqual(input.Results)
                 );
         }
 
@@ -229,32 +227,30 @@ namespace RadioManager.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.CurrentPage != null)
-                    hash = hash * 59 + this.CurrentPage.GetHashCode();
+                    hashCode = hashCode * 59 + this.CurrentPage.GetHashCode();
                 if (this.From != null)
-                    hash = hash * 59 + this.From.GetHashCode();
+                    hashCode = hashCode * 59 + this.From.GetHashCode();
                 if (this.LastPage != null)
-                    hash = hash * 59 + this.LastPage.GetHashCode();
+                    hashCode = hashCode * 59 + this.LastPage.GetHashCode();
                 if (this.NextPageUrl != null)
-                    hash = hash * 59 + this.NextPageUrl.GetHashCode();
+                    hashCode = hashCode * 59 + this.NextPageUrl.GetHashCode();
                 if (this.Path != null)
-                    hash = hash * 59 + this.Path.GetHashCode();
+                    hashCode = hashCode * 59 + this.Path.GetHashCode();
                 if (this.PerPage != null)
-                    hash = hash * 59 + this.PerPage.GetHashCode();
+                    hashCode = hashCode * 59 + this.PerPage.GetHashCode();
                 if (this.PrevPageUrl != null)
-                    hash = hash * 59 + this.PrevPageUrl.GetHashCode();
+                    hashCode = hashCode * 59 + this.PrevPageUrl.GetHashCode();
                 if (this.To != null)
-                    hash = hash * 59 + this.To.GetHashCode();
+                    hashCode = hashCode * 59 + this.To.GetHashCode();
                 if (this.Total != null)
-                    hash = hash * 59 + this.Total.GetHashCode();
+                    hashCode = hashCode * 59 + this.Total.GetHashCode();
                 if (this.Results != null)
-                    hash = hash * 59 + this.Results.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.Results.GetHashCode();
+                return hashCode;
             }
         }
 
