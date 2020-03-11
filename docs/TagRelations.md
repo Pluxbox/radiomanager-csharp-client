@@ -3,10 +3,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Broadcasts** | [**TagRelationsBroadcasts**](TagRelationsBroadcasts.md) |  | [optional] 
-**Programs** | [**TagRelationsPrograms**](TagRelationsPrograms.md) |  | [optional] 
-**Contacts** | [**TagRelationsContacts**](TagRelationsContacts.md) |  | [optional] 
-**Items** | [**TagRelationsItems**](TagRelationsItems.md) |  | [optional] 
+**Broadcasts** | **Object** |  | [optional] 
+**Programs** | **Object** |  | [optional] 
+**Contacts** | **Object** |  | [optional] 
+**Items** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

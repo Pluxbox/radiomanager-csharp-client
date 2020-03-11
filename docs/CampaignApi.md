@@ -1,6 +1,6 @@
 # RadioManager.Api.CampaignApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,10 +10,9 @@ Method | HTTP request | Description
 [**ListCampaigns**](CampaignApi.md#listcampaigns) | **GET** /campaigns | Get all campaigns.
 [**UpdateCampaignByID**](CampaignApi.md#updatecampaignbyid) | **PATCH** /campaigns/{id} | Update campaign by id
 
-
 <a name="createcampaign"></a>
 # **CreateCampaign**
-> PostSuccess CreateCampaign (CampaignDataInput data)
+> PostSuccess CreateCampaign (CampaignDataInput body)
 
 Create campaign.
 
@@ -33,18 +32,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new CampaignApi();
-            var data = new CampaignDataInput(); // CampaignDataInput | Data **(Required)**
+            var body = new CampaignDataInput(); // CampaignDataInput | Data **(Required)**
 
             try
             {
                 // Create campaign.
-                PostSuccess result = apiInstance.CreateCampaign(data);
+                PostSuccess result = apiInstance.CreateCampaign(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -60,7 +59,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**CampaignDataInput**](CampaignDataInput.md)| Data **(Required)** | 
+ **body** | [**CampaignDataInput**](CampaignDataInput.md)| Data **(Required)** | 
 
 ### Return type
 
@@ -68,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -76,7 +75,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="deletecampaignbyid"></a>
 # **DeleteCampaignById**
 > Success DeleteCampaignById (long? id)
@@ -99,7 +97,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -134,15 +132,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getcampaignbyid"></a>
 # **GetCampaignById**
 > CampaignResult GetCampaignById (long? id, long? externalStationId = null)
@@ -165,7 +162,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -202,18 +199,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listcampaigns"></a>
 # **ListCampaigns**
-> CampaignResults ListCampaigns (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> Object ListCampaigns (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all campaigns.
 
@@ -233,7 +229,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -252,7 +248,7 @@ namespace Example
             try
             {
                 // Get all campaigns.
-                CampaignResults result = apiInstance.ListCampaigns(page, itemId, modelTypeId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
+                Object result = apiInstance.ListCampaigns(page, itemId, modelTypeId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -280,22 +276,21 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CampaignResults**](CampaignResults.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="updatecampaignbyid"></a>
 # **UpdateCampaignByID**
-> Success UpdateCampaignByID (long? id, CampaignDataInput data = null)
+> Success UpdateCampaignByID (long? id, CampaignDataInput body = null)
 
 Update campaign by id
 
@@ -315,19 +310,19 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new CampaignApi();
             var id = 789;  // long? | ID of Campaign **(Required)**
-            var data = new CampaignDataInput(); // CampaignDataInput | Data *(Optional)* (optional) 
+            var body = new CampaignDataInput(); // CampaignDataInput | Data *(Optional)* (optional) 
 
             try
             {
                 // Update campaign by id
-                Success result = apiInstance.UpdateCampaignByID(id, data);
+                Success result = apiInstance.UpdateCampaignByID(id, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -344,7 +339,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of Campaign **(Required)** | 
- **data** | [**CampaignDataInput**](CampaignDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**CampaignDataInput**](CampaignDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
@@ -352,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -360,4 +355,3 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

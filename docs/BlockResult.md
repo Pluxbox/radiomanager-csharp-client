@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **UpdatedAt** | **DateTime?** | Time of the last update of the Block (formatted as a DateTime object), saved with an TimeZone. | 
 **DeletedAt** | **DateTime?** | Moment when the Block got deleted (formatted as a DateTime object), saved with an TimeZone. | 
 **ExternalStationId** | **long?** |  | [optional] 
-**Items** | [**BlockRelationsItems**](BlockRelationsItems.md) |  | [optional] 
-**Broadcast** | [**BlockRelationsBroadcast**](BlockRelationsBroadcast.md) |  | [optional] 
-**Program** | [**BlockRelationsProgram**](BlockRelationsProgram.md) |  | [optional] 
+**Items** | **Object** |  | [optional] 
+**Broadcast** | **Object** |  | [optional] 
+**Program** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

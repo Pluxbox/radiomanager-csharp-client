@@ -1,6 +1,6 @@
 # RadioManager.Api.BlockApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**GetCurrentBlock**](BlockApi.md#getcurrentblock) | **GET** /blocks/current | Get current Block
 [**GetNextBlock**](BlockApi.md#getnextblock) | **GET** /blocks/next | Get upcoming Block
 [**ListBlocks**](BlockApi.md#listblocks) | **GET** /blocks | Get a list of all blocks currently in your station.
-
 
 <a name="getblockbyid"></a>
 # **GetBlockById**
@@ -32,7 +31,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -69,15 +68,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getcurrentblock"></a>
 # **GetCurrentBlock**
 > BlockResult GetCurrentBlock ()
@@ -100,7 +98,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -131,15 +129,14 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getnextblock"></a>
 # **GetNextBlock**
 > BlockResult GetNextBlock ()
@@ -162,7 +159,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -193,18 +190,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listblocks"></a>
 # **ListBlocks**
-> BlockResults ListBlocks (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> Object ListBlocks (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get a list of all blocks currently in your station.
 
@@ -224,13 +220,13 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BlockApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
+            var page = 789;  // long? | Current page *(Optional)* (optional) 
             var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
             var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
             var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
@@ -244,7 +240,7 @@ namespace Example
             try
             {
                 // Get a list of all blocks currently in your station.
-                BlockResults result = apiInstance.ListBlocks(page, broadcastId, itemId, programId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
+                Object result = apiInstance.ListBlocks(page, broadcastId, itemId, programId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -260,7 +256,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
+ **page** | **long?**| Current page *(Optional)* | [optional] 
  **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
@@ -273,16 +269,15 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlockResults**](BlockResults.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

@@ -1,6 +1,6 @@
 # RadioManager.Api.TagApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,10 +10,9 @@ Method | HTTP request | Description
 [**ListTags**](TagApi.md#listtags) | **GET** /tags | Get a list of all the tags currently in your station.
 [**UpdateTagByID**](TagApi.md#updatetagbyid) | **PATCH** /tags/{id} | Update tag by id
 
-
 <a name="createtag"></a>
 # **CreateTag**
-> PostSuccess CreateTag (TagDataInput data)
+> PostSuccess CreateTag (TagDataInput body)
 
 Create tag.
 
@@ -33,18 +32,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new TagApi();
-            var data = new TagDataInput(); // TagDataInput | Data **(Required)**
+            var body = new TagDataInput(); // TagDataInput | Data **(Required)**
 
             try
             {
                 // Create tag.
-                PostSuccess result = apiInstance.CreateTag(data);
+                PostSuccess result = apiInstance.CreateTag(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -60,7 +59,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**TagDataInput**](TagDataInput.md)| Data **(Required)** | 
+ **body** | [**TagDataInput**](TagDataInput.md)| Data **(Required)** | 
 
 ### Return type
 
@@ -68,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -76,7 +75,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="deletetagbyid"></a>
 # **DeleteTagById**
 > Success DeleteTagById (long? id)
@@ -99,7 +97,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -134,15 +132,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="gettagbyid"></a>
 # **GetTagById**
 > TagResult GetTagById (long? id, long? externalStationId = null)
@@ -165,7 +162,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -202,18 +199,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listtags"></a>
 # **ListTags**
-> TagResults ListTags (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> Object ListTags (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get a list of all the tags currently in your station.
 
@@ -233,7 +229,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -252,7 +248,7 @@ namespace Example
             try
             {
                 // Get a list of all the tags currently in your station.
-                TagResults result = apiInstance.ListTags(page, programId, itemId, broadcastId, contactId, limit, orderBy, orderDirection, externalStationId);
+                Object result = apiInstance.ListTags(page, programId, itemId, broadcastId, contactId, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -280,22 +276,21 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagResults**](TagResults.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="updatetagbyid"></a>
 # **UpdateTagByID**
-> Success UpdateTagByID (long? id, TagDataInput data = null)
+> Success UpdateTagByID (long? id, TagDataInput body = null)
 
 Update tag by id
 
@@ -315,19 +310,19 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new TagApi();
             var id = 789;  // long? | ID of Tag **(Required)**
-            var data = new TagDataInput(); // TagDataInput | Data *(Optional)* (optional) 
+            var body = new TagDataInput(); // TagDataInput | Data *(Optional)* (optional) 
 
             try
             {
                 // Update tag by id
-                Success result = apiInstance.UpdateTagByID(id, data);
+                Success result = apiInstance.UpdateTagByID(id, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -344,7 +339,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of Tag **(Required)** | 
- **data** | [**TagDataInput**](TagDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**TagDataInput**](TagDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
@@ -352,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -360,4 +355,3 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

@@ -3,13 +3,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Genre** | [**BroadcastRelationsGenre**](BroadcastRelationsGenre.md) |  | [optional] 
-**Items** | [**BroadcastRelationsItems**](BroadcastRelationsItems.md) |  | [optional] 
-**Blocks** | [**BroadcastRelationsBlocks**](BroadcastRelationsBlocks.md) |  | [optional] 
-**Program** | [**BlockRelationsProgram**](BlockRelationsProgram.md) |  | [optional] 
-**Tags** | [**BroadcastRelationsTags**](BroadcastRelationsTags.md) |  | [optional] 
-**Presenters** | [**BroadcastRelationsPresenters**](BroadcastRelationsPresenters.md) |  | [optional] 
-**ModelType** | [**BroadcastRelationsModelType**](BroadcastRelationsModelType.md) |  | [optional] 
+**Genre** | **Object** |  | [optional] 
+**Items** | **Object** |  | [optional] 
+**Blocks** | **Object** |  | [optional] 
+**Program** | **Object** |  | [optional] 
+**Tags** | **Object** |  | [optional] 
+**Presenters** | **Object** |  | [optional] 
+**ModelType** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

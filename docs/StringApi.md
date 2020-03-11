@@ -1,11 +1,10 @@
 # RadioManager.Api.StringApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetStringsByName**](StringApi.md#getstringsbyname) | **GET** /strings/{name} | Get Strings (formatted)
-
 
 <a name="getstringsbyname"></a>
 # **GetStringsByName**
@@ -29,14 +28,14 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new StringApi();
             var name = name_example;  // string | Name of Strings **(Required)**
-            var fullModel = true;  // bool? | Full model or content only **(Required)** (default to true)
+            var fullModel = true;  // bool? | Full model or content only **(Required)**
 
             try
             {
@@ -58,7 +57,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| Name of Strings **(Required)** | 
- **fullModel** | **bool?**| Full model or content only **(Required)** | [default to true]
+ **fullModel** | **bool?**| Full model or content only **(Required)** | 
 
 ### Return type
 
@@ -66,12 +65,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

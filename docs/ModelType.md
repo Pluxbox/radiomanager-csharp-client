@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Model** | **string** |  | [optional] 
 **CreatedAt** | **DateTime?** |  | [optional] 
 **UpdatedAt** | **DateTime?** |  | [optional] 
-**Options** | [**ModelTypeOptions**](ModelTypeOptions.md) |  | [optional] 
+**Options** | **Object** |  | [optional] 
 **Order** | **long?** |  | [optional] 
 **DeletedAt** | **DateTime?** |  | [optional] 
 

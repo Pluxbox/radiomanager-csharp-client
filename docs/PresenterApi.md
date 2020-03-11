@@ -1,6 +1,6 @@
 # RadioManager.Api.PresenterApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,10 +10,9 @@ Method | HTTP request | Description
 [**ListPresenters**](PresenterApi.md#listpresenters) | **GET** /presenters | Get all presenters.
 [**UpdatePresenterByID**](PresenterApi.md#updatepresenterbyid) | **PATCH** /presenters/{id} | Update presenter by id
 
-
 <a name="createpresenter"></a>
 # **CreatePresenter**
-> PostSuccess CreatePresenter (PresenterDataInput data)
+> PostSuccess CreatePresenter (PresenterDataInput body)
 
 Create presenter.
 
@@ -33,18 +32,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new PresenterApi();
-            var data = new PresenterDataInput(); // PresenterDataInput | Data **(Required)**
+            var body = new PresenterDataInput(); // PresenterDataInput | Data **(Required)**
 
             try
             {
                 // Create presenter.
-                PostSuccess result = apiInstance.CreatePresenter(data);
+                PostSuccess result = apiInstance.CreatePresenter(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -60,7 +59,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**PresenterDataInput**](PresenterDataInput.md)| Data **(Required)** | 
+ **body** | [**PresenterDataInput**](PresenterDataInput.md)| Data **(Required)** | 
 
 ### Return type
 
@@ -68,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -76,7 +75,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="deletepresenterbyid"></a>
 # **DeletePresenterById**
 > Success DeletePresenterById (long? id)
@@ -99,7 +97,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -134,15 +132,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getpresenterbyid"></a>
 # **GetPresenterById**
 > PresenterResult GetPresenterById (long? id, long? externalStationId = null)
@@ -165,7 +162,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -202,18 +199,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listpresenters"></a>
 # **ListPresenters**
-> PresenterResults ListPresenters (long? page = null, long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> Object ListPresenters (long? page = null, long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all presenters.
 
@@ -233,7 +229,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -251,7 +247,7 @@ namespace Example
             try
             {
                 // Get all presenters.
-                PresenterResults result = apiInstance.ListPresenters(page, programId, broadcastId, modelTypeId, limit, orderBy, orderDirection, externalStationId);
+                Object result = apiInstance.ListPresenters(page, programId, broadcastId, modelTypeId, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -278,22 +274,21 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PresenterResults**](PresenterResults.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="updatepresenterbyid"></a>
 # **UpdatePresenterByID**
-> Success UpdatePresenterByID (long? id, PresenterDataInput data = null)
+> Success UpdatePresenterByID (long? id, PresenterDataInput body = null)
 
 Update presenter by id
 
@@ -313,19 +308,19 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new PresenterApi();
             var id = 789;  // long? | id of Presenter
-            var data = new PresenterDataInput(); // PresenterDataInput | Data *(Optional)* (optional) 
+            var body = new PresenterDataInput(); // PresenterDataInput | Data *(Optional)* (optional) 
 
             try
             {
                 // Update presenter by id
-                Success result = apiInstance.UpdatePresenterByID(id, data);
+                Success result = apiInstance.UpdatePresenterByID(id, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -342,7 +337,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| id of Presenter | 
- **data** | [**PresenterDataInput**](PresenterDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**PresenterDataInput**](PresenterDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
@@ -350,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -358,4 +353,3 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

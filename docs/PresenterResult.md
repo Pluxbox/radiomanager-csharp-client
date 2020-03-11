@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 **Lastname** | **string** |  | [optional] 
 **Active** | **bool?** |  | [optional] 
 **Name** | **string** |  | [optional] 
-**Programs** | [**PresenterRelationsPrograms**](PresenterRelationsPrograms.md) |  | [optional] 
-**Broadcasts** | [**PresenterRelationsBroadcasts**](PresenterRelationsBroadcasts.md) |  | [optional] 
-**ModelType** | [**BroadcastRelationsModelType**](BroadcastRelationsModelType.md) |  | [optional] 
+**Programs** | **Object** |  | [optional] 
+**Broadcasts** | **Object** |  | [optional] 
+**ModelType** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

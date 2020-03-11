@@ -3,22 +3,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ModelTypeId** | **long?** |  | 
-**BlockId** | **long?** |  | [optional] 
-**ExternalId** | **string** |  | [optional] 
-**FieldValues** | **Object** |  | [optional] 
-**Title** | **string** |  | [optional] 
-**Duration** | **long?** |  | [optional] 
-**Start** | **DateTime?** |  | [optional] 
-**Status** | **string** |  | [optional] 
-**Import** | **long?** |  | [optional] 
-**CampaignId** | **long?** |  | [optional] 
-**Recommended** | **bool?** |  | [optional] 
-**StationDraftId** | **long?** |  | [optional] 
-**ProgramDraftId** | **long?** |  | [optional] 
-**UserDraftId** | **long?** |  | [optional] 
-**StaticStart** | **bool?** |  | [optional] 
-**Details** | **string** |  | [optional] 
 **PreviousId** | **long?** |  | [optional] 
 **BeforeId** | **long?** |  | [optional] 
 **Contacts** | **List&lt;int?&gt;** |  | [optional] 

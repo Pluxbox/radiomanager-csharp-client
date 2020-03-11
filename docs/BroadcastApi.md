@@ -1,6 +1,6 @@
 # RadioManager.Api.BroadcastApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,10 +16,9 @@ Method | HTTP request | Description
 [**PrintBroadcastById**](BroadcastApi.md#printbroadcastbyid) | **GET** /broadcasts/print/{id} | Print broadcast by id with template
 [**UpdateBroadcastByID**](BroadcastApi.md#updatebroadcastbyid) | **PATCH** /broadcasts/{id} | Update broadcast by id
 
-
 <a name="createbroadcast"></a>
 # **CreateBroadcast**
-> PostSuccess CreateBroadcast (BroadcastDataInput data)
+> PostSuccess CreateBroadcast (BroadcastDataInput body)
 
 Create broadcast.
 
@@ -39,18 +38,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
-            var data = new BroadcastDataInput(); // BroadcastDataInput | Data **(Required)**
+            var body = new BroadcastDataInput(); // BroadcastDataInput | Data **(Required)**
 
             try
             {
                 // Create broadcast.
-                PostSuccess result = apiInstance.CreateBroadcast(data);
+                PostSuccess result = apiInstance.CreateBroadcast(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -66,7 +65,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**BroadcastDataInput**](BroadcastDataInput.md)| Data **(Required)** | 
+ **body** | [**BroadcastDataInput**](BroadcastDataInput.md)| Data **(Required)** | 
 
 ### Return type
 
@@ -74,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -82,7 +81,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="deletebroadcastbyid"></a>
 # **DeleteBroadcastById**
 > Success DeleteBroadcastById (long? id)
@@ -105,7 +103,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -140,15 +138,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getbroadcastbyid"></a>
 # **GetBroadcastById**
 > BroadcastResult GetBroadcastById (long? id, long? externalStationId = null)
@@ -171,7 +168,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -208,15 +205,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getcurrentbroadcast"></a>
 # **GetCurrentBroadcast**
 > BroadcastResult GetCurrentBroadcast (bool? withunpublished = null)
@@ -239,7 +235,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -274,15 +270,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getdailyepg"></a>
 # **GetDailyEPG**
 > EPGResults GetDailyEPG (DateTime? date = null, bool? withunpublished = null)
@@ -305,7 +300,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -342,15 +337,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getepgbydate"></a>
 # **GetEPGByDate**
 > EPGResults GetEPGByDate (DateTime? date = null, bool? withunpublished = null)
@@ -373,7 +367,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -410,15 +404,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getnextbroadcast"></a>
 # **GetNextBroadcast**
 > BroadcastResult GetNextBroadcast (bool? withunpublished = null)
@@ -441,7 +434,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -476,15 +469,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getweeklyepg"></a>
 # **GetWeeklyEPG**
 > EPGResults GetWeeklyEPG (string date = null, bool? withunpublished = null)
@@ -507,7 +499,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -544,18 +536,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listbroadcasts"></a>
 # **ListBroadcasts**
-> BroadcastResults ListBroadcasts (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> Object ListBroadcasts (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all broadcasts.
 
@@ -575,13 +566,13 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
+            var page = 789;  // long? | Current page *(Optional)* (optional) 
             var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
             var blockId = 789;  // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
             var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
@@ -599,7 +590,7 @@ namespace Example
             try
             {
                 // Get all broadcasts.
-                BroadcastResults result = apiInstance.ListBroadcasts(page, programId, blockId, modelTypeId, tagId, presenterId, genreId, itemId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
+                Object result = apiInstance.ListBroadcasts(page, programId, blockId, modelTypeId, tagId, presenterId, genreId, itemId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -615,7 +606,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
+ **page** | **long?**| Current page *(Optional)* | [optional] 
  **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **blockId** | **long?**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
@@ -632,19 +623,18 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BroadcastResults**](BroadcastResults.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="printbroadcastbyid"></a>
 # **PrintBroadcastById**
 > string PrintBroadcastById (long? id, long? templateId = null)
@@ -667,7 +657,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -704,18 +694,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="updatebroadcastbyid"></a>
 # **UpdateBroadcastByID**
-> Success UpdateBroadcastByID (long? id, BroadcastDataInput data = null)
+> Success UpdateBroadcastByID (long? id, BroadcastDataInput body = null)
 
 Update broadcast by id
 
@@ -735,19 +724,19 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
             var id = 789;  // long? | ID of Broadcast **(Required)**
-            var data = new BroadcastDataInput(); // BroadcastDataInput | Data *(Optional)* (optional) 
+            var body = new BroadcastDataInput(); // BroadcastDataInput | Data *(Optional)* (optional) 
 
             try
             {
                 // Update broadcast by id
-                Success result = apiInstance.UpdateBroadcastByID(id, data);
+                Success result = apiInstance.UpdateBroadcastByID(id, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -764,7 +753,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of Broadcast **(Required)** | 
- **data** | [**BroadcastDataInput**](BroadcastDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**BroadcastDataInput**](BroadcastDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
@@ -772,7 +761,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -780,4 +769,3 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

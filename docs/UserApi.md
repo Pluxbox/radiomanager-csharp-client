@@ -1,6 +1,6 @@
 # RadioManager.Api.UserApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**GetUserById**](UserApi.md#getuserbyid) | **GET** /users/{id} | Get user by id
 [**InviteUserByMail**](UserApi.md#inviteuserbymail) | **POST** /users/invite | Invite user by mail
 [**ListUsers**](UserApi.md#listusers) | **GET** /users | Get all users.
-
 
 <a name="deleteuserbyid"></a>
 # **DeleteUserById**
@@ -32,7 +31,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -67,15 +66,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getuserbyid"></a>
 # **GetUserById**
 > UserResult GetUserById (long? id)
@@ -98,7 +96,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -133,18 +131,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="inviteuserbymail"></a>
 # **InviteUserByMail**
-> InviteUserSuccess InviteUserByMail (InviteUserData data)
+> Object InviteUserByMail (InviteUserData body)
 
 Invite user by mail
 
@@ -164,18 +161,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new UserApi();
-            var data = new InviteUserData(); // InviteUserData | Data **(Required)**
+            var body = new InviteUserData(); // InviteUserData | Data **(Required)**
 
             try
             {
                 // Invite user by mail
-                InviteUserSuccess result = apiInstance.InviteUserByMail(data);
+                Object result = apiInstance.InviteUserByMail(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -191,15 +188,15 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**InviteUserData**](InviteUserData.md)| Data **(Required)** | 
+ **body** | [**InviteUserData**](InviteUserData.md)| Data **(Required)** | 
 
 ### Return type
 
-[**InviteUserSuccess**](InviteUserSuccess.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -207,10 +204,9 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listusers"></a>
 # **ListUsers**
-> UserResults ListUsers (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null)
+> Object ListUsers (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null)
 
 Get all users.
 
@@ -230,13 +226,13 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new UserApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
+            var page = 789;  // long? | Current page *(Optional)* (optional) 
             var roleId = 789;  // long? | Search on Role ID *(Optional)* (optional) 
             var limit = 789;  // long? | Results per page *(Optional)* (optional) 
             var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
@@ -245,7 +241,7 @@ namespace Example
             try
             {
                 // Get all users.
-                UserResults result = apiInstance.ListUsers(page, roleId, limit, orderBy, orderDirection);
+                Object result = apiInstance.ListUsers(page, roleId, limit, orderBy, orderDirection);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -261,7 +257,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
+ **page** | **long?**| Current page *(Optional)* | [optional] 
  **roleId** | **long?**| Search on Role ID *(Optional)* | [optional] 
  **limit** | **long?**| Results per page *(Optional)* | [optional] 
  **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
@@ -269,16 +265,15 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserResults**](UserResults.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

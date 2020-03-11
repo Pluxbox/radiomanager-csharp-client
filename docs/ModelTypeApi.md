@@ -1,12 +1,11 @@
 # RadioManager.Api.ModelTypeApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetModelTypeById**](ModelTypeApi.md#getmodeltypebyid) | **GET** /model_types/{id} | Get modelType by id
 [**ListModelTypes**](ModelTypeApi.md#listmodeltypes) | **GET** /model_types | Get all modelTypes.
-
 
 <a name="getmodeltypebyid"></a>
 # **GetModelTypeById**
@@ -30,7 +29,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -67,18 +66,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listmodeltypes"></a>
 # **ListModelTypes**
-> ModelTypeResults ListModelTypes (long? page = null, long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> Object ListModelTypes (long? page = null, long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all modelTypes.
 
@@ -98,7 +96,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -120,7 +118,7 @@ namespace Example
             try
             {
                 // Get all modelTypes.
-                ModelTypeResults result = apiInstance.ListModelTypes(page, programId, broadcastId, itemId, campaignId, presenterId, contactId, model, limit, orderBy, orderDirection, externalStationId);
+                Object result = apiInstance.ListModelTypes(page, programId, broadcastId, itemId, campaignId, presenterId, contactId, model, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -151,16 +149,15 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTypeResults**](ModelTypeResults.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

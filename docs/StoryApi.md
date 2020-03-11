@@ -1,6 +1,6 @@
 # RadioManager.Api.StoryApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,10 +10,9 @@ Method | HTTP request | Description
 [**ListStories**](StoryApi.md#liststories) | **GET** /stories | Get all stories.
 [**UpdateStoryByID**](StoryApi.md#updatestorybyid) | **PATCH** /stories/{id} | Update story by id
 
-
 <a name="createstory"></a>
 # **CreateStory**
-> PostSuccess CreateStory (StoryDataInput data)
+> PostSuccess CreateStory (StoryDataInput body)
 
 Create story.
 
@@ -33,18 +32,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new StoryApi();
-            var data = new StoryDataInput(); // StoryDataInput | Data **(Required)**
+            var body = new StoryDataInput(); // StoryDataInput | Data **(Required)**
 
             try
             {
                 // Create story.
-                PostSuccess result = apiInstance.CreateStory(data);
+                PostSuccess result = apiInstance.CreateStory(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -60,7 +59,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**StoryDataInput**](StoryDataInput.md)| Data **(Required)** | 
+ **body** | [**StoryDataInput**](StoryDataInput.md)| Data **(Required)** | 
 
 ### Return type
 
@@ -68,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -76,7 +75,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="deletestorybyid"></a>
 # **DeleteStoryById**
 > Success DeleteStoryById (long? id)
@@ -99,7 +97,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -134,15 +132,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getstorybyid"></a>
 # **GetStoryById**
 > StoryResult GetStoryById (long? id, long? externalStationId = null)
@@ -165,7 +162,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -202,18 +199,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="liststories"></a>
 # **ListStories**
-> StoryResults ListStories (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> Object ListStories (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all stories.
 
@@ -233,13 +229,13 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new StoryApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
+            var page = 789;  // long? | Current page *(Optional)* (optional) 
             var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
             var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
             var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
@@ -251,7 +247,7 @@ namespace Example
             try
             {
                 // Get all stories.
-                StoryResults result = apiInstance.ListStories(page, itemId, modelTypeId, tagId, limit, orderBy, orderDirection, externalStationId);
+                Object result = apiInstance.ListStories(page, itemId, modelTypeId, tagId, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -267,7 +263,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
+ **page** | **long?**| Current page *(Optional)* | [optional] 
  **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
@@ -278,22 +274,21 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StoryResults**](StoryResults.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="updatestorybyid"></a>
 # **UpdateStoryByID**
-> Success UpdateStoryByID (long? id, StoryDataInput data = null)
+> Success UpdateStoryByID (long? id, StoryDataInput body = null)
 
 Update story by id
 
@@ -313,19 +308,19 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new StoryApi();
             var id = 789;  // long? | ID of Story **(Required)**
-            var data = new StoryDataInput(); // StoryDataInput | Data *(Optional)* (optional) 
+            var body = new StoryDataInput(); // StoryDataInput | Data *(Optional)* (optional) 
 
             try
             {
                 // Update story by id
-                Success result = apiInstance.UpdateStoryByID(id, data);
+                Success result = apiInstance.UpdateStoryByID(id, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -342,7 +337,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of Story **(Required)** | 
- **data** | [**StoryDataInput**](StoryDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**StoryDataInput**](StoryDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
@@ -350,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -358,4 +353,3 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

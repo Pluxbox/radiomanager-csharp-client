@@ -1,12 +1,11 @@
 # RadioManager.Api.GenreApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetGenreById**](GenreApi.md#getgenrebyid) | **GET** /genres/{id} | Get genre by id
 [**ListGenres**](GenreApi.md#listgenres) | **GET** /genres | List all genres.
-
 
 <a name="getgenrebyid"></a>
 # **GetGenreById**
@@ -30,7 +29,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -67,18 +66,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listgenres"></a>
 # **ListGenres**
-> GenreResults ListGenres (long? page = null, long? parentId = null, long? programId = null, long? broadcastId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> Object ListGenres (long? page = null, long? parentId = null, long? programId = null, long? broadcastId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 List all genres.
 
@@ -98,7 +96,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -116,7 +114,7 @@ namespace Example
             try
             {
                 // List all genres.
-                GenreResults result = apiInstance.ListGenres(page, parentId, programId, broadcastId, limit, orderBy, orderDirection, externalStationId);
+                Object result = apiInstance.ListGenres(page, parentId, programId, broadcastId, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -143,16 +141,15 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenreResults**](GenreResults.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

@@ -1,6 +1,6 @@
 # RadioManager.Api.ProgramApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,10 +10,9 @@ Method | HTTP request | Description
 [**ListPrograms**](ProgramApi.md#listprograms) | **GET** /programs | Get all programs.
 [**UpdateProgramByID**](ProgramApi.md#updateprogrambyid) | **PATCH** /programs/{id} | Update program by id
 
-
 <a name="createprogram"></a>
 # **CreateProgram**
-> PostSuccess CreateProgram (ProgramDataInput data)
+> PostSuccess CreateProgram (ProgramDataInput body)
 
 Create program.
 
@@ -33,18 +32,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ProgramApi();
-            var data = new ProgramDataInput(); // ProgramDataInput | Data **(Required)**
+            var body = new ProgramDataInput(); // ProgramDataInput | Data **(Required)**
 
             try
             {
                 // Create program.
-                PostSuccess result = apiInstance.CreateProgram(data);
+                PostSuccess result = apiInstance.CreateProgram(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -60,7 +59,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**ProgramDataInput**](ProgramDataInput.md)| Data **(Required)** | 
+ **body** | [**ProgramDataInput**](ProgramDataInput.md)| Data **(Required)** | 
 
 ### Return type
 
@@ -68,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -76,7 +75,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="deleteprogrambyid"></a>
 # **DeleteProgramById**
 > Success DeleteProgramById (long? id)
@@ -99,7 +97,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -134,15 +132,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getprogrambyid"></a>
 # **GetProgramById**
 > ProgramResult GetProgramById (long? id, long? externalStationId = null)
@@ -165,7 +162,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -202,18 +199,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listprograms"></a>
 # **ListPrograms**
-> ProgramResults ListPrograms (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> Object ListPrograms (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all programs.
 
@@ -233,7 +229,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -247,6 +243,7 @@ namespace Example
             var genreId = 789;  // long? | Search on Genre ID *(Optional)* (optional) 
             var blockId = 789;  // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
             var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var disabled = 56;  // int? | Search on Disabled status *(Optional)* (optional) 
             var limit = 789;  // long? | Results per page *(Optional)* (optional) 
             var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
             var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
@@ -255,7 +252,7 @@ namespace Example
             try
             {
                 // Get all programs.
-                ProgramResults result = apiInstance.ListPrograms(page, broadcastId, modelTypeId, tagId, presenterId, genreId, blockId, itemId, limit, orderBy, orderDirection, externalStationId);
+                Object result = apiInstance.ListPrograms(page, broadcastId, modelTypeId, tagId, presenterId, genreId, blockId, itemId, disabled, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -279,6 +276,7 @@ Name | Type | Description  | Notes
  **genreId** | **long?**| Search on Genre ID *(Optional)* | [optional] 
  **blockId** | **long?**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **disabled** | **int?**| Search on Disabled status *(Optional)* | [optional] 
  **limit** | **long?**| Results per page *(Optional)* | [optional] 
  **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
  **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
@@ -286,22 +284,21 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProgramResults**](ProgramResults.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="updateprogrambyid"></a>
 # **UpdateProgramByID**
-> Success UpdateProgramByID (long? id, ProgramDataInput data = null)
+> Success UpdateProgramByID (long? id, ProgramDataInput body = null)
 
 Update program by id
 
@@ -321,19 +318,19 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ProgramApi();
             var id = 789;  // long? | ID of Program **(Required)**
-            var data = new ProgramDataInput(); // ProgramDataInput | Data *(Optional)* (optional) 
+            var body = new ProgramDataInput(); // ProgramDataInput | Data *(Optional)* (optional) 
 
             try
             {
                 // Update program by id
-                Success result = apiInstance.UpdateProgramByID(id, data);
+                Success result = apiInstance.UpdateProgramByID(id, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -350,7 +347,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of Program **(Required)** | 
- **data** | [**ProgramDataInput**](ProgramDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**ProgramDataInput**](ProgramDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
@@ -358,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -366,4 +363,3 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

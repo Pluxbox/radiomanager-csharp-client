@@ -21,13 +21,13 @@ Name | Type | Description | Notes
 **Recommended** | **bool?** |  | [optional] 
 **Language** | **string** |  | [optional] 
 **PtyCodeId** | **long?** |  | [optional] 
-**Genre** | [**BroadcastRelationsGenre**](BroadcastRelationsGenre.md) |  | [optional] 
-**Items** | [**ProgramRelationsItems**](ProgramRelationsItems.md) |  | [optional] 
-**Blocks** | [**ProgramRelationsBlocks**](ProgramRelationsBlocks.md) |  | [optional] 
-**Broadcasts** | [**ProgramRelationsBroadcasts**](ProgramRelationsBroadcasts.md) |  | [optional] 
-**Presenters** | [**ProgramRelationsPresenters**](ProgramRelationsPresenters.md) |  | [optional] 
-**Tags** | [**ProgramRelationsTags**](ProgramRelationsTags.md) |  | [optional] 
-**ModelType** | [**BroadcastRelationsModelType**](BroadcastRelationsModelType.md) |  | [optional] 
+**Genre** | **Object** |  | [optional] 
+**Items** | **Object** |  | [optional] 
+**Blocks** | **Object** |  | [optional] 
+**Broadcasts** | **Object** |  | [optional] 
+**Presenters** | **Object** |  | [optional] 
+**Tags** | **Object** |  | [optional] 
+**ModelType** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

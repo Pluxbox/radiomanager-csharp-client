@@ -1,6 +1,6 @@
 # RadioManager.Api.ItemApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,10 +17,9 @@ Method | HTTP request | Description
 [**StopCurrentItem**](ItemApi.md#stopcurrentitem) | **POST** /items/stopcurrent | Stop an Item
 [**UpdateItemById**](ItemApi.md#updateitembyid) | **PATCH** /items/{id} | Update extended item details by ID.
 
-
 <a name="createitem"></a>
 # **CreateItem**
-> PostSuccess CreateItem (ItemDataInput data = null)
+> PostSuccess CreateItem (ItemDataInput body = null)
 
 Create an new item.
 
@@ -40,18 +39,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var data = new ItemDataInput(); // ItemDataInput | Data *(Optional)* (optional) 
+            var body = new ItemDataInput(); // ItemDataInput | Data *(Optional)* (optional) 
 
             try
             {
                 // Create an new item.
-                PostSuccess result = apiInstance.CreateItem(data);
+                PostSuccess result = apiInstance.CreateItem(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -67,7 +66,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**ItemDataInput**](ItemDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**ItemDataInput**](ItemDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
@@ -75,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -83,10 +82,9 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="currentitempoststructure"></a>
 # **CurrentItemPostStructure**
-> Success CurrentItemPostStructure (ImportItem data = null)
+> Success CurrentItemPostStructure (ImportItem body = null)
 
 Post a current playing item, keep structure
 
@@ -106,18 +104,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var data = new ImportItem(); // ImportItem | Data *(Optional)* (optional) 
+            var body = new ImportItem(); // ImportItem | Data *(Optional)* (optional) 
 
             try
             {
                 // Post a current playing item, keep structure
-                Success result = apiInstance.CurrentItemPostStructure(data);
+                Success result = apiInstance.CurrentItemPostStructure(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -133,7 +131,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**ImportItem**](ImportItem.md)| Data *(Optional)* | [optional] 
+ **body** | [**ImportItem**](ImportItem.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
@@ -141,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -149,10 +147,9 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="currentitemposttiming"></a>
 # **CurrentItemPostTiming**
-> Success CurrentItemPostTiming (ImportItem data = null)
+> Success CurrentItemPostTiming (ImportItem body = null)
 
 Post a current playing item
 
@@ -172,18 +169,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var data = new ImportItem(); // ImportItem | Data *(Optional)* (optional) 
+            var body = new ImportItem(); // ImportItem | Data *(Optional)* (optional) 
 
             try
             {
                 // Post a current playing item
-                Success result = apiInstance.CurrentItemPostTiming(data);
+                Success result = apiInstance.CurrentItemPostTiming(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -199,7 +196,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**ImportItem**](ImportItem.md)| Data *(Optional)* | [optional] 
+ **body** | [**ImportItem**](ImportItem.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
@@ -207,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -215,7 +212,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="deleteitembyid"></a>
 # **DeleteItemById**
 > Success DeleteItemById (long? id)
@@ -238,7 +234,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -273,15 +269,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getcurrentitem"></a>
 # **GetCurrentItem**
 > ItemResult GetCurrentItem (bool? lastplayed = null)
@@ -304,7 +299,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -339,15 +334,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getitembyid"></a>
 # **GetItemById**
 > ItemResult GetItemById (long? id, long? externalStationId = null)
@@ -370,7 +364,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -407,18 +401,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listitems"></a>
 # **ListItems**
-> ItemResults ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> Object ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get a list of all the items currently in your station.
 
@@ -438,7 +431,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -469,7 +462,7 @@ namespace Example
             try
             {
                 // Get a list of all the items currently in your station.
-                ItemResults result = apiInstance.ListItems(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, externalId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
+                Object result = apiInstance.ListItems(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, externalId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -509,22 +502,21 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ItemResults**](ItemResults.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="playlistpostmerge"></a>
 # **PlaylistPostMerge**
-> InlineResponse202 PlaylistPostMerge (Data2 data = null)
+> Object PlaylistPostMerge (Object body = null)
 
 Post a playlist, do not remove previously imported items
 
@@ -544,18 +536,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var data = new Data2(); // Data2 | Data *(Optional)* (optional) 
+            var body = new Object(); // Object | Data *(Optional)* (optional) 
 
             try
             {
                 // Post a playlist, do not remove previously imported items
-                InlineResponse202 result = apiInstance.PlaylistPostMerge(data);
+                Object result = apiInstance.PlaylistPostMerge(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -571,15 +563,15 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**Data2**](Data2.md)| Data *(Optional)* | [optional] 
+ **body** | [**Object**](Object.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
-[**InlineResponse202**](InlineResponse202.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -587,10 +579,9 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="playlistpoststructure"></a>
 # **PlaylistPostStructure**
-> InlineResponse202 PlaylistPostStructure (Data1 data = null)
+> Object PlaylistPostStructure (Object body = null)
 
 Post a playlist, keep current structure
 
@@ -610,18 +601,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var data = new Data1(); // Data1 | Data *(Optional)* (optional) 
+            var body = new Object(); // Object | Data *(Optional)* (optional) 
 
             try
             {
                 // Post a playlist, keep current structure
-                InlineResponse202 result = apiInstance.PlaylistPostStructure(data);
+                Object result = apiInstance.PlaylistPostStructure(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -637,15 +628,15 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**Data1**](Data1.md)| Data *(Optional)* | [optional] 
+ **body** | [**Object**](Object.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
-[**InlineResponse202**](InlineResponse202.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -653,10 +644,9 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="playlistposttiming"></a>
 # **PlaylistPostTiming**
-> InlineResponse202 PlaylistPostTiming (Data data = null)
+> Object PlaylistPostTiming (Object body = null)
 
 Post a playlist
 
@@ -676,18 +666,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var data = new Data(); // Data | Data *(Optional)* (optional) 
+            var body = new Object(); // Object | Data *(Optional)* (optional) 
 
             try
             {
                 // Post a playlist
-                InlineResponse202 result = apiInstance.PlaylistPostTiming(data);
+                Object result = apiInstance.PlaylistPostTiming(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -703,15 +693,15 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**Data**](Data.md)| Data *(Optional)* | [optional] 
+ **body** | [**Object**](Object.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
-[**InlineResponse202**](InlineResponse202.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -719,10 +709,9 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="stopcurrentitem"></a>
 # **StopCurrentItem**
-> Success StopCurrentItem (Data3 data = null)
+> Success StopCurrentItem (Object body = null)
 
 Stop an Item
 
@@ -742,18 +731,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var data = new Data3(); // Data3 | Data *(Optional)* (optional) 
+            var body = new Object(); // Object | Data *(Optional)* (optional) 
 
             try
             {
                 // Stop an Item
-                Success result = apiInstance.StopCurrentItem(data);
+                Success result = apiInstance.StopCurrentItem(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -769,7 +758,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**Data3**](Data3.md)| Data *(Optional)* | [optional] 
+ **body** | [**Object**](Object.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
@@ -777,7 +766,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -785,10 +774,9 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="updateitembyid"></a>
 # **UpdateItemById**
-> Success UpdateItemById (long? id, ItemDataInput data = null)
+> Success UpdateItemById (long? id, ItemDataInput body = null)
 
 Update extended item details by ID.
 
@@ -808,19 +796,19 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
             var id = 789;  // long? | ID of Item **(Required)**
-            var data = new ItemDataInput(); // ItemDataInput | Data *(Optional)* (optional) 
+            var body = new ItemDataInput(); // ItemDataInput | Data *(Optional)* (optional) 
 
             try
             {
                 // Update extended item details by ID.
-                Success result = apiInstance.UpdateItemById(id, data);
+                Success result = apiInstance.UpdateItemById(id, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -837,7 +825,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of Item **(Required)** | 
- **data** | [**ItemDataInput**](ItemDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**ItemDataInput**](ItemDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
@@ -845,7 +833,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -853,4 +841,3 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

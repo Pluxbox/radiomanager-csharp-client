@@ -1,6 +1,6 @@
 # RadioManager.Api.ContactApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,10 +10,9 @@ Method | HTTP request | Description
 [**ListContacts**](ContactApi.md#listcontacts) | **GET** /contacts | Get all contacts.
 [**UpdateContactByID**](ContactApi.md#updatecontactbyid) | **PATCH** /contacts/{id} | Update contact by id
 
-
 <a name="createcontact"></a>
 # **CreateContact**
-> PostSuccess CreateContact (ContactDataInput data)
+> PostSuccess CreateContact (ContactDataInput body)
 
 Create contact.
 
@@ -33,18 +32,18 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ContactApi();
-            var data = new ContactDataInput(); // ContactDataInput | Data **(Required)**
+            var body = new ContactDataInput(); // ContactDataInput | Data **(Required)**
 
             try
             {
                 // Create contact.
-                PostSuccess result = apiInstance.CreateContact(data);
+                PostSuccess result = apiInstance.CreateContact(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -60,7 +59,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**ContactDataInput**](ContactDataInput.md)| Data **(Required)** | 
+ **body** | [**ContactDataInput**](ContactDataInput.md)| Data **(Required)** | 
 
 ### Return type
 
@@ -68,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -76,7 +75,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="deletecontactbyid"></a>
 # **DeleteContactById**
 > Success DeleteContactById (long? id)
@@ -99,7 +97,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -134,15 +132,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getcontactbyid"></a>
 # **GetContactById**
 > ContactResult GetContactById (long? id, long? externalStationId = null)
@@ -165,7 +162,7 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
@@ -202,18 +199,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listcontacts"></a>
 # **ListContacts**
-> ContactResults ListContacts (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> Object ListContacts (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all contacts.
 
@@ -233,13 +229,13 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ContactApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
+            var page = 789;  // long? | Current page *(Optional)* (optional) 
             var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
             var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
             var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
@@ -251,7 +247,7 @@ namespace Example
             try
             {
                 // Get all contacts.
-                ContactResults result = apiInstance.ListContacts(page, itemId, modelTypeId, tagId, limit, orderBy, orderDirection, externalStationId);
+                Object result = apiInstance.ListContacts(page, itemId, modelTypeId, tagId, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -267,7 +263,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
+ **page** | **long?**| Current page *(Optional)* | [optional] 
  **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
@@ -278,22 +274,21 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContactResults**](ContactResults.md)
+**Object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="updatecontactbyid"></a>
 # **UpdateContactByID**
-> Success UpdateContactByID (long? id, ContactDataInput data = null)
+> Success UpdateContactByID (long? id, ContactDataInput body = null)
 
 Update contact by id
 
@@ -313,19 +308,19 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: API Key
+            // Configure API key authorization: API-Key
             Configuration.Default.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ContactApi();
             var id = 789;  // long? | ID of Contact **(Required)**
-            var data = new ContactDataInput(); // ContactDataInput | Data *(Optional)* (optional) 
+            var body = new ContactDataInput(); // ContactDataInput | Data *(Optional)* (optional) 
 
             try
             {
                 // Update contact by id
-                Success result = apiInstance.UpdateContactByID(id, data);
+                Success result = apiInstance.UpdateContactByID(id, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -342,7 +337,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of Contact **(Required)** | 
- **data** | [**ContactDataInput**](ContactDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**ContactDataInput**](ContactDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
@@ -350,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
@@ -358,4 +353,3 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

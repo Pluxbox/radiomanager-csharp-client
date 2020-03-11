@@ -16,8 +16,6 @@ Name | Type | Description | Notes
 **Recommended** | **bool?** |  | [optional] 
 **Language** | **string** |  | [optional] 
 **PtyCodeId** | **long?** |  | [optional] 
-**Tags** | **List&lt;int?&gt;** |  | [optional] 
-**Presenters** | **List&lt;int?&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,12 +3,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Campaigns** | [**ModelTypeRelationsCampaigns**](ModelTypeRelationsCampaigns.md) |  | [optional] 
-**Broadcasts** | [**ModelTypeRelationsBroadcasts**](ModelTypeRelationsBroadcasts.md) |  | [optional] 
-**Programs** | [**ModelTypeRelationsPrograms**](ModelTypeRelationsPrograms.md) |  | [optional] 
-**Contacts** | [**ModelTypeRelationsContacts**](ModelTypeRelationsContacts.md) |  | [optional] 
-**Presenters** | [**ModelTypeRelationsPresenters**](ModelTypeRelationsPresenters.md) |  | [optional] 
-**Items** | [**ModelTypeRelationsItems**](ModelTypeRelationsItems.md) |  | [optional] 
+**Campaigns** | **Object** |  | [optional] 
+**Broadcasts** | **Object** |  | [optional] 
+**Programs** | **Object** |  | [optional] 
+**Contacts** | **Object** |  | [optional] 
+**Presenters** | **Object** |  | [optional] 
+**Items** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
