@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -71,7 +71,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test the method and replace null with proper value
             //ItemDataInput body = null;
             //var response = instance.CreateItem(body);
-            //Assert.IsInstanceOf<PostSuccess> (response, "response is PostSuccess");
+            //Assert.IsInstanceOf<InlineResponse2002> (response, "response is InlineResponse2002");
         }
         /// <summary>
         /// Test CurrentItemPostStructure
@@ -82,7 +82,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test the method and replace null with proper value
             //ImportItem body = null;
             //var response = instance.CurrentItemPostStructure(body);
-            //Assert.IsInstanceOf<Success> (response, "response is Success");
+            //Assert.IsInstanceOf<ItemResult> (response, "response is ItemResult");
         }
         /// <summary>
         /// Test CurrentItemPostTiming
@@ -93,7 +93,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test the method and replace null with proper value
             //ImportItem body = null;
             //var response = instance.CurrentItemPostTiming(body);
-            //Assert.IsInstanceOf<Success> (response, "response is Success");
+            //Assert.IsInstanceOf<ItemResult> (response, "response is ItemResult");
         }
         /// <summary>
         /// Test DeleteItemById
@@ -103,8 +103,8 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //var response = instance.DeleteItemById(id);
-            //Assert.IsInstanceOf<Success> (response, "response is Success");
+            //instance.DeleteItemById(id);
+            
         }
         /// <summary>
         /// Test GetCurrentItem
@@ -136,7 +136,6 @@ namespace RadioManager.Test
         public void ListItemsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? page = null;
             //long? blockId = null;
             //long? broadcastId = null;
             //long? modelTypeId = null;
@@ -148,17 +147,18 @@ namespace RadioManager.Test
             //long? stationDraftId = null;
             //long? programId = null;
             //string externalId = null;
-            //DateTime? startMin = null;
-            //DateTime? startMax = null;
             //int? durationMin = null;
             //int? durationMax = null;
             //string status = null;
+            //DateTime? startMin = null;
+            //DateTime? startMax = null;
+            //long? page = null;
             //long? limit = null;
             //string orderBy = null;
             //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListItems(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, externalId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //var response = instance.ListItems(blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, externalId, durationMin, durationMax, status, startMin, startMax, page, limit, orderBy, orderDirection, externalStationId);
+            //Assert.IsInstanceOf<InlineResponse2008> (response, "response is InlineResponse2008");
         }
         /// <summary>
         /// Test PlaylistPostMerge
@@ -167,9 +167,9 @@ namespace RadioManager.Test
         public void PlaylistPostMergeTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
+            //PlaylistMergeBody body = null;
             //var response = instance.PlaylistPostMerge(body);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //Assert.IsInstanceOf<InlineResponse2021> (response, "response is InlineResponse2021");
         }
         /// <summary>
         /// Test PlaylistPostStructure
@@ -178,9 +178,9 @@ namespace RadioManager.Test
         public void PlaylistPostStructureTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
+            //PlaylistStructureBody body = null;
             //var response = instance.PlaylistPostStructure(body);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //Assert.IsInstanceOf<InlineResponse2021> (response, "response is InlineResponse2021");
         }
         /// <summary>
         /// Test PlaylistPostTiming
@@ -189,9 +189,9 @@ namespace RadioManager.Test
         public void PlaylistPostTimingTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
+            //PlaylistTimingBody body = null;
             //var response = instance.PlaylistPostTiming(body);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //Assert.IsInstanceOf<InlineResponse2021> (response, "response is InlineResponse2021");
         }
         /// <summary>
         /// Test StopCurrentItem
@@ -200,9 +200,9 @@ namespace RadioManager.Test
         public void StopCurrentItemTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Object body = null;
+            //ItemsStopcurrentBody body = null;
             //var response = instance.StopCurrentItem(body);
-            //Assert.IsInstanceOf<Success> (response, "response is Success");
+            //Assert.IsInstanceOf<InlineResponse202> (response, "response is InlineResponse202");
         }
         /// <summary>
         /// Test UpdateItemById
@@ -211,10 +211,10 @@ namespace RadioManager.Test
         public void UpdateItemByIdTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? id = null;
             //ItemDataInput body = null;
-            //var response = instance.UpdateItemById(id, body);
-            //Assert.IsInstanceOf<Success> (response, "response is Success");
+            //long? id = null;
+            //var response = instance.UpdateItemById(body, id);
+            //Assert.IsInstanceOf<InlineResponse202> (response, "response is InlineResponse202");
         }
     }
 

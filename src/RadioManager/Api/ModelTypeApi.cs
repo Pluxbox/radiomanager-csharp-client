@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -31,9 +31,10 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of ModelType **(Required)**</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ModelTypeResult</returns>
-        ModelTypeResult GetModelTypeById (long? id, long? externalStationId = null);
+        ModelTypeResult GetModelTypeById (long? id, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get modelType by id
@@ -43,9 +44,10 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of ModelType **(Required)**</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of ModelTypeResult</returns>
-        ApiResponse<ModelTypeResult> GetModelTypeByIdWithHttpInfo (long? id, long? externalStationId = null);
+        ApiResponse<ModelTypeResult> GetModelTypeByIdWithHttpInfo (long? id, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Get all modelTypes.
         /// </summary>
@@ -53,7 +55,6 @@ namespace RadioManager.Api
         /// List all modelTypes.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* (optional)</param>
@@ -61,12 +62,10 @@ namespace RadioManager.Api
         /// <param name="presenterId">Search on Presenter ID *(Optional)* (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* (optional)</param>
         /// <param name="model">Search Modeltypes for certain Model *(Optional)* (optional)</param>
-        /// <param name="limit">Results per page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        Object ListModelTypes (long? page = null, long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>InlineResponse2009</returns>
+        InlineResponse2009 ListModelTypes (long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all modelTypes.
@@ -75,7 +74,6 @@ namespace RadioManager.Api
         /// List all modelTypes.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* (optional)</param>
@@ -83,12 +81,10 @@ namespace RadioManager.Api
         /// <param name="presenterId">Search on Presenter ID *(Optional)* (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* (optional)</param>
         /// <param name="model">Search Modeltypes for certain Model *(Optional)* (optional)</param>
-        /// <param name="limit">Results per page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> ListModelTypesWithHttpInfo (long? page = null, long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>ApiResponse of InlineResponse2009</returns>
+        ApiResponse<InlineResponse2009> ListModelTypesWithHttpInfo (long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, string orderDirection = null, long? externalStationId = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -99,9 +95,10 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of ModelType **(Required)**</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ModelTypeResult</returns>
-        System.Threading.Tasks.Task<ModelTypeResult> GetModelTypeByIdAsync (long? id, long? externalStationId = null);
+        System.Threading.Tasks.Task<ModelTypeResult> GetModelTypeByIdAsync (long? id, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get modelType by id
@@ -111,9 +108,10 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of ModelType **(Required)**</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (ModelTypeResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ModelTypeResult>> GetModelTypeByIdAsyncWithHttpInfo (long? id, long? externalStationId = null);
+        System.Threading.Tasks.Task<ApiResponse<ModelTypeResult>> GetModelTypeByIdAsyncWithHttpInfo (long? id, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Get all modelTypes.
         /// </summary>
@@ -121,7 +119,6 @@ namespace RadioManager.Api
         /// List all modelTypes.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* (optional)</param>
@@ -129,12 +126,10 @@ namespace RadioManager.Api
         /// <param name="presenterId">Search on Presenter ID *(Optional)* (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* (optional)</param>
         /// <param name="model">Search Modeltypes for certain Model *(Optional)* (optional)</param>
-        /// <param name="limit">Results per page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> ListModelTypesAsync (long? page = null, long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of InlineResponse2009</returns>
+        System.Threading.Tasks.Task<InlineResponse2009> ListModelTypesAsync (long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all modelTypes.
@@ -143,7 +138,6 @@ namespace RadioManager.Api
         /// List all modelTypes.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* (optional)</param>
@@ -151,12 +145,10 @@ namespace RadioManager.Api
         /// <param name="presenterId">Search on Presenter ID *(Optional)* (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* (optional)</param>
         /// <param name="model">Search Modeltypes for certain Model *(Optional)* (optional)</param>
-        /// <param name="limit">Results per page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListModelTypesAsyncWithHttpInfo (long? page = null, long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2009>> ListModelTypesAsyncWithHttpInfo (long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, string orderDirection = null, long? externalStationId = null);
         #endregion Asynchronous Operations
     }
 
@@ -273,11 +265,12 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of ModelType **(Required)**</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ModelTypeResult</returns>
-        public ModelTypeResult GetModelTypeById (long? id, long? externalStationId = null)
+        public ModelTypeResult GetModelTypeById (long? id, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<ModelTypeResult> localVarResponse = GetModelTypeByIdWithHttpInfo(id, externalStationId);
+             ApiResponse<ModelTypeResult> localVarResponse = GetModelTypeByIdWithHttpInfo(id, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -286,9 +279,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of ModelType **(Required)**</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of ModelTypeResult</returns>
-        public ApiResponse< ModelTypeResult > GetModelTypeByIdWithHttpInfo (long? id, long? externalStationId = null)
+        public ApiResponse< ModelTypeResult > GetModelTypeByIdWithHttpInfo (long? id, string orderDirection = null, long? externalStationId = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -316,6 +310,7 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
             // authentication (API-Key) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
@@ -346,11 +341,12 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of ModelType **(Required)**</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ModelTypeResult</returns>
-        public async System.Threading.Tasks.Task<ModelTypeResult> GetModelTypeByIdAsync (long? id, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ModelTypeResult> GetModelTypeByIdAsync (long? id, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<ModelTypeResult> localVarResponse = await GetModelTypeByIdAsyncWithHttpInfo(id, externalStationId);
+             ApiResponse<ModelTypeResult> localVarResponse = await GetModelTypeByIdAsyncWithHttpInfo(id, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -360,9 +356,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of ModelType **(Required)**</param>
+        /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (ModelTypeResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ModelTypeResult>> GetModelTypeByIdAsyncWithHttpInfo (long? id, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ModelTypeResult>> GetModelTypeByIdAsyncWithHttpInfo (long? id, string orderDirection = null, long? externalStationId = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -390,6 +387,7 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
             // authentication (API-Key) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
@@ -419,7 +417,6 @@ namespace RadioManager.Api
         /// Get all modelTypes. List all modelTypes.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* (optional)</param>
@@ -427,14 +424,12 @@ namespace RadioManager.Api
         /// <param name="presenterId">Search on Presenter ID *(Optional)* (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* (optional)</param>
         /// <param name="model">Search Modeltypes for certain Model *(Optional)* (optional)</param>
-        /// <param name="limit">Results per page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        public Object ListModelTypes (long? page = null, long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>InlineResponse2009</returns>
+        public InlineResponse2009 ListModelTypes (long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = ListModelTypesWithHttpInfo(page, programId, broadcastId, itemId, campaignId, presenterId, contactId, model, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse2009> localVarResponse = ListModelTypesWithHttpInfo(programId, broadcastId, itemId, campaignId, presenterId, contactId, model, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -442,7 +437,6 @@ namespace RadioManager.Api
         /// Get all modelTypes. List all modelTypes.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* (optional)</param>
@@ -450,12 +444,10 @@ namespace RadioManager.Api
         /// <param name="presenterId">Search on Presenter ID *(Optional)* (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* (optional)</param>
         /// <param name="model">Search Modeltypes for certain Model *(Optional)* (optional)</param>
-        /// <param name="limit">Results per page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > ListModelTypesWithHttpInfo (long? page = null, long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>ApiResponse of InlineResponse2009</returns>
+        public ApiResponse< InlineResponse2009 > ListModelTypesWithHttpInfo (long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/model_types";
@@ -479,7 +471,6 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (programId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "program_id", programId)); // query parameter
             if (broadcastId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
             if (itemId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "item_id", itemId)); // query parameter
@@ -487,8 +478,6 @@ namespace RadioManager.Api
             if (presenterId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "presenter_id", presenterId)); // query parameter
             if (contactId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "contact_id", contactId)); // query parameter
             if (model != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "model", model)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-            if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
             // authentication (API-Key) required
@@ -510,16 +499,15 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2009>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2009) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2009)));
         }
 
         /// <summary>
         /// Get all modelTypes. List all modelTypes.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* (optional)</param>
@@ -527,14 +515,12 @@ namespace RadioManager.Api
         /// <param name="presenterId">Search on Presenter ID *(Optional)* (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* (optional)</param>
         /// <param name="model">Search Modeltypes for certain Model *(Optional)* (optional)</param>
-        /// <param name="limit">Results per page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> ListModelTypesAsync (long? page = null, long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of InlineResponse2009</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2009> ListModelTypesAsync (long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = await ListModelTypesAsyncWithHttpInfo(page, programId, broadcastId, itemId, campaignId, presenterId, contactId, model, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse2009> localVarResponse = await ListModelTypesAsyncWithHttpInfo(programId, broadcastId, itemId, campaignId, presenterId, contactId, model, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -543,7 +529,6 @@ namespace RadioManager.Api
         /// Get all modelTypes. List all modelTypes.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* (optional)</param>
@@ -551,12 +536,10 @@ namespace RadioManager.Api
         /// <param name="presenterId">Search on Presenter ID *(Optional)* (optional)</param>
         /// <param name="contactId">Search on Contact ID *(Optional)* (optional)</param>
         /// <param name="model">Search Modeltypes for certain Model *(Optional)* (optional)</param>
-        /// <param name="limit">Results per page *(Optional)* (optional)</param>
-        /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ListModelTypesAsyncWithHttpInfo (long? page = null, long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2009>> ListModelTypesAsyncWithHttpInfo (long? programId = null, long? broadcastId = null, long? itemId = null, long? campaignId = null, long? presenterId = null, long? contactId = null, string model = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/model_types";
@@ -580,7 +563,6 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (programId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "program_id", programId)); // query parameter
             if (broadcastId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
             if (itemId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "item_id", itemId)); // query parameter
@@ -588,8 +570,6 @@ namespace RadioManager.Api
             if (presenterId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "presenter_id", presenterId)); // query parameter
             if (contactId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "contact_id", contactId)); // query parameter
             if (model != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "model", model)); // query parameter
-            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-            if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
             if (externalStationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
             // authentication (API-Key) required
@@ -611,9 +591,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2009>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2009) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2009)));
         }
 
     }

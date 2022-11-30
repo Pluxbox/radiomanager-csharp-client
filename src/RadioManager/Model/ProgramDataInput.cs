@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -32,7 +32,7 @@ namespace RadioManager.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProgramDataInput" /> class.
         /// </summary>
-        public ProgramDataInput(long? modelTypeId = default(long?), Object fieldValues = default(Object), string title = default(string), bool? disabled = default(bool?), long? genreId = default(long?), string description = default(string), string shortName = default(string), string mediumName = default(string), string website = default(string), string email = default(string), bool? recommended = default(bool?), string language = default(string), long? ptyCodeId = default(long?)) : base(modelTypeId, fieldValues, title, disabled, genreId, description, shortName, mediumName, website, email, recommended, language, ptyCodeId)
+        public ProgramDataInput(long? modelTypeId = default(long?), Object fieldValues = default(Object), string title = default(string), bool? disabled = default(bool?), long? genreId = default(long?), long? groupId = default(long?), string description = default(string), string shortName = default(string), string mediumName = default(string), string website = default(string), string email = default(string), bool? recommended = default(bool?), string language = default(string), long? ptyCodeId = default(long?)) : base(modelTypeId, fieldValues, title, disabled, genreId, groupId, description, shortName, mediumName, website, email, recommended, language, ptyCodeId)
         {
         }
         
@@ -101,7 +101,6 @@ namespace RadioManager.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

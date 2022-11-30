@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -41,7 +41,7 @@ namespace RadioManager.Model
         /// <param name="programs">programs.</param>
         /// <param name="broadcasts">broadcasts.</param>
         /// <param name="modelType">modelType.</param>
-        public PresenterResult(long? modelTypeId = default(long?), Object fieldValues = default(Object), string firstname = default(string), string lastname = default(string), bool? active = default(bool?), string name = default(string), Object programs = default(Object), Object broadcasts = default(Object), Object modelType = default(Object), long? modelTypeId = default(long?), Object fieldValues = default(Object), string firstname = default(string), Object modelType = default(Object), long? id = default(long?), DateTime? updatedAt = default(DateTime?), DateTime? createdAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), long? externalStationId = default(long?)) : base(id, updatedAt, createdAt, deletedAt, externalStationId)
+        public PresenterResult(long? modelTypeId = default(long?), Object fieldValues = default(Object), string firstname = default(string), string lastname = default(string), bool? active = default(bool?), string name = default(string), PresenterRelationsPrograms programs = default(PresenterRelationsPrograms), PresenterRelationsBroadcasts broadcasts = default(PresenterRelationsBroadcasts), PresenterRelationsModelType modelType = default(PresenterRelationsModelType), long? modelTypeId = default(long?), Object fieldValues = default(Object), string firstname = default(string), PresenterRelationsModelType modelType = default(PresenterRelationsModelType), long? id = default(long?), DateTime? updatedAt = default(DateTime?), DateTime? createdAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), long? externalStationId = default(long?)) : base(id, updatedAt, createdAt, deletedAt, externalStationId)
         {
             // to ensure "modelTypeId" is required (not null)
             if (modelTypeId == null)
@@ -102,19 +102,19 @@ namespace RadioManager.Model
         /// Gets or Sets Programs
         /// </summary>
         [DataMember(Name="programs", EmitDefaultValue=false)]
-        public Object Programs { get; set; }
+        public PresenterRelationsPrograms Programs { get; set; }
 
         /// <summary>
         /// Gets or Sets Broadcasts
         /// </summary>
         [DataMember(Name="broadcasts", EmitDefaultValue=false)]
-        public Object Broadcasts { get; set; }
+        public PresenterRelationsBroadcasts Broadcasts { get; set; }
 
         /// <summary>
         /// Gets or Sets ModelType
         /// </summary>
         [DataMember(Name="model_type", EmitDefaultValue=false)]
-        public Object ModelType { get; set; }
+        public PresenterRelationsModelType ModelType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -253,7 +253,6 @@ namespace RadioManager.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

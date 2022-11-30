@@ -2,7 +2,7 @@
 <!--
 RadioManager
 
-RadioManager
+This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
 
 OpenAPI spec version: 2.0
 Contact: support@pluxbox.com
@@ -81,7 +81,7 @@ Contact: support@pluxbox.com
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\RadioManager\RadioManager.csproj">
-          <Project>{B451C4A2-413D-4668-BC4B-5AAA7B145851}</Project>
+          <Project>{47CDADA9-629D-45A1-92F9-29BD92E57FAF}</Project>
           <Name>RadioManager</Name>
       </ProjectReference>
   </ItemGroup>

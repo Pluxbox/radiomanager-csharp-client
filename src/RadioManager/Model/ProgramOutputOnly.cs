@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -33,9 +33,9 @@ namespace RadioManager.Model
         /// Initializes a new instance of the <see cref="ProgramOutputOnly" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="updatedAt">updatedAt (required).</param>
-        /// <param name="createdAt">createdAt (required).</param>
-        /// <param name="deletedAt">deletedAt (required).</param>
+        /// <param name="updatedAt">updatedAt.</param>
+        /// <param name="createdAt">createdAt.</param>
+        /// <param name="deletedAt">deletedAt.</param>
         /// <param name="externalStationId">externalStationId.</param>
         public ProgramOutputOnly(long? id = default(long?), DateTime? updatedAt = default(DateTime?), DateTime? createdAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), long? externalStationId = default(long?))
         {
@@ -48,33 +48,9 @@ namespace RadioManager.Model
             {
                 this.Id = id;
             }
-            // to ensure "updatedAt" is required (not null)
-            if (updatedAt == null)
-            {
-                throw new InvalidDataException("updatedAt is a required property for ProgramOutputOnly and cannot be null");
-            }
-            else
-            {
-                this.UpdatedAt = updatedAt;
-            }
-            // to ensure "createdAt" is required (not null)
-            if (createdAt == null)
-            {
-                throw new InvalidDataException("createdAt is a required property for ProgramOutputOnly and cannot be null");
-            }
-            else
-            {
-                this.CreatedAt = createdAt;
-            }
-            // to ensure "deletedAt" is required (not null)
-            if (deletedAt == null)
-            {
-                throw new InvalidDataException("deletedAt is a required property for ProgramOutputOnly and cannot be null");
-            }
-            else
-            {
-                this.DeletedAt = deletedAt;
-            }
+            this.UpdatedAt = updatedAt;
+            this.CreatedAt = createdAt;
+            this.DeletedAt = deletedAt;
             this.ExternalStationId = externalStationId;
         }
         

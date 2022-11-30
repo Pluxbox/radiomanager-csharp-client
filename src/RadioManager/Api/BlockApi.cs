@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -50,7 +50,7 @@ namespace RadioManager.Api
         /// Get current Block
         /// </summary>
         /// <remarks>
-        /// Get current Block
+        /// Get currently playing Block
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>BlockResult</returns>
@@ -60,7 +60,7 @@ namespace RadioManager.Api
         /// Get current Block
         /// </summary>
         /// <remarks>
-        /// Get current Block
+        /// Get currently playing Block
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of BlockResult</returns>
@@ -69,7 +69,7 @@ namespace RadioManager.Api
         /// Get upcoming Block
         /// </summary>
         /// <remarks>
-        /// Get upcoming Block
+        /// Get currently upcoming Block
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>BlockResult</returns>
@@ -79,7 +79,7 @@ namespace RadioManager.Api
         /// Get upcoming Block
         /// </summary>
         /// <remarks>
-        /// Get upcoming Block
+        /// Get currently upcoming Block
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of BlockResult</returns>
@@ -91,18 +91,18 @@ namespace RadioManager.Api
         /// Get a list of all blocks currently in your station. This feature supports pagination and will give a maximum of 50 blocks back.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        Object ListBlocks (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>InlineResponse200</returns>
+        InlineResponse200 ListBlocks (long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get a list of all blocks currently in your station.
@@ -111,18 +111,18 @@ namespace RadioManager.Api
         /// Get a list of all blocks currently in your station. This feature supports pagination and will give a maximum of 50 blocks back.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> ListBlocksWithHttpInfo (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>ApiResponse of InlineResponse200</returns>
+        ApiResponse<InlineResponse200> ListBlocksWithHttpInfo (long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -152,7 +152,7 @@ namespace RadioManager.Api
         /// Get current Block
         /// </summary>
         /// <remarks>
-        /// Get current Block
+        /// Get currently playing Block
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of BlockResult</returns>
@@ -162,7 +162,7 @@ namespace RadioManager.Api
         /// Get current Block
         /// </summary>
         /// <remarks>
-        /// Get current Block
+        /// Get currently playing Block
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (BlockResult)</returns>
@@ -171,7 +171,7 @@ namespace RadioManager.Api
         /// Get upcoming Block
         /// </summary>
         /// <remarks>
-        /// Get upcoming Block
+        /// Get currently upcoming Block
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of BlockResult</returns>
@@ -181,7 +181,7 @@ namespace RadioManager.Api
         /// Get upcoming Block
         /// </summary>
         /// <remarks>
-        /// Get upcoming Block
+        /// Get currently upcoming Block
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (BlockResult)</returns>
@@ -193,18 +193,18 @@ namespace RadioManager.Api
         /// Get a list of all blocks currently in your station. This feature supports pagination and will give a maximum of 50 blocks back.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> ListBlocksAsync (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of InlineResponse200</returns>
+        System.Threading.Tasks.Task<InlineResponse200> ListBlocksAsync (long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get a list of all blocks currently in your station.
@@ -213,18 +213,18 @@ namespace RadioManager.Api
         /// Get a list of all blocks currently in your station. This feature supports pagination and will give a maximum of 50 blocks back.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListBlocksAsyncWithHttpInfo (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> ListBlocksAsyncWithHttpInfo (long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         #endregion Asynchronous Operations
     }
 
@@ -484,7 +484,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get current Block Get current Block
+        /// Get current Block Get currently playing Block
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>BlockResult</returns>
@@ -495,7 +495,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get current Block Get current Block
+        /// Get current Block Get currently playing Block
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of BlockResult</returns>
@@ -548,7 +548,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get current Block Get current Block
+        /// Get current Block Get currently playing Block
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of BlockResult</returns>
@@ -560,7 +560,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get current Block Get current Block
+        /// Get current Block Get currently playing Block
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (BlockResult)</returns>
@@ -613,7 +613,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get upcoming Block Get upcoming Block
+        /// Get upcoming Block Get currently upcoming Block
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>BlockResult</returns>
@@ -624,7 +624,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get upcoming Block Get upcoming Block
+        /// Get upcoming Block Get currently upcoming Block
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of BlockResult</returns>
@@ -677,7 +677,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get upcoming Block Get upcoming Block
+        /// Get upcoming Block Get currently upcoming Block
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of BlockResult</returns>
@@ -689,7 +689,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get upcoming Block Get upcoming Block
+        /// Get upcoming Block Get currently upcoming Block
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (BlockResult)</returns>
@@ -745,20 +745,20 @@ namespace RadioManager.Api
         /// Get a list of all blocks currently in your station. Get a list of all blocks currently in your station. This feature supports pagination and will give a maximum of 50 blocks back.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        public Object ListBlocks (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>InlineResponse200</returns>
+        public InlineResponse200 ListBlocks (long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = ListBlocksWithHttpInfo(page, broadcastId, itemId, programId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse200> localVarResponse = ListBlocksWithHttpInfo(broadcastId, itemId, programId, startMin, startMax, page, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -766,18 +766,18 @@ namespace RadioManager.Api
         /// Get a list of all blocks currently in your station. Get a list of all blocks currently in your station. This feature supports pagination and will give a maximum of 50 blocks back.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > ListBlocksWithHttpInfo (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>ApiResponse of InlineResponse200</returns>
+        public ApiResponse< InlineResponse200 > ListBlocksWithHttpInfo (long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/blocks";
@@ -801,12 +801,12 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (broadcastId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
             if (itemId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "item_id", itemId)); // query parameter
             if (programId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "program_id", programId)); // query parameter
             if (startMin != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-min", startMin)); // query parameter
             if (startMax != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-max", startMax)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -830,29 +830,29 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse200>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse200) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse200)));
         }
 
         /// <summary>
         /// Get a list of all blocks currently in your station. Get a list of all blocks currently in your station. This feature supports pagination and will give a maximum of 50 blocks back.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> ListBlocksAsync (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of InlineResponse200</returns>
+        public async System.Threading.Tasks.Task<InlineResponse200> ListBlocksAsync (long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = await ListBlocksAsyncWithHttpInfo(page, broadcastId, itemId, programId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse200> localVarResponse = await ListBlocksAsyncWithHttpInfo(broadcastId, itemId, programId, startMin, startMax, page, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -861,18 +861,18 @@ namespace RadioManager.Api
         /// Get a list of all blocks currently in your station. Get a list of all blocks currently in your station. This feature supports pagination and will give a maximum of 50 blocks back.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ListBlocksAsyncWithHttpInfo (long? page = null, long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> ListBlocksAsyncWithHttpInfo (long? broadcastId = null, long? itemId = null, long? programId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/blocks";
@@ -896,12 +896,12 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (broadcastId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
             if (itemId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "item_id", itemId)); // query parameter
             if (programId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "program_id", programId)); // query parameter
             if (startMin != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-min", startMin)); // query parameter
             if (startMax != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-max", startMax)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -925,9 +925,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse200>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse200) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse200)));
         }
 
     }

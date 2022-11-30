@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -31,8 +31,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>PostSuccess</returns>
-        PostSuccess CreateCampaign (CampaignDataInput body);
+        /// <returns>InlineResponse2002</returns>
+        InlineResponse2002 CreateCampaign (CampaignDataInput body);
 
         /// <summary>
         /// Create campaign.
@@ -42,8 +42,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>ApiResponse of PostSuccess</returns>
-        ApiResponse<PostSuccess> CreateCampaignWithHttpInfo (CampaignDataInput body);
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        ApiResponse<InlineResponse2002> CreateCampaignWithHttpInfo (CampaignDataInput body);
         /// <summary>
         /// Delete campaign by id
         /// </summary>
@@ -52,8 +52,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <returns>Success</returns>
-        Success DeleteCampaignById (long? id);
+        /// <returns>InlineResponse202</returns>
+        InlineResponse202 DeleteCampaignById (long? id);
 
         /// <summary>
         /// Delete campaign by id
@@ -63,8 +63,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> DeleteCampaignByIdWithHttpInfo (long? id);
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        ApiResponse<InlineResponse202> DeleteCampaignByIdWithHttpInfo (long? id);
         /// <summary>
         /// Get campaign by id
         /// </summary>
@@ -73,9 +73,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>CampaignResult</returns>
-        CampaignResult GetCampaignById (long? id, long? externalStationId = null);
+        CampaignResult GetCampaignById (long? id);
 
         /// <summary>
         /// Get campaign by id
@@ -85,9 +84,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of CampaignResult</returns>
-        ApiResponse<CampaignResult> GetCampaignByIdWithHttpInfo (long? id, long? externalStationId = null);
+        ApiResponse<CampaignResult> GetCampaignByIdWithHttpInfo (long? id);
         /// <summary>
         /// Get all campaigns.
         /// </summary>
@@ -95,17 +93,17 @@ namespace RadioManager.Api
         /// List all campaigns.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        Object ListCampaigns (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>InlineResponse2004</returns>
+        InlineResponse2004 ListCampaigns (long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all campaigns.
@@ -114,17 +112,17 @@ namespace RadioManager.Api
         /// List all campaigns.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> ListCampaignsWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>ApiResponse of InlineResponse2004</returns>
+        ApiResponse<InlineResponse2004> ListCampaignsWithHttpInfo (long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update campaign by id
         /// </summary>
@@ -132,10 +130,10 @@ namespace RadioManager.Api
         /// Update campaign by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data **(Optional)**</param>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        Success UpdateCampaignByID (long? id, CampaignDataInput body = null);
+        /// <returns>InlineResponse202</returns>
+        InlineResponse202 UpdateCampaignByID (CampaignDataInput body, long? id);
 
         /// <summary>
         /// Update campaign by id
@@ -144,10 +142,10 @@ namespace RadioManager.Api
         /// Update campaign by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data **(Optional)**</param>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> UpdateCampaignByIDWithHttpInfo (long? id, CampaignDataInput body = null);
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        ApiResponse<InlineResponse202> UpdateCampaignByIDWithHttpInfo (CampaignDataInput body, long? id);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -158,8 +156,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of PostSuccess</returns>
-        System.Threading.Tasks.Task<PostSuccess> CreateCampaignAsync (CampaignDataInput body);
+        /// <returns>Task of InlineResponse2002</returns>
+        System.Threading.Tasks.Task<InlineResponse2002> CreateCampaignAsync (CampaignDataInput body);
 
         /// <summary>
         /// Create campaign.
@@ -169,8 +167,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of ApiResponse (PostSuccess)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PostSuccess>> CreateCampaignAsyncWithHttpInfo (CampaignDataInput body);
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> CreateCampaignAsyncWithHttpInfo (CampaignDataInput body);
         /// <summary>
         /// Delete campaign by id
         /// </summary>
@@ -179,8 +177,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> DeleteCampaignByIdAsync (long? id);
+        /// <returns>Task of InlineResponse202</returns>
+        System.Threading.Tasks.Task<InlineResponse202> DeleteCampaignByIdAsync (long? id);
 
         /// <summary>
         /// Delete campaign by id
@@ -190,8 +188,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> DeleteCampaignByIdAsyncWithHttpInfo (long? id);
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> DeleteCampaignByIdAsyncWithHttpInfo (long? id);
         /// <summary>
         /// Get campaign by id
         /// </summary>
@@ -200,9 +198,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of CampaignResult</returns>
-        System.Threading.Tasks.Task<CampaignResult> GetCampaignByIdAsync (long? id, long? externalStationId = null);
+        System.Threading.Tasks.Task<CampaignResult> GetCampaignByIdAsync (long? id);
 
         /// <summary>
         /// Get campaign by id
@@ -212,9 +209,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (CampaignResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CampaignResult>> GetCampaignByIdAsyncWithHttpInfo (long? id, long? externalStationId = null);
+        System.Threading.Tasks.Task<ApiResponse<CampaignResult>> GetCampaignByIdAsyncWithHttpInfo (long? id);
         /// <summary>
         /// Get all campaigns.
         /// </summary>
@@ -222,17 +218,17 @@ namespace RadioManager.Api
         /// List all campaigns.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> ListCampaignsAsync (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of InlineResponse2004</returns>
+        System.Threading.Tasks.Task<InlineResponse2004> ListCampaignsAsync (long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all campaigns.
@@ -241,17 +237,17 @@ namespace RadioManager.Api
         /// List all campaigns.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListCampaignsAsyncWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of ApiResponse (InlineResponse2004)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2004>> ListCampaignsAsyncWithHttpInfo (long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update campaign by id
         /// </summary>
@@ -259,10 +255,10 @@ namespace RadioManager.Api
         /// Update campaign by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data **(Optional)**</param>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> UpdateCampaignByIDAsync (long? id, CampaignDataInput body = null);
+        /// <returns>Task of InlineResponse202</returns>
+        System.Threading.Tasks.Task<InlineResponse202> UpdateCampaignByIDAsync (CampaignDataInput body, long? id);
 
         /// <summary>
         /// Update campaign by id
@@ -271,10 +267,10 @@ namespace RadioManager.Api
         /// Update campaign by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data **(Optional)**</param>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> UpdateCampaignByIDAsyncWithHttpInfo (long? id, CampaignDataInput body = null);
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> UpdateCampaignByIDAsyncWithHttpInfo (CampaignDataInput body, long? id);
         #endregion Asynchronous Operations
     }
 
@@ -391,10 +387,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>PostSuccess</returns>
-        public PostSuccess CreateCampaign (CampaignDataInput body)
+        /// <returns>InlineResponse2002</returns>
+        public InlineResponse2002 CreateCampaign (CampaignDataInput body)
         {
-             ApiResponse<PostSuccess> localVarResponse = CreateCampaignWithHttpInfo(body);
+             ApiResponse<InlineResponse2002> localVarResponse = CreateCampaignWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
@@ -403,8 +399,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>ApiResponse of PostSuccess</returns>
-        public ApiResponse< PostSuccess > CreateCampaignWithHttpInfo (CampaignDataInput body)
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        public ApiResponse< InlineResponse2002 > CreateCampaignWithHttpInfo (CampaignDataInput body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -459,9 +455,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PostSuccess>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2002>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (PostSuccess) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostSuccess)));
+                (InlineResponse2002) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2002)));
         }
 
         /// <summary>
@@ -469,10 +465,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of PostSuccess</returns>
-        public async System.Threading.Tasks.Task<PostSuccess> CreateCampaignAsync (CampaignDataInput body)
+        /// <returns>Task of InlineResponse2002</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2002> CreateCampaignAsync (CampaignDataInput body)
         {
-             ApiResponse<PostSuccess> localVarResponse = await CreateCampaignAsyncWithHttpInfo(body);
+             ApiResponse<InlineResponse2002> localVarResponse = await CreateCampaignAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
@@ -482,8 +478,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of ApiResponse (PostSuccess)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PostSuccess>> CreateCampaignAsyncWithHttpInfo (CampaignDataInput body)
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> CreateCampaignAsyncWithHttpInfo (CampaignDataInput body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -538,9 +534,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PostSuccess>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2002>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (PostSuccess) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostSuccess)));
+                (InlineResponse2002) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2002)));
         }
 
         /// <summary>
@@ -548,10 +544,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <returns>Success</returns>
-        public Success DeleteCampaignById (long? id)
+        /// <returns>InlineResponse202</returns>
+        public InlineResponse202 DeleteCampaignById (long? id)
         {
-             ApiResponse<Success> localVarResponse = DeleteCampaignByIdWithHttpInfo(id);
+             ApiResponse<InlineResponse202> localVarResponse = DeleteCampaignByIdWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -560,8 +556,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > DeleteCampaignByIdWithHttpInfo (long? id)
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        public ApiResponse< InlineResponse202 > DeleteCampaignByIdWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -608,9 +604,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
@@ -618,10 +614,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> DeleteCampaignByIdAsync (long? id)
+        /// <returns>Task of InlineResponse202</returns>
+        public async System.Threading.Tasks.Task<InlineResponse202> DeleteCampaignByIdAsync (long? id)
         {
-             ApiResponse<Success> localVarResponse = await DeleteCampaignByIdAsyncWithHttpInfo(id);
+             ApiResponse<InlineResponse202> localVarResponse = await DeleteCampaignByIdAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -631,8 +627,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> DeleteCampaignByIdAsyncWithHttpInfo (long? id)
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> DeleteCampaignByIdAsyncWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -679,9 +675,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
@@ -689,11 +685,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>CampaignResult</returns>
-        public CampaignResult GetCampaignById (long? id, long? externalStationId = null)
+        public CampaignResult GetCampaignById (long? id)
         {
-             ApiResponse<CampaignResult> localVarResponse = GetCampaignByIdWithHttpInfo(id, externalStationId);
+             ApiResponse<CampaignResult> localVarResponse = GetCampaignByIdWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -702,9 +697,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of CampaignResult</returns>
-        public ApiResponse< CampaignResult > GetCampaignByIdWithHttpInfo (long? id, long? externalStationId = null)
+        public ApiResponse< CampaignResult > GetCampaignByIdWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -732,7 +726,6 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (externalStationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
             // authentication (API-Key) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
             {
@@ -762,11 +755,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of CampaignResult</returns>
-        public async System.Threading.Tasks.Task<CampaignResult> GetCampaignByIdAsync (long? id, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<CampaignResult> GetCampaignByIdAsync (long? id)
         {
-             ApiResponse<CampaignResult> localVarResponse = await GetCampaignByIdAsyncWithHttpInfo(id, externalStationId);
+             ApiResponse<CampaignResult> localVarResponse = await GetCampaignByIdAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -776,9 +768,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (CampaignResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CampaignResult>> GetCampaignByIdAsyncWithHttpInfo (long? id, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CampaignResult>> GetCampaignByIdAsyncWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -806,7 +797,6 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (externalStationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
             // authentication (API-Key) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
             {
@@ -835,19 +825,19 @@ namespace RadioManager.Api
         /// Get all campaigns. List all campaigns.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        public Object ListCampaigns (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>InlineResponse2004</returns>
+        public InlineResponse2004 ListCampaigns (long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = ListCampaignsWithHttpInfo(page, itemId, modelTypeId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse2004> localVarResponse = ListCampaignsWithHttpInfo(itemId, modelTypeId, startMin, startMax, page, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -855,17 +845,17 @@ namespace RadioManager.Api
         /// Get all campaigns. List all campaigns.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > ListCampaignsWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>ApiResponse of InlineResponse2004</returns>
+        public ApiResponse< InlineResponse2004 > ListCampaignsWithHttpInfo (long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/campaigns";
@@ -889,11 +879,11 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (itemId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "item_id", itemId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "model_type_id", modelTypeId)); // query parameter
             if (startMin != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-min", startMin)); // query parameter
             if (startMax != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-max", startMax)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -917,28 +907,28 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2004>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2004) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2004)));
         }
 
         /// <summary>
         /// Get all campaigns. List all campaigns.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> ListCampaignsAsync (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of InlineResponse2004</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2004> ListCampaignsAsync (long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = await ListCampaignsAsyncWithHttpInfo(page, itemId, modelTypeId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse2004> localVarResponse = await ListCampaignsAsyncWithHttpInfo(itemId, modelTypeId, startMin, startMax, page, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -947,17 +937,17 @@ namespace RadioManager.Api
         /// Get all campaigns. List all campaigns.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
         /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ListCampaignsAsyncWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of ApiResponse (InlineResponse2004)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2004>> ListCampaignsAsyncWithHttpInfo (long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/campaigns";
@@ -981,11 +971,11 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (itemId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "item_id", itemId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "model_type_id", modelTypeId)); // query parameter
             if (startMin != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-min", startMin)); // query parameter
             if (startMax != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-max", startMax)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -1009,21 +999,21 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2004>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2004) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2004)));
         }
 
         /// <summary>
         /// Update campaign by id Update campaign by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data **(Optional)**</param>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        public Success UpdateCampaignByID (long? id, CampaignDataInput body = null)
+        /// <returns>InlineResponse202</returns>
+        public InlineResponse202 UpdateCampaignByID (CampaignDataInput body, long? id)
         {
-             ApiResponse<Success> localVarResponse = UpdateCampaignByIDWithHttpInfo(id, body);
+             ApiResponse<InlineResponse202> localVarResponse = UpdateCampaignByIDWithHttpInfo(body, id);
              return localVarResponse.Data;
         }
 
@@ -1031,11 +1021,14 @@ namespace RadioManager.Api
         /// Update campaign by id Update campaign by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data **(Optional)**</param>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > UpdateCampaignByIDWithHttpInfo (long? id, CampaignDataInput body = null)
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        public ApiResponse< InlineResponse202 > UpdateCampaignByIDWithHttpInfo (CampaignDataInput body, long? id)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling CampaignApi->UpdateCampaignByID");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling CampaignApi->UpdateCampaignByID");
@@ -1090,21 +1083,21 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
         /// Update campaign by id Update campaign by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data **(Optional)**</param>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> UpdateCampaignByIDAsync (long? id, CampaignDataInput body = null)
+        /// <returns>Task of InlineResponse202</returns>
+        public async System.Threading.Tasks.Task<InlineResponse202> UpdateCampaignByIDAsync (CampaignDataInput body, long? id)
         {
-             ApiResponse<Success> localVarResponse = await UpdateCampaignByIDAsyncWithHttpInfo(id, body);
+             ApiResponse<InlineResponse202> localVarResponse = await UpdateCampaignByIDAsyncWithHttpInfo(body, id);
              return localVarResponse.Data;
 
         }
@@ -1113,11 +1106,14 @@ namespace RadioManager.Api
         /// Update campaign by id Update campaign by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data **(Optional)**</param>
         /// <param name="id">ID of Campaign **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> UpdateCampaignByIDAsyncWithHttpInfo (long? id, CampaignDataInput body = null)
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> UpdateCampaignByIDAsyncWithHttpInfo (CampaignDataInput body, long? id)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling CampaignApi->UpdateCampaignByID");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling CampaignApi->UpdateCampaignByID");
@@ -1172,9 +1168,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
     }

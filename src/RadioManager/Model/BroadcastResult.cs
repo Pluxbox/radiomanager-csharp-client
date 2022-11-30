@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -39,22 +39,22 @@ namespace RadioManager.Model
             /// Enum _1week for value: 1 week
             /// </summary>
             [EnumMember(Value = "1 week")]
-            _1week = 0,
+            _1week = 1,
             /// <summary>
             /// Enum _2week for value: 2 week
             /// </summary>
             [EnumMember(Value = "2 week")]
-            _2week = 1,
+            _2week = 2,
             /// <summary>
             /// Enum _4week for value: 4 week
             /// </summary>
             [EnumMember(Value = "4 week")]
-            _4week = 2,
+            _4week = 3,
             /// <summary>
             /// Enum _1month for value: 1 month
             /// </summary>
             [EnumMember(Value = "1 month")]
-            _1month = 3        }
+            _1month = 4        }
         /// <summary>
         /// Gets or Sets RepetitionType
         /// </summary>
@@ -85,6 +85,8 @@ namespace RadioManager.Model
         /// <param name="repetitionStart">repetitionStart.</param>
         /// <param name="repetitionDays">repetitionDays.</param>
         /// <param name="ptyCodeId">ptyCodeId.</param>
+        /// <param name="plannedInEpg">plannedInEpg.</param>
+        /// <param name="groupId">groupId.</param>
         /// <param name="genre">genre.</param>
         /// <param name="items">items.</param>
         /// <param name="blocks">blocks.</param>
@@ -92,7 +94,8 @@ namespace RadioManager.Model
         /// <param name="tags">tags.</param>
         /// <param name="presenters">presenters.</param>
         /// <param name="modelType">modelType.</param>
-        public BroadcastResult(long? programId = default(long?), long? modelTypeId = default(long?), long? stationId = default(long?), Object fieldValues = default(Object), string title = default(string), DateTime? start = default(DateTime?), DateTime? stop = default(DateTime?), long? genreId = default(long?), string description = default(string), string shortName = default(string), string mediumName = default(string), string website = default(string), string email = default(string), bool? recommended = default(bool?), string language = default(string), bool? published = default(bool?), string repetitionUid = default(string), RepetitionTypeEnum? repetitionType = default(RepetitionTypeEnum?), DateTime? repetitionEnd = default(DateTime?), DateTime? repetitionStart = default(DateTime?), string repetitionDays = default(string), long? ptyCodeId = default(long?), Object genre = default(Object), Object items = default(Object), Object blocks = default(Object), Object program = default(Object), Object tags = default(Object), Object presenters = default(Object), Object modelType = default(Object), long? programId = default(long?), long? modelTypeId = default(long?), long? stationId = default(long?), Object modelType = default(Object), long? id = default(long?), DateTime? updatedAt = default(DateTime?), DateTime? createdAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), long? externalStationId = default(long?)) : base(id, updatedAt, createdAt, deletedAt, externalStationId)
+        /// <param name="group">group.</param>
+        public BroadcastResult(long? programId = default(long?), long? modelTypeId = default(long?), long? stationId = default(long?), Object fieldValues = default(Object), string title = default(string), DateTime? start = default(DateTime?), DateTime? stop = default(DateTime?), long? genreId = default(long?), string description = default(string), string shortName = default(string), string mediumName = default(string), string website = default(string), string email = default(string), bool? recommended = default(bool?), string language = default(string), bool? published = default(bool?), string repetitionUid = default(string), RepetitionTypeEnum? repetitionType = default(RepetitionTypeEnum?), DateTime? repetitionEnd = default(DateTime?), DateTime? repetitionStart = default(DateTime?), string repetitionDays = default(string), long? ptyCodeId = default(long?), int? plannedInEpg = default(int?), long? groupId = default(long?), BroadcastRelationsGenre genre = default(BroadcastRelationsGenre), BroadcastRelationsItems items = default(BroadcastRelationsItems), BroadcastRelationsBlocks blocks = default(BroadcastRelationsBlocks), BlockRelationsProgram program = default(BlockRelationsProgram), BroadcastRelationsTags tags = default(BroadcastRelationsTags), BroadcastRelationsPresenters presenters = default(BroadcastRelationsPresenters), BroadcastRelationsModelType modelType = default(BroadcastRelationsModelType), BroadcastRelationsGroup group = default(BroadcastRelationsGroup), long? programId = default(long?), long? modelTypeId = default(long?), long? stationId = default(long?), BroadcastRelationsGroup group = default(BroadcastRelationsGroup), long? id = default(long?), DateTime? updatedAt = default(DateTime?), DateTime? createdAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), long? externalStationId = default(long?)) : base(id, updatedAt, createdAt, deletedAt, externalStationId)
         {
             this.ProgramId = programId;
             this.ModelTypeId = modelTypeId;
@@ -116,6 +119,8 @@ namespace RadioManager.Model
             this.RepetitionStart = repetitionStart;
             this.RepetitionDays = repetitionDays;
             this.PtyCodeId = ptyCodeId;
+            this.PlannedInEpg = plannedInEpg;
+            this.GroupId = groupId;
             this.Genre = genre;
             this.Items = items;
             this.Blocks = blocks;
@@ -123,6 +128,7 @@ namespace RadioManager.Model
             this.Tags = tags;
             this.Presenters = presenters;
             this.ModelType = modelType;
+            this.Group = group;
         }
         
         /// <summary>
@@ -253,46 +259,64 @@ namespace RadioManager.Model
         public long? PtyCodeId { get; set; }
 
         /// <summary>
+        /// Gets or Sets PlannedInEpg
+        /// </summary>
+        [DataMember(Name="planned_in_epg", EmitDefaultValue=false)]
+        public int? PlannedInEpg { get; set; }
+
+        /// <summary>
+        /// Gets or Sets GroupId
+        /// </summary>
+        [DataMember(Name="group_id", EmitDefaultValue=false)]
+        public long? GroupId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Genre
         /// </summary>
         [DataMember(Name="genre", EmitDefaultValue=false)]
-        public Object Genre { get; set; }
+        public BroadcastRelationsGenre Genre { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items", EmitDefaultValue=false)]
-        public Object Items { get; set; }
+        public BroadcastRelationsItems Items { get; set; }
 
         /// <summary>
         /// Gets or Sets Blocks
         /// </summary>
         [DataMember(Name="blocks", EmitDefaultValue=false)]
-        public Object Blocks { get; set; }
+        public BroadcastRelationsBlocks Blocks { get; set; }
 
         /// <summary>
         /// Gets or Sets Program
         /// </summary>
         [DataMember(Name="program", EmitDefaultValue=false)]
-        public Object Program { get; set; }
+        public BlockRelationsProgram Program { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name="tags", EmitDefaultValue=false)]
-        public Object Tags { get; set; }
+        public BroadcastRelationsTags Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Presenters
         /// </summary>
         [DataMember(Name="presenters", EmitDefaultValue=false)]
-        public Object Presenters { get; set; }
+        public BroadcastRelationsPresenters Presenters { get; set; }
 
         /// <summary>
         /// Gets or Sets ModelType
         /// </summary>
         [DataMember(Name="model_type", EmitDefaultValue=false)]
-        public Object ModelType { get; set; }
+        public BroadcastRelationsModelType ModelType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Group
+        /// </summary>
+        [DataMember(Name="group", EmitDefaultValue=false)]
+        public BroadcastRelationsGroup Group { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -325,6 +349,8 @@ namespace RadioManager.Model
             sb.Append("  RepetitionStart: ").Append(RepetitionStart).Append("\n");
             sb.Append("  RepetitionDays: ").Append(RepetitionDays).Append("\n");
             sb.Append("  PtyCodeId: ").Append(PtyCodeId).Append("\n");
+            sb.Append("  PlannedInEpg: ").Append(PlannedInEpg).Append("\n");
+            sb.Append("  GroupId: ").Append(GroupId).Append("\n");
             sb.Append("  Genre: ").Append(Genre).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  Blocks: ").Append(Blocks).Append("\n");
@@ -332,6 +358,7 @@ namespace RadioManager.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Presenters: ").Append(Presenters).Append("\n");
             sb.Append("  ModelType: ").Append(ModelType).Append("\n");
+            sb.Append("  Group: ").Append(Group).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -477,6 +504,16 @@ namespace RadioManager.Model
                     this.PtyCodeId.Equals(input.PtyCodeId))
                 ) && base.Equals(input) && 
                 (
+                    this.PlannedInEpg == input.PlannedInEpg ||
+                    (this.PlannedInEpg != null &&
+                    this.PlannedInEpg.Equals(input.PlannedInEpg))
+                ) && base.Equals(input) && 
+                (
+                    this.GroupId == input.GroupId ||
+                    (this.GroupId != null &&
+                    this.GroupId.Equals(input.GroupId))
+                ) && base.Equals(input) && 
+                (
                     this.Genre == input.Genre ||
                     (this.Genre != null &&
                     this.Genre.Equals(input.Genre))
@@ -510,6 +547,11 @@ namespace RadioManager.Model
                     this.ModelType == input.ModelType ||
                     (this.ModelType != null &&
                     this.ModelType.Equals(input.ModelType))
+                ) && base.Equals(input) && 
+                (
+                    this.Group == input.Group ||
+                    (this.Group != null &&
+                    this.Group.Equals(input.Group))
                 );
         }
 
@@ -566,6 +608,10 @@ namespace RadioManager.Model
                     hashCode = hashCode * 59 + this.RepetitionDays.GetHashCode();
                 if (this.PtyCodeId != null)
                     hashCode = hashCode * 59 + this.PtyCodeId.GetHashCode();
+                if (this.PlannedInEpg != null)
+                    hashCode = hashCode * 59 + this.PlannedInEpg.GetHashCode();
+                if (this.GroupId != null)
+                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.Genre != null)
                     hashCode = hashCode * 59 + this.Genre.GetHashCode();
                 if (this.Items != null)
@@ -580,6 +626,8 @@ namespace RadioManager.Model
                     hashCode = hashCode * 59 + this.Presenters.GetHashCode();
                 if (this.ModelType != null)
                     hashCode = hashCode * 59 + this.ModelType.GetHashCode();
+                if (this.Group != null)
+                    hashCode = hashCode * 59 + this.Group.GetHashCode();
                 return hashCode;
             }
         }
@@ -591,7 +639,6 @@ namespace RadioManager.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

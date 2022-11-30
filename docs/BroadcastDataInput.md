@@ -25,6 +25,8 @@ Name | Type | Description | Notes
 **RepetitionStart** | **DateTime?** |  | [optional] 
 **RepetitionDays** | **string** |  | [optional] 
 **PtyCodeId** | **long?** |  | [optional] 
+**PlannedInEpg** | **int?** |  | [optional] 
+**GroupId** | **long?** |  | [optional] 
 **Tags** | **List&lt;int?&gt;** |  | [optional] 
 **Presenters** | **List&lt;int?&gt;** |  | [optional] 
 

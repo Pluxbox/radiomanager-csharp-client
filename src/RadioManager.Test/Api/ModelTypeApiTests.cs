@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -70,8 +70,9 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
+            //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.GetModelTypeById(id, externalStationId);
+            //var response = instance.GetModelTypeById(id, orderDirection, externalStationId);
             //Assert.IsInstanceOf<ModelTypeResult> (response, "response is ModelTypeResult");
         }
         /// <summary>
@@ -81,7 +82,6 @@ namespace RadioManager.Test
         public void ListModelTypesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? page = null;
             //long? programId = null;
             //long? broadcastId = null;
             //long? itemId = null;
@@ -89,12 +89,10 @@ namespace RadioManager.Test
             //long? presenterId = null;
             //long? contactId = null;
             //string model = null;
-            //long? limit = null;
-            //string orderBy = null;
             //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListModelTypes(page, programId, broadcastId, itemId, campaignId, presenterId, contactId, model, limit, orderBy, orderDirection, externalStationId);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //var response = instance.ListModelTypes(programId, broadcastId, itemId, campaignId, presenterId, contactId, model, orderDirection, externalStationId);
+            //Assert.IsInstanceOf<InlineResponse2009> (response, "response is InlineResponse2009");
         }
     }
 

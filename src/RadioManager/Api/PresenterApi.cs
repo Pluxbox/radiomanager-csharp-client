@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -31,8 +31,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>PostSuccess</returns>
-        PostSuccess CreatePresenter (PresenterDataInput body);
+        /// <returns>InlineResponse2002</returns>
+        InlineResponse2002 CreatePresenter (PresenterDataInput body);
 
         /// <summary>
         /// Create presenter.
@@ -42,8 +42,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>ApiResponse of PostSuccess</returns>
-        ApiResponse<PostSuccess> CreatePresenterWithHttpInfo (PresenterDataInput body);
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        ApiResponse<InlineResponse2002> CreatePresenterWithHttpInfo (PresenterDataInput body);
         /// <summary>
         /// Delete presenter by id
         /// </summary>
@@ -52,8 +52,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of presenter</param>
-        /// <returns>Success</returns>
-        Success DeletePresenterById (long? id);
+        /// <returns>InlineResponse202</returns>
+        InlineResponse202 DeletePresenterById (long? id);
 
         /// <summary>
         /// Delete presenter by id
@@ -63,8 +63,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of presenter</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> DeletePresenterByIdWithHttpInfo (long? id);
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        ApiResponse<InlineResponse202> DeletePresenterByIdWithHttpInfo (long? id);
         /// <summary>
         /// Get presenter by id
         /// </summary>
@@ -73,9 +73,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of Presenter</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>PresenterResult</returns>
-        PresenterResult GetPresenterById (long? id, long? externalStationId = null);
+        PresenterResult GetPresenterById (long? id);
 
         /// <summary>
         /// Get presenter by id
@@ -85,9 +84,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of Presenter</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of PresenterResult</returns>
-        ApiResponse<PresenterResult> GetPresenterByIdWithHttpInfo (long? id, long? externalStationId = null);
+        ApiResponse<PresenterResult> GetPresenterByIdWithHttpInfo (long? id);
         /// <summary>
         /// Get all presenters.
         /// </summary>
@@ -95,16 +93,16 @@ namespace RadioManager.Api
         /// List all presenters.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID (Optional) (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        Object ListPresenters (long? page = null, long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>InlineResponse20010</returns>
+        InlineResponse20010 ListPresenters (long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all presenters.
@@ -113,16 +111,16 @@ namespace RadioManager.Api
         /// List all presenters.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID (Optional) (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> ListPresentersWithHttpInfo (long? page = null, long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>ApiResponse of InlineResponse20010</returns>
+        ApiResponse<InlineResponse20010> ListPresentersWithHttpInfo (long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update presenter by id
         /// </summary>
@@ -130,10 +128,10 @@ namespace RadioManager.Api
         /// Update presenter by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">id of Presenter</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        Success UpdatePresenterByID (long? id, PresenterDataInput body = null);
+        /// <returns>InlineResponse202</returns>
+        InlineResponse202 UpdatePresenterByID (PresenterDataInput body, long? id);
 
         /// <summary>
         /// Update presenter by id
@@ -142,10 +140,10 @@ namespace RadioManager.Api
         /// Update presenter by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">id of Presenter</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> UpdatePresenterByIDWithHttpInfo (long? id, PresenterDataInput body = null);
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        ApiResponse<InlineResponse202> UpdatePresenterByIDWithHttpInfo (PresenterDataInput body, long? id);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -156,8 +154,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of PostSuccess</returns>
-        System.Threading.Tasks.Task<PostSuccess> CreatePresenterAsync (PresenterDataInput body);
+        /// <returns>Task of InlineResponse2002</returns>
+        System.Threading.Tasks.Task<InlineResponse2002> CreatePresenterAsync (PresenterDataInput body);
 
         /// <summary>
         /// Create presenter.
@@ -167,8 +165,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of ApiResponse (PostSuccess)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PostSuccess>> CreatePresenterAsyncWithHttpInfo (PresenterDataInput body);
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> CreatePresenterAsyncWithHttpInfo (PresenterDataInput body);
         /// <summary>
         /// Delete presenter by id
         /// </summary>
@@ -177,8 +175,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of presenter</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> DeletePresenterByIdAsync (long? id);
+        /// <returns>Task of InlineResponse202</returns>
+        System.Threading.Tasks.Task<InlineResponse202> DeletePresenterByIdAsync (long? id);
 
         /// <summary>
         /// Delete presenter by id
@@ -188,8 +186,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of presenter</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> DeletePresenterByIdAsyncWithHttpInfo (long? id);
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> DeletePresenterByIdAsyncWithHttpInfo (long? id);
         /// <summary>
         /// Get presenter by id
         /// </summary>
@@ -198,9 +196,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of Presenter</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of PresenterResult</returns>
-        System.Threading.Tasks.Task<PresenterResult> GetPresenterByIdAsync (long? id, long? externalStationId = null);
+        System.Threading.Tasks.Task<PresenterResult> GetPresenterByIdAsync (long? id);
 
         /// <summary>
         /// Get presenter by id
@@ -210,9 +207,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of Presenter</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (PresenterResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PresenterResult>> GetPresenterByIdAsyncWithHttpInfo (long? id, long? externalStationId = null);
+        System.Threading.Tasks.Task<ApiResponse<PresenterResult>> GetPresenterByIdAsyncWithHttpInfo (long? id);
         /// <summary>
         /// Get all presenters.
         /// </summary>
@@ -220,16 +216,16 @@ namespace RadioManager.Api
         /// List all presenters.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID (Optional) (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> ListPresentersAsync (long? page = null, long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of InlineResponse20010</returns>
+        System.Threading.Tasks.Task<InlineResponse20010> ListPresentersAsync (long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all presenters.
@@ -238,16 +234,16 @@ namespace RadioManager.Api
         /// List all presenters.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID (Optional) (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListPresentersAsyncWithHttpInfo (long? page = null, long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20010>> ListPresentersAsyncWithHttpInfo (long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update presenter by id
         /// </summary>
@@ -255,10 +251,10 @@ namespace RadioManager.Api
         /// Update presenter by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">id of Presenter</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> UpdatePresenterByIDAsync (long? id, PresenterDataInput body = null);
+        /// <returns>Task of InlineResponse202</returns>
+        System.Threading.Tasks.Task<InlineResponse202> UpdatePresenterByIDAsync (PresenterDataInput body, long? id);
 
         /// <summary>
         /// Update presenter by id
@@ -267,10 +263,10 @@ namespace RadioManager.Api
         /// Update presenter by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">id of Presenter</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> UpdatePresenterByIDAsyncWithHttpInfo (long? id, PresenterDataInput body = null);
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> UpdatePresenterByIDAsyncWithHttpInfo (PresenterDataInput body, long? id);
         #endregion Asynchronous Operations
     }
 
@@ -387,10 +383,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>PostSuccess</returns>
-        public PostSuccess CreatePresenter (PresenterDataInput body)
+        /// <returns>InlineResponse2002</returns>
+        public InlineResponse2002 CreatePresenter (PresenterDataInput body)
         {
-             ApiResponse<PostSuccess> localVarResponse = CreatePresenterWithHttpInfo(body);
+             ApiResponse<InlineResponse2002> localVarResponse = CreatePresenterWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
@@ -399,8 +395,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>ApiResponse of PostSuccess</returns>
-        public ApiResponse< PostSuccess > CreatePresenterWithHttpInfo (PresenterDataInput body)
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        public ApiResponse< InlineResponse2002 > CreatePresenterWithHttpInfo (PresenterDataInput body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -455,9 +451,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PostSuccess>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2002>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (PostSuccess) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostSuccess)));
+                (InlineResponse2002) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2002)));
         }
 
         /// <summary>
@@ -465,10 +461,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of PostSuccess</returns>
-        public async System.Threading.Tasks.Task<PostSuccess> CreatePresenterAsync (PresenterDataInput body)
+        /// <returns>Task of InlineResponse2002</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2002> CreatePresenterAsync (PresenterDataInput body)
         {
-             ApiResponse<PostSuccess> localVarResponse = await CreatePresenterAsyncWithHttpInfo(body);
+             ApiResponse<InlineResponse2002> localVarResponse = await CreatePresenterAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
@@ -478,8 +474,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of ApiResponse (PostSuccess)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PostSuccess>> CreatePresenterAsyncWithHttpInfo (PresenterDataInput body)
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> CreatePresenterAsyncWithHttpInfo (PresenterDataInput body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -534,9 +530,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PostSuccess>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2002>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (PostSuccess) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostSuccess)));
+                (InlineResponse2002) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2002)));
         }
 
         /// <summary>
@@ -544,10 +540,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of presenter</param>
-        /// <returns>Success</returns>
-        public Success DeletePresenterById (long? id)
+        /// <returns>InlineResponse202</returns>
+        public InlineResponse202 DeletePresenterById (long? id)
         {
-             ApiResponse<Success> localVarResponse = DeletePresenterByIdWithHttpInfo(id);
+             ApiResponse<InlineResponse202> localVarResponse = DeletePresenterByIdWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -556,8 +552,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of presenter</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > DeletePresenterByIdWithHttpInfo (long? id)
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        public ApiResponse< InlineResponse202 > DeletePresenterByIdWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -604,9 +600,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
@@ -614,10 +610,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of presenter</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> DeletePresenterByIdAsync (long? id)
+        /// <returns>Task of InlineResponse202</returns>
+        public async System.Threading.Tasks.Task<InlineResponse202> DeletePresenterByIdAsync (long? id)
         {
-             ApiResponse<Success> localVarResponse = await DeletePresenterByIdAsyncWithHttpInfo(id);
+             ApiResponse<InlineResponse202> localVarResponse = await DeletePresenterByIdAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -627,8 +623,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of presenter</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> DeletePresenterByIdAsyncWithHttpInfo (long? id)
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> DeletePresenterByIdAsyncWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -675,9 +671,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
@@ -685,11 +681,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of Presenter</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>PresenterResult</returns>
-        public PresenterResult GetPresenterById (long? id, long? externalStationId = null)
+        public PresenterResult GetPresenterById (long? id)
         {
-             ApiResponse<PresenterResult> localVarResponse = GetPresenterByIdWithHttpInfo(id, externalStationId);
+             ApiResponse<PresenterResult> localVarResponse = GetPresenterByIdWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -698,9 +693,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of Presenter</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>ApiResponse of PresenterResult</returns>
-        public ApiResponse< PresenterResult > GetPresenterByIdWithHttpInfo (long? id, long? externalStationId = null)
+        public ApiResponse< PresenterResult > GetPresenterByIdWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -728,7 +722,6 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (externalStationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
             // authentication (API-Key) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
             {
@@ -758,11 +751,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of Presenter</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of PresenterResult</returns>
-        public async System.Threading.Tasks.Task<PresenterResult> GetPresenterByIdAsync (long? id, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<PresenterResult> GetPresenterByIdAsync (long? id)
         {
-             ApiResponse<PresenterResult> localVarResponse = await GetPresenterByIdAsyncWithHttpInfo(id, externalStationId);
+             ApiResponse<PresenterResult> localVarResponse = await GetPresenterByIdAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -772,9 +764,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of Presenter</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
         /// <returns>Task of ApiResponse (PresenterResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PresenterResult>> GetPresenterByIdAsyncWithHttpInfo (long? id, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PresenterResult>> GetPresenterByIdAsyncWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -802,7 +793,6 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (externalStationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
             // authentication (API-Key) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
             {
@@ -831,18 +821,18 @@ namespace RadioManager.Api
         /// Get all presenters. List all presenters.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID (Optional) (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        public Object ListPresenters (long? page = null, long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>InlineResponse20010</returns>
+        public InlineResponse20010 ListPresenters (long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = ListPresentersWithHttpInfo(page, programId, broadcastId, modelTypeId, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse20010> localVarResponse = ListPresentersWithHttpInfo(programId, broadcastId, modelTypeId, page, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -850,16 +840,16 @@ namespace RadioManager.Api
         /// Get all presenters. List all presenters.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID (Optional) (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > ListPresentersWithHttpInfo (long? page = null, long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>ApiResponse of InlineResponse20010</returns>
+        public ApiResponse< InlineResponse20010 > ListPresentersWithHttpInfo (long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/presenters";
@@ -883,10 +873,10 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (programId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "program_id", programId)); // query parameter
             if (broadcastId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "model_type_id", modelTypeId)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -910,27 +900,27 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse20010>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse20010) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20010)));
         }
 
         /// <summary>
         /// Get all presenters. List all presenters.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID (Optional) (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> ListPresentersAsync (long? page = null, long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of InlineResponse20010</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20010> ListPresentersAsync (long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = await ListPresentersAsyncWithHttpInfo(page, programId, broadcastId, modelTypeId, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse20010> localVarResponse = await ListPresentersAsyncWithHttpInfo(programId, broadcastId, modelTypeId, page, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -939,16 +929,16 @@ namespace RadioManager.Api
         /// Get all presenters. List all presenters.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID (Optional) (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ListPresentersAsyncWithHttpInfo (long? page = null, long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20010>> ListPresentersAsyncWithHttpInfo (long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/presenters";
@@ -972,10 +962,10 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (programId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "program_id", programId)); // query parameter
             if (broadcastId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "model_type_id", modelTypeId)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -999,21 +989,21 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse20010>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse20010) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20010)));
         }
 
         /// <summary>
         /// Update presenter by id Update presenter by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">id of Presenter</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        public Success UpdatePresenterByID (long? id, PresenterDataInput body = null)
+        /// <returns>InlineResponse202</returns>
+        public InlineResponse202 UpdatePresenterByID (PresenterDataInput body, long? id)
         {
-             ApiResponse<Success> localVarResponse = UpdatePresenterByIDWithHttpInfo(id, body);
+             ApiResponse<InlineResponse202> localVarResponse = UpdatePresenterByIDWithHttpInfo(body, id);
              return localVarResponse.Data;
         }
 
@@ -1021,11 +1011,14 @@ namespace RadioManager.Api
         /// Update presenter by id Update presenter by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">id of Presenter</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > UpdatePresenterByIDWithHttpInfo (long? id, PresenterDataInput body = null)
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        public ApiResponse< InlineResponse202 > UpdatePresenterByIDWithHttpInfo (PresenterDataInput body, long? id)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling PresenterApi->UpdatePresenterByID");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling PresenterApi->UpdatePresenterByID");
@@ -1080,21 +1073,21 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
         /// Update presenter by id Update presenter by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">id of Presenter</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> UpdatePresenterByIDAsync (long? id, PresenterDataInput body = null)
+        /// <returns>Task of InlineResponse202</returns>
+        public async System.Threading.Tasks.Task<InlineResponse202> UpdatePresenterByIDAsync (PresenterDataInput body, long? id)
         {
-             ApiResponse<Success> localVarResponse = await UpdatePresenterByIDAsyncWithHttpInfo(id, body);
+             ApiResponse<InlineResponse202> localVarResponse = await UpdatePresenterByIDAsyncWithHttpInfo(body, id);
              return localVarResponse.Data;
 
         }
@@ -1103,11 +1096,14 @@ namespace RadioManager.Api
         /// Update presenter by id Update presenter by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">id of Presenter</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> UpdatePresenterByIDAsyncWithHttpInfo (long? id, PresenterDataInput body = null)
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> UpdatePresenterByIDAsyncWithHttpInfo (PresenterDataInput body, long? id)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling PresenterApi->UpdatePresenterByID");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling PresenterApi->UpdatePresenterByID");
@@ -1162,9 +1158,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
     }

@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateItem**](ItemApi.md#createitem) | **POST** /items | Create an new item.
 [**CurrentItemPostStructure**](ItemApi.md#currentitempoststructure) | **POST** /items/current/structure | Post a current playing item, keep structure
-[**CurrentItemPostTiming**](ItemApi.md#currentitemposttiming) | **POST** /items/current/timing | Post a current playing item
+[**CurrentItemPostTiming**](ItemApi.md#currentitemposttiming) | **POST** /items/current/timing | Post current playing Item
 [**DeleteItemById**](ItemApi.md#deleteitembyid) | **DELETE** /items/{id} | Delete item by ID.
 [**GetCurrentItem**](ItemApi.md#getcurrentitem) | **GET** /items/current | Get current Item
 [**GetItemById**](ItemApi.md#getitembyid) | **GET** /items/{id} | Get extended item details by ID.
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 <a name="createitem"></a>
 # **CreateItem**
-> PostSuccess CreateItem (ItemDataInput body = null)
+> InlineResponse2002 CreateItem (ItemDataInput body)
 
 Create an new item.
 
@@ -45,12 +45,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var body = new ItemDataInput(); // ItemDataInput | Data *(Optional)* (optional) 
+            var body = new ItemDataInput(); // ItemDataInput | Data **(Required)**
 
             try
             {
                 // Create an new item.
-                PostSuccess result = apiInstance.CreateItem(body);
+                InlineResponse2002 result = apiInstance.CreateItem(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -66,11 +66,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ItemDataInput**](ItemDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**ItemDataInput**](ItemDataInput.md)| Data **(Required)** | 
 
 ### Return type
 
-[**PostSuccess**](PostSuccess.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -84,11 +84,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="currentitempoststructure"></a>
 # **CurrentItemPostStructure**
-> Success CurrentItemPostStructure (ImportItem body = null)
+> ItemResult CurrentItemPostStructure (ImportItem body)
 
 Post a current playing item, keep structure
 
-Post a current playing item, keep structure
+Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will attempt to** keep Items' ModelType structure in rundown.
 
 ### Example
 ```csharp
@@ -110,12 +110,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var body = new ImportItem(); // ImportItem | Data *(Optional)* (optional) 
+            var body = new ImportItem(); // ImportItem | Data **(Required)**
 
             try
             {
                 // Post a current playing item, keep structure
-                Success result = apiInstance.CurrentItemPostStructure(body);
+                ItemResult result = apiInstance.CurrentItemPostStructure(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -131,11 +131,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ImportItem**](ImportItem.md)| Data *(Optional)* | [optional] 
+ **body** | [**ImportItem**](ImportItem.md)| Data **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**ItemResult**](ItemResult.md)
 
 ### Authorization
 
@@ -149,11 +149,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="currentitemposttiming"></a>
 # **CurrentItemPostTiming**
-> Success CurrentItemPostTiming (ImportItem body = null)
+> ItemResult CurrentItemPostTiming (ImportItem body)
 
-Post a current playing item
+Post current playing Item
 
-Post a current playing item
+Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will not keep** Items' ModelType structure in rundown.
 
 ### Example
 ```csharp
@@ -175,12 +175,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var body = new ImportItem(); // ImportItem | Data *(Optional)* (optional) 
+            var body = new ImportItem(); // ImportItem | Data **(Required)**
 
             try
             {
-                // Post a current playing item
-                Success result = apiInstance.CurrentItemPostTiming(body);
+                // Post current playing Item
+                ItemResult result = apiInstance.CurrentItemPostTiming(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -196,11 +196,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ImportItem**](ImportItem.md)| Data *(Optional)* | [optional] 
+ **body** | [**ImportItem**](ImportItem.md)| Data **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**ItemResult**](ItemResult.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="deleteitembyid"></a>
 # **DeleteItemById**
-> Success DeleteItemById (long? id)
+> void DeleteItemById (long? id)
 
 Delete item by ID.
 
@@ -240,13 +240,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var id = 789;  // long? | ID of Item **(Required)**
+            var id = new long?(); // long? | ID of Item **(Required)**
 
             try
             {
                 // Delete item by ID.
-                Success result = apiInstance.DeleteItemById(id);
-                Debug.WriteLine(result);
+                apiInstance.DeleteItemById(id);
             }
             catch (Exception e)
             {
@@ -261,11 +260,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Item **(Required)** | 
+ **id** | [**long?**](long?.md)| ID of Item **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+void (empty response body)
 
 ### Authorization
 
@@ -305,7 +304,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var lastplayed = true;  // bool? | Show last played item if there is no current item*(Optional)* (optional) 
+            var lastplayed = new bool?(); // bool? | Show last played item if there is no current item*(Optional)* (optional) 
 
             try
             {
@@ -326,7 +325,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lastplayed** | **bool?**| Show last played item if there is no current item*(Optional)* | [optional] 
+ **lastplayed** | [**bool?**](bool?.md)| Show last played item if there is no current item*(Optional)* | [optional] 
 
 ### Return type
 
@@ -370,7 +369,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var id = 789;  // long? | ID of Item **(Required)**
+            var id = new long?(); // long? | ID of Item **(Required)**
             var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
@@ -392,7 +391,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Item **(Required)** | 
+ **id** | [**long?**](long?.md)| ID of Item **(Required)** | 
  **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type
@@ -411,7 +410,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="listitems"></a>
 # **ListItems**
-> Object ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> InlineResponse2008 ListItems (long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, int? durationMin = null, int? durationMax = null, string status = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get a list of all the items currently in your station.
 
@@ -437,23 +436,23 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var blockId = 789;  // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
-            var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
-            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
-            var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
-            var campaignId = 789;  // long? | Search on Campaign ID *(Optional)* `(Relation)` (optional) 
-            var contactId = 789;  // long? | Search on Contact ID *(Optional)* `(Relation)` (optional) 
-            var programDraftId = 789;  // long? | Search on Program Draft ID *(Optional)* (optional) 
-            var userDraftId = 789;  // long? | Search on User Draft ID *(Optional)* (optional) 
-            var stationDraftId = 789;  // long? | Search on Station Draft ID *(Optional)* (optional) 
-            var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
+            var blockId = new long?(); // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
+            var broadcastId = new long?(); // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
+            var modelTypeId = new long?(); // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
+            var tagId = new long?(); // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
+            var campaignId = new long?(); // long? | Search on Campaign ID *(Optional)* `(Relation)` (optional) 
+            var contactId = new long?(); // long? | Search on Contact ID *(Optional)* `(Relation)` (optional) 
+            var programDraftId = new long?(); // long? | Search on Program Draft ID *(Optional)* (optional) 
+            var userDraftId = new long?(); // long? | Search on User Draft ID *(Optional)* (optional) 
+            var stationDraftId = new long?(); // long? | Search on Station Draft ID *(Optional)* (optional) 
+            var programId = new long?(); // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
             var externalId = externalId_example;  // string | Search on External ID *(Optional)* (optional) 
-            var startMin = 2013-10-20T19:20:30+01:00;  // DateTime? | Minimum start date *(Optional)* (optional) 
-            var startMax = 2013-10-20T19:20:30+01:00;  // DateTime? | Maximum start date *(Optional)* (optional) 
             var durationMin = 56;  // int? | Minimum duration (seconds) *(Optional)* (optional) 
             var durationMax = 56;  // int? | Maximum duration (seconds) *(Optional)* (optional) 
             var status = status_example;  // string | Play Status of item *(Optional)* (optional) 
+            var startMin = 2013-10-20T19:20:30+01:00;  // DateTime? | Minimum start date *(Optional)* (optional) 
+            var startMax = 2013-10-20T19:20:30+01:00;  // DateTime? | Maximum start date *(Optional)* (optional) 
+            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
             var limit = 789;  // long? | Results per page *(Optional)* (optional) 
             var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
             var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
@@ -462,7 +461,7 @@ namespace Example
             try
             {
                 // Get a list of all the items currently in your station.
-                Object result = apiInstance.ListItems(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, externalId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
+                InlineResponse2008 result = apiInstance.ListItems(blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, externalId, durationMin, durationMax, status, startMin, startMax, page, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -478,23 +477,23 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] 
- **blockId** | **long?**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **campaignId** | **long?**| Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **contactId** | **long?**| Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **programDraftId** | **long?**| Search on Program Draft ID *(Optional)* | [optional] 
- **userDraftId** | **long?**| Search on User Draft ID *(Optional)* | [optional] 
- **stationDraftId** | **long?**| Search on Station Draft ID *(Optional)* | [optional] 
- **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **blockId** | [**long?**](long?.md)| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **broadcastId** | [**long?**](long?.md)| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **modelTypeId** | [**long?**](long?.md)| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **tagId** | [**long?**](long?.md)| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **campaignId** | [**long?**](long?.md)| Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **contactId** | [**long?**](long?.md)| Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **programDraftId** | [**long?**](long?.md)| Search on Program Draft ID *(Optional)* | [optional] 
+ **userDraftId** | [**long?**](long?.md)| Search on User Draft ID *(Optional)* | [optional] 
+ **stationDraftId** | [**long?**](long?.md)| Search on Station Draft ID *(Optional)* | [optional] 
+ **programId** | [**long?**](long?.md)| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **externalId** | **string**| Search on External ID *(Optional)* | [optional] 
- **startMin** | **DateTime?**| Minimum start date *(Optional)* | [optional] 
- **startMax** | **DateTime?**| Maximum start date *(Optional)* | [optional] 
  **durationMin** | **int?**| Minimum duration (seconds) *(Optional)* | [optional] 
  **durationMax** | **int?**| Maximum duration (seconds) *(Optional)* | [optional] 
  **status** | **string**| Play Status of item *(Optional)* | [optional] 
+ **startMin** | **DateTime?**| Minimum start date *(Optional)* | [optional] 
+ **startMax** | **DateTime?**| Maximum start date *(Optional)* | [optional] 
+ **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
  **limit** | **long?**| Results per page *(Optional)* | [optional] 
  **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
  **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
@@ -502,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -516,11 +515,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="playlistpostmerge"></a>
 # **PlaylistPostMerge**
-> Object PlaylistPostMerge (Object body = null)
+> InlineResponse2021 PlaylistPostMerge (PlaylistMergeBody body)
 
 Post a playlist, do not remove previously imported items
 
-Post a playlist, do not remove previously imported items
+Post a playlist with 'keep structure' method, but do not remove previously imported items
 
 ### Example
 ```csharp
@@ -542,12 +541,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var body = new Object(); // Object | Data *(Optional)* (optional) 
+            var body = new PlaylistMergeBody(); // PlaylistMergeBody | Data *(Required)*
 
             try
             {
                 // Post a playlist, do not remove previously imported items
-                Object result = apiInstance.PlaylistPostMerge(body);
+                InlineResponse2021 result = apiInstance.PlaylistPostMerge(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -563,11 +562,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| Data *(Optional)* | [optional] 
+ **body** | [**PlaylistMergeBody**](PlaylistMergeBody.md)| Data *(Required)* | 
 
 ### Return type
 
-**Object**
+[**InlineResponse2021**](InlineResponse2021.md)
 
 ### Authorization
 
@@ -581,11 +580,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="playlistpoststructure"></a>
 # **PlaylistPostStructure**
-> Object PlaylistPostStructure (Object body = null)
+> InlineResponse2021 PlaylistPostStructure (PlaylistStructureBody body)
 
 Post a playlist, keep current structure
 
-Post a playlist, keep current structure
+Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will attempt to** keep Items' ModelType structure in rundown.
 
 ### Example
 ```csharp
@@ -607,12 +606,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var body = new Object(); // Object | Data *(Optional)* (optional) 
+            var body = new PlaylistStructureBody(); // PlaylistStructureBody | Data *(Required)*
 
             try
             {
                 // Post a playlist, keep current structure
-                Object result = apiInstance.PlaylistPostStructure(body);
+                InlineResponse2021 result = apiInstance.PlaylistPostStructure(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -628,11 +627,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| Data *(Optional)* | [optional] 
+ **body** | [**PlaylistStructureBody**](PlaylistStructureBody.md)| Data *(Required)* | 
 
 ### Return type
 
-**Object**
+[**InlineResponse2021**](InlineResponse2021.md)
 
 ### Authorization
 
@@ -646,11 +645,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="playlistposttiming"></a>
 # **PlaylistPostTiming**
-> Object PlaylistPostTiming (Object body = null)
+> InlineResponse2021 PlaylistPostTiming (PlaylistTimingBody body)
 
 Post a playlist
 
-Post a playlist
+Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will not** keep Items' ModelType structure in rundown.
 
 ### Example
 ```csharp
@@ -672,12 +671,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var body = new Object(); // Object | Data *(Optional)* (optional) 
+            var body = new PlaylistTimingBody(); // PlaylistTimingBody | Data *(Required)*
 
             try
             {
                 // Post a playlist
-                Object result = apiInstance.PlaylistPostTiming(body);
+                InlineResponse2021 result = apiInstance.PlaylistPostTiming(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -693,11 +692,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| Data *(Optional)* | [optional] 
+ **body** | [**PlaylistTimingBody**](PlaylistTimingBody.md)| Data *(Required)* | 
 
 ### Return type
 
-**Object**
+[**InlineResponse2021**](InlineResponse2021.md)
 
 ### Authorization
 
@@ -711,7 +710,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="stopcurrentitem"></a>
 # **StopCurrentItem**
-> Success StopCurrentItem (Object body = null)
+> InlineResponse202 StopCurrentItem (ItemsStopcurrentBody body = null)
 
 Stop an Item
 
@@ -737,12 +736,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var body = new Object(); // Object | Data *(Optional)* (optional) 
+            var body = new ItemsStopcurrentBody(); // ItemsStopcurrentBody | Data *(Optional)* (optional) 
 
             try
             {
                 // Stop an Item
-                Success result = apiInstance.StopCurrentItem(body);
+                InlineResponse202 result = apiInstance.StopCurrentItem(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -758,11 +757,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| Data *(Optional)* | [optional] 
+ **body** | [**ItemsStopcurrentBody**](ItemsStopcurrentBody.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 
@@ -776,7 +775,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="updateitembyid"></a>
 # **UpdateItemById**
-> Success UpdateItemById (long? id, ItemDataInput body = null)
+> InlineResponse202 UpdateItemById (ItemDataInput body, long? id)
 
 Update extended item details by ID.
 
@@ -802,13 +801,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ItemApi();
-            var id = 789;  // long? | ID of Item **(Required)**
-            var body = new ItemDataInput(); // ItemDataInput | Data *(Optional)* (optional) 
+            var body = new ItemDataInput(); // ItemDataInput | Data *(Optional)*
+            var id = new long?(); // long? | ID of Item **(Required)**
 
             try
             {
                 // Update extended item details by ID.
-                Success result = apiInstance.UpdateItemById(id, body);
+                InlineResponse202 result = apiInstance.UpdateItemById(body, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -824,12 +823,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Item **(Required)** | 
- **body** | [**ItemDataInput**](ItemDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**ItemDataInput**](ItemDataInput.md)| Data *(Optional)* | 
+ **id** | [**long?**](long?.md)| ID of Item **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 

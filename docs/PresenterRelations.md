@@ -3,9 +3,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Programs** | **Object** |  | [optional] 
-**Broadcasts** | **Object** |  | [optional] 
-**ModelType** | **Object** |  | [optional] 
+**Programs** | [**PresenterRelationsPrograms**](PresenterRelationsPrograms.md) |  | [optional] 
+**Broadcasts** | [**PresenterRelationsBroadcasts**](PresenterRelationsBroadcasts.md) |  | [optional] 
+**ModelType** | [**PresenterRelationsModelType**](PresenterRelationsModelType.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createpresenter"></a>
 # **CreatePresenter**
-> PostSuccess CreatePresenter (PresenterDataInput body)
+> InlineResponse2002 CreatePresenter (PresenterDataInput body)
 
 Create presenter.
 
@@ -43,7 +43,7 @@ namespace Example
             try
             {
                 // Create presenter.
-                PostSuccess result = apiInstance.CreatePresenter(body);
+                InlineResponse2002 result = apiInstance.CreatePresenter(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSuccess**](PostSuccess.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="deletepresenterbyid"></a>
 # **DeletePresenterById**
-> Success DeletePresenterById (long? id)
+> InlineResponse202 DeletePresenterById (long? id)
 
 Delete presenter by id
 
@@ -103,12 +103,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new PresenterApi();
-            var id = 789;  // long? | id of presenter
+            var id = new long?(); // long? | id of presenter
 
             try
             {
                 // Delete presenter by id
-                Success result = apiInstance.DeletePresenterById(id);
+                InlineResponse202 result = apiInstance.DeletePresenterById(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -124,11 +124,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| id of presenter | 
+ **id** | [**long?**](long?.md)| id of presenter | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="getpresenterbyid"></a>
 # **GetPresenterById**
-> PresenterResult GetPresenterById (long? id, long? externalStationId = null)
+> PresenterResult GetPresenterById (long? id)
 
 Get presenter by id
 
@@ -168,13 +168,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new PresenterApi();
-            var id = 789;  // long? | id of Presenter
-            var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
+            var id = new long?(); // long? | id of Presenter
 
             try
             {
                 // Get presenter by id
-                PresenterResult result = apiInstance.GetPresenterById(id, externalStationId);
+                PresenterResult result = apiInstance.GetPresenterById(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -190,8 +189,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| id of Presenter | 
- **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
+ **id** | [**long?**](long?.md)| id of Presenter | 
 
 ### Return type
 
@@ -209,7 +207,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="listpresenters"></a>
 # **ListPresenters**
-> Object ListPresenters (long? page = null, long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> InlineResponse20010 ListPresenters (long? programId = null, long? broadcastId = null, long? modelTypeId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all presenters.
 
@@ -235,10 +233,10 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new PresenterApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
-            var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
-            var modelTypeId = 789;  // long? | Search on ModelType ID (Optional) (optional) 
+            var programId = new long?(); // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
+            var broadcastId = new long?(); // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
+            var modelTypeId = new long?(); // long? | Search on ModelType ID (Optional) (optional) 
+            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
             var limit = 789;  // long? | Results per page *(Optional)* (optional) 
             var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
             var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
@@ -247,7 +245,7 @@ namespace Example
             try
             {
                 // Get all presenters.
-                Object result = apiInstance.ListPresenters(page, programId, broadcastId, modelTypeId, limit, orderBy, orderDirection, externalStationId);
+                InlineResponse20010 result = apiInstance.ListPresenters(programId, broadcastId, modelTypeId, page, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -263,10 +261,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] 
- **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **modelTypeId** | **long?**| Search on ModelType ID (Optional) | [optional] 
+ **programId** | [**long?**](long?.md)| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **broadcastId** | [**long?**](long?.md)| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **modelTypeId** | [**long?**](long?.md)| Search on ModelType ID (Optional) | [optional] 
+ **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
  **limit** | **long?**| Results per page *(Optional)* | [optional] 
  **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
  **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
@@ -274,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 
@@ -288,7 +286,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="updatepresenterbyid"></a>
 # **UpdatePresenterByID**
-> Success UpdatePresenterByID (long? id, PresenterDataInput body = null)
+> InlineResponse202 UpdatePresenterByID (PresenterDataInput body, long? id)
 
 Update presenter by id
 
@@ -314,13 +312,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new PresenterApi();
-            var id = 789;  // long? | id of Presenter
-            var body = new PresenterDataInput(); // PresenterDataInput | Data *(Optional)* (optional) 
+            var body = new PresenterDataInput(); // PresenterDataInput | Data *(Optional)*
+            var id = new long?(); // long? | id of Presenter
 
             try
             {
                 // Update presenter by id
-                Success result = apiInstance.UpdatePresenterByID(id, body);
+                InlineResponse202 result = apiInstance.UpdatePresenterByID(body, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -336,12 +334,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| id of Presenter | 
- **body** | [**PresenterDataInput**](PresenterDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**PresenterDataInput**](PresenterDataInput.md)| Data *(Optional)* | 
+ **id** | [**long?**](long?.md)| id of Presenter | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 

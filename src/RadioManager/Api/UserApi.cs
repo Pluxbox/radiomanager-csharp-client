@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -24,26 +24,26 @@ namespace RadioManager.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Remove user from station by Id
+        /// Remove User from station by Id
         /// </summary>
         /// <remarks>
-        /// Remove user from station by Id
+        /// Remove User from station by Id, will not actually delete a User record
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id of User</param>
-        /// <returns>Success</returns>
-        Success DeleteUserById (long? id);
+        /// <param name="id">ID of User **(Required)**</param>
+        /// <returns>InlineResponse202</returns>
+        InlineResponse202 DeleteUserById (long? id);
 
         /// <summary>
-        /// Remove user from station by Id
+        /// Remove User from station by Id
         /// </summary>
         /// <remarks>
-        /// Remove user from station by Id
+        /// Remove User from station by Id, will not actually delete a User record
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id of User</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> DeleteUserByIdWithHttpInfo (long? id);
+        /// <param name="id">ID of User **(Required)**</param>
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        ApiResponse<InlineResponse202> DeleteUserByIdWithHttpInfo (long? id);
         /// <summary>
         /// Get user by id
         /// </summary>
@@ -72,9 +72,9 @@ namespace RadioManager.Api
         /// Invite user by mail
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data **(Required)**</param>
-        /// <returns>Object</returns>
-        Object InviteUserByMail (InviteUserData body);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>InlineResponse202</returns>
+        InlineResponse202 InviteUserByMail (InviteUserData body);
 
         /// <summary>
         /// Invite user by mail
@@ -83,9 +83,9 @@ namespace RadioManager.Api
         /// Invite user by mail
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data **(Required)**</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> InviteUserByMailWithHttpInfo (InviteUserData body);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        ApiResponse<InlineResponse202> InviteUserByMailWithHttpInfo (InviteUserData body);
         /// <summary>
         /// Get all users.
         /// </summary>
@@ -93,13 +93,14 @@ namespace RadioManager.Api
         /// List all users.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        Object ListUsers (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null);
+        /// <returns>InlineResponse20013</returns>
+        InlineResponse20013 ListUsers (long? roleId = null, long? groupId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null);
 
         /// <summary>
         /// Get all users.
@@ -108,36 +109,37 @@ namespace RadioManager.Api
         /// List all users.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> ListUsersWithHttpInfo (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null);
+        /// <returns>ApiResponse of InlineResponse20013</returns>
+        ApiResponse<InlineResponse20013> ListUsersWithHttpInfo (long? roleId = null, long? groupId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Remove user from station by Id
+        /// Remove User from station by Id
         /// </summary>
         /// <remarks>
-        /// Remove user from station by Id
+        /// Remove User from station by Id, will not actually delete a User record
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id of User</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> DeleteUserByIdAsync (long? id);
+        /// <param name="id">ID of User **(Required)**</param>
+        /// <returns>Task of InlineResponse202</returns>
+        System.Threading.Tasks.Task<InlineResponse202> DeleteUserByIdAsync (long? id);
 
         /// <summary>
-        /// Remove user from station by Id
+        /// Remove User from station by Id
         /// </summary>
         /// <remarks>
-        /// Remove user from station by Id
+        /// Remove User from station by Id, will not actually delete a User record
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id of User</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> DeleteUserByIdAsyncWithHttpInfo (long? id);
+        /// <param name="id">ID of User **(Required)**</param>
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> DeleteUserByIdAsyncWithHttpInfo (long? id);
         /// <summary>
         /// Get user by id
         /// </summary>
@@ -166,9 +168,9 @@ namespace RadioManager.Api
         /// Invite user by mail
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> InviteUserByMailAsync (InviteUserData body);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of InlineResponse202</returns>
+        System.Threading.Tasks.Task<InlineResponse202> InviteUserByMailAsync (InviteUserData body);
 
         /// <summary>
         /// Invite user by mail
@@ -177,9 +179,9 @@ namespace RadioManager.Api
         /// Invite user by mail
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> InviteUserByMailAsyncWithHttpInfo (InviteUserData body);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> InviteUserByMailAsyncWithHttpInfo (InviteUserData body);
         /// <summary>
         /// Get all users.
         /// </summary>
@@ -187,13 +189,14 @@ namespace RadioManager.Api
         /// List all users.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> ListUsersAsync (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null);
+        /// <returns>Task of InlineResponse20013</returns>
+        System.Threading.Tasks.Task<InlineResponse20013> ListUsersAsync (long? roleId = null, long? groupId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null);
 
         /// <summary>
         /// Get all users.
@@ -202,13 +205,14 @@ namespace RadioManager.Api
         /// List all users.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListUsersAsyncWithHttpInfo (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null);
+        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20013>> ListUsersAsyncWithHttpInfo (long? roleId = null, long? groupId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null);
         #endregion Asynchronous Operations
     }
 
@@ -321,24 +325,24 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Remove user from station by Id Remove user from station by Id
+        /// Remove User from station by Id Remove User from station by Id, will not actually delete a User record
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id of User</param>
-        /// <returns>Success</returns>
-        public Success DeleteUserById (long? id)
+        /// <param name="id">ID of User **(Required)**</param>
+        /// <returns>InlineResponse202</returns>
+        public InlineResponse202 DeleteUserById (long? id)
         {
-             ApiResponse<Success> localVarResponse = DeleteUserByIdWithHttpInfo(id);
+             ApiResponse<InlineResponse202> localVarResponse = DeleteUserByIdWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Remove user from station by Id Remove user from station by Id
+        /// Remove User from station by Id Remove User from station by Id, will not actually delete a User record
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id of User</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > DeleteUserByIdWithHttpInfo (long? id)
+        /// <param name="id">ID of User **(Required)**</param>
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        public ApiResponse< InlineResponse202 > DeleteUserByIdWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -385,31 +389,31 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
-        /// Remove user from station by Id Remove user from station by Id
+        /// Remove User from station by Id Remove User from station by Id, will not actually delete a User record
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id of User</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> DeleteUserByIdAsync (long? id)
+        /// <param name="id">ID of User **(Required)**</param>
+        /// <returns>Task of InlineResponse202</returns>
+        public async System.Threading.Tasks.Task<InlineResponse202> DeleteUserByIdAsync (long? id)
         {
-             ApiResponse<Success> localVarResponse = await DeleteUserByIdAsyncWithHttpInfo(id);
+             ApiResponse<InlineResponse202> localVarResponse = await DeleteUserByIdAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Remove user from station by Id Remove user from station by Id
+        /// Remove User from station by Id Remove User from station by Id, will not actually delete a User record
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">id of User</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> DeleteUserByIdAsyncWithHttpInfo (long? id)
+        /// <param name="id">ID of User **(Required)**</param>
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> DeleteUserByIdAsyncWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -456,9 +460,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
@@ -606,11 +610,11 @@ namespace RadioManager.Api
         /// Invite user by mail Invite user by mail
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data **(Required)**</param>
-        /// <returns>Object</returns>
-        public Object InviteUserByMail (InviteUserData body)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>InlineResponse202</returns>
+        public InlineResponse202 InviteUserByMail (InviteUserData body)
         {
-             ApiResponse<Object> localVarResponse = InviteUserByMailWithHttpInfo(body);
+             ApiResponse<InlineResponse202> localVarResponse = InviteUserByMailWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
@@ -618,9 +622,9 @@ namespace RadioManager.Api
         /// Invite user by mail Invite user by mail
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data **(Required)**</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > InviteUserByMailWithHttpInfo (InviteUserData body)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        public ApiResponse< InlineResponse202 > InviteUserByMailWithHttpInfo (InviteUserData body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -675,20 +679,20 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
         /// Invite user by mail Invite user by mail
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> InviteUserByMailAsync (InviteUserData body)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of InlineResponse202</returns>
+        public async System.Threading.Tasks.Task<InlineResponse202> InviteUserByMailAsync (InviteUserData body)
         {
-             ApiResponse<Object> localVarResponse = await InviteUserByMailAsyncWithHttpInfo(body);
+             ApiResponse<InlineResponse202> localVarResponse = await InviteUserByMailAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
@@ -697,9 +701,9 @@ namespace RadioManager.Api
         /// Invite user by mail Invite user by mail
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> InviteUserByMailAsyncWithHttpInfo (InviteUserData body)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> InviteUserByMailAsyncWithHttpInfo (InviteUserData body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -754,24 +758,25 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
         /// Get all users. List all users.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        public Object ListUsers (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null)
+        /// <returns>InlineResponse20013</returns>
+        public InlineResponse20013 ListUsers (long? roleId = null, long? groupId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null)
         {
-             ApiResponse<Object> localVarResponse = ListUsersWithHttpInfo(page, roleId, limit, orderBy, orderDirection);
+             ApiResponse<InlineResponse20013> localVarResponse = ListUsersWithHttpInfo(roleId, groupId, page, limit, orderBy, orderDirection);
              return localVarResponse.Data;
         }
 
@@ -779,13 +784,14 @@ namespace RadioManager.Api
         /// Get all users. List all users.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > ListUsersWithHttpInfo (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null)
+        /// <returns>ApiResponse of InlineResponse20013</returns>
+        public ApiResponse< InlineResponse20013 > ListUsersWithHttpInfo (long? roleId = null, long? groupId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null)
         {
 
             var localVarPath = "/users";
@@ -809,8 +815,9 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (roleId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "role_id", roleId)); // query parameter
+            if (groupId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "group_id", groupId)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -833,24 +840,25 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse20013>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse20013) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20013)));
         }
 
         /// <summary>
         /// Get all users. List all users.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> ListUsersAsync (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null)
+        /// <returns>Task of InlineResponse20013</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20013> ListUsersAsync (long? roleId = null, long? groupId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null)
         {
-             ApiResponse<Object> localVarResponse = await ListUsersAsyncWithHttpInfo(page, roleId, limit, orderBy, orderDirection);
+             ApiResponse<InlineResponse20013> localVarResponse = await ListUsersAsyncWithHttpInfo(roleId, groupId, page, limit, orderBy, orderDirection);
              return localVarResponse.Data;
 
         }
@@ -859,13 +867,14 @@ namespace RadioManager.Api
         /// Get all users. List all users.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="roleId">Search on Role ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ListUsersAsyncWithHttpInfo (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null)
+        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20013>> ListUsersAsyncWithHttpInfo (long? roleId = null, long? groupId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null)
         {
 
             var localVarPath = "/users";
@@ -889,8 +898,9 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (roleId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "role_id", roleId)); // query parameter
+            if (groupId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "group_id", groupId)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -913,9 +923,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse20013>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse20013) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20013)));
         }
 
     }

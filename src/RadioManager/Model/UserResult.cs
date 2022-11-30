@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -44,7 +44,8 @@ namespace RadioManager.Model
         /// <param name="language">language.</param>
         /// <param name="activeExternalStationId">activeExternalStationId.</param>
         /// <param name="roles">roles.</param>
-        public UserResult(long? id = default(long?), string email = default(string), string firstname = default(string), string lastname = default(string), string phone = default(string), DateTime? createdAt = default(DateTime?), DateTime? updatedAt = default(DateTime?), bool? active = default(bool?), Object settings = default(Object), bool? language = default(bool?), long? activeExternalStationId = default(long?), List<Object> roles = default(List<Object>))
+        /// <param name="groups">groups.</param>
+        public UserResult(long? id = default(long?), string email = default(string), string firstname = default(string), string lastname = default(string), string phone = default(string), DateTime? createdAt = default(DateTime?), DateTime? updatedAt = default(DateTime?), bool? active = default(bool?), UserResultSettings settings = default(UserResultSettings), bool? language = default(bool?), long? activeExternalStationId = default(long?), List<UserResultRoles> roles = default(List<UserResultRoles>), List<UserResultGroups> groups = default(List<UserResultGroups>))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -90,6 +91,7 @@ namespace RadioManager.Model
             this.Language = language;
             this.ActiveExternalStationId = activeExternalStationId;
             this.Roles = roles;
+            this.Groups = groups;
         }
         
         /// <summary>
@@ -144,7 +146,7 @@ namespace RadioManager.Model
         /// Gets or Sets Settings
         /// </summary>
         [DataMember(Name="settings", EmitDefaultValue=false)]
-        public Object Settings { get; set; }
+        public UserResultSettings Settings { get; set; }
 
         /// <summary>
         /// Gets or Sets Language
@@ -162,7 +164,13 @@ namespace RadioManager.Model
         /// Gets or Sets Roles
         /// </summary>
         [DataMember(Name="roles", EmitDefaultValue=false)]
-        public List<Object> Roles { get; set; }
+        public List<UserResultRoles> Roles { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Groups
+        /// </summary>
+        [DataMember(Name="groups", EmitDefaultValue=false)]
+        public List<UserResultGroups> Groups { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -184,6 +192,7 @@ namespace RadioManager.Model
             sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  ActiveExternalStationId: ").Append(ActiveExternalStationId).Append("\n");
             sb.Append("  Roles: ").Append(Roles).Append("\n");
+            sb.Append("  Groups: ").Append(Groups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -278,6 +287,12 @@ namespace RadioManager.Model
                     this.Roles != null &&
                     input.Roles != null &&
                     this.Roles.SequenceEqual(input.Roles)
+                ) && 
+                (
+                    this.Groups == input.Groups ||
+                    this.Groups != null &&
+                    input.Groups != null &&
+                    this.Groups.SequenceEqual(input.Groups)
                 );
         }
 
@@ -314,6 +329,8 @@ namespace RadioManager.Model
                     hashCode = hashCode * 59 + this.ActiveExternalStationId.GetHashCode();
                 if (this.Roles != null)
                     hashCode = hashCode * 59 + this.Roles.GetHashCode();
+                if (this.Groups != null)
+                    hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 return hashCode;
             }
         }

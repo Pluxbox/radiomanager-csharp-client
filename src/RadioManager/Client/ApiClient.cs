@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -25,7 +25,7 @@ namespace RadioManager.Client
     /// <summary>
     /// API client is mainly responsible for making the HTTP call to the API backend.
     /// </summary>
-        public partial class ApiClient
+    public partial class ApiClient
     {
         private JsonSerializerSettings serializerSettings = new JsonSerializerSettings
         {
@@ -229,6 +229,11 @@ namespace RadioManager.Client
                 return FileParameter.Create(name, ReadAsBytes(stream), Path.GetFileName(((FileStream)stream).Name));
             else
                 return FileParameter.Create(name, ReadAsBytes(stream), "no_file_name_provided");
+        }
+
+        public FileParameter ParameterToFile(string name, byte[] stream)
+        {
+            return FileParameter.Create(name, stream, "no_file_name_provided");
         }
 
         /// <summary>

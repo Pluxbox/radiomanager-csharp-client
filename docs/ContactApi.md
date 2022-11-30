@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createcontact"></a>
 # **CreateContact**
-> PostSuccess CreateContact (ContactDataInput body)
+> InlineResponse2002 CreateContact (ContactDataInput body)
 
 Create contact.
 
@@ -43,7 +43,7 @@ namespace Example
             try
             {
                 // Create contact.
-                PostSuccess result = apiInstance.CreateContact(body);
+                InlineResponse2002 result = apiInstance.CreateContact(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSuccess**](PostSuccess.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="deletecontactbyid"></a>
 # **DeleteContactById**
-> Success DeleteContactById (long? id)
+> InlineResponse202 DeleteContactById (long? id)
 
 Delete contact by id
 
@@ -103,12 +103,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ContactApi();
-            var id = 789;  // long? | ID of Contact **(Required)**
+            var id = new long?(); // long? | ID of Contact **(Required)**
 
             try
             {
                 // Delete contact by id
-                Success result = apiInstance.DeleteContactById(id);
+                InlineResponse202 result = apiInstance.DeleteContactById(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -124,11 +124,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Contact **(Required)** | 
+ **id** | [**long?**](long?.md)| ID of Contact **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ContactApi();
-            var id = 789;  // long? | ID of Contact **(Required)**
+            var id = new long?(); // long? | ID of Contact **(Required)**
             var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
@@ -190,7 +190,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Contact **(Required)** | 
+ **id** | [**long?**](long?.md)| ID of Contact **(Required)** | 
  **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="listcontacts"></a>
 # **ListContacts**
-> Object ListContacts (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> InlineResponse2005 ListContacts (long? itemId = null, long? modelTypeId = null, long? tagId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all contacts.
 
@@ -235,10 +235,10 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ContactApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
-            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
-            var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
+            var itemId = new long?(); // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var modelTypeId = new long?(); // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
+            var tagId = new long?(); // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
+            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
             var limit = 789;  // long? | Results per page *(Optional)* (optional) 
             var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
             var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
@@ -247,7 +247,7 @@ namespace Example
             try
             {
                 // Get all contacts.
-                Object result = apiInstance.ListContacts(page, itemId, modelTypeId, tagId, limit, orderBy, orderDirection, externalStationId);
+                InlineResponse2005 result = apiInstance.ListContacts(itemId, modelTypeId, tagId, page, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -263,10 +263,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] 
- **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **itemId** | [**long?**](long?.md)| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **modelTypeId** | [**long?**](long?.md)| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **tagId** | [**long?**](long?.md)| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
  **limit** | **long?**| Results per page *(Optional)* | [optional] 
  **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
  **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="updatecontactbyid"></a>
 # **UpdateContactByID**
-> Success UpdateContactByID (long? id, ContactDataInput body = null)
+> InlineResponse202 UpdateContactByID (ContactDataInput body, long? id)
 
 Update contact by id
 
@@ -314,13 +314,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ContactApi();
-            var id = 789;  // long? | ID of Contact **(Required)**
-            var body = new ContactDataInput(); // ContactDataInput | Data *(Optional)* (optional) 
+            var body = new ContactDataInput(); // ContactDataInput | Data *(Optional)*
+            var id = new long?(); // long? | ID of Contact **(Required)**
 
             try
             {
                 // Update contact by id
-                Success result = apiInstance.UpdateContactByID(id, body);
+                InlineResponse202 result = apiInstance.UpdateContactByID(body, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -336,12 +336,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Contact **(Required)** | 
- **body** | [**ContactDataInput**](ContactDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**ContactDataInput**](ContactDataInput.md)| Data *(Optional)* | 
+ **id** | [**long?**](long?.md)| ID of Contact **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 

@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -101,18 +101,18 @@ namespace RadioManager.Test
         public void ListBlocksTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? page = null;
             //long? broadcastId = null;
             //long? itemId = null;
             //long? programId = null;
             //DateTime? startMin = null;
             //DateTime? startMax = null;
+            //long? page = null;
             //long? limit = null;
             //string orderBy = null;
             //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListBlocks(page, broadcastId, itemId, programId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //var response = instance.ListBlocks(broadcastId, itemId, programId, startMin, startMax, page, limit, orderBy, orderDirection, externalStationId);
+            //Assert.IsInstanceOf<InlineResponse200> (response, "response is InlineResponse200");
         }
     }
 

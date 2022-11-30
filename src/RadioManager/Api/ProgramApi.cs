@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -31,8 +31,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>PostSuccess</returns>
-        PostSuccess CreateProgram (ProgramDataInput body);
+        /// <returns>InlineResponse2002</returns>
+        InlineResponse2002 CreateProgram (ProgramDataInput body);
 
         /// <summary>
         /// Create program.
@@ -42,8 +42,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>ApiResponse of PostSuccess</returns>
-        ApiResponse<PostSuccess> CreateProgramWithHttpInfo (ProgramDataInput body);
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        ApiResponse<InlineResponse2002> CreateProgramWithHttpInfo (ProgramDataInput body);
         /// <summary>
         /// Delete program by id
         /// </summary>
@@ -52,8 +52,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of program **(Required)**</param>
-        /// <returns>Success</returns>
-        Success DeleteProgramById (long? id);
+        /// <returns>InlineResponse202</returns>
+        InlineResponse202 DeleteProgramById (long? id);
 
         /// <summary>
         /// Delete program by id
@@ -63,8 +63,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of program **(Required)**</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> DeleteProgramByIdWithHttpInfo (long? id);
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        ApiResponse<InlineResponse202> DeleteProgramByIdWithHttpInfo (long? id);
         /// <summary>
         /// Get program by id
         /// </summary>
@@ -95,21 +95,22 @@ namespace RadioManager.Api
         /// List all programs.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="disabled">Search on Disabled status *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        Object ListPrograms (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>InlineResponse20011</returns>
+        InlineResponse20011 ListPrograms (long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? groupId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all programs.
@@ -118,21 +119,22 @@ namespace RadioManager.Api
         /// List all programs.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="disabled">Search on Disabled status *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> ListProgramsWithHttpInfo (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>ApiResponse of InlineResponse20011</returns>
+        ApiResponse<InlineResponse20011> ListProgramsWithHttpInfo (long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? groupId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update program by id
         /// </summary>
@@ -140,10 +142,10 @@ namespace RadioManager.Api
         /// Update program by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Program **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        Success UpdateProgramByID (long? id, ProgramDataInput body = null);
+        /// <returns>InlineResponse202</returns>
+        InlineResponse202 UpdateProgramByID (ProgramDataInput body, long? id);
 
         /// <summary>
         /// Update program by id
@@ -152,10 +154,10 @@ namespace RadioManager.Api
         /// Update program by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Program **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> UpdateProgramByIDWithHttpInfo (long? id, ProgramDataInput body = null);
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        ApiResponse<InlineResponse202> UpdateProgramByIDWithHttpInfo (ProgramDataInput body, long? id);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -166,8 +168,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of PostSuccess</returns>
-        System.Threading.Tasks.Task<PostSuccess> CreateProgramAsync (ProgramDataInput body);
+        /// <returns>Task of InlineResponse2002</returns>
+        System.Threading.Tasks.Task<InlineResponse2002> CreateProgramAsync (ProgramDataInput body);
 
         /// <summary>
         /// Create program.
@@ -177,8 +179,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of ApiResponse (PostSuccess)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PostSuccess>> CreateProgramAsyncWithHttpInfo (ProgramDataInput body);
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> CreateProgramAsyncWithHttpInfo (ProgramDataInput body);
         /// <summary>
         /// Delete program by id
         /// </summary>
@@ -187,8 +189,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of program **(Required)**</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> DeleteProgramByIdAsync (long? id);
+        /// <returns>Task of InlineResponse202</returns>
+        System.Threading.Tasks.Task<InlineResponse202> DeleteProgramByIdAsync (long? id);
 
         /// <summary>
         /// Delete program by id
@@ -198,8 +200,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of program **(Required)**</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> DeleteProgramByIdAsyncWithHttpInfo (long? id);
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> DeleteProgramByIdAsyncWithHttpInfo (long? id);
         /// <summary>
         /// Get program by id
         /// </summary>
@@ -230,21 +232,22 @@ namespace RadioManager.Api
         /// List all programs.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="disabled">Search on Disabled status *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> ListProgramsAsync (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of InlineResponse20011</returns>
+        System.Threading.Tasks.Task<InlineResponse20011> ListProgramsAsync (long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? groupId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all programs.
@@ -253,21 +256,22 @@ namespace RadioManager.Api
         /// List all programs.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="disabled">Search on Disabled status *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListProgramsAsyncWithHttpInfo (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20011>> ListProgramsAsyncWithHttpInfo (long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? groupId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update program by id
         /// </summary>
@@ -275,10 +279,10 @@ namespace RadioManager.Api
         /// Update program by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Program **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> UpdateProgramByIDAsync (long? id, ProgramDataInput body = null);
+        /// <returns>Task of InlineResponse202</returns>
+        System.Threading.Tasks.Task<InlineResponse202> UpdateProgramByIDAsync (ProgramDataInput body, long? id);
 
         /// <summary>
         /// Update program by id
@@ -287,10 +291,10 @@ namespace RadioManager.Api
         /// Update program by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Program **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> UpdateProgramByIDAsyncWithHttpInfo (long? id, ProgramDataInput body = null);
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> UpdateProgramByIDAsyncWithHttpInfo (ProgramDataInput body, long? id);
         #endregion Asynchronous Operations
     }
 
@@ -407,10 +411,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>PostSuccess</returns>
-        public PostSuccess CreateProgram (ProgramDataInput body)
+        /// <returns>InlineResponse2002</returns>
+        public InlineResponse2002 CreateProgram (ProgramDataInput body)
         {
-             ApiResponse<PostSuccess> localVarResponse = CreateProgramWithHttpInfo(body);
+             ApiResponse<InlineResponse2002> localVarResponse = CreateProgramWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
@@ -419,8 +423,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>ApiResponse of PostSuccess</returns>
-        public ApiResponse< PostSuccess > CreateProgramWithHttpInfo (ProgramDataInput body)
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        public ApiResponse< InlineResponse2002 > CreateProgramWithHttpInfo (ProgramDataInput body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -475,9 +479,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PostSuccess>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2002>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (PostSuccess) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostSuccess)));
+                (InlineResponse2002) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2002)));
         }
 
         /// <summary>
@@ -485,10 +489,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of PostSuccess</returns>
-        public async System.Threading.Tasks.Task<PostSuccess> CreateProgramAsync (ProgramDataInput body)
+        /// <returns>Task of InlineResponse2002</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2002> CreateProgramAsync (ProgramDataInput body)
         {
-             ApiResponse<PostSuccess> localVarResponse = await CreateProgramAsyncWithHttpInfo(body);
+             ApiResponse<InlineResponse2002> localVarResponse = await CreateProgramAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
@@ -498,8 +502,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of ApiResponse (PostSuccess)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PostSuccess>> CreateProgramAsyncWithHttpInfo (ProgramDataInput body)
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> CreateProgramAsyncWithHttpInfo (ProgramDataInput body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -554,9 +558,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PostSuccess>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2002>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (PostSuccess) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostSuccess)));
+                (InlineResponse2002) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2002)));
         }
 
         /// <summary>
@@ -564,10 +568,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of program **(Required)**</param>
-        /// <returns>Success</returns>
-        public Success DeleteProgramById (long? id)
+        /// <returns>InlineResponse202</returns>
+        public InlineResponse202 DeleteProgramById (long? id)
         {
-             ApiResponse<Success> localVarResponse = DeleteProgramByIdWithHttpInfo(id);
+             ApiResponse<InlineResponse202> localVarResponse = DeleteProgramByIdWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -576,8 +580,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of program **(Required)**</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > DeleteProgramByIdWithHttpInfo (long? id)
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        public ApiResponse< InlineResponse202 > DeleteProgramByIdWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -624,9 +628,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
@@ -634,10 +638,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of program **(Required)**</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> DeleteProgramByIdAsync (long? id)
+        /// <returns>Task of InlineResponse202</returns>
+        public async System.Threading.Tasks.Task<InlineResponse202> DeleteProgramByIdAsync (long? id)
         {
-             ApiResponse<Success> localVarResponse = await DeleteProgramByIdAsyncWithHttpInfo(id);
+             ApiResponse<InlineResponse202> localVarResponse = await DeleteProgramByIdAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -647,8 +651,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of program **(Required)**</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> DeleteProgramByIdAsyncWithHttpInfo (long? id)
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> DeleteProgramByIdAsyncWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -695,9 +699,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
@@ -851,23 +855,24 @@ namespace RadioManager.Api
         /// Get all programs. List all programs.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="disabled">Search on Disabled status *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        public Object ListPrograms (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>InlineResponse20011</returns>
+        public InlineResponse20011 ListPrograms (long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? groupId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = ListProgramsWithHttpInfo(page, broadcastId, modelTypeId, tagId, presenterId, genreId, blockId, itemId, disabled, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse20011> localVarResponse = ListProgramsWithHttpInfo(broadcastId, modelTypeId, tagId, presenterId, genreId, groupId, blockId, itemId, disabled, page, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -875,21 +880,22 @@ namespace RadioManager.Api
         /// Get all programs. List all programs.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="disabled">Search on Disabled status *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > ListProgramsWithHttpInfo (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>ApiResponse of InlineResponse20011</returns>
+        public ApiResponse< InlineResponse20011 > ListProgramsWithHttpInfo (long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? groupId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/programs";
@@ -913,15 +919,16 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (broadcastId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "model_type_id", modelTypeId)); // query parameter
             if (tagId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "tag_id", tagId)); // query parameter
             if (presenterId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "presenter_id", presenterId)); // query parameter
             if (genreId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "genre_id", genreId)); // query parameter
+            if (groupId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "group_id", groupId)); // query parameter
             if (blockId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "block_id", blockId)); // query parameter
             if (itemId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "item_id", itemId)); // query parameter
             if (disabled != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "disabled", disabled)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -945,32 +952,33 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse20011>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse20011) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20011)));
         }
 
         /// <summary>
         /// Get all programs. List all programs.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="disabled">Search on Disabled status *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> ListProgramsAsync (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of InlineResponse20011</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20011> ListProgramsAsync (long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? groupId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = await ListProgramsAsyncWithHttpInfo(page, broadcastId, modelTypeId, tagId, presenterId, genreId, blockId, itemId, disabled, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse20011> localVarResponse = await ListProgramsAsyncWithHttpInfo(broadcastId, modelTypeId, tagId, presenterId, genreId, groupId, blockId, itemId, disabled, page, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -979,21 +987,22 @@ namespace RadioManager.Api
         /// Get all programs. List all programs.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="presenterId">Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="genreId">Search on Genre ID *(Optional)* (optional)</param>
+        /// <param name="groupId">Search on Group ID *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="disabled">Search on Disabled status *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ListProgramsAsyncWithHttpInfo (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20011>> ListProgramsAsyncWithHttpInfo (long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? groupId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/programs";
@@ -1017,15 +1026,16 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (broadcastId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "model_type_id", modelTypeId)); // query parameter
             if (tagId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "tag_id", tagId)); // query parameter
             if (presenterId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "presenter_id", presenterId)); // query parameter
             if (genreId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "genre_id", genreId)); // query parameter
+            if (groupId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "group_id", groupId)); // query parameter
             if (blockId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "block_id", blockId)); // query parameter
             if (itemId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "item_id", itemId)); // query parameter
             if (disabled != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "disabled", disabled)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -1049,21 +1059,21 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse20011>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse20011) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20011)));
         }
 
         /// <summary>
         /// Update program by id Update program by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Program **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        public Success UpdateProgramByID (long? id, ProgramDataInput body = null)
+        /// <returns>InlineResponse202</returns>
+        public InlineResponse202 UpdateProgramByID (ProgramDataInput body, long? id)
         {
-             ApiResponse<Success> localVarResponse = UpdateProgramByIDWithHttpInfo(id, body);
+             ApiResponse<InlineResponse202> localVarResponse = UpdateProgramByIDWithHttpInfo(body, id);
              return localVarResponse.Data;
         }
 
@@ -1071,11 +1081,14 @@ namespace RadioManager.Api
         /// Update program by id Update program by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Program **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > UpdateProgramByIDWithHttpInfo (long? id, ProgramDataInput body = null)
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        public ApiResponse< InlineResponse202 > UpdateProgramByIDWithHttpInfo (ProgramDataInput body, long? id)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ProgramApi->UpdateProgramByID");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling ProgramApi->UpdateProgramByID");
@@ -1130,21 +1143,21 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
         /// Update program by id Update program by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Program **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> UpdateProgramByIDAsync (long? id, ProgramDataInput body = null)
+        /// <returns>Task of InlineResponse202</returns>
+        public async System.Threading.Tasks.Task<InlineResponse202> UpdateProgramByIDAsync (ProgramDataInput body, long? id)
         {
-             ApiResponse<Success> localVarResponse = await UpdateProgramByIDAsyncWithHttpInfo(id, body);
+             ApiResponse<InlineResponse202> localVarResponse = await UpdateProgramByIDAsyncWithHttpInfo(body, id);
              return localVarResponse.Data;
 
         }
@@ -1153,11 +1166,14 @@ namespace RadioManager.Api
         /// Update program by id Update program by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Program **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> UpdateProgramByIDAsyncWithHttpInfo (long? id, ProgramDataInput body = null)
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> UpdateProgramByIDAsyncWithHttpInfo (ProgramDataInput body, long? id)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ProgramApi->UpdateProgramByID");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling ProgramApi->UpdateProgramByID");
@@ -1212,9 +1228,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
     }

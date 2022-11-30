@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -34,7 +34,7 @@ namespace RadioManager.Model
         /// </summary>
         /// <param name="tags">tags.</param>
         /// <param name="presenters">presenters.</param>
-        public BroadcastDataInput(List<int?> tags = default(List<int?>), List<int?> presenters = default(List<int?>), List<int?> tags = default(List<int?>), List<int?> presenters = default(List<int?>), long? programId = default(long?), long? modelTypeId = default(long?), long? stationId = default(long?), Object fieldValues = default(Object), string title = default(string), DateTime? start = default(DateTime?), DateTime? stop = default(DateTime?), long? genreId = default(long?), string description = default(string), string shortName = default(string), string mediumName = default(string), string website = default(string), string email = default(string), bool? recommended = default(bool?), string language = default(string), bool? published = default(bool?), string repetitionUid = default(string), RepetitionTypeEnum? repetitionType = default(RepetitionTypeEnum?), DateTime? repetitionEnd = default(DateTime?), DateTime? repetitionStart = default(DateTime?), string repetitionDays = default(string), long? ptyCodeId = default(long?)) : base(programId, modelTypeId, stationId, fieldValues, title, start, stop, genreId, description, shortName, mediumName, website, email, recommended, language, published, repetitionUid, repetitionType, repetitionEnd, repetitionStart, repetitionDays, ptyCodeId)
+        public BroadcastDataInput(List<int?> tags = default(List<int?>), List<int?> presenters = default(List<int?>), List<int?> tags = default(List<int?>), List<int?> presenters = default(List<int?>), long? programId = default(long?), long? modelTypeId = default(long?), long? stationId = default(long?), Object fieldValues = default(Object), string title = default(string), DateTime? start = default(DateTime?), DateTime? stop = default(DateTime?), long? genreId = default(long?), string description = default(string), string shortName = default(string), string mediumName = default(string), string website = default(string), string email = default(string), bool? recommended = default(bool?), string language = default(string), bool? published = default(bool?), string repetitionUid = default(string), RepetitionTypeEnum? repetitionType = default(RepetitionTypeEnum?), DateTime? repetitionEnd = default(DateTime?), DateTime? repetitionStart = default(DateTime?), string repetitionDays = default(string), long? ptyCodeId = default(long?), int? plannedInEpg = default(int?), long? groupId = default(long?)) : base(programId, modelTypeId, stationId, fieldValues, title, start, stop, genreId, description, shortName, mediumName, website, email, recommended, language, published, repetitionUid, repetitionType, repetitionEnd, repetitionStart, repetitionDays, ptyCodeId, plannedInEpg, groupId)
         {
             this.Tags = tags;
             this.Presenters = presenters;
@@ -135,7 +135,6 @@ namespace RadioManager.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

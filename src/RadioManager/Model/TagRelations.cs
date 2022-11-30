@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -36,7 +36,7 @@ namespace RadioManager.Model
         /// <param name="programs">programs.</param>
         /// <param name="contacts">contacts.</param>
         /// <param name="items">items.</param>
-        public TagRelations(Object broadcasts = default(Object), Object programs = default(Object), Object contacts = default(Object), Object items = default(Object))
+        public TagRelations(TagRelationsBroadcasts broadcasts = default(TagRelationsBroadcasts), TagRelationsPrograms programs = default(TagRelationsPrograms), TagRelationsContacts contacts = default(TagRelationsContacts), TagRelationsItems items = default(TagRelationsItems))
         {
             this.Broadcasts = broadcasts;
             this.Programs = programs;
@@ -48,25 +48,25 @@ namespace RadioManager.Model
         /// Gets or Sets Broadcasts
         /// </summary>
         [DataMember(Name="broadcasts", EmitDefaultValue=false)]
-        public Object Broadcasts { get; set; }
+        public TagRelationsBroadcasts Broadcasts { get; set; }
 
         /// <summary>
         /// Gets or Sets Programs
         /// </summary>
         [DataMember(Name="programs", EmitDefaultValue=false)]
-        public Object Programs { get; set; }
+        public TagRelationsPrograms Programs { get; set; }
 
         /// <summary>
         /// Gets or Sets Contacts
         /// </summary>
         [DataMember(Name="contacts", EmitDefaultValue=false)]
-        public Object Contacts { get; set; }
+        public TagRelationsContacts Contacts { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items", EmitDefaultValue=false)]
-        public Object Items { get; set; }
+        public TagRelationsItems Items { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

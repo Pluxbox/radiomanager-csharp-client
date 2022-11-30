@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -71,7 +71,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test the method and replace null with proper value
             //PresenterDataInput body = null;
             //var response = instance.CreatePresenter(body);
-            //Assert.IsInstanceOf<PostSuccess> (response, "response is PostSuccess");
+            //Assert.IsInstanceOf<InlineResponse2002> (response, "response is InlineResponse2002");
         }
         /// <summary>
         /// Test DeletePresenterById
@@ -82,7 +82,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
             //var response = instance.DeletePresenterById(id);
-            //Assert.IsInstanceOf<Success> (response, "response is Success");
+            //Assert.IsInstanceOf<InlineResponse202> (response, "response is InlineResponse202");
         }
         /// <summary>
         /// Test GetPresenterById
@@ -92,8 +92,7 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //long? externalStationId = null;
-            //var response = instance.GetPresenterById(id, externalStationId);
+            //var response = instance.GetPresenterById(id);
             //Assert.IsInstanceOf<PresenterResult> (response, "response is PresenterResult");
         }
         /// <summary>
@@ -103,16 +102,16 @@ namespace RadioManager.Test
         public void ListPresentersTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? page = null;
             //long? programId = null;
             //long? broadcastId = null;
             //long? modelTypeId = null;
+            //long? page = null;
             //long? limit = null;
             //string orderBy = null;
             //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListPresenters(page, programId, broadcastId, modelTypeId, limit, orderBy, orderDirection, externalStationId);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //var response = instance.ListPresenters(programId, broadcastId, modelTypeId, page, limit, orderBy, orderDirection, externalStationId);
+            //Assert.IsInstanceOf<InlineResponse20010> (response, "response is InlineResponse20010");
         }
         /// <summary>
         /// Test UpdatePresenterByID
@@ -121,10 +120,10 @@ namespace RadioManager.Test
         public void UpdatePresenterByIDTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? id = null;
             //PresenterDataInput body = null;
-            //var response = instance.UpdatePresenterByID(id, body);
-            //Assert.IsInstanceOf<Success> (response, "response is Success");
+            //long? id = null;
+            //var response = instance.UpdatePresenterByID(body, id);
+            //Assert.IsInstanceOf<InlineResponse202> (response, "response is InlineResponse202");
         }
     }
 

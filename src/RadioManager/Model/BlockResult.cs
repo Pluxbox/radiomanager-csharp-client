@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -35,7 +35,7 @@ namespace RadioManager.Model
         /// <param name="items">items.</param>
         /// <param name="broadcast">broadcast.</param>
         /// <param name="program">program.</param>
-        public BlockResult(Object items = default(Object), Object broadcast = default(Object), Object program = default(Object), Object items = default(Object), Object broadcast = default(Object), Object program = default(Object), long? id = default(long?), long? broadcastId = default(long?), DateTime? start = default(DateTime?), DateTime? stop = default(DateTime?), DateTime? createdAt = default(DateTime?), DateTime? updatedAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), long? externalStationId = default(long?)) : base(id, broadcastId, start, stop, createdAt, updatedAt, deletedAt, externalStationId)
+        public BlockResult(BlockRelationsItems items = default(BlockRelationsItems), BlockRelationsBroadcast broadcast = default(BlockRelationsBroadcast), BlockRelationsProgram program = default(BlockRelationsProgram), BlockRelationsItems items = default(BlockRelationsItems), BlockRelationsBroadcast broadcast = default(BlockRelationsBroadcast), BlockRelationsProgram program = default(BlockRelationsProgram), long? id = default(long?), long? broadcastId = default(long?), DateTime? start = default(DateTime?), DateTime? stop = default(DateTime?), DateTime? createdAt = default(DateTime?), DateTime? updatedAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), long? externalStationId = default(long?)) : base(id, broadcastId, start, stop, createdAt, updatedAt, deletedAt, externalStationId)
         {
             this.Items = items;
             this.Broadcast = broadcast;
@@ -46,19 +46,19 @@ namespace RadioManager.Model
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items", EmitDefaultValue=false)]
-        public Object Items { get; set; }
+        public BlockRelationsItems Items { get; set; }
 
         /// <summary>
         /// Gets or Sets Broadcast
         /// </summary>
         [DataMember(Name="broadcast", EmitDefaultValue=false)]
-        public Object Broadcast { get; set; }
+        public BlockRelationsBroadcast Broadcast { get; set; }
 
         /// <summary>
         /// Gets or Sets Program
         /// </summary>
         [DataMember(Name="program", EmitDefaultValue=false)]
-        public Object Program { get; set; }
+        public BlockRelationsProgram Program { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -149,7 +149,6 @@ namespace RadioManager.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

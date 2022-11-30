@@ -4,15 +4,15 @@ All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetVisualSlide**](VisualSlideApi.md#getvisualslide) | **GET** /visual | Get Visual Slide Image as Base64
+[**GetVisualSlide**](VisualSlideApi.md#getvisualslide) | **GET** /visual | Get Visual Slide Image
 
 <a name="getvisualslide"></a>
 # **GetVisualSlide**
 > VisualResult GetVisualSlide ()
 
-Get Visual Slide Image as Base64
+Get Visual Slide Image
 
-Get Visual Slide Image as Base64
+Get VisualRadio Image as PNG for publication Base64 encoded inside a JSON object
 
 ### Example
 ```csharp
@@ -37,7 +37,7 @@ namespace Example
 
             try
             {
-                // Get Visual Slide Image as Base64
+                // Get Visual Slide Image
                 VisualResult result = apiInstance.GetVisualSlide();
                 Debug.WriteLine(result);
             }

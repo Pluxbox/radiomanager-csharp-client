@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -24,20 +24,20 @@ namespace RadioManager.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get Visual Slide Image as Base64
+        /// Get Visual Slide Image
         /// </summary>
         /// <remarks>
-        /// Get Visual Slide Image as Base64
+        /// Get VisualRadio Image as PNG for publication Base64 encoded inside a JSON object
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>VisualResult</returns>
         VisualResult GetVisualSlide ();
 
         /// <summary>
-        /// Get Visual Slide Image as Base64
+        /// Get Visual Slide Image
         /// </summary>
         /// <remarks>
-        /// Get Visual Slide Image as Base64
+        /// Get VisualRadio Image as PNG for publication Base64 encoded inside a JSON object
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of VisualResult</returns>
@@ -45,20 +45,20 @@ namespace RadioManager.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Get Visual Slide Image as Base64
+        /// Get Visual Slide Image
         /// </summary>
         /// <remarks>
-        /// Get Visual Slide Image as Base64
+        /// Get VisualRadio Image as PNG for publication Base64 encoded inside a JSON object
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of VisualResult</returns>
         System.Threading.Tasks.Task<VisualResult> GetVisualSlideAsync ();
 
         /// <summary>
-        /// Get Visual Slide Image as Base64
+        /// Get Visual Slide Image
         /// </summary>
         /// <remarks>
-        /// Get Visual Slide Image as Base64
+        /// Get VisualRadio Image as PNG for publication Base64 encoded inside a JSON object
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (VisualResult)</returns>
@@ -175,7 +175,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get Visual Slide Image as Base64 Get Visual Slide Image as Base64
+        /// Get Visual Slide Image Get VisualRadio Image as PNG for publication Base64 encoded inside a JSON object
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>VisualResult</returns>
@@ -186,7 +186,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get Visual Slide Image as Base64 Get Visual Slide Image as Base64
+        /// Get Visual Slide Image Get VisualRadio Image as PNG for publication Base64 encoded inside a JSON object
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of VisualResult</returns>
@@ -239,7 +239,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get Visual Slide Image as Base64 Get Visual Slide Image as Base64
+        /// Get Visual Slide Image Get VisualRadio Image as PNG for publication Base64 encoded inside a JSON object
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of VisualResult</returns>
@@ -251,7 +251,7 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get Visual Slide Image as Base64 Get Visual Slide Image as Base64
+        /// Get Visual Slide Image Get VisualRadio Image as PNG for publication Base64 encoded inside a JSON object
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (VisualResult)</returns>

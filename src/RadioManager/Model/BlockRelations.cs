@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -35,7 +35,7 @@ namespace RadioManager.Model
         /// <param name="items">items.</param>
         /// <param name="broadcast">broadcast.</param>
         /// <param name="program">program.</param>
-        public BlockRelations(Object items = default(Object), Object broadcast = default(Object), Object program = default(Object))
+        public BlockRelations(BlockRelationsItems items = default(BlockRelationsItems), BlockRelationsBroadcast broadcast = default(BlockRelationsBroadcast), BlockRelationsProgram program = default(BlockRelationsProgram))
         {
             this.Items = items;
             this.Broadcast = broadcast;
@@ -46,19 +46,19 @@ namespace RadioManager.Model
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items", EmitDefaultValue=false)]
-        public Object Items { get; set; }
+        public BlockRelationsItems Items { get; set; }
 
         /// <summary>
         /// Gets or Sets Broadcast
         /// </summary>
         [DataMember(Name="broadcast", EmitDefaultValue=false)]
-        public Object Broadcast { get; set; }
+        public BlockRelationsBroadcast Broadcast { get; set; }
 
         /// <summary>
         /// Gets or Sets Program
         /// </summary>
         [DataMember(Name="program", EmitDefaultValue=false)]
-        public Object Program { get; set; }
+        public BlockRelationsProgram Program { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

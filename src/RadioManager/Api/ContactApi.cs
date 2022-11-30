@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -31,8 +31,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>PostSuccess</returns>
-        PostSuccess CreateContact (ContactDataInput body);
+        /// <returns>InlineResponse2002</returns>
+        InlineResponse2002 CreateContact (ContactDataInput body);
 
         /// <summary>
         /// Create contact.
@@ -42,8 +42,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>ApiResponse of PostSuccess</returns>
-        ApiResponse<PostSuccess> CreateContactWithHttpInfo (ContactDataInput body);
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        ApiResponse<InlineResponse2002> CreateContactWithHttpInfo (ContactDataInput body);
         /// <summary>
         /// Delete contact by id
         /// </summary>
@@ -52,8 +52,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <returns>Success</returns>
-        Success DeleteContactById (long? id);
+        /// <returns>InlineResponse202</returns>
+        InlineResponse202 DeleteContactById (long? id);
 
         /// <summary>
         /// Delete contact by id
@@ -63,8 +63,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> DeleteContactByIdWithHttpInfo (long? id);
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        ApiResponse<InlineResponse202> DeleteContactByIdWithHttpInfo (long? id);
         /// <summary>
         /// Get contact by id
         /// </summary>
@@ -95,16 +95,16 @@ namespace RadioManager.Api
         /// List all contacts.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        Object ListContacts (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>InlineResponse2005</returns>
+        InlineResponse2005 ListContacts (long? itemId = null, long? modelTypeId = null, long? tagId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all contacts.
@@ -113,16 +113,16 @@ namespace RadioManager.Api
         /// List all contacts.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> ListContactsWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>ApiResponse of InlineResponse2005</returns>
+        ApiResponse<InlineResponse2005> ListContactsWithHttpInfo (long? itemId = null, long? modelTypeId = null, long? tagId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update contact by id
         /// </summary>
@@ -130,10 +130,10 @@ namespace RadioManager.Api
         /// Update contact by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        Success UpdateContactByID (long? id, ContactDataInput body = null);
+        /// <returns>InlineResponse202</returns>
+        InlineResponse202 UpdateContactByID (ContactDataInput body, long? id);
 
         /// <summary>
         /// Update contact by id
@@ -142,10 +142,10 @@ namespace RadioManager.Api
         /// Update contact by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> UpdateContactByIDWithHttpInfo (long? id, ContactDataInput body = null);
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        ApiResponse<InlineResponse202> UpdateContactByIDWithHttpInfo (ContactDataInput body, long? id);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -156,8 +156,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of PostSuccess</returns>
-        System.Threading.Tasks.Task<PostSuccess> CreateContactAsync (ContactDataInput body);
+        /// <returns>Task of InlineResponse2002</returns>
+        System.Threading.Tasks.Task<InlineResponse2002> CreateContactAsync (ContactDataInput body);
 
         /// <summary>
         /// Create contact.
@@ -167,8 +167,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of ApiResponse (PostSuccess)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PostSuccess>> CreateContactAsyncWithHttpInfo (ContactDataInput body);
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> CreateContactAsyncWithHttpInfo (ContactDataInput body);
         /// <summary>
         /// Delete contact by id
         /// </summary>
@@ -177,8 +177,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> DeleteContactByIdAsync (long? id);
+        /// <returns>Task of InlineResponse202</returns>
+        System.Threading.Tasks.Task<InlineResponse202> DeleteContactByIdAsync (long? id);
 
         /// <summary>
         /// Delete contact by id
@@ -188,8 +188,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> DeleteContactByIdAsyncWithHttpInfo (long? id);
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> DeleteContactByIdAsyncWithHttpInfo (long? id);
         /// <summary>
         /// Get contact by id
         /// </summary>
@@ -220,16 +220,16 @@ namespace RadioManager.Api
         /// List all contacts.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> ListContactsAsync (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of InlineResponse2005</returns>
+        System.Threading.Tasks.Task<InlineResponse2005> ListContactsAsync (long? itemId = null, long? modelTypeId = null, long? tagId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get all contacts.
@@ -238,16 +238,16 @@ namespace RadioManager.Api
         /// List all contacts.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListContactsAsyncWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2005>> ListContactsAsyncWithHttpInfo (long? itemId = null, long? modelTypeId = null, long? tagId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Update contact by id
         /// </summary>
@@ -255,10 +255,10 @@ namespace RadioManager.Api
         /// Update contact by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> UpdateContactByIDAsync (long? id, ContactDataInput body = null);
+        /// <returns>Task of InlineResponse202</returns>
+        System.Threading.Tasks.Task<InlineResponse202> UpdateContactByIDAsync (ContactDataInput body, long? id);
 
         /// <summary>
         /// Update contact by id
@@ -267,10 +267,10 @@ namespace RadioManager.Api
         /// Update contact by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> UpdateContactByIDAsyncWithHttpInfo (long? id, ContactDataInput body = null);
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> UpdateContactByIDAsyncWithHttpInfo (ContactDataInput body, long? id);
         #endregion Asynchronous Operations
     }
 
@@ -387,10 +387,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>PostSuccess</returns>
-        public PostSuccess CreateContact (ContactDataInput body)
+        /// <returns>InlineResponse2002</returns>
+        public InlineResponse2002 CreateContact (ContactDataInput body)
         {
-             ApiResponse<PostSuccess> localVarResponse = CreateContactWithHttpInfo(body);
+             ApiResponse<InlineResponse2002> localVarResponse = CreateContactWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
@@ -399,8 +399,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>ApiResponse of PostSuccess</returns>
-        public ApiResponse< PostSuccess > CreateContactWithHttpInfo (ContactDataInput body)
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        public ApiResponse< InlineResponse2002 > CreateContactWithHttpInfo (ContactDataInput body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -455,9 +455,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PostSuccess>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2002>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (PostSuccess) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostSuccess)));
+                (InlineResponse2002) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2002)));
         }
 
         /// <summary>
@@ -465,10 +465,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of PostSuccess</returns>
-        public async System.Threading.Tasks.Task<PostSuccess> CreateContactAsync (ContactDataInput body)
+        /// <returns>Task of InlineResponse2002</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2002> CreateContactAsync (ContactDataInput body)
         {
-             ApiResponse<PostSuccess> localVarResponse = await CreateContactAsyncWithHttpInfo(body);
+             ApiResponse<InlineResponse2002> localVarResponse = await CreateContactAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
@@ -478,8 +478,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data **(Required)**</param>
-        /// <returns>Task of ApiResponse (PostSuccess)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PostSuccess>> CreateContactAsyncWithHttpInfo (ContactDataInput body)
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> CreateContactAsyncWithHttpInfo (ContactDataInput body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -534,9 +534,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PostSuccess>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2002>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (PostSuccess) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostSuccess)));
+                (InlineResponse2002) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2002)));
         }
 
         /// <summary>
@@ -544,10 +544,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <returns>Success</returns>
-        public Success DeleteContactById (long? id)
+        /// <returns>InlineResponse202</returns>
+        public InlineResponse202 DeleteContactById (long? id)
         {
-             ApiResponse<Success> localVarResponse = DeleteContactByIdWithHttpInfo(id);
+             ApiResponse<InlineResponse202> localVarResponse = DeleteContactByIdWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -556,8 +556,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > DeleteContactByIdWithHttpInfo (long? id)
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        public ApiResponse< InlineResponse202 > DeleteContactByIdWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -604,9 +604,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
@@ -614,10 +614,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> DeleteContactByIdAsync (long? id)
+        /// <returns>Task of InlineResponse202</returns>
+        public async System.Threading.Tasks.Task<InlineResponse202> DeleteContactByIdAsync (long? id)
         {
-             ApiResponse<Success> localVarResponse = await DeleteContactByIdAsyncWithHttpInfo(id);
+             ApiResponse<InlineResponse202> localVarResponse = await DeleteContactByIdAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -627,8 +627,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> DeleteContactByIdAsyncWithHttpInfo (long? id)
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> DeleteContactByIdAsyncWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -675,9 +675,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
@@ -831,18 +831,18 @@ namespace RadioManager.Api
         /// Get all contacts. List all contacts.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        public Object ListContacts (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>InlineResponse2005</returns>
+        public InlineResponse2005 ListContacts (long? itemId = null, long? modelTypeId = null, long? tagId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = ListContactsWithHttpInfo(page, itemId, modelTypeId, tagId, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse2005> localVarResponse = ListContactsWithHttpInfo(itemId, modelTypeId, tagId, page, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -850,16 +850,16 @@ namespace RadioManager.Api
         /// Get all contacts. List all contacts.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > ListContactsWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>ApiResponse of InlineResponse2005</returns>
+        public ApiResponse< InlineResponse2005 > ListContactsWithHttpInfo (long? itemId = null, long? modelTypeId = null, long? tagId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/contacts";
@@ -883,10 +883,10 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (itemId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "item_id", itemId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "model_type_id", modelTypeId)); // query parameter
             if (tagId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "tag_id", tagId)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -910,27 +910,27 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2005>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2005) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
         }
 
         /// <summary>
         /// Get all contacts. List all contacts.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> ListContactsAsync (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of InlineResponse2005</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2005> ListContactsAsync (long? itemId = null, long? modelTypeId = null, long? tagId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = await ListContactsAsyncWithHttpInfo(page, itemId, modelTypeId, tagId, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse2005> localVarResponse = await ListContactsAsyncWithHttpInfo(itemId, modelTypeId, tagId, page, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -939,16 +939,16 @@ namespace RadioManager.Api
         /// Get all contacts. List all contacts.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="itemId">Search on Item ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="tagId">Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ListContactsAsyncWithHttpInfo (long? page = null, long? itemId = null, long? modelTypeId = null, long? tagId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2005>> ListContactsAsyncWithHttpInfo (long? itemId = null, long? modelTypeId = null, long? tagId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/contacts";
@@ -972,10 +972,10 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (itemId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "item_id", itemId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "model_type_id", modelTypeId)); // query parameter
             if (tagId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "tag_id", tagId)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -999,21 +999,21 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2005>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2005) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
         }
 
         /// <summary>
         /// Update contact by id Update contact by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        public Success UpdateContactByID (long? id, ContactDataInput body = null)
+        /// <returns>InlineResponse202</returns>
+        public InlineResponse202 UpdateContactByID (ContactDataInput body, long? id)
         {
-             ApiResponse<Success> localVarResponse = UpdateContactByIDWithHttpInfo(id, body);
+             ApiResponse<InlineResponse202> localVarResponse = UpdateContactByIDWithHttpInfo(body, id);
              return localVarResponse.Data;
         }
 
@@ -1021,11 +1021,14 @@ namespace RadioManager.Api
         /// Update contact by id Update contact by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > UpdateContactByIDWithHttpInfo (long? id, ContactDataInput body = null)
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        public ApiResponse< InlineResponse202 > UpdateContactByIDWithHttpInfo (ContactDataInput body, long? id)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ContactApi->UpdateContactByID");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling ContactApi->UpdateContactByID");
@@ -1080,21 +1083,21 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
         /// Update contact by id Update contact by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> UpdateContactByIDAsync (long? id, ContactDataInput body = null)
+        /// <returns>Task of InlineResponse202</returns>
+        public async System.Threading.Tasks.Task<InlineResponse202> UpdateContactByIDAsync (ContactDataInput body, long? id)
         {
-             ApiResponse<Success> localVarResponse = await UpdateContactByIDAsyncWithHttpInfo(id, body);
+             ApiResponse<InlineResponse202> localVarResponse = await UpdateContactByIDAsyncWithHttpInfo(body, id);
              return localVarResponse.Data;
 
         }
@@ -1103,11 +1106,14 @@ namespace RadioManager.Api
         /// Update contact by id Update contact by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Contact **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> UpdateContactByIDAsyncWithHttpInfo (long? id, ContactDataInput body = null)
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> UpdateContactByIDAsyncWithHttpInfo (ContactDataInput body, long? id)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ContactApi->UpdateContactByID");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling ContactApi->UpdateContactByID");
@@ -1162,9 +1168,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
     }

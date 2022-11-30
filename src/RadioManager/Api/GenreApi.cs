@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -30,10 +30,9 @@ namespace RadioManager.Api
         /// Get genre by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID of Genre **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
+        /// <param name="id"></param>
         /// <returns>GenreResult</returns>
-        GenreResult GetGenreById (long? id, long? externalStationId = null);
+        GenreResult GetGenreById (long? id);
 
         /// <summary>
         /// Get genre by id
@@ -42,10 +41,9 @@ namespace RadioManager.Api
         /// Get genre by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID of Genre **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
+        /// <param name="id"></param>
         /// <returns>ApiResponse of GenreResult</returns>
-        ApiResponse<GenreResult> GetGenreByIdWithHttpInfo (long? id, long? externalStationId = null);
+        ApiResponse<GenreResult> GetGenreByIdWithHttpInfo (long? id);
         /// <summary>
         /// List all genres.
         /// </summary>
@@ -53,16 +51,12 @@ namespace RadioManager.Api
         /// List all genres.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="parentId">Search on Parent ID of Genre *(Optional)* (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        Object ListGenres (long? page = null, long? parentId = null, long? programId = null, long? broadcastId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>InlineResponse2006</returns>
+        InlineResponse2006 ListGenres (long? page = null, long? limit = null, string orderBy = null, string orderDirection = null);
 
         /// <summary>
         /// List all genres.
@@ -71,16 +65,12 @@ namespace RadioManager.Api
         /// List all genres.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="parentId">Search on Parent ID of Genre *(Optional)* (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> ListGenresWithHttpInfo (long? page = null, long? parentId = null, long? programId = null, long? broadcastId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>ApiResponse of InlineResponse2006</returns>
+        ApiResponse<InlineResponse2006> ListGenresWithHttpInfo (long? page = null, long? limit = null, string orderBy = null, string orderDirection = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -90,10 +80,9 @@ namespace RadioManager.Api
         /// Get genre by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID of Genre **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
+        /// <param name="id"></param>
         /// <returns>Task of GenreResult</returns>
-        System.Threading.Tasks.Task<GenreResult> GetGenreByIdAsync (long? id, long? externalStationId = null);
+        System.Threading.Tasks.Task<GenreResult> GetGenreByIdAsync (long? id);
 
         /// <summary>
         /// Get genre by id
@@ -102,10 +91,9 @@ namespace RadioManager.Api
         /// Get genre by id
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID of Genre **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
+        /// <param name="id"></param>
         /// <returns>Task of ApiResponse (GenreResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GenreResult>> GetGenreByIdAsyncWithHttpInfo (long? id, long? externalStationId = null);
+        System.Threading.Tasks.Task<ApiResponse<GenreResult>> GetGenreByIdAsyncWithHttpInfo (long? id);
         /// <summary>
         /// List all genres.
         /// </summary>
@@ -113,16 +101,12 @@ namespace RadioManager.Api
         /// List all genres.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="parentId">Search on Parent ID of Genre *(Optional)* (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> ListGenresAsync (long? page = null, long? parentId = null, long? programId = null, long? broadcastId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of InlineResponse2006</returns>
+        System.Threading.Tasks.Task<InlineResponse2006> ListGenresAsync (long? page = null, long? limit = null, string orderBy = null, string orderDirection = null);
 
         /// <summary>
         /// List all genres.
@@ -131,16 +115,12 @@ namespace RadioManager.Api
         /// List all genres.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="parentId">Search on Parent ID of Genre *(Optional)* (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListGenresAsyncWithHttpInfo (long? page = null, long? parentId = null, long? programId = null, long? broadcastId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of ApiResponse (InlineResponse2006)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2006>> ListGenresAsyncWithHttpInfo (long? page = null, long? limit = null, string orderBy = null, string orderDirection = null);
         #endregion Asynchronous Operations
     }
 
@@ -256,12 +236,11 @@ namespace RadioManager.Api
         /// Get genre by id Get genre by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID of Genre **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
+        /// <param name="id"></param>
         /// <returns>GenreResult</returns>
-        public GenreResult GetGenreById (long? id, long? externalStationId = null)
+        public GenreResult GetGenreById (long? id)
         {
-             ApiResponse<GenreResult> localVarResponse = GetGenreByIdWithHttpInfo(id, externalStationId);
+             ApiResponse<GenreResult> localVarResponse = GetGenreByIdWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -269,10 +248,9 @@ namespace RadioManager.Api
         /// Get genre by id Get genre by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID of Genre **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
+        /// <param name="id"></param>
         /// <returns>ApiResponse of GenreResult</returns>
-        public ApiResponse< GenreResult > GetGenreByIdWithHttpInfo (long? id, long? externalStationId = null)
+        public ApiResponse< GenreResult > GetGenreByIdWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -300,7 +278,6 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (externalStationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
             // authentication (API-Key) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
             {
@@ -329,12 +306,11 @@ namespace RadioManager.Api
         /// Get genre by id Get genre by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID of Genre **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
+        /// <param name="id"></param>
         /// <returns>Task of GenreResult</returns>
-        public async System.Threading.Tasks.Task<GenreResult> GetGenreByIdAsync (long? id, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<GenreResult> GetGenreByIdAsync (long? id)
         {
-             ApiResponse<GenreResult> localVarResponse = await GetGenreByIdAsyncWithHttpInfo(id, externalStationId);
+             ApiResponse<GenreResult> localVarResponse = await GetGenreByIdAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -343,10 +319,9 @@ namespace RadioManager.Api
         /// Get genre by id Get genre by id
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID of Genre **(Required)**</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
+        /// <param name="id"></param>
         /// <returns>Task of ApiResponse (GenreResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GenreResult>> GetGenreByIdAsyncWithHttpInfo (long? id, long? externalStationId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GenreResult>> GetGenreByIdAsyncWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -374,7 +349,6 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (externalStationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
             // authentication (API-Key) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
             {
@@ -403,18 +377,14 @@ namespace RadioManager.Api
         /// List all genres. List all genres.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="parentId">Search on Parent ID of Genre *(Optional)* (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        public Object ListGenres (long? page = null, long? parentId = null, long? programId = null, long? broadcastId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>InlineResponse2006</returns>
+        public InlineResponse2006 ListGenres (long? page = null, long? limit = null, string orderBy = null, string orderDirection = null)
         {
-             ApiResponse<Object> localVarResponse = ListGenresWithHttpInfo(page, parentId, programId, broadcastId, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse2006> localVarResponse = ListGenresWithHttpInfo(page, limit, orderBy, orderDirection);
              return localVarResponse.Data;
         }
 
@@ -422,16 +392,12 @@ namespace RadioManager.Api
         /// List all genres. List all genres.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="parentId">Search on Parent ID of Genre *(Optional)* (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > ListGenresWithHttpInfo (long? page = null, long? parentId = null, long? programId = null, long? broadcastId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>ApiResponse of InlineResponse2006</returns>
+        public ApiResponse< InlineResponse2006 > ListGenresWithHttpInfo (long? page = null, long? limit = null, string orderBy = null, string orderDirection = null)
         {
 
             var localVarPath = "/genres";
@@ -456,13 +422,9 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
-            if (parentId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "parent_id", parentId)); // query parameter
-            if (programId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "program_id", programId)); // query parameter
-            if (broadcastId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
-            if (externalStationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
             // authentication (API-Key) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
             {
@@ -482,27 +444,23 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2006>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2006) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2006)));
         }
 
         /// <summary>
         /// List all genres. List all genres.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="parentId">Search on Parent ID of Genre *(Optional)* (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> ListGenresAsync (long? page = null, long? parentId = null, long? programId = null, long? broadcastId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of InlineResponse2006</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2006> ListGenresAsync (long? page = null, long? limit = null, string orderBy = null, string orderDirection = null)
         {
-             ApiResponse<Object> localVarResponse = await ListGenresAsyncWithHttpInfo(page, parentId, programId, broadcastId, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse2006> localVarResponse = await ListGenresAsyncWithHttpInfo(page, limit, orderBy, orderDirection);
              return localVarResponse.Data;
 
         }
@@ -511,16 +469,12 @@ namespace RadioManager.Api
         /// List all genres. List all genres.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
-        /// <param name="parentId">Search on Parent ID of Genre *(Optional)* (optional)</param>
-        /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
-        /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
-        /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ListGenresAsyncWithHttpInfo (long? page = null, long? parentId = null, long? programId = null, long? broadcastId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of ApiResponse (InlineResponse2006)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2006>> ListGenresAsyncWithHttpInfo (long? page = null, long? limit = null, string orderBy = null, string orderDirection = null)
         {
 
             var localVarPath = "/genres";
@@ -545,13 +499,9 @@ namespace RadioManager.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
-            if (parentId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "parent_id", parentId)); // query parameter
-            if (programId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "program_id", programId)); // query parameter
-            if (broadcastId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
-            if (externalStationId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "_external_station_id", externalStationId)); // query parameter
             // authentication (API-Key) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
             {
@@ -571,9 +521,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2006>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2006) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2006)));
         }
 
     }

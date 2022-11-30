@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createtag"></a>
 # **CreateTag**
-> PostSuccess CreateTag (TagDataInput body)
+> InlineResponse2002 CreateTag (TagDataInput body)
 
 Create tag.
 
@@ -43,7 +43,7 @@ namespace Example
             try
             {
                 // Create tag.
-                PostSuccess result = apiInstance.CreateTag(body);
+                InlineResponse2002 result = apiInstance.CreateTag(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSuccess**](PostSuccess.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="deletetagbyid"></a>
 # **DeleteTagById**
-> Success DeleteTagById (long? id)
+> InlineResponse202 DeleteTagById (long? id)
 
 Delete tag by id
 
@@ -103,12 +103,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new TagApi();
-            var id = 789;  // long? | ID of Tag **(Required)**
+            var id = new long?(); // long? | ID of Tag **(Required)**
 
             try
             {
                 // Delete tag by id
-                Success result = apiInstance.DeleteTagById(id);
+                InlineResponse202 result = apiInstance.DeleteTagById(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -124,11 +124,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Tag **(Required)** | 
+ **id** | [**long?**](long?.md)| ID of Tag **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="gettagbyid"></a>
 # **GetTagById**
-> TagResult GetTagById (long? id, long? externalStationId = null)
+> TagResult GetTagById (long? id)
 
 Get tags by id
 
@@ -168,13 +168,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new TagApi();
-            var id = 789;  // long? | ID of Tag **(Required)**
-            var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
+            var id = new long?(); // long? | ID of Tag **(Required)**
 
             try
             {
                 // Get tags by id
-                TagResult result = apiInstance.GetTagById(id, externalStationId);
+                TagResult result = apiInstance.GetTagById(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -190,8 +189,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Tag **(Required)** | 
- **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
+ **id** | [**long?**](long?.md)| ID of Tag **(Required)** | 
 
 ### Return type
 
@@ -209,7 +207,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="listtags"></a>
 # **ListTags**
-> Object ListTags (long? page = null, long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> InlineResponse20012 ListTags (long? programId = null, long? itemId = null, long? broadcastId = null, long? contactId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get a list of all the tags currently in your station.
 
@@ -235,11 +233,11 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new TagApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
-            var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
-            var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
-            var contactId = 789;  // long? | Search on Contact ID *(Optional)* `(Relation)` (optional) 
+            var programId = new long?(); // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
+            var itemId = new long?(); // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var broadcastId = new long?(); // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
+            var contactId = new long?(); // long? | Search on Contact ID *(Optional)* `(Relation)` (optional) 
+            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
             var limit = 789;  // long? | Results per page *(Optional)* (optional) 
             var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
             var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
@@ -248,7 +246,7 @@ namespace Example
             try
             {
                 // Get a list of all the tags currently in your station.
-                Object result = apiInstance.ListTags(page, programId, itemId, broadcastId, contactId, limit, orderBy, orderDirection, externalStationId);
+                InlineResponse20012 result = apiInstance.ListTags(programId, itemId, broadcastId, contactId, page, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -264,11 +262,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] 
- **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **contactId** | **long?**| Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **programId** | [**long?**](long?.md)| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **itemId** | [**long?**](long?.md)| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **broadcastId** | [**long?**](long?.md)| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **contactId** | [**long?**](long?.md)| Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
  **limit** | **long?**| Results per page *(Optional)* | [optional] 
  **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
  **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
@@ -276,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -290,7 +288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="updatetagbyid"></a>
 # **UpdateTagByID**
-> Success UpdateTagByID (long? id, TagDataInput body = null)
+> InlineResponse202 UpdateTagByID (TagDataInput body, long? id)
 
 Update tag by id
 
@@ -316,13 +314,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new TagApi();
-            var id = 789;  // long? | ID of Tag **(Required)**
-            var body = new TagDataInput(); // TagDataInput | Data *(Optional)* (optional) 
+            var body = new TagDataInput(); // TagDataInput | Data *(Optional)*
+            var id = new long?(); // long? | ID of Tag **(Required)**
 
             try
             {
                 // Update tag by id
-                Success result = apiInstance.UpdateTagByID(id, body);
+                InlineResponse202 result = apiInstance.UpdateTagByID(body, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -338,12 +336,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Tag **(Required)** | 
- **body** | [**TagDataInput**](TagDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**TagDataInput**](TagDataInput.md)| Data *(Optional)* | 
+ **id** | [**long?**](long?.md)| ID of Tag **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 

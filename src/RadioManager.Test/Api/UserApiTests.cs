@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -71,7 +71,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
             //var response = instance.DeleteUserById(id);
-            //Assert.IsInstanceOf<Success> (response, "response is Success");
+            //Assert.IsInstanceOf<InlineResponse202> (response, "response is InlineResponse202");
         }
         /// <summary>
         /// Test GetUserById
@@ -93,7 +93,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test the method and replace null with proper value
             //InviteUserData body = null;
             //var response = instance.InviteUserByMail(body);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //Assert.IsInstanceOf<InlineResponse202> (response, "response is InlineResponse202");
         }
         /// <summary>
         /// Test ListUsers
@@ -102,13 +102,14 @@ namespace RadioManager.Test
         public void ListUsersTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? page = null;
             //long? roleId = null;
+            //long? groupId = null;
+            //long? page = null;
             //long? limit = null;
             //string orderBy = null;
             //string orderDirection = null;
-            //var response = instance.ListUsers(page, roleId, limit, orderBy, orderDirection);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //var response = instance.ListUsers(roleId, groupId, page, limit, orderBy, orderDirection);
+            //Assert.IsInstanceOf<InlineResponse20013> (response, "response is InlineResponse20013");
         }
     }
 

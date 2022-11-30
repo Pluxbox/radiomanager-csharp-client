@@ -4,18 +4,18 @@ All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteUserById**](UserApi.md#deleteuserbyid) | **DELETE** /users/{id} | Remove user from station by Id
+[**DeleteUserById**](UserApi.md#deleteuserbyid) | **DELETE** /users/{id} | Remove User from station by Id
 [**GetUserById**](UserApi.md#getuserbyid) | **GET** /users/{id} | Get user by id
 [**InviteUserByMail**](UserApi.md#inviteuserbymail) | **POST** /users/invite | Invite user by mail
 [**ListUsers**](UserApi.md#listusers) | **GET** /users | Get all users.
 
 <a name="deleteuserbyid"></a>
 # **DeleteUserById**
-> Success DeleteUserById (long? id)
+> InlineResponse202 DeleteUserById (long? id)
 
-Remove user from station by Id
+Remove User from station by Id
 
-Remove user from station by Id
+Remove User from station by Id, will not actually delete a User record
 
 ### Example
 ```csharp
@@ -37,12 +37,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new UserApi();
-            var id = 789;  // long? | id of User
+            var id = new long?(); // long? | ID of User **(Required)**
 
             try
             {
-                // Remove user from station by Id
-                Success result = apiInstance.DeleteUserById(id);
+                // Remove User from station by Id
+                InlineResponse202 result = apiInstance.DeleteUserById(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -58,11 +58,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| id of User | 
+ **id** | [**long?**](long?.md)| ID of User **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new UserApi();
-            var id = 789;  // long? | id of User
+            var id = new long?(); // long? | id of User
 
             try
             {
@@ -123,7 +123,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| id of User | 
+ **id** | [**long?**](long?.md)| id of User | 
 
 ### Return type
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="inviteuserbymail"></a>
 # **InviteUserByMail**
-> Object InviteUserByMail (InviteUserData body)
+> InlineResponse202 InviteUserByMail (InviteUserData body)
 
 Invite user by mail
 
@@ -167,12 +167,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new UserApi();
-            var body = new InviteUserData(); // InviteUserData | Data **(Required)**
+            var body = new InviteUserData(); // InviteUserData | Data *(Required)*
 
             try
             {
                 // Invite user by mail
-                Object result = apiInstance.InviteUserByMail(body);
+                InlineResponse202 result = apiInstance.InviteUserByMail(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -188,11 +188,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InviteUserData**](InviteUserData.md)| Data **(Required)** | 
+ **body** | [**InviteUserData**](InviteUserData.md)| Data *(Required)* | 
 
 ### Return type
 
-**Object**
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="listusers"></a>
 # **ListUsers**
-> Object ListUsers (long? page = null, long? roleId = null, long? limit = null, string orderBy = null, string orderDirection = null)
+> InlineResponse20013 ListUsers (long? roleId = null, long? groupId = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null)
 
 Get all users.
 
@@ -232,8 +232,9 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new UserApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var roleId = 789;  // long? | Search on Role ID *(Optional)* (optional) 
+            var roleId = new long?(); // long? | Search on Role ID *(Optional)* (optional) 
+            var groupId = new long?(); // long? | Search on Group ID *(Optional)* (optional) 
+            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
             var limit = 789;  // long? | Results per page *(Optional)* (optional) 
             var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
             var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
@@ -241,7 +242,7 @@ namespace Example
             try
             {
                 // Get all users.
-                Object result = apiInstance.ListUsers(page, roleId, limit, orderBy, orderDirection);
+                InlineResponse20013 result = apiInstance.ListUsers(roleId, groupId, page, limit, orderBy, orderDirection);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -257,15 +258,16 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] 
- **roleId** | **long?**| Search on Role ID *(Optional)* | [optional] 
+ **roleId** | [**long?**](long?.md)| Search on Role ID *(Optional)* | [optional] 
+ **groupId** | [**long?**](long?.md)| Search on Group ID *(Optional)* | [optional] 
+ **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
  **limit** | **long?**| Results per page *(Optional)* | [optional] 
  **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
  **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
 
 ### Return type
 
-**Object**
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 

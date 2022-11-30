@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -242,6 +242,22 @@ namespace RadioManager.Test
             // TODO unit test for the property 'PtyCodeId'
         }
         /// <summary>
+        /// Test the property 'PlannedInEpg'
+        /// </summary>
+        [Test]
+        public void PlannedInEpgTest()
+        {
+            // TODO unit test for the property 'PlannedInEpg'
+        }
+        /// <summary>
+        /// Test the property 'GroupId'
+        /// </summary>
+        [Test]
+        public void GroupIdTest()
+        {
+            // TODO unit test for the property 'GroupId'
+        }
+        /// <summary>
         /// Test the property 'Genre'
         /// </summary>
         [Test]
@@ -296,6 +312,14 @@ namespace RadioManager.Test
         public void ModelTypeTest()
         {
             // TODO unit test for the property 'ModelType'
+        }
+        /// <summary>
+        /// Test the property 'Group'
+        /// </summary>
+        [Test]
+        public void GroupTest()
+        {
+            // TODO unit test for the property 'Group'
         }
 
     }

@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -39,37 +39,37 @@ namespace RadioManager.Model
             /// Enum Broadcast for value: broadcast
             /// </summary>
             [EnumMember(Value = "broadcast")]
-            Broadcast = 0,
+            Broadcast = 1,
             /// <summary>
             /// Enum Program for value: program
             /// </summary>
             [EnumMember(Value = "program")]
-            Program = 1,
+            Program = 2,
             /// <summary>
             /// Enum Item for value: item
             /// </summary>
             [EnumMember(Value = "item")]
-            Item = 2,
+            Item = 3,
             /// <summary>
             /// Enum Campaign for value: campaign
             /// </summary>
             [EnumMember(Value = "campaign")]
-            Campaign = 3,
+            Campaign = 4,
             /// <summary>
             /// Enum Presenter for value: presenter
             /// </summary>
             [EnumMember(Value = "presenter")]
-            Presenter = 4,
+            Presenter = 5,
             /// <summary>
             /// Enum Contact for value: contact
             /// </summary>
             [EnumMember(Value = "contact")]
-            Contact = 5,
+            Contact = 6,
             /// <summary>
             /// Enum External for value: external
             /// </summary>
             [EnumMember(Value = "external")]
-            External = 6        }
+            External = 7        }
         /// <summary>
         /// Gets or Sets Model
         /// </summary>
@@ -86,7 +86,7 @@ namespace RadioManager.Model
         /// <param name="options">options.</param>
         /// <param name="order">order.</param>
         /// <param name="deletedAt">deletedAt.</param>
-        public ModelType(long? id = default(long?), string name = default(string), ModelEnum? model = default(ModelEnum?), DateTime? createdAt = default(DateTime?), DateTime? updatedAt = default(DateTime?), Object options = default(Object), long? order = default(long?), DateTime? deletedAt = default(DateTime?))
+        public ModelType(long? id = default(long?), string name = default(string), ModelEnum? model = default(ModelEnum?), DateTime? createdAt = default(DateTime?), DateTime? updatedAt = default(DateTime?), ModelTypeOptions options = default(ModelTypeOptions), long? order = default(long?), DateTime? deletedAt = default(DateTime?))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -135,7 +135,7 @@ namespace RadioManager.Model
         /// Gets or Sets Options
         /// </summary>
         [DataMember(Name="options", EmitDefaultValue=false)]
-        public Object Options { get; set; }
+        public ModelTypeOptions Options { get; set; }
 
         /// <summary>
         /// Gets or Sets Order

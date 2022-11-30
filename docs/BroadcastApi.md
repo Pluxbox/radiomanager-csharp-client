@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="createbroadcast"></a>
 # **CreateBroadcast**
-> PostSuccess CreateBroadcast (BroadcastDataInput body)
+> InlineResponse2002 CreateBroadcast (BroadcastDataInput body)
 
 Create broadcast.
 
@@ -49,7 +49,7 @@ namespace Example
             try
             {
                 // Create broadcast.
-                PostSuccess result = apiInstance.CreateBroadcast(body);
+                InlineResponse2002 result = apiInstance.CreateBroadcast(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSuccess**](PostSuccess.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="deletebroadcastbyid"></a>
 # **DeleteBroadcastById**
-> Success DeleteBroadcastById (long? id)
+> InlineResponse202 DeleteBroadcastById (long? id)
 
 Delete broadcast by id
 
@@ -109,12 +109,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
-            var id = 789;  // long? | ID of Broadcast **(Required)**
+            var id = new long?(); // long? | ID of Broadcast **(Required)**
 
             try
             {
                 // Delete broadcast by id
-                Success result = apiInstance.DeleteBroadcastById(id);
+                InlineResponse202 result = apiInstance.DeleteBroadcastById(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -130,11 +130,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Broadcast **(Required)** | 
+ **id** | [**long?**](long?.md)| ID of Broadcast **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
-            var id = 789;  // long? | ID of Broadcast **(Required)**
+            var id = new long?(); // long? | ID of Broadcast **(Required)**
             var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
@@ -196,7 +196,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Broadcast **(Required)** | 
+ **id** | [**long?**](long?.md)| ID of Broadcast **(Required)** | 
  **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 Get current Broadcast
 
-Get current Broadcast
+Get currently playing Broadcast
 
 ### Example
 ```csharp
@@ -241,7 +241,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
-            var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
+            var withunpublished = new bool?(); // bool? | Show Unpublished *(Optional)* (optional) 
 
             try
             {
@@ -262,7 +262,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **withunpublished** | **bool?**| Show Unpublished *(Optional)* | [optional] 
+ **withunpublished** | [**bool?**](bool?.md)| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 Get daily EPG
 
-Get current Broadcast
+Get a list of broadcasts as Programming guide for 1 day
 
 ### Example
 ```csharp
@@ -306,8 +306,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
-            var date = 2013-10-20T19:20:30+01:00;  // DateTime? | Date *(Optional)* (optional) 
-            var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
+            var date = new DateTime?(); // DateTime? | Date *(Optional)* (optional) 
+            var withunpublished = new bool?(); // bool? | Show Unpublished *(Optional)* (optional) 
 
             try
             {
@@ -328,8 +328,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **date** | **DateTime?**| Date *(Optional)* | [optional] 
- **withunpublished** | **bool?**| Show Unpublished *(Optional)* | [optional] 
+ **date** | [**DateTime?**](DateTime?.md)| Date *(Optional)* | [optional] 
+ **withunpublished** | [**bool?**](bool?.md)| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 Get EPG by date
 
-Get EPG by date
+Get a list of broadcasts as Programming guide, seperated per day
 
 ### Example
 ```csharp
@@ -373,8 +373,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
-            var date = 2013-10-20T19:20:30+01:00;  // DateTime? | Date *(Optional)* (optional) 
-            var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
+            var date = new DateTime?(); // DateTime? | Date *(Optional)* (optional) 
+            var withunpublished = new bool?(); // bool? | Show Unpublished *(Optional)* (optional) 
 
             try
             {
@@ -395,8 +395,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **date** | **DateTime?**| Date *(Optional)* | [optional] 
- **withunpublished** | **bool?**| Show Unpublished *(Optional)* | [optional] 
+ **date** | [**DateTime?**](DateTime?.md)| Date *(Optional)* | [optional] 
+ **withunpublished** | [**bool?**](bool?.md)| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 
 Get next Broadcast
 
-Get next Broadcast
+Get currently upcoming Broadcast
 
 ### Example
 ```csharp
@@ -440,7 +440,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
-            var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
+            var withunpublished = new bool?(); // bool? | Show Unpublished *(Optional)* (optional) 
 
             try
             {
@@ -461,7 +461,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **withunpublished** | **bool?**| Show Unpublished *(Optional)* | [optional] 
+ **withunpublished** | [**bool?**](bool?.md)| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
@@ -479,11 +479,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="getweeklyepg"></a>
 # **GetWeeklyEPG**
-> EPGResults GetWeeklyEPG (string date = null, bool? withunpublished = null)
+> EPGResults GetWeeklyEPG (DateTime? date = null, bool? withunpublished = null)
 
 Get weekly EPG
 
-Get weekly EPG
+Get a list of broadcasts as Programming guide for 7 days, seperated per day
 
 ### Example
 ```csharp
@@ -505,8 +505,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
-            var date = date_example;  // string | Date *(Optional)* (optional) 
-            var withunpublished = true;  // bool? | Show Unpublished *(Optional)* (optional) 
+            var date = new DateTime?(); // DateTime? | Date *(Optional)* (optional) 
+            var withunpublished = new bool?(); // bool? | Show Unpublished *(Optional)* (optional) 
 
             try
             {
@@ -527,8 +527,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **date** | **string**| Date *(Optional)* | [optional] 
- **withunpublished** | **bool?**| Show Unpublished *(Optional)* | [optional] 
+ **date** | [**DateTime?**](DateTime?.md)| Date *(Optional)* | [optional] 
+ **withunpublished** | [**bool?**](bool?.md)| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
@@ -546,7 +546,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="listbroadcasts"></a>
 # **ListBroadcasts**
-> Object ListBroadcasts (long? page = null, long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? itemId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> InlineResponse2001 ListBroadcasts (long? programId = null, long? blockId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? groupId = null, long? itemId = null, long? plannedInEpg = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all broadcasts.
 
@@ -572,16 +572,18 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
-            var blockId = 789;  // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
-            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
-            var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
-            var presenterId = 789;  // long? | Search on Presenter ID *(Optional)* `(Relation)` (optional) 
-            var genreId = 789;  // long? | Search on Genre ID *(Optional)* `(Relation)` (optional) 
-            var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var programId = new long?(); // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
+            var blockId = new long?(); // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
+            var modelTypeId = new long?(); // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
+            var tagId = new long?(); // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
+            var presenterId = new long?(); // long? | Search on Presenter ID *(Optional)* `(Relation)` (optional) 
+            var genreId = new long?(); // long? | Search on Genre ID *(Optional)* `(Relation)` (optional) 
+            var groupId = new long?(); // long? | Search on Group ID *(Optional)* `(Relation)` (optional) 
+            var itemId = new long?(); // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var plannedInEpg = new long?(); // long? | Checks if item is in EPG *(Optional)* (optional) 
             var startMin = 2013-10-20T19:20:30+01:00;  // DateTime? | Minimum start date *(Optional)* (optional) 
             var startMax = 2013-10-20T19:20:30+01:00;  // DateTime? | Maximum start date *(Optional)* (optional) 
+            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
             var limit = 789;  // long? | Results per page *(Optional)* (optional) 
             var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
             var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
@@ -590,7 +592,7 @@ namespace Example
             try
             {
                 // Get all broadcasts.
-                Object result = apiInstance.ListBroadcasts(page, programId, blockId, modelTypeId, tagId, presenterId, genreId, itemId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
+                InlineResponse2001 result = apiInstance.ListBroadcasts(programId, blockId, modelTypeId, tagId, presenterId, genreId, groupId, itemId, plannedInEpg, startMin, startMax, page, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -606,16 +608,18 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] 
- **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **blockId** | **long?**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **presenterId** | **long?**| Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **genreId** | **long?**| Search on Genre ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **programId** | [**long?**](long?.md)| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **blockId** | [**long?**](long?.md)| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **modelTypeId** | [**long?**](long?.md)| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **tagId** | [**long?**](long?.md)| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **presenterId** | [**long?**](long?.md)| Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **genreId** | [**long?**](long?.md)| Search on Genre ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **groupId** | [**long?**](long?.md)| Search on Group ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **itemId** | [**long?**](long?.md)| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **plannedInEpg** | [**long?**](long?.md)| Checks if item is in EPG *(Optional)* | [optional] 
  **startMin** | **DateTime?**| Minimum start date *(Optional)* | [optional] 
  **startMax** | **DateTime?**| Maximum start date *(Optional)* | [optional] 
+ **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
  **limit** | **long?**| Results per page *(Optional)* | [optional] 
  **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
  **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
@@ -623,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -637,11 +641,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="printbroadcastbyid"></a>
 # **PrintBroadcastById**
-> string PrintBroadcastById (long? id, long? templateId = null)
+> InlineResponse2003 PrintBroadcastById (long? id, long? templateId = null)
 
 Print broadcast by id with template
 
-Print broadcast by id with template
+Download a rundown in printable format as HTML inside the JSON repsonse
 
 ### Example
 ```csharp
@@ -663,13 +667,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
-            var id = 789;  // long? | ID of Broadcast **(Required)**
-            var templateId = 789;  // long? | Search on template ID *(Optional)* (optional) 
+            var id = new long?(); // long? | ID of Broadcast **(Required)**
+            var templateId = new long?(); // long? | The print template to be used *(Optional)* (optional) 
 
             try
             {
                 // Print broadcast by id with template
-                string result = apiInstance.PrintBroadcastById(id, templateId);
+                InlineResponse2003 result = apiInstance.PrintBroadcastById(id, templateId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -685,12 +689,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Broadcast **(Required)** | 
- **templateId** | **long?**| Search on template ID *(Optional)* | [optional] 
+ **id** | [**long?**](long?.md)| ID of Broadcast **(Required)** | 
+ **templateId** | [**long?**](long?.md)| The print template to be used *(Optional)* | [optional] 
 
 ### Return type
 
-**string**
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -704,7 +708,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="updatebroadcastbyid"></a>
 # **UpdateBroadcastByID**
-> Success UpdateBroadcastByID (long? id, BroadcastDataInput body = null)
+> InlineResponse202 UpdateBroadcastByID (long? id, BroadcastDataInput body = null)
 
 Update broadcast by id
 
@@ -730,13 +734,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new BroadcastApi();
-            var id = 789;  // long? | ID of Broadcast **(Required)**
+            var id = new long?(); // long? | ID of Broadcast **(Required)**
             var body = new BroadcastDataInput(); // BroadcastDataInput | Data *(Optional)* (optional) 
 
             try
             {
                 // Update broadcast by id
-                Success result = apiInstance.UpdateBroadcastByID(id, body);
+                InlineResponse202 result = apiInstance.UpdateBroadcastByID(id, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -752,12 +756,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Broadcast **(Required)** | 
+ **id** | [**long?**](long?.md)| ID of Broadcast **(Required)** | 
  **body** | [**BroadcastDataInput**](BroadcastDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 

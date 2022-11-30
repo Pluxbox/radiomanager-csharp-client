@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -14,7 +14,7 @@ namespace RadioManager.Client
     /// <summary>
     /// API Exception
     /// </summary>
-        public class ApiException : Exception
+    public class ApiException : Exception
     {
         /// <summary>
         /// Gets or sets the error code (HTTP status code)

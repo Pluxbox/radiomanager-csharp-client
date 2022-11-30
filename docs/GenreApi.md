@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getgenrebyid"></a>
 # **GetGenreById**
-> GenreResult GetGenreById (long? id, long? externalStationId = null)
+> GenreResult GetGenreById (long? id)
 
 Get genre by id
 
@@ -35,13 +35,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new GenreApi();
-            var id = 789;  // long? | ID of Genre **(Required)**
-            var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
+            var id = new long?(); // long? | 
 
             try
             {
                 // Get genre by id
-                GenreResult result = apiInstance.GetGenreById(id, externalStationId);
+                GenreResult result = apiInstance.GetGenreById(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,8 +56,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Genre **(Required)** | 
- **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
+ **id** | [**long?**](long?.md)|  | 
 
 ### Return type
 
@@ -76,7 +74,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="listgenres"></a>
 # **ListGenres**
-> Object ListGenres (long? page = null, long? parentId = null, long? programId = null, long? broadcastId = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> InlineResponse2006 ListGenres (long? page = null, long? limit = null, string orderBy = null, string orderDirection = null)
 
 List all genres.
 
@@ -102,19 +100,15 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new GenreApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var parentId = 789;  // long? | Search on Parent ID of Genre *(Optional)* (optional) 
-            var programId = 789;  // long? | Search on Program ID *(Optional)* `(Relation)` (optional) 
-            var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
+            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
             var limit = 789;  // long? | Results per page *(Optional)* (optional) 
             var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
             var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
-            var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
             {
                 // List all genres.
-                Object result = apiInstance.ListGenres(page, parentId, programId, broadcastId, limit, orderBy, orderDirection, externalStationId);
+                InlineResponse2006 result = apiInstance.ListGenres(page, limit, orderBy, orderDirection);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -130,18 +124,14 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] 
- **parentId** | **long?**| Search on Parent ID of Genre *(Optional)* | [optional] 
- **programId** | **long?**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
  **limit** | **long?**| Results per page *(Optional)* | [optional] 
  **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
  **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
- **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type
 
-**Object**
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 

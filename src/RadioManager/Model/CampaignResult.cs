@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -41,7 +41,7 @@ namespace RadioManager.Model
         /// <param name="description">description.</param>
         /// <param name="items">items.</param>
         /// <param name="modelType">modelType.</param>
-        public CampaignResult(long? modelTypeId = default(long?), Object fieldValues = default(Object), string title = default(string), DateTime? start = default(DateTime?), DateTime? stop = default(DateTime?), bool? recommended = default(bool?), string description = default(string), Object items = default(Object), Object modelType = default(Object), long? modelTypeId = default(long?), Object fieldValues = default(Object), string title = default(string), Object modelType = default(Object), long? id = default(long?), DateTime? updatedAt = default(DateTime?), DateTime? createdAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), CampaignTemplateItem item = default(CampaignTemplateItem), long? externalStationId = default(long?)) : base(id, updatedAt, createdAt, deletedAt, item, externalStationId)
+        public CampaignResult(long? modelTypeId = default(long?), Object fieldValues = default(Object), string title = default(string), DateTime? start = default(DateTime?), DateTime? stop = default(DateTime?), bool? recommended = default(bool?), string description = default(string), CampaignRelationsItems items = default(CampaignRelationsItems), BroadcastRelationsModelType modelType = default(BroadcastRelationsModelType), long? modelTypeId = default(long?), Object fieldValues = default(Object), string title = default(string), BroadcastRelationsModelType modelType = default(BroadcastRelationsModelType), long? id = default(long?), DateTime? updatedAt = default(DateTime?), DateTime? createdAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), CampaignTemplateItem item = default(CampaignTemplateItem), long? externalStationId = default(long?)) : base(id, updatedAt, createdAt, deletedAt, item, externalStationId)
         {
             // to ensure "modelTypeId" is required (not null)
             if (modelTypeId == null)
@@ -124,13 +124,13 @@ namespace RadioManager.Model
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items", EmitDefaultValue=false)]
-        public Object Items { get; set; }
+        public CampaignRelationsItems Items { get; set; }
 
         /// <summary>
         /// Gets or Sets ModelType
         /// </summary>
         [DataMember(Name="model_type", EmitDefaultValue=false)]
-        public Object ModelType { get; set; }
+        public BroadcastRelationsModelType ModelType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -269,7 +269,6 @@ namespace RadioManager.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

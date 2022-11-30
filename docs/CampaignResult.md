@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **Stop** | **DateTime?** |  | 
 **Recommended** | **bool?** |  | [optional] 
 **Description** | **string** |  | [optional] 
-**Items** | **Object** |  | [optional] 
-**ModelType** | **Object** |  | [optional] 
+**Items** | [**CampaignRelationsItems**](CampaignRelationsItems.md) |  | [optional] 
+**ModelType** | [**BroadcastRelationsModelType**](BroadcastRelationsModelType.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

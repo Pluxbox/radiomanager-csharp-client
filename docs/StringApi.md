@@ -8,11 +8,11 @@ Method | HTTP request | Description
 
 <a name="getstringsbyname"></a>
 # **GetStringsByName**
-> TextString GetStringsByName (string name, bool? fullModel)
+> TextString GetStringsByName (string name, bool? fullModel = null)
 
 Get Strings (formatted)
 
-Get Strings (formatted)
+Get RadioText/DAB String for publication based on String Templates
 
 ### Example
 ```csharp
@@ -34,8 +34,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new StringApi();
-            var name = name_example;  // string | Name of Strings **(Required)**
-            var fullModel = true;  // bool? | Full model or content only **(Required)**
+            var name = name_example;  // string | Name of String Template **(Required)**
+            var fullModel = new bool?(); // bool? | Full model or content only **(Optional)** (optional) 
 
             try
             {
@@ -56,8 +56,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string**| Name of Strings **(Required)** | 
- **fullModel** | **bool?**| Full model or content only **(Required)** | 
+ **name** | **string**| Name of String Template **(Required)** | 
+ **fullModel** | [**bool?**](bool?.md)| Full model or content only **(Optional)** | [optional] 
 
 ### Return type
 

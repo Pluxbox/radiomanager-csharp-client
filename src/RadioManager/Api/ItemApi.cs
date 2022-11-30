@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -30,9 +30,9 @@ namespace RadioManager.Api
         /// Create item.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>PostSuccess</returns>
-        PostSuccess CreateItem (ItemDataInput body = null);
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>InlineResponse2002</returns>
+        InlineResponse2002 CreateItem (ItemDataInput body);
 
         /// <summary>
         /// Create an new item.
@@ -41,51 +41,51 @@ namespace RadioManager.Api
         /// Create item.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of PostSuccess</returns>
-        ApiResponse<PostSuccess> CreateItemWithHttpInfo (ItemDataInput body = null);
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        ApiResponse<InlineResponse2002> CreateItemWithHttpInfo (ItemDataInput body);
         /// <summary>
         /// Post a current playing item, keep structure
         /// </summary>
         /// <remarks>
-        /// Post a current playing item, keep structure
+        /// Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        Success CurrentItemPostStructure (ImportItem body = null);
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>ItemResult</returns>
+        ItemResult CurrentItemPostStructure (ImportItem body);
 
         /// <summary>
         /// Post a current playing item, keep structure
         /// </summary>
         /// <remarks>
-        /// Post a current playing item, keep structure
+        /// Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> CurrentItemPostStructureWithHttpInfo (ImportItem body = null);
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>ApiResponse of ItemResult</returns>
+        ApiResponse<ItemResult> CurrentItemPostStructureWithHttpInfo (ImportItem body);
         /// <summary>
-        /// Post a current playing item
+        /// Post current playing Item
         /// </summary>
         /// <remarks>
-        /// Post a current playing item
+        /// Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will not keep** Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        Success CurrentItemPostTiming (ImportItem body = null);
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>ItemResult</returns>
+        ItemResult CurrentItemPostTiming (ImportItem body);
 
         /// <summary>
-        /// Post a current playing item
+        /// Post current playing Item
         /// </summary>
         /// <remarks>
-        /// Post a current playing item
+        /// Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will not keep** Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> CurrentItemPostTimingWithHttpInfo (ImportItem body = null);
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>ApiResponse of ItemResult</returns>
+        ApiResponse<ItemResult> CurrentItemPostTimingWithHttpInfo (ImportItem body);
         /// <summary>
         /// Delete item by ID.
         /// </summary>
@@ -94,8 +94,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <returns>Success</returns>
-        Success DeleteItemById (long? id);
+        /// <returns></returns>
+        void DeleteItemById (long? id);
 
         /// <summary>
         /// Delete item by ID.
@@ -105,8 +105,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> DeleteItemByIdWithHttpInfo (long? id);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteItemByIdWithHttpInfo (long? id);
         /// <summary>
         /// Get current Item
         /// </summary>
@@ -158,7 +158,6 @@ namespace RadioManager.Api
         /// Get a list of all the items currently in your station. This feature supports pagination and will give a maximum results of 50 items back.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
@@ -170,17 +169,18 @@ namespace RadioManager.Api
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        Object ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>InlineResponse2008</returns>
+        InlineResponse2008 ListItems (long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, int? durationMin = null, int? durationMax = null, string status = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get a list of all the items currently in your station.
@@ -189,7 +189,6 @@ namespace RadioManager.Api
         /// Get a list of all the items currently in your station. This feature supports pagination and will give a maximum results of 50 items back.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
@@ -201,80 +200,81 @@ namespace RadioManager.Api
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> ListItemsWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>ApiResponse of InlineResponse2008</returns>
+        ApiResponse<InlineResponse2008> ListItemsWithHttpInfo (long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, int? durationMin = null, int? durationMax = null, string status = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Post a playlist, do not remove previously imported items
         /// </summary>
         /// <remarks>
-        /// Post a playlist, do not remove previously imported items
+        /// Post a playlist with &#x27;keep structure&#x27; method, but do not remove previously imported items
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        Object PlaylistPostMerge (Object body = null);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>InlineResponse2021</returns>
+        InlineResponse2021 PlaylistPostMerge (PlaylistMergeBody body);
 
         /// <summary>
         /// Post a playlist, do not remove previously imported items
         /// </summary>
         /// <remarks>
-        /// Post a playlist, do not remove previously imported items
+        /// Post a playlist with &#x27;keep structure&#x27; method, but do not remove previously imported items
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> PlaylistPostMergeWithHttpInfo (Object body = null);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>ApiResponse of InlineResponse2021</returns>
+        ApiResponse<InlineResponse2021> PlaylistPostMergeWithHttpInfo (PlaylistMergeBody body);
         /// <summary>
         /// Post a playlist, keep current structure
         /// </summary>
         /// <remarks>
-        /// Post a playlist, keep current structure
+        /// Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        Object PlaylistPostStructure (Object body = null);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>InlineResponse2021</returns>
+        InlineResponse2021 PlaylistPostStructure (PlaylistStructureBody body);
 
         /// <summary>
         /// Post a playlist, keep current structure
         /// </summary>
         /// <remarks>
-        /// Post a playlist, keep current structure
+        /// Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> PlaylistPostStructureWithHttpInfo (Object body = null);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>ApiResponse of InlineResponse2021</returns>
+        ApiResponse<InlineResponse2021> PlaylistPostStructureWithHttpInfo (PlaylistStructureBody body);
         /// <summary>
         /// Post a playlist
         /// </summary>
         /// <remarks>
-        /// Post a playlist
+        /// Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will not** keep Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        Object PlaylistPostTiming (Object body = null);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>InlineResponse2021</returns>
+        InlineResponse2021 PlaylistPostTiming (PlaylistTimingBody body);
 
         /// <summary>
         /// Post a playlist
         /// </summary>
         /// <remarks>
-        /// Post a playlist
+        /// Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will not** keep Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> PlaylistPostTimingWithHttpInfo (Object body = null);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>ApiResponse of InlineResponse2021</returns>
+        ApiResponse<InlineResponse2021> PlaylistPostTimingWithHttpInfo (PlaylistTimingBody body);
         /// <summary>
         /// Stop an Item
         /// </summary>
@@ -283,8 +283,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        Success StopCurrentItem (Object body = null);
+        /// <returns>InlineResponse202</returns>
+        InlineResponse202 StopCurrentItem (ItemsStopcurrentBody body = null);
 
         /// <summary>
         /// Stop an Item
@@ -294,8 +294,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> StopCurrentItemWithHttpInfo (Object body = null);
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        ApiResponse<InlineResponse202> StopCurrentItemWithHttpInfo (ItemsStopcurrentBody body = null);
         /// <summary>
         /// Update extended item details by ID.
         /// </summary>
@@ -303,10 +303,10 @@ namespace RadioManager.Api
         /// Update item by id.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        Success UpdateItemById (long? id, ItemDataInput body = null);
+        /// <returns>InlineResponse202</returns>
+        InlineResponse202 UpdateItemById (ItemDataInput body, long? id);
 
         /// <summary>
         /// Update extended item details by ID.
@@ -315,10 +315,10 @@ namespace RadioManager.Api
         /// Update item by id.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        ApiResponse<Success> UpdateItemByIdWithHttpInfo (long? id, ItemDataInput body = null);
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        ApiResponse<InlineResponse202> UpdateItemByIdWithHttpInfo (ItemDataInput body, long? id);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -328,9 +328,9 @@ namespace RadioManager.Api
         /// Create item.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of PostSuccess</returns>
-        System.Threading.Tasks.Task<PostSuccess> CreateItemAsync (ItemDataInput body = null);
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>Task of InlineResponse2002</returns>
+        System.Threading.Tasks.Task<InlineResponse2002> CreateItemAsync (ItemDataInput body);
 
         /// <summary>
         /// Create an new item.
@@ -339,51 +339,51 @@ namespace RadioManager.Api
         /// Create item.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (PostSuccess)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PostSuccess>> CreateItemAsyncWithHttpInfo (ItemDataInput body = null);
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> CreateItemAsyncWithHttpInfo (ItemDataInput body);
         /// <summary>
         /// Post a current playing item, keep structure
         /// </summary>
         /// <remarks>
-        /// Post a current playing item, keep structure
+        /// Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> CurrentItemPostStructureAsync (ImportItem body = null);
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>Task of ItemResult</returns>
+        System.Threading.Tasks.Task<ItemResult> CurrentItemPostStructureAsync (ImportItem body);
 
         /// <summary>
         /// Post a current playing item, keep structure
         /// </summary>
         /// <remarks>
-        /// Post a current playing item, keep structure
+        /// Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> CurrentItemPostStructureAsyncWithHttpInfo (ImportItem body = null);
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>Task of ApiResponse (ItemResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ItemResult>> CurrentItemPostStructureAsyncWithHttpInfo (ImportItem body);
         /// <summary>
-        /// Post a current playing item
+        /// Post current playing Item
         /// </summary>
         /// <remarks>
-        /// Post a current playing item
+        /// Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will not keep** Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> CurrentItemPostTimingAsync (ImportItem body = null);
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>Task of ItemResult</returns>
+        System.Threading.Tasks.Task<ItemResult> CurrentItemPostTimingAsync (ImportItem body);
 
         /// <summary>
-        /// Post a current playing item
+        /// Post current playing Item
         /// </summary>
         /// <remarks>
-        /// Post a current playing item
+        /// Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will not keep** Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> CurrentItemPostTimingAsyncWithHttpInfo (ImportItem body = null);
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>Task of ApiResponse (ItemResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ItemResult>> CurrentItemPostTimingAsyncWithHttpInfo (ImportItem body);
         /// <summary>
         /// Delete item by ID.
         /// </summary>
@@ -392,8 +392,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> DeleteItemByIdAsync (long? id);
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteItemByIdAsync (long? id);
 
         /// <summary>
         /// Delete item by ID.
@@ -403,8 +403,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> DeleteItemByIdAsyncWithHttpInfo (long? id);
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteItemByIdAsyncWithHttpInfo (long? id);
         /// <summary>
         /// Get current Item
         /// </summary>
@@ -456,7 +456,6 @@ namespace RadioManager.Api
         /// Get a list of all the items currently in your station. This feature supports pagination and will give a maximum results of 50 items back.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
@@ -468,17 +467,18 @@ namespace RadioManager.Api
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> ListItemsAsync (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of InlineResponse2008</returns>
+        System.Threading.Tasks.Task<InlineResponse2008> ListItemsAsync (long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, int? durationMin = null, int? durationMax = null, string status = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
 
         /// <summary>
         /// Get a list of all the items currently in your station.
@@ -487,7 +487,6 @@ namespace RadioManager.Api
         /// Get a list of all the items currently in your station. This feature supports pagination and will give a maximum results of 50 items back.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
@@ -499,80 +498,81 @@ namespace RadioManager.Api
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListItemsAsyncWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
+        /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2008>> ListItemsAsyncWithHttpInfo (long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, int? durationMin = null, int? durationMax = null, string status = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null);
         /// <summary>
         /// Post a playlist, do not remove previously imported items
         /// </summary>
         /// <remarks>
-        /// Post a playlist, do not remove previously imported items
+        /// Post a playlist with &#x27;keep structure&#x27; method, but do not remove previously imported items
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> PlaylistPostMergeAsync (Object body = null);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of InlineResponse2021</returns>
+        System.Threading.Tasks.Task<InlineResponse2021> PlaylistPostMergeAsync (PlaylistMergeBody body);
 
         /// <summary>
         /// Post a playlist, do not remove previously imported items
         /// </summary>
         /// <remarks>
-        /// Post a playlist, do not remove previously imported items
+        /// Post a playlist with &#x27;keep structure&#x27; method, but do not remove previously imported items
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PlaylistPostMergeAsyncWithHttpInfo (Object body = null);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of ApiResponse (InlineResponse2021)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2021>> PlaylistPostMergeAsyncWithHttpInfo (PlaylistMergeBody body);
         /// <summary>
         /// Post a playlist, keep current structure
         /// </summary>
         /// <remarks>
-        /// Post a playlist, keep current structure
+        /// Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> PlaylistPostStructureAsync (Object body = null);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of InlineResponse2021</returns>
+        System.Threading.Tasks.Task<InlineResponse2021> PlaylistPostStructureAsync (PlaylistStructureBody body);
 
         /// <summary>
         /// Post a playlist, keep current structure
         /// </summary>
         /// <remarks>
-        /// Post a playlist, keep current structure
+        /// Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PlaylistPostStructureAsyncWithHttpInfo (Object body = null);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of ApiResponse (InlineResponse2021)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2021>> PlaylistPostStructureAsyncWithHttpInfo (PlaylistStructureBody body);
         /// <summary>
         /// Post a playlist
         /// </summary>
         /// <remarks>
-        /// Post a playlist
+        /// Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will not** keep Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> PlaylistPostTimingAsync (Object body = null);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of InlineResponse2021</returns>
+        System.Threading.Tasks.Task<InlineResponse2021> PlaylistPostTimingAsync (PlaylistTimingBody body);
 
         /// <summary>
         /// Post a playlist
         /// </summary>
         /// <remarks>
-        /// Post a playlist
+        /// Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will not** keep Items&#x27; ModelType structure in rundown.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PlaylistPostTimingAsyncWithHttpInfo (Object body = null);
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of ApiResponse (InlineResponse2021)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2021>> PlaylistPostTimingAsyncWithHttpInfo (PlaylistTimingBody body);
         /// <summary>
         /// Stop an Item
         /// </summary>
@@ -581,8 +581,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> StopCurrentItemAsync (Object body = null);
+        /// <returns>Task of InlineResponse202</returns>
+        System.Threading.Tasks.Task<InlineResponse202> StopCurrentItemAsync (ItemsStopcurrentBody body = null);
 
         /// <summary>
         /// Stop an Item
@@ -592,8 +592,8 @@ namespace RadioManager.Api
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> StopCurrentItemAsyncWithHttpInfo (Object body = null);
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> StopCurrentItemAsyncWithHttpInfo (ItemsStopcurrentBody body = null);
         /// <summary>
         /// Update extended item details by ID.
         /// </summary>
@@ -601,10 +601,10 @@ namespace RadioManager.Api
         /// Update item by id.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        System.Threading.Tasks.Task<Success> UpdateItemByIdAsync (long? id, ItemDataInput body = null);
+        /// <returns>Task of InlineResponse202</returns>
+        System.Threading.Tasks.Task<InlineResponse202> UpdateItemByIdAsync (ItemDataInput body, long? id);
 
         /// <summary>
         /// Update extended item details by ID.
@@ -613,10 +613,10 @@ namespace RadioManager.Api
         /// Update item by id.
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Success>> UpdateItemByIdAsyncWithHttpInfo (long? id, ItemDataInput body = null);
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> UpdateItemByIdAsyncWithHttpInfo (ItemDataInput body, long? id);
         #endregion Asynchronous Operations
     }
 
@@ -732,11 +732,11 @@ namespace RadioManager.Api
         /// Create an new item. Create item.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>PostSuccess</returns>
-        public PostSuccess CreateItem (ItemDataInput body = null)
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>InlineResponse2002</returns>
+        public InlineResponse2002 CreateItem (ItemDataInput body)
         {
-             ApiResponse<PostSuccess> localVarResponse = CreateItemWithHttpInfo(body);
+             ApiResponse<InlineResponse2002> localVarResponse = CreateItemWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
@@ -744,10 +744,13 @@ namespace RadioManager.Api
         /// Create an new item. Create item.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of PostSuccess</returns>
-        public ApiResponse< PostSuccess > CreateItemWithHttpInfo (ItemDataInput body = null)
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        public ApiResponse< InlineResponse2002 > CreateItemWithHttpInfo (ItemDataInput body)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->CreateItem");
 
             var localVarPath = "/items";
             var localVarPathParams = new Dictionary<String, String>();
@@ -798,20 +801,20 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PostSuccess>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2002>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (PostSuccess) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostSuccess)));
+                (InlineResponse2002) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2002)));
         }
 
         /// <summary>
         /// Create an new item. Create item.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of PostSuccess</returns>
-        public async System.Threading.Tasks.Task<PostSuccess> CreateItemAsync (ItemDataInput body = null)
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>Task of InlineResponse2002</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2002> CreateItemAsync (ItemDataInput body)
         {
-             ApiResponse<PostSuccess> localVarResponse = await CreateItemAsyncWithHttpInfo(body);
+             ApiResponse<InlineResponse2002> localVarResponse = await CreateItemAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
@@ -820,10 +823,13 @@ namespace RadioManager.Api
         /// Create an new item. Create item.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (PostSuccess)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PostSuccess>> CreateItemAsyncWithHttpInfo (ItemDataInput body = null)
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> CreateItemAsyncWithHttpInfo (ItemDataInput body)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->CreateItem");
 
             var localVarPath = "/items";
             var localVarPathParams = new Dictionary<String, String>();
@@ -874,31 +880,34 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PostSuccess>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2002>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (PostSuccess) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PostSuccess)));
+                (InlineResponse2002) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2002)));
         }
 
         /// <summary>
-        /// Post a current playing item, keep structure Post a current playing item, keep structure
+        /// Post a current playing item, keep structure Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        public Success CurrentItemPostStructure (ImportItem body = null)
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>ItemResult</returns>
+        public ItemResult CurrentItemPostStructure (ImportItem body)
         {
-             ApiResponse<Success> localVarResponse = CurrentItemPostStructureWithHttpInfo(body);
+             ApiResponse<ItemResult> localVarResponse = CurrentItemPostStructureWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Post a current playing item, keep structure Post a current playing item, keep structure
+        /// Post a current playing item, keep structure Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > CurrentItemPostStructureWithHttpInfo (ImportItem body = null)
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>ApiResponse of ItemResult</returns>
+        public ApiResponse< ItemResult > CurrentItemPostStructureWithHttpInfo (ImportItem body)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->CurrentItemPostStructure");
 
             var localVarPath = "/items/current/structure";
             var localVarPathParams = new Dictionary<String, String>();
@@ -949,32 +958,35 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<ItemResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (ItemResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ItemResult)));
         }
 
         /// <summary>
-        /// Post a current playing item, keep structure Post a current playing item, keep structure
+        /// Post a current playing item, keep structure Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> CurrentItemPostStructureAsync (ImportItem body = null)
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>Task of ItemResult</returns>
+        public async System.Threading.Tasks.Task<ItemResult> CurrentItemPostStructureAsync (ImportItem body)
         {
-             ApiResponse<Success> localVarResponse = await CurrentItemPostStructureAsyncWithHttpInfo(body);
+             ApiResponse<ItemResult> localVarResponse = await CurrentItemPostStructureAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Post a current playing item, keep structure Post a current playing item, keep structure
+        /// Post a current playing item, keep structure Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> CurrentItemPostStructureAsyncWithHttpInfo (ImportItem body = null)
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>Task of ApiResponse (ItemResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ItemResult>> CurrentItemPostStructureAsyncWithHttpInfo (ImportItem body)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->CurrentItemPostStructure");
 
             var localVarPath = "/items/current/structure";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1025,31 +1037,34 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<ItemResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (ItemResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ItemResult)));
         }
 
         /// <summary>
-        /// Post a current playing item Post a current playing item
+        /// Post current playing Item Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will not keep** Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        public Success CurrentItemPostTiming (ImportItem body = null)
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>ItemResult</returns>
+        public ItemResult CurrentItemPostTiming (ImportItem body)
         {
-             ApiResponse<Success> localVarResponse = CurrentItemPostTimingWithHttpInfo(body);
+             ApiResponse<ItemResult> localVarResponse = CurrentItemPostTimingWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Post a current playing item Post a current playing item
+        /// Post current playing Item Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will not keep** Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > CurrentItemPostTimingWithHttpInfo (ImportItem body = null)
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>ApiResponse of ItemResult</returns>
+        public ApiResponse< ItemResult > CurrentItemPostTimingWithHttpInfo (ImportItem body)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->CurrentItemPostTiming");
 
             var localVarPath = "/items/current/timing";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1100,32 +1115,35 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<ItemResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (ItemResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ItemResult)));
         }
 
         /// <summary>
-        /// Post a current playing item Post a current playing item
+        /// Post current playing Item Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will not keep** Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> CurrentItemPostTimingAsync (ImportItem body = null)
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>Task of ItemResult</returns>
+        public async System.Threading.Tasks.Task<ItemResult> CurrentItemPostTimingAsync (ImportItem body)
         {
-             ApiResponse<Success> localVarResponse = await CurrentItemPostTimingAsyncWithHttpInfo(body);
+             ApiResponse<ItemResult> localVarResponse = await CurrentItemPostTimingAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Post a current playing item Post a current playing item
+        /// Post current playing Item Post current playing Item. Can be existing Item referenced by external_id. When Items are moved, this function **will not keep** Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> CurrentItemPostTimingAsyncWithHttpInfo (ImportItem body = null)
+        /// <param name="body">Data **(Required)**</param>
+        /// <returns>Task of ApiResponse (ItemResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ItemResult>> CurrentItemPostTimingAsyncWithHttpInfo (ImportItem body)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->CurrentItemPostTiming");
 
             var localVarPath = "/items/current/timing";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1176,9 +1194,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<ItemResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (ItemResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ItemResult)));
         }
 
         /// <summary>
@@ -1186,11 +1204,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <returns>Success</returns>
-        public Success DeleteItemById (long? id)
+        /// <returns></returns>
+        public void DeleteItemById (long? id)
         {
-             ApiResponse<Success> localVarResponse = DeleteItemByIdWithHttpInfo(id);
-             return localVarResponse.Data;
+             DeleteItemByIdWithHttpInfo(id);
         }
 
         /// <summary>
@@ -1198,8 +1215,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > DeleteItemByIdWithHttpInfo (long? id)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DeleteItemByIdWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1246,9 +1263,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                null);
         }
 
         /// <summary>
@@ -1256,11 +1273,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> DeleteItemByIdAsync (long? id)
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteItemByIdAsync (long? id)
         {
-             ApiResponse<Success> localVarResponse = await DeleteItemByIdAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
+             await DeleteItemByIdAsyncWithHttpInfo(id);
 
         }
 
@@ -1269,8 +1285,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> DeleteItemByIdAsyncWithHttpInfo (long? id)
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteItemByIdAsyncWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1317,9 +1333,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                null);
         }
 
         /// <summary>
@@ -1608,7 +1624,6 @@ namespace RadioManager.Api
         /// Get a list of all the items currently in your station. Get a list of all the items currently in your station. This feature supports pagination and will give a maximum results of 50 items back.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
@@ -1620,19 +1635,20 @@ namespace RadioManager.Api
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        public Object ListItems (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>InlineResponse2008</returns>
+        public InlineResponse2008 ListItems (long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, int? durationMin = null, int? durationMax = null, string status = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = ListItemsWithHttpInfo(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, externalId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse2008> localVarResponse = ListItemsWithHttpInfo(blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, externalId, durationMin, durationMax, status, startMin, startMax, page, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
         }
 
@@ -1640,7 +1656,6 @@ namespace RadioManager.Api
         /// Get a list of all the items currently in your station. Get a list of all the items currently in your station. This feature supports pagination and will give a maximum results of 50 items back.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
@@ -1652,17 +1667,18 @@ namespace RadioManager.Api
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > ListItemsWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>ApiResponse of InlineResponse2008</returns>
+        public ApiResponse< InlineResponse2008 > ListItemsWithHttpInfo (long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, int? durationMin = null, int? durationMax = null, string status = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/items";
@@ -1686,7 +1702,6 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (blockId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "block_id", blockId)); // query parameter
             if (broadcastId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "model_type_id", modelTypeId)); // query parameter
@@ -1698,11 +1713,12 @@ namespace RadioManager.Api
             if (stationDraftId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "station_draft_id", stationDraftId)); // query parameter
             if (programId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "program_id", programId)); // query parameter
             if (externalId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "external_id", externalId)); // query parameter
-            if (startMin != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-min", startMin)); // query parameter
-            if (startMax != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-max", startMax)); // query parameter
             if (durationMin != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration-min", durationMin)); // query parameter
             if (durationMax != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration-max", durationMax)); // query parameter
             if (status != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
+            if (startMin != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-min", startMin)); // query parameter
+            if (startMax != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-max", startMax)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -1726,16 +1742,15 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2008>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2008) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2008)));
         }
 
         /// <summary>
         /// Get a list of all the items currently in your station. Get a list of all the items currently in your station. This feature supports pagination and will give a maximum results of 50 items back.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
@@ -1747,19 +1762,20 @@ namespace RadioManager.Api
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> ListItemsAsync (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of InlineResponse2008</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2008> ListItemsAsync (long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, int? durationMin = null, int? durationMax = null, string status = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
-             ApiResponse<Object> localVarResponse = await ListItemsAsyncWithHttpInfo(page, blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, externalId, startMin, startMax, durationMin, durationMax, status, limit, orderBy, orderDirection, externalStationId);
+             ApiResponse<InlineResponse2008> localVarResponse = await ListItemsAsyncWithHttpInfo(blockId, broadcastId, modelTypeId, tagId, campaignId, contactId, programDraftId, userDraftId, stationDraftId, programId, externalId, durationMin, durationMax, status, startMin, startMax, page, limit, orderBy, orderDirection, externalStationId);
              return localVarResponse.Data;
 
         }
@@ -1768,7 +1784,6 @@ namespace RadioManager.Api
         /// Get a list of all the items currently in your station. Get a list of all the items currently in your station. This feature supports pagination and will give a maximum results of 50 items back.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Current page *(Optional)* (optional)</param>
         /// <param name="blockId">Search on Block ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="broadcastId">Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="modelTypeId">Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
@@ -1780,17 +1795,18 @@ namespace RadioManager.Api
         /// <param name="stationDraftId">Search on Station Draft ID *(Optional)* (optional)</param>
         /// <param name="programId">Search on Program ID *(Optional)* &#x60;(Relation)&#x60; (optional)</param>
         /// <param name="externalId">Search on External ID *(Optional)* (optional)</param>
-        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
-        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
         /// <param name="durationMin">Minimum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="durationMax">Maximum duration (seconds) *(Optional)* (optional)</param>
         /// <param name="status">Play Status of item *(Optional)* (optional)</param>
+        /// <param name="startMin">Minimum start date *(Optional)* (optional)</param>
+        /// <param name="startMax">Maximum start date *(Optional)* (optional)</param>
+        /// <param name="page">Current page *(Optional)* (optional, default to 1)</param>
         /// <param name="limit">Results per page *(Optional)* (optional)</param>
         /// <param name="orderBy">Field to order the results *(Optional)* (optional)</param>
         /// <param name="orderDirection">Direction of ordering *(Optional)* (optional)</param>
         /// <param name="externalStationId">Query on a different (content providing) station *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ListItemsAsyncWithHttpInfo (long? page = null, long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, DateTime? startMin = null, DateTime? startMax = null, int? durationMin = null, int? durationMax = null, string status = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+        /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2008>> ListItemsAsyncWithHttpInfo (long? blockId = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? campaignId = null, long? contactId = null, long? programDraftId = null, long? userDraftId = null, long? stationDraftId = null, long? programId = null, string externalId = null, int? durationMin = null, int? durationMax = null, string status = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
         {
 
             var localVarPath = "/items";
@@ -1814,7 +1830,6 @@ namespace RadioManager.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (blockId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "block_id", blockId)); // query parameter
             if (broadcastId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "broadcast_id", broadcastId)); // query parameter
             if (modelTypeId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "model_type_id", modelTypeId)); // query parameter
@@ -1826,11 +1841,12 @@ namespace RadioManager.Api
             if (stationDraftId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "station_draft_id", stationDraftId)); // query parameter
             if (programId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "program_id", programId)); // query parameter
             if (externalId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "external_id", externalId)); // query parameter
-            if (startMin != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-min", startMin)); // query parameter
-            if (startMax != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-max", startMax)); // query parameter
             if (durationMin != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration-min", durationMin)); // query parameter
             if (durationMax != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "duration-max", durationMax)); // query parameter
             if (status != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
+            if (startMin != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-min", startMin)); // query parameter
+            if (startMax != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start-max", startMax)); // query parameter
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-by", orderBy)); // query parameter
             if (orderDirection != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order-direction", orderDirection)); // query parameter
@@ -1854,31 +1870,34 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2008>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2008) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2008)));
         }
 
         /// <summary>
-        /// Post a playlist, do not remove previously imported items Post a playlist, do not remove previously imported items
+        /// Post a playlist, do not remove previously imported items Post a playlist with &#x27;keep structure&#x27; method, but do not remove previously imported items
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        public Object PlaylistPostMerge (Object body = null)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>InlineResponse2021</returns>
+        public InlineResponse2021 PlaylistPostMerge (PlaylistMergeBody body)
         {
-             ApiResponse<Object> localVarResponse = PlaylistPostMergeWithHttpInfo(body);
+             ApiResponse<InlineResponse2021> localVarResponse = PlaylistPostMergeWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Post a playlist, do not remove previously imported items Post a playlist, do not remove previously imported items
+        /// Post a playlist, do not remove previously imported items Post a playlist with &#x27;keep structure&#x27; method, but do not remove previously imported items
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > PlaylistPostMergeWithHttpInfo (Object body = null)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>ApiResponse of InlineResponse2021</returns>
+        public ApiResponse< InlineResponse2021 > PlaylistPostMergeWithHttpInfo (PlaylistMergeBody body)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->PlaylistPostMerge");
 
             var localVarPath = "/items/playlist/merge";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1929,32 +1948,35 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2021>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2021) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2021)));
         }
 
         /// <summary>
-        /// Post a playlist, do not remove previously imported items Post a playlist, do not remove previously imported items
+        /// Post a playlist, do not remove previously imported items Post a playlist with &#x27;keep structure&#x27; method, but do not remove previously imported items
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> PlaylistPostMergeAsync (Object body = null)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of InlineResponse2021</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2021> PlaylistPostMergeAsync (PlaylistMergeBody body)
         {
-             ApiResponse<Object> localVarResponse = await PlaylistPostMergeAsyncWithHttpInfo(body);
+             ApiResponse<InlineResponse2021> localVarResponse = await PlaylistPostMergeAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Post a playlist, do not remove previously imported items Post a playlist, do not remove previously imported items
+        /// Post a playlist, do not remove previously imported items Post a playlist with &#x27;keep structure&#x27; method, but do not remove previously imported items
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PlaylistPostMergeAsyncWithHttpInfo (Object body = null)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of ApiResponse (InlineResponse2021)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2021>> PlaylistPostMergeAsyncWithHttpInfo (PlaylistMergeBody body)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->PlaylistPostMerge");
 
             var localVarPath = "/items/playlist/merge";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2005,31 +2027,34 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2021>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2021) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2021)));
         }
 
         /// <summary>
-        /// Post a playlist, keep current structure Post a playlist, keep current structure
+        /// Post a playlist, keep current structure Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        public Object PlaylistPostStructure (Object body = null)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>InlineResponse2021</returns>
+        public InlineResponse2021 PlaylistPostStructure (PlaylistStructureBody body)
         {
-             ApiResponse<Object> localVarResponse = PlaylistPostStructureWithHttpInfo(body);
+             ApiResponse<InlineResponse2021> localVarResponse = PlaylistPostStructureWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Post a playlist, keep current structure Post a playlist, keep current structure
+        /// Post a playlist, keep current structure Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > PlaylistPostStructureWithHttpInfo (Object body = null)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>ApiResponse of InlineResponse2021</returns>
+        public ApiResponse< InlineResponse2021 > PlaylistPostStructureWithHttpInfo (PlaylistStructureBody body)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->PlaylistPostStructure");
 
             var localVarPath = "/items/playlist/structure";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2080,32 +2105,35 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2021>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2021) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2021)));
         }
 
         /// <summary>
-        /// Post a playlist, keep current structure Post a playlist, keep current structure
+        /// Post a playlist, keep current structure Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> PlaylistPostStructureAsync (Object body = null)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of InlineResponse2021</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2021> PlaylistPostStructureAsync (PlaylistStructureBody body)
         {
-             ApiResponse<Object> localVarResponse = await PlaylistPostStructureAsyncWithHttpInfo(body);
+             ApiResponse<InlineResponse2021> localVarResponse = await PlaylistPostStructureAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Post a playlist, keep current structure Post a playlist, keep current structure
+        /// Post a playlist, keep current structure Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will attempt to** keep Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PlaylistPostStructureAsyncWithHttpInfo (Object body = null)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of ApiResponse (InlineResponse2021)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2021>> PlaylistPostStructureAsyncWithHttpInfo (PlaylistStructureBody body)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->PlaylistPostStructure");
 
             var localVarPath = "/items/playlist/structure";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2156,31 +2184,34 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2021>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2021) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2021)));
         }
 
         /// <summary>
-        /// Post a playlist Post a playlist
+        /// Post a playlist Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will not** keep Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Object</returns>
-        public Object PlaylistPostTiming (Object body = null)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>InlineResponse2021</returns>
+        public InlineResponse2021 PlaylistPostTiming (PlaylistTimingBody body)
         {
-             ApiResponse<Object> localVarResponse = PlaylistPostTimingWithHttpInfo(body);
+             ApiResponse<InlineResponse2021> localVarResponse = PlaylistPostTimingWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Post a playlist Post a playlist
+        /// Post a playlist Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will not** keep Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > PlaylistPostTimingWithHttpInfo (Object body = null)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>ApiResponse of InlineResponse2021</returns>
+        public ApiResponse< InlineResponse2021 > PlaylistPostTimingWithHttpInfo (PlaylistTimingBody body)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->PlaylistPostTiming");
 
             var localVarPath = "/items/playlist/timing";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2231,32 +2262,35 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2021>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2021) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2021)));
         }
 
         /// <summary>
-        /// Post a playlist Post a playlist
+        /// Post a playlist Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will not** keep Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> PlaylistPostTimingAsync (Object body = null)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of InlineResponse2021</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2021> PlaylistPostTimingAsync (PlaylistTimingBody body)
         {
-             ApiResponse<Object> localVarResponse = await PlaylistPostTimingAsyncWithHttpInfo(body);
+             ApiResponse<InlineResponse2021> localVarResponse = await PlaylistPostTimingAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Post a playlist Post a playlist
+        /// Post a playlist Post a playlist for a block. Existing Items can referenced by external_id. When Items are moved, this function **will not** keep Items&#x27; ModelType structure in rundown.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PlaylistPostTimingAsyncWithHttpInfo (Object body = null)
+        /// <param name="body">Data *(Required)*</param>
+        /// <returns>Task of ApiResponse (InlineResponse2021)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2021>> PlaylistPostTimingAsyncWithHttpInfo (PlaylistTimingBody body)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->PlaylistPostTiming");
 
             var localVarPath = "/items/playlist/timing";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2307,9 +2341,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<InlineResponse2021>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (InlineResponse2021) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2021)));
         }
 
         /// <summary>
@@ -2317,10 +2351,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        public Success StopCurrentItem (Object body = null)
+        /// <returns>InlineResponse202</returns>
+        public InlineResponse202 StopCurrentItem (ItemsStopcurrentBody body = null)
         {
-             ApiResponse<Success> localVarResponse = StopCurrentItemWithHttpInfo(body);
+             ApiResponse<InlineResponse202> localVarResponse = StopCurrentItemWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
@@ -2329,8 +2363,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > StopCurrentItemWithHttpInfo (Object body = null)
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        public ApiResponse< InlineResponse202 > StopCurrentItemWithHttpInfo (ItemsStopcurrentBody body = null)
         {
 
             var localVarPath = "/items/stopcurrent";
@@ -2382,9 +2416,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
@@ -2392,10 +2426,10 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> StopCurrentItemAsync (Object body = null)
+        /// <returns>Task of InlineResponse202</returns>
+        public async System.Threading.Tasks.Task<InlineResponse202> StopCurrentItemAsync (ItemsStopcurrentBody body = null)
         {
-             ApiResponse<Success> localVarResponse = await StopCurrentItemAsyncWithHttpInfo(body);
+             ApiResponse<InlineResponse202> localVarResponse = await StopCurrentItemAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
@@ -2405,8 +2439,8 @@ namespace RadioManager.Api
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> StopCurrentItemAsyncWithHttpInfo (Object body = null)
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> StopCurrentItemAsyncWithHttpInfo (ItemsStopcurrentBody body = null)
         {
 
             var localVarPath = "/items/stopcurrent";
@@ -2458,21 +2492,21 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
         /// Update extended item details by ID. Update item by id.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Success</returns>
-        public Success UpdateItemById (long? id, ItemDataInput body = null)
+        /// <returns>InlineResponse202</returns>
+        public InlineResponse202 UpdateItemById (ItemDataInput body, long? id)
         {
-             ApiResponse<Success> localVarResponse = UpdateItemByIdWithHttpInfo(id, body);
+             ApiResponse<InlineResponse202> localVarResponse = UpdateItemByIdWithHttpInfo(body, id);
              return localVarResponse.Data;
         }
 
@@ -2480,11 +2514,14 @@ namespace RadioManager.Api
         /// Update extended item details by ID. Update item by id.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>ApiResponse of Success</returns>
-        public ApiResponse< Success > UpdateItemByIdWithHttpInfo (long? id, ItemDataInput body = null)
+        /// <returns>ApiResponse of InlineResponse202</returns>
+        public ApiResponse< InlineResponse202 > UpdateItemByIdWithHttpInfo (ItemDataInput body, long? id)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->UpdateItemById");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling ItemApi->UpdateItemById");
@@ -2539,21 +2576,21 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
         /// <summary>
         /// Update extended item details by ID. Update item by id.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of Success</returns>
-        public async System.Threading.Tasks.Task<Success> UpdateItemByIdAsync (long? id, ItemDataInput body = null)
+        /// <returns>Task of InlineResponse202</returns>
+        public async System.Threading.Tasks.Task<InlineResponse202> UpdateItemByIdAsync (ItemDataInput body, long? id)
         {
-             ApiResponse<Success> localVarResponse = await UpdateItemByIdAsyncWithHttpInfo(id, body);
+             ApiResponse<InlineResponse202> localVarResponse = await UpdateItemByIdAsyncWithHttpInfo(body, id);
              return localVarResponse.Data;
 
         }
@@ -2562,11 +2599,14 @@ namespace RadioManager.Api
         /// Update extended item details by ID. Update item by id.
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Data *(Optional)*</param>
         /// <param name="id">ID of Item **(Required)**</param>
-        /// <param name="body">Data *(Optional)* (optional)</param>
-        /// <returns>Task of ApiResponse (Success)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Success>> UpdateItemByIdAsyncWithHttpInfo (long? id, ItemDataInput body = null)
+        /// <returns>Task of ApiResponse (InlineResponse202)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse202>> UpdateItemByIdAsyncWithHttpInfo (ItemDataInput body, long? id)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ItemApi->UpdateItemById");
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling ItemApi->UpdateItemById");
@@ -2621,9 +2661,9 @@ namespace RadioManager.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Success>(localVarStatusCode,
+            return new ApiResponse<InlineResponse202>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Success) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Success)));
+                (InlineResponse202) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse202)));
         }
 
     }

@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -39,7 +39,8 @@ namespace RadioManager.Model
         /// <param name="tags">tags.</param>
         /// <param name="presenters">presenters.</param>
         /// <param name="modelType">modelType.</param>
-        public BroadcastRelations(Object genre = default(Object), Object items = default(Object), Object blocks = default(Object), Object program = default(Object), Object tags = default(Object), Object presenters = default(Object), Object modelType = default(Object))
+        /// <param name="group">group.</param>
+        public BroadcastRelations(BroadcastRelationsGenre genre = default(BroadcastRelationsGenre), BroadcastRelationsItems items = default(BroadcastRelationsItems), BroadcastRelationsBlocks blocks = default(BroadcastRelationsBlocks), BlockRelationsProgram program = default(BlockRelationsProgram), BroadcastRelationsTags tags = default(BroadcastRelationsTags), BroadcastRelationsPresenters presenters = default(BroadcastRelationsPresenters), BroadcastRelationsModelType modelType = default(BroadcastRelationsModelType), BroadcastRelationsGroup group = default(BroadcastRelationsGroup))
         {
             this.Genre = genre;
             this.Items = items;
@@ -48,49 +49,56 @@ namespace RadioManager.Model
             this.Tags = tags;
             this.Presenters = presenters;
             this.ModelType = modelType;
+            this.Group = group;
         }
         
         /// <summary>
         /// Gets or Sets Genre
         /// </summary>
         [DataMember(Name="genre", EmitDefaultValue=false)]
-        public Object Genre { get; set; }
+        public BroadcastRelationsGenre Genre { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items", EmitDefaultValue=false)]
-        public Object Items { get; set; }
+        public BroadcastRelationsItems Items { get; set; }
 
         /// <summary>
         /// Gets or Sets Blocks
         /// </summary>
         [DataMember(Name="blocks", EmitDefaultValue=false)]
-        public Object Blocks { get; set; }
+        public BroadcastRelationsBlocks Blocks { get; set; }
 
         /// <summary>
         /// Gets or Sets Program
         /// </summary>
         [DataMember(Name="program", EmitDefaultValue=false)]
-        public Object Program { get; set; }
+        public BlockRelationsProgram Program { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name="tags", EmitDefaultValue=false)]
-        public Object Tags { get; set; }
+        public BroadcastRelationsTags Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Presenters
         /// </summary>
         [DataMember(Name="presenters", EmitDefaultValue=false)]
-        public Object Presenters { get; set; }
+        public BroadcastRelationsPresenters Presenters { get; set; }
 
         /// <summary>
         /// Gets or Sets ModelType
         /// </summary>
         [DataMember(Name="model_type", EmitDefaultValue=false)]
-        public Object ModelType { get; set; }
+        public BroadcastRelationsModelType ModelType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Group
+        /// </summary>
+        [DataMember(Name="group", EmitDefaultValue=false)]
+        public BroadcastRelationsGroup Group { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -107,6 +115,7 @@ namespace RadioManager.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Presenters: ").Append(Presenters).Append("\n");
             sb.Append("  ModelType: ").Append(ModelType).Append("\n");
+            sb.Append("  Group: ").Append(Group).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -175,6 +184,11 @@ namespace RadioManager.Model
                     this.ModelType == input.ModelType ||
                     (this.ModelType != null &&
                     this.ModelType.Equals(input.ModelType))
+                ) && 
+                (
+                    this.Group == input.Group ||
+                    (this.Group != null &&
+                    this.Group.Equals(input.Group))
                 );
         }
 
@@ -201,6 +215,8 @@ namespace RadioManager.Model
                     hashCode = hashCode * 59 + this.Presenters.GetHashCode();
                 if (this.ModelType != null)
                     hashCode = hashCode * 59 + this.ModelType.GetHashCode();
+                if (this.Group != null)
+                    hashCode = hashCode * 59 + this.Group.GetHashCode();
                 return hashCode;
             }
         }

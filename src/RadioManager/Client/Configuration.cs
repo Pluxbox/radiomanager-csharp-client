@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -20,7 +20,7 @@ namespace RadioManager.Client
     /// <summary>
     /// Represents a set of configuration settings
     /// </summary>
-        public class Configuration : IReadableConfiguration
+    public class Configuration : IReadableConfiguration
     {
         #region Constants
 
@@ -119,7 +119,6 @@ namespace RadioManager.Client
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
 
-            // Setting Timeout has side effects (forces ApiClient creation).
             Timeout = 100000;
         }
 
@@ -242,14 +241,32 @@ namespace RadioManager.Client
         /// </summary>
         public virtual IDictionary<string, string> DefaultHeader { get; set; }
 
+        private int _timeout = 100000;
         /// <summary>
         /// Gets or sets the HTTP timeout (milliseconds) of ApiClient. Default to 100000 milliseconds.
         /// </summary>
         public virtual int Timeout
         {
             
-            get { return ApiClient.RestClient.Timeout; }
-            set { ApiClient.RestClient.Timeout = value; }
+            get
+            {
+                if (_apiClient == null)
+                {
+                    return _timeout;
+                } 
+                else
+                {
+                    return ApiClient.RestClient.Timeout;
+                }
+            }
+            set
+            {
+                _timeout = value;
+                if (_apiClient != null)
+                {
+                    ApiClient.RestClient.Timeout = _timeout;
+                }
+            }
         }
 
         /// <summary>

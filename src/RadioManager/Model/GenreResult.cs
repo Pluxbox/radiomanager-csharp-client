@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -35,7 +35,7 @@ namespace RadioManager.Model
         /// <param name="broadcasts">broadcasts.</param>
         /// <param name="programs">programs.</param>
         /// <param name="externalStationId">externalStationId.</param>
-        public GenreResult(Object broadcasts = default(Object), Object programs = default(Object), long? externalStationId = default(long?), Object broadcasts = default(Object), Object programs = default(Object), long? externalStationId = default(long?), long? id = default(long?), string urn = default(string), long? parentId = default(long?), string name = default(string)) : base(id, urn, parentId, name)
+        public GenreResult(GenreRelationsBroadcasts broadcasts = default(GenreRelationsBroadcasts), GenreRelationsPrograms programs = default(GenreRelationsPrograms), long? externalStationId = default(long?), GenreRelationsBroadcasts broadcasts = default(GenreRelationsBroadcasts), GenreRelationsPrograms programs = default(GenreRelationsPrograms), long? externalStationId = default(long?), long? id = default(long?), string urn = default(string), long? parentId = default(long?), string name = default(string)) : base(id, urn, parentId, name)
         {
             this.Broadcasts = broadcasts;
             this.Programs = programs;
@@ -46,13 +46,13 @@ namespace RadioManager.Model
         /// Gets or Sets Broadcasts
         /// </summary>
         [DataMember(Name="broadcasts", EmitDefaultValue=false)]
-        public Object Broadcasts { get; set; }
+        public GenreRelationsBroadcasts Broadcasts { get; set; }
 
         /// <summary>
         /// Gets or Sets Programs
         /// </summary>
         [DataMember(Name="programs", EmitDefaultValue=false)]
-        public Object Programs { get; set; }
+        public GenreRelationsPrograms Programs { get; set; }
 
         /// <summary>
         /// Gets or Sets ExternalStationId
@@ -149,7 +149,6 @@ namespace RadioManager.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

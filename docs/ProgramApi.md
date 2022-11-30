@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createprogram"></a>
 # **CreateProgram**
-> PostSuccess CreateProgram (ProgramDataInput body)
+> InlineResponse2002 CreateProgram (ProgramDataInput body)
 
 Create program.
 
@@ -43,7 +43,7 @@ namespace Example
             try
             {
                 // Create program.
-                PostSuccess result = apiInstance.CreateProgram(body);
+                InlineResponse2002 result = apiInstance.CreateProgram(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSuccess**](PostSuccess.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="deleteprogrambyid"></a>
 # **DeleteProgramById**
-> Success DeleteProgramById (long? id)
+> InlineResponse202 DeleteProgramById (long? id)
 
 Delete program by id
 
@@ -103,12 +103,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ProgramApi();
-            var id = 789;  // long? | ID of program **(Required)**
+            var id = new long?(); // long? | ID of program **(Required)**
 
             try
             {
                 // Delete program by id
-                Success result = apiInstance.DeleteProgramById(id);
+                InlineResponse202 result = apiInstance.DeleteProgramById(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -124,11 +124,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of program **(Required)** | 
+ **id** | [**long?**](long?.md)| ID of program **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ProgramApi();
-            var id = 789;  // long? | ID of Program **(Required)**
+            var id = new long?(); // long? | ID of Program **(Required)**
             var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
 
             try
@@ -190,7 +190,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Program **(Required)** | 
+ **id** | [**long?**](long?.md)| ID of Program **(Required)** | 
  **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="listprograms"></a>
 # **ListPrograms**
-> Object ListPrograms (long? page = null, long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> InlineResponse20011 ListPrograms (long? broadcastId = null, long? modelTypeId = null, long? tagId = null, long? presenterId = null, long? genreId = null, long? groupId = null, long? blockId = null, long? itemId = null, int? disabled = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all programs.
 
@@ -235,15 +235,16 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ProgramApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var broadcastId = 789;  // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
-            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
-            var tagId = 789;  // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
-            var presenterId = 789;  // long? | Search on Presenter ID *(Optional)* `(Relation)` (optional) 
-            var genreId = 789;  // long? | Search on Genre ID *(Optional)* (optional) 
-            var blockId = 789;  // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
-            var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
-            var disabled = 56;  // int? | Search on Disabled status *(Optional)* (optional) 
+            var broadcastId = new long?(); // long? | Search on Broadcast ID *(Optional)* `(Relation)` (optional) 
+            var modelTypeId = new long?(); // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
+            var tagId = new long?(); // long? | Search on Tag ID *(Optional)* `(Relation)` (optional) 
+            var presenterId = new long?(); // long? | Search on Presenter ID *(Optional)* `(Relation)` (optional) 
+            var genreId = new long?(); // long? | Search on Genre ID *(Optional)* (optional) 
+            var groupId = new long?(); // long? | Search on Group ID *(Optional)* (optional) 
+            var blockId = new long?(); // long? | Search on Block ID *(Optional)* `(Relation)` (optional) 
+            var itemId = new long?(); // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var disabled = new int?(); // int? | Search on Disabled status *(Optional)* (optional) 
+            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
             var limit = 789;  // long? | Results per page *(Optional)* (optional) 
             var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
             var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
@@ -252,7 +253,7 @@ namespace Example
             try
             {
                 // Get all programs.
-                Object result = apiInstance.ListPrograms(page, broadcastId, modelTypeId, tagId, presenterId, genreId, blockId, itemId, disabled, limit, orderBy, orderDirection, externalStationId);
+                InlineResponse20011 result = apiInstance.ListPrograms(broadcastId, modelTypeId, tagId, presenterId, genreId, groupId, blockId, itemId, disabled, page, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -268,15 +269,16 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] 
- **broadcastId** | **long?**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **tagId** | **long?**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **presenterId** | **long?**| Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **genreId** | **long?**| Search on Genre ID *(Optional)* | [optional] 
- **blockId** | **long?**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **disabled** | **int?**| Search on Disabled status *(Optional)* | [optional] 
+ **broadcastId** | [**long?**](long?.md)| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **modelTypeId** | [**long?**](long?.md)| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **tagId** | [**long?**](long?.md)| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **presenterId** | [**long?**](long?.md)| Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **genreId** | [**long?**](long?.md)| Search on Genre ID *(Optional)* | [optional] 
+ **groupId** | [**long?**](long?.md)| Search on Group ID *(Optional)* | [optional] 
+ **blockId** | [**long?**](long?.md)| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **itemId** | [**long?**](long?.md)| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **disabled** | [**int?**](int?.md)| Search on Disabled status *(Optional)* | [optional] 
+ **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
  **limit** | **long?**| Results per page *(Optional)* | [optional] 
  **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
  **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
@@ -284,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -298,7 +300,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="updateprogrambyid"></a>
 # **UpdateProgramByID**
-> Success UpdateProgramByID (long? id, ProgramDataInput body = null)
+> InlineResponse202 UpdateProgramByID (ProgramDataInput body, long? id)
 
 Update program by id
 
@@ -324,13 +326,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new ProgramApi();
-            var id = 789;  // long? | ID of Program **(Required)**
-            var body = new ProgramDataInput(); // ProgramDataInput | Data *(Optional)* (optional) 
+            var body = new ProgramDataInput(); // ProgramDataInput | Data *(Optional)*
+            var id = new long?(); // long? | ID of Program **(Required)**
 
             try
             {
                 // Update program by id
-                Success result = apiInstance.UpdateProgramByID(id, body);
+                InlineResponse202 result = apiInstance.UpdateProgramByID(body, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -346,12 +348,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Program **(Required)** | 
- **body** | [**ProgramDataInput**](ProgramDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**ProgramDataInput**](ProgramDataInput.md)| Data *(Optional)* | 
+ **id** | [**long?**](long?.md)| ID of Program **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 

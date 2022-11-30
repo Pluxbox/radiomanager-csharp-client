@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -37,6 +37,7 @@ namespace RadioManager.Model
         /// <param name="title">title (required).</param>
         /// <param name="disabled">disabled.</param>
         /// <param name="genreId">genreId.</param>
+        /// <param name="groupId">groupId.</param>
         /// <param name="description">description.</param>
         /// <param name="shortName">shortName.</param>
         /// <param name="mediumName">mediumName.</param>
@@ -45,7 +46,7 @@ namespace RadioManager.Model
         /// <param name="recommended">recommended.</param>
         /// <param name="language">language.</param>
         /// <param name="ptyCodeId">ptyCodeId.</param>
-        public Program(long? modelTypeId = default(long?), Object fieldValues = default(Object), string title = default(string), bool? disabled = default(bool?), long? genreId = default(long?), string description = default(string), string shortName = default(string), string mediumName = default(string), string website = default(string), string email = default(string), bool? recommended = default(bool?), string language = default(string), long? ptyCodeId = default(long?))
+        public Program(long? modelTypeId = default(long?), Object fieldValues = default(Object), string title = default(string), bool? disabled = default(bool?), long? genreId = default(long?), long? groupId = default(long?), string description = default(string), string shortName = default(string), string mediumName = default(string), string website = default(string), string email = default(string), bool? recommended = default(bool?), string language = default(string), long? ptyCodeId = default(long?))
         {
             // to ensure "modelTypeId" is required (not null)
             if (modelTypeId == null)
@@ -68,6 +69,7 @@ namespace RadioManager.Model
             this.FieldValues = fieldValues;
             this.Disabled = disabled;
             this.GenreId = genreId;
+            this.GroupId = groupId;
             this.Description = description;
             this.ShortName = shortName;
             this.MediumName = mediumName;
@@ -107,6 +109,12 @@ namespace RadioManager.Model
         /// </summary>
         [DataMember(Name="genre_id", EmitDefaultValue=false)]
         public long? GenreId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets GroupId
+        /// </summary>
+        [DataMember(Name="group_id", EmitDefaultValue=false)]
+        public long? GroupId { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
@@ -169,6 +177,7 @@ namespace RadioManager.Model
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Disabled: ").Append(Disabled).Append("\n");
             sb.Append("  GenreId: ").Append(GenreId).Append("\n");
+            sb.Append("  GroupId: ").Append(GroupId).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  ShortName: ").Append(ShortName).Append("\n");
             sb.Append("  MediumName: ").Append(MediumName).Append("\n");
@@ -237,6 +246,11 @@ namespace RadioManager.Model
                     this.GenreId.Equals(input.GenreId))
                 ) && 
                 (
+                    this.GroupId == input.GroupId ||
+                    (this.GroupId != null &&
+                    this.GroupId.Equals(input.GroupId))
+                ) && 
+                (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
@@ -297,6 +311,8 @@ namespace RadioManager.Model
                     hashCode = hashCode * 59 + this.Disabled.GetHashCode();
                 if (this.GenreId != null)
                     hashCode = hashCode * 59 + this.GenreId.GetHashCode();
+                if (this.GroupId != null)
+                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.ShortName != null)

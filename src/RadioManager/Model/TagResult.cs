@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -37,7 +37,7 @@ namespace RadioManager.Model
         /// <param name="programs">programs.</param>
         /// <param name="contacts">contacts.</param>
         /// <param name="items">items.</param>
-        public TagResult(string name = default(string), Object broadcasts = default(Object), Object programs = default(Object), Object contacts = default(Object), Object items = default(Object), string name = default(string), Object broadcasts = default(Object), Object programs = default(Object), Object items = default(Object), long? id = default(long?), DateTime? createdAt = default(DateTime?), DateTime? updatedAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), long? externalStationId = default(long?)) : base(id, createdAt, updatedAt, deletedAt, externalStationId)
+        public TagResult(string name = default(string), TagRelationsBroadcasts broadcasts = default(TagRelationsBroadcasts), TagRelationsPrograms programs = default(TagRelationsPrograms), TagRelationsContacts contacts = default(TagRelationsContacts), TagRelationsItems items = default(TagRelationsItems), string name = default(string), TagRelationsBroadcasts broadcasts = default(TagRelationsBroadcasts), TagRelationsPrograms programs = default(TagRelationsPrograms), TagRelationsItems items = default(TagRelationsItems), long? id = default(long?), DateTime? createdAt = default(DateTime?), DateTime? updatedAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), long? externalStationId = default(long?)) : base(id, createdAt, updatedAt, deletedAt, externalStationId)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -64,25 +64,25 @@ namespace RadioManager.Model
         /// Gets or Sets Broadcasts
         /// </summary>
         [DataMember(Name="broadcasts", EmitDefaultValue=false)]
-        public Object Broadcasts { get; set; }
+        public TagRelationsBroadcasts Broadcasts { get; set; }
 
         /// <summary>
         /// Gets or Sets Programs
         /// </summary>
         [DataMember(Name="programs", EmitDefaultValue=false)]
-        public Object Programs { get; set; }
+        public TagRelationsPrograms Programs { get; set; }
 
         /// <summary>
         /// Gets or Sets Contacts
         /// </summary>
         [DataMember(Name="contacts", EmitDefaultValue=false)]
-        public Object Contacts { get; set; }
+        public TagRelationsContacts Contacts { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items", EmitDefaultValue=false)]
-        public Object Items { get; set; }
+        public TagRelationsItems Items { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -189,7 +189,6 @@ namespace RadioManager.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

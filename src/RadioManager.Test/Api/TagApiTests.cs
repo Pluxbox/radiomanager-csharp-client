@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -71,7 +71,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test the method and replace null with proper value
             //TagDataInput body = null;
             //var response = instance.CreateTag(body);
-            //Assert.IsInstanceOf<PostSuccess> (response, "response is PostSuccess");
+            //Assert.IsInstanceOf<InlineResponse2002> (response, "response is InlineResponse2002");
         }
         /// <summary>
         /// Test DeleteTagById
@@ -82,7 +82,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
             //var response = instance.DeleteTagById(id);
-            //Assert.IsInstanceOf<Success> (response, "response is Success");
+            //Assert.IsInstanceOf<InlineResponse202> (response, "response is InlineResponse202");
         }
         /// <summary>
         /// Test GetTagById
@@ -92,8 +92,7 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //long? externalStationId = null;
-            //var response = instance.GetTagById(id, externalStationId);
+            //var response = instance.GetTagById(id);
             //Assert.IsInstanceOf<TagResult> (response, "response is TagResult");
         }
         /// <summary>
@@ -103,17 +102,17 @@ namespace RadioManager.Test
         public void ListTagsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? page = null;
             //long? programId = null;
             //long? itemId = null;
             //long? broadcastId = null;
             //long? contactId = null;
+            //long? page = null;
             //long? limit = null;
             //string orderBy = null;
             //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListTags(page, programId, itemId, broadcastId, contactId, limit, orderBy, orderDirection, externalStationId);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //var response = instance.ListTags(programId, itemId, broadcastId, contactId, page, limit, orderBy, orderDirection, externalStationId);
+            //Assert.IsInstanceOf<InlineResponse20012> (response, "response is InlineResponse20012");
         }
         /// <summary>
         /// Test UpdateTagByID
@@ -122,10 +121,10 @@ namespace RadioManager.Test
         public void UpdateTagByIDTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? id = null;
             //TagDataInput body = null;
-            //var response = instance.UpdateTagByID(id, body);
-            //Assert.IsInstanceOf<Success> (response, "response is Success");
+            //long? id = null;
+            //var response = instance.UpdateTagByID(body, id);
+            //Assert.IsInstanceOf<InlineResponse202> (response, "response is InlineResponse202");
         }
     }
 

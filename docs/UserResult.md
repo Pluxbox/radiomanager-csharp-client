@@ -11,10 +11,11 @@ Name | Type | Description | Notes
 **CreatedAt** | **DateTime?** |  | [optional] 
 **UpdatedAt** | **DateTime?** |  | [optional] 
 **Active** | **bool?** |  | [optional] 
-**Settings** | **Object** |  | [optional] 
+**Settings** | [**UserResultSettings**](UserResultSettings.md) |  | [optional] 
 **Language** | **bool?** |  | [optional] 
 **ActiveExternalStationId** | **long?** |  | [optional] 
-**Roles** | **List&lt;Object&gt;** |  | [optional] 
+**Roles** | [**List&lt;UserResultRoles&gt;**](UserResultRoles.md) |  | [optional] 
+**Groups** | [**List&lt;UserResultGroups&gt;**](UserResultGroups.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -35,7 +35,7 @@ namespace RadioManager.Model
         /// <param name="tags">tags (required).</param>
         /// <param name="items">items.</param>
         /// <param name="modelType">modelType.</param>
-        public ContactRelations(Object tags = default(Object), Object items = default(Object), Object modelType = default(Object))
+        public ContactRelations(ContactRelationsTags tags = default(ContactRelationsTags), ContactRelationsItems items = default(ContactRelationsItems), BroadcastRelationsModelType modelType = default(BroadcastRelationsModelType))
         {
             // to ensure "tags" is required (not null)
             if (tags == null)
@@ -54,19 +54,19 @@ namespace RadioManager.Model
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name="tags", EmitDefaultValue=false)]
-        public Object Tags { get; set; }
+        public ContactRelationsTags Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items", EmitDefaultValue=false)]
-        public Object Items { get; set; }
+        public ContactRelationsItems Items { get; set; }
 
         /// <summary>
         /// Gets or Sets ModelType
         /// </summary>
         [DataMember(Name="model_type", EmitDefaultValue=false)]
-        public Object ModelType { get; set; }
+        public BroadcastRelationsModelType ModelType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -33,7 +33,7 @@ namespace RadioManager.Model
         /// Initializes a new instance of the <see cref="StationResult" /> class.
         /// </summary>
         /// <param name="station">station.</param>
-        public StationResult(Object station = default(Object))
+        public StationResult(StationResultStation station = default(StationResultStation))
         {
             this.Station = station;
         }
@@ -42,7 +42,7 @@ namespace RadioManager.Model
         /// Gets or Sets Station
         /// </summary>
         [DataMember(Name="station", EmitDefaultValue=false)]
-        public Object Station { get; set; }
+        public StationResultStation Station { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

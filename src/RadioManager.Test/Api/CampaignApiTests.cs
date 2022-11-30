@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -71,7 +71,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test the method and replace null with proper value
             //CampaignDataInput body = null;
             //var response = instance.CreateCampaign(body);
-            //Assert.IsInstanceOf<PostSuccess> (response, "response is PostSuccess");
+            //Assert.IsInstanceOf<InlineResponse2002> (response, "response is InlineResponse2002");
         }
         /// <summary>
         /// Test DeleteCampaignById
@@ -82,7 +82,7 @@ namespace RadioManager.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
             //var response = instance.DeleteCampaignById(id);
-            //Assert.IsInstanceOf<Success> (response, "response is Success");
+            //Assert.IsInstanceOf<InlineResponse202> (response, "response is InlineResponse202");
         }
         /// <summary>
         /// Test GetCampaignById
@@ -92,8 +92,7 @@ namespace RadioManager.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //long? externalStationId = null;
-            //var response = instance.GetCampaignById(id, externalStationId);
+            //var response = instance.GetCampaignById(id);
             //Assert.IsInstanceOf<CampaignResult> (response, "response is CampaignResult");
         }
         /// <summary>
@@ -103,17 +102,17 @@ namespace RadioManager.Test
         public void ListCampaignsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? page = null;
             //long? itemId = null;
             //long? modelTypeId = null;
             //DateTime? startMin = null;
             //DateTime? startMax = null;
+            //long? page = null;
             //long? limit = null;
             //string orderBy = null;
             //string orderDirection = null;
             //long? externalStationId = null;
-            //var response = instance.ListCampaigns(page, itemId, modelTypeId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //var response = instance.ListCampaigns(itemId, modelTypeId, startMin, startMax, page, limit, orderBy, orderDirection, externalStationId);
+            //Assert.IsInstanceOf<InlineResponse2004> (response, "response is InlineResponse2004");
         }
         /// <summary>
         /// Test UpdateCampaignByID
@@ -122,10 +121,10 @@ namespace RadioManager.Test
         public void UpdateCampaignByIDTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? id = null;
             //CampaignDataInput body = null;
-            //var response = instance.UpdateCampaignByID(id, body);
-            //Assert.IsInstanceOf<Success> (response, "response is Success");
+            //long? id = null;
+            //var response = instance.UpdateCampaignByID(body, id);
+            //Assert.IsInstanceOf<InlineResponse202> (response, "response is InlineResponse202");
         }
     }
 

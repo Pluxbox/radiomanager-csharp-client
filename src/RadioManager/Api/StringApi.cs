@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -27,50 +27,50 @@ namespace RadioManager.Api
         /// Get Strings (formatted)
         /// </summary>
         /// <remarks>
-        /// Get Strings (formatted)
+        /// Get RadioText/DAB String for publication based on String Templates
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">Name of Strings **(Required)**</param>
-        /// <param name="fullModel">Full model or content only **(Required)**</param>
+        /// <param name="name">Name of String Template **(Required)**</param>
+        /// <param name="fullModel">Full model or content only **(Optional)** (optional)</param>
         /// <returns>TextString</returns>
-        TextString GetStringsByName (string name, bool? fullModel);
+        TextString GetStringsByName (string name, bool? fullModel = null);
 
         /// <summary>
         /// Get Strings (formatted)
         /// </summary>
         /// <remarks>
-        /// Get Strings (formatted)
+        /// Get RadioText/DAB String for publication based on String Templates
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">Name of Strings **(Required)**</param>
-        /// <param name="fullModel">Full model or content only **(Required)**</param>
+        /// <param name="name">Name of String Template **(Required)**</param>
+        /// <param name="fullModel">Full model or content only **(Optional)** (optional)</param>
         /// <returns>ApiResponse of TextString</returns>
-        ApiResponse<TextString> GetStringsByNameWithHttpInfo (string name, bool? fullModel);
+        ApiResponse<TextString> GetStringsByNameWithHttpInfo (string name, bool? fullModel = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
         /// Get Strings (formatted)
         /// </summary>
         /// <remarks>
-        /// Get Strings (formatted)
+        /// Get RadioText/DAB String for publication based on String Templates
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">Name of Strings **(Required)**</param>
-        /// <param name="fullModel">Full model or content only **(Required)**</param>
+        /// <param name="name">Name of String Template **(Required)**</param>
+        /// <param name="fullModel">Full model or content only **(Optional)** (optional)</param>
         /// <returns>Task of TextString</returns>
-        System.Threading.Tasks.Task<TextString> GetStringsByNameAsync (string name, bool? fullModel);
+        System.Threading.Tasks.Task<TextString> GetStringsByNameAsync (string name, bool? fullModel = null);
 
         /// <summary>
         /// Get Strings (formatted)
         /// </summary>
         /// <remarks>
-        /// Get Strings (formatted)
+        /// Get RadioText/DAB String for publication based on String Templates
         /// </remarks>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">Name of Strings **(Required)**</param>
-        /// <param name="fullModel">Full model or content only **(Required)**</param>
+        /// <param name="name">Name of String Template **(Required)**</param>
+        /// <param name="fullModel">Full model or content only **(Optional)** (optional)</param>
         /// <returns>Task of ApiResponse (TextString)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TextString>> GetStringsByNameAsyncWithHttpInfo (string name, bool? fullModel);
+        System.Threading.Tasks.Task<ApiResponse<TextString>> GetStringsByNameAsyncWithHttpInfo (string name, bool? fullModel = null);
         #endregion Asynchronous Operations
     }
 
@@ -183,33 +183,30 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get Strings (formatted) Get Strings (formatted)
+        /// Get Strings (formatted) Get RadioText/DAB String for publication based on String Templates
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">Name of Strings **(Required)**</param>
-        /// <param name="fullModel">Full model or content only **(Required)**</param>
+        /// <param name="name">Name of String Template **(Required)**</param>
+        /// <param name="fullModel">Full model or content only **(Optional)** (optional)</param>
         /// <returns>TextString</returns>
-        public TextString GetStringsByName (string name, bool? fullModel)
+        public TextString GetStringsByName (string name, bool? fullModel = null)
         {
              ApiResponse<TextString> localVarResponse = GetStringsByNameWithHttpInfo(name, fullModel);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get Strings (formatted) Get Strings (formatted)
+        /// Get Strings (formatted) Get RadioText/DAB String for publication based on String Templates
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">Name of Strings **(Required)**</param>
-        /// <param name="fullModel">Full model or content only **(Required)**</param>
+        /// <param name="name">Name of String Template **(Required)**</param>
+        /// <param name="fullModel">Full model or content only **(Optional)** (optional)</param>
         /// <returns>ApiResponse of TextString</returns>
-        public ApiResponse< TextString > GetStringsByNameWithHttpInfo (string name, bool? fullModel)
+        public ApiResponse< TextString > GetStringsByNameWithHttpInfo (string name, bool? fullModel = null)
         {
             // verify the required parameter 'name' is set
             if (name == null)
                 throw new ApiException(400, "Missing required parameter 'name' when calling StringApi->GetStringsByName");
-            // verify the required parameter 'fullModel' is set
-            if (fullModel == null)
-                throw new ApiException(400, "Missing required parameter 'fullModel' when calling StringApi->GetStringsByName");
 
             var localVarPath = "/strings/{name}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -259,13 +256,13 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get Strings (formatted) Get Strings (formatted)
+        /// Get Strings (formatted) Get RadioText/DAB String for publication based on String Templates
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">Name of Strings **(Required)**</param>
-        /// <param name="fullModel">Full model or content only **(Required)**</param>
+        /// <param name="name">Name of String Template **(Required)**</param>
+        /// <param name="fullModel">Full model or content only **(Optional)** (optional)</param>
         /// <returns>Task of TextString</returns>
-        public async System.Threading.Tasks.Task<TextString> GetStringsByNameAsync (string name, bool? fullModel)
+        public async System.Threading.Tasks.Task<TextString> GetStringsByNameAsync (string name, bool? fullModel = null)
         {
              ApiResponse<TextString> localVarResponse = await GetStringsByNameAsyncWithHttpInfo(name, fullModel);
              return localVarResponse.Data;
@@ -273,20 +270,17 @@ namespace RadioManager.Api
         }
 
         /// <summary>
-        /// Get Strings (formatted) Get Strings (formatted)
+        /// Get Strings (formatted) Get RadioText/DAB String for publication based on String Templates
         /// </summary>
         /// <exception cref="RadioManager.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">Name of Strings **(Required)**</param>
-        /// <param name="fullModel">Full model or content only **(Required)**</param>
+        /// <param name="name">Name of String Template **(Required)**</param>
+        /// <param name="fullModel">Full model or content only **(Optional)** (optional)</param>
         /// <returns>Task of ApiResponse (TextString)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TextString>> GetStringsByNameAsyncWithHttpInfo (string name, bool? fullModel)
+        public async System.Threading.Tasks.Task<ApiResponse<TextString>> GetStringsByNameAsyncWithHttpInfo (string name, bool? fullModel = null)
         {
             // verify the required parameter 'name' is set
             if (name == null)
                 throw new ApiException(400, "Missing required parameter 'name' when calling StringApi->GetStringsByName");
-            // verify the required parameter 'fullModel' is set
-            if (fullModel == null)
-                throw new ApiException(400, "Missing required parameter 'fullModel' when calling StringApi->GetStringsByName");
 
             var localVarPath = "/strings/{name}";
             var localVarPathParams = new Dictionary<String, String>();

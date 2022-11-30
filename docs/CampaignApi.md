@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createcampaign"></a>
 # **CreateCampaign**
-> PostSuccess CreateCampaign (CampaignDataInput body)
+> InlineResponse2002 CreateCampaign (CampaignDataInput body)
 
 Create campaign.
 
@@ -43,7 +43,7 @@ namespace Example
             try
             {
                 // Create campaign.
-                PostSuccess result = apiInstance.CreateCampaign(body);
+                InlineResponse2002 result = apiInstance.CreateCampaign(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSuccess**](PostSuccess.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="deletecampaignbyid"></a>
 # **DeleteCampaignById**
-> Success DeleteCampaignById (long? id)
+> InlineResponse202 DeleteCampaignById (long? id)
 
 Delete campaign by id
 
@@ -103,12 +103,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new CampaignApi();
-            var id = 789;  // long? | ID of Campaign **(Required)**
+            var id = new long?(); // long? | ID of Campaign **(Required)**
 
             try
             {
                 // Delete campaign by id
-                Success result = apiInstance.DeleteCampaignById(id);
+                InlineResponse202 result = apiInstance.DeleteCampaignById(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -124,11 +124,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Campaign **(Required)** | 
+ **id** | [**long?**](long?.md)| ID of Campaign **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="getcampaignbyid"></a>
 # **GetCampaignById**
-> CampaignResult GetCampaignById (long? id, long? externalStationId = null)
+> CampaignResult GetCampaignById (long? id)
 
 Get campaign by id
 
@@ -168,13 +168,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new CampaignApi();
-            var id = 789;  // long? | ID of Campaign **(Required)**
-            var externalStationId = 789;  // long? | Query on a different (content providing) station *(Optional)* (optional) 
+            var id = new long?(); // long? | ID of Campaign **(Required)**
 
             try
             {
                 // Get campaign by id
-                CampaignResult result = apiInstance.GetCampaignById(id, externalStationId);
+                CampaignResult result = apiInstance.GetCampaignById(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -190,8 +189,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Campaign **(Required)** | 
- **externalStationId** | **long?**| Query on a different (content providing) station *(Optional)* | [optional] 
+ **id** | [**long?**](long?.md)| ID of Campaign **(Required)** | 
 
 ### Return type
 
@@ -209,7 +207,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="listcampaigns"></a>
 # **ListCampaigns**
-> Object ListCampaigns (long? page = null, long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
+> InlineResponse2004 ListCampaigns (long? itemId = null, long? modelTypeId = null, DateTime? startMin = null, DateTime? startMax = null, long? page = null, long? limit = null, string orderBy = null, string orderDirection = null, long? externalStationId = null)
 
 Get all campaigns.
 
@@ -235,11 +233,11 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new CampaignApi();
-            var page = 789;  // long? | Current page *(Optional)* (optional) 
-            var itemId = 789;  // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
-            var modelTypeId = 789;  // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
+            var itemId = new long?(); // long? | Search on Item ID *(Optional)* `(Relation)` (optional) 
+            var modelTypeId = new long?(); // long? | Search on ModelType ID *(Optional)* `(Relation)` (optional) 
             var startMin = 2013-10-20T19:20:30+01:00;  // DateTime? | Minimum start date *(Optional)* (optional) 
             var startMax = 2013-10-20T19:20:30+01:00;  // DateTime? | Maximum start date *(Optional)* (optional) 
+            var page = 789;  // long? | Current page *(Optional)* (optional)  (default to 1)
             var limit = 789;  // long? | Results per page *(Optional)* (optional) 
             var orderBy = orderBy_example;  // string | Field to order the results *(Optional)* (optional) 
             var orderDirection = orderDirection_example;  // string | Direction of ordering *(Optional)* (optional) 
@@ -248,7 +246,7 @@ namespace Example
             try
             {
                 // Get all campaigns.
-                Object result = apiInstance.ListCampaigns(page, itemId, modelTypeId, startMin, startMax, limit, orderBy, orderDirection, externalStationId);
+                InlineResponse2004 result = apiInstance.ListCampaigns(itemId, modelTypeId, startMin, startMax, page, limit, orderBy, orderDirection, externalStationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -264,11 +262,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **long?**| Current page *(Optional)* | [optional] 
- **itemId** | **long?**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **modelTypeId** | **long?**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **itemId** | [**long?**](long?.md)| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **modelTypeId** | [**long?**](long?.md)| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **startMin** | **DateTime?**| Minimum start date *(Optional)* | [optional] 
  **startMax** | **DateTime?**| Maximum start date *(Optional)* | [optional] 
+ **page** | **long?**| Current page *(Optional)* | [optional] [default to 1]
  **limit** | **long?**| Results per page *(Optional)* | [optional] 
  **orderBy** | **string**| Field to order the results *(Optional)* | [optional] 
  **orderDirection** | **string**| Direction of ordering *(Optional)* | [optional] 
@@ -276,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -290,7 +288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="updatecampaignbyid"></a>
 # **UpdateCampaignByID**
-> Success UpdateCampaignByID (long? id, CampaignDataInput body = null)
+> InlineResponse202 UpdateCampaignByID (CampaignDataInput body, long? id)
 
 Update campaign by id
 
@@ -316,13 +314,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("api-key", "Bearer");
 
             var apiInstance = new CampaignApi();
-            var id = 789;  // long? | ID of Campaign **(Required)**
-            var body = new CampaignDataInput(); // CampaignDataInput | Data *(Optional)* (optional) 
+            var body = new CampaignDataInput(); // CampaignDataInput | Data **(Optional)**
+            var id = new long?(); // long? | ID of Campaign **(Required)**
 
             try
             {
                 // Update campaign by id
-                Success result = apiInstance.UpdateCampaignByID(id, body);
+                InlineResponse202 result = apiInstance.UpdateCampaignByID(body, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -338,12 +336,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **long?**| ID of Campaign **(Required)** | 
- **body** | [**CampaignDataInput**](CampaignDataInput.md)| Data *(Optional)* | [optional] 
+ **body** | [**CampaignDataInput**](CampaignDataInput.md)| Data **(Optional)** | 
+ **id** | [**long?**](long?.md)| ID of Campaign **(Required)** | 
 
 ### Return type
 
-[**Success**](Success.md)
+[**InlineResponse202**](InlineResponse202.md)
 
 ### Authorization
 

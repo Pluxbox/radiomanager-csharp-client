@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -38,7 +38,7 @@ namespace RadioManager.Model
         /// <param name="tags">tags.</param>
         /// <param name="presenters">presenters.</param>
         /// <param name="modelType">modelType.</param>
-        public BroadcastEPGRelations(Object items = default(Object), Object blocks = default(Object), Object program = default(Object), Object tags = default(Object), List<PresenterEPGResult> presenters = default(List<PresenterEPGResult>), Object modelType = default(Object))
+        public BroadcastEPGRelations(BroadcastRelationsItems items = default(BroadcastRelationsItems), BroadcastRelationsBlocks blocks = default(BroadcastRelationsBlocks), BlockRelationsProgram program = default(BlockRelationsProgram), BroadcastRelationsTags tags = default(BroadcastRelationsTags), List<PresenterEPGResult> presenters = default(List<PresenterEPGResult>), BroadcastRelationsModelType modelType = default(BroadcastRelationsModelType))
         {
             this.Items = items;
             this.Blocks = blocks;
@@ -52,25 +52,25 @@ namespace RadioManager.Model
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items", EmitDefaultValue=false)]
-        public Object Items { get; set; }
+        public BroadcastRelationsItems Items { get; set; }
 
         /// <summary>
         /// Gets or Sets Blocks
         /// </summary>
         [DataMember(Name="blocks", EmitDefaultValue=false)]
-        public Object Blocks { get; set; }
+        public BroadcastRelationsBlocks Blocks { get; set; }
 
         /// <summary>
         /// Gets or Sets Program
         /// </summary>
         [DataMember(Name="program", EmitDefaultValue=false)]
-        public Object Program { get; set; }
+        public BlockRelationsProgram Program { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name="tags", EmitDefaultValue=false)]
-        public Object Tags { get; set; }
+        public BroadcastRelationsTags Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Presenters
@@ -82,7 +82,7 @@ namespace RadioManager.Model
         /// Gets or Sets ModelType
         /// </summary>
         [DataMember(Name="model_type", EmitDefaultValue=false)]
-        public Object ModelType { get; set; }
+        public BroadcastRelationsModelType ModelType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -39,7 +39,7 @@ namespace RadioManager.Model
         /// <param name="tags">tags.</param>
         /// <param name="campaign">campaign.</param>
         /// <param name="modelType">modelType.</param>
-        public ItemResult(Object block = default(Object), Object broadcast = default(Object), Object program = default(Object), Object contacts = default(Object), Object tags = default(Object), Object campaign = default(Object), Object modelType = default(Object), Object block = default(Object), Object broadcast = default(Object), Object program = default(Object), Object contacts = default(Object), Object tags = default(Object), Object modelType = default(Object), long? id = default(long?), DateTime? updatedAt = default(DateTime?), DateTime? createdAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), long? dataModified = default(long?), long? order = default(long?), long? templateblockId = default(long?), long? templateitemId = default(long?), long? externalStationId = default(long?)) : base(id, updatedAt, createdAt, deletedAt, dataModified, order, templateblockId, templateitemId, externalStationId)
+        public ItemResult(ItemRelationsBlock block = default(ItemRelationsBlock), BlockRelationsBroadcast broadcast = default(BlockRelationsBroadcast), ItemRelationsProgram program = default(ItemRelationsProgram), ItemRelationsContacts contacts = default(ItemRelationsContacts), ItemRelationsTags tags = default(ItemRelationsTags), ItemRelationsCampaign campaign = default(ItemRelationsCampaign), BroadcastRelationsModelType modelType = default(BroadcastRelationsModelType), ItemRelationsBlock block = default(ItemRelationsBlock), BlockRelationsBroadcast broadcast = default(BlockRelationsBroadcast), ItemRelationsProgram program = default(ItemRelationsProgram), ItemRelationsContacts contacts = default(ItemRelationsContacts), ItemRelationsTags tags = default(ItemRelationsTags), BroadcastRelationsModelType modelType = default(BroadcastRelationsModelType), long? id = default(long?), DateTime? updatedAt = default(DateTime?), DateTime? createdAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), long? dataModified = default(long?), long? order = default(long?), long? templateblockId = default(long?), long? templateitemId = default(long?), long? externalStationId = default(long?)) : base(id, updatedAt, createdAt, deletedAt, dataModified, order, templateblockId, templateitemId, externalStationId)
         {
             this.Block = block;
             this.Broadcast = broadcast;
@@ -54,43 +54,43 @@ namespace RadioManager.Model
         /// Gets or Sets Block
         /// </summary>
         [DataMember(Name="block", EmitDefaultValue=false)]
-        public Object Block { get; set; }
+        public ItemRelationsBlock Block { get; set; }
 
         /// <summary>
         /// Gets or Sets Broadcast
         /// </summary>
         [DataMember(Name="broadcast", EmitDefaultValue=false)]
-        public Object Broadcast { get; set; }
+        public BlockRelationsBroadcast Broadcast { get; set; }
 
         /// <summary>
         /// Gets or Sets Program
         /// </summary>
         [DataMember(Name="program", EmitDefaultValue=false)]
-        public Object Program { get; set; }
+        public ItemRelationsProgram Program { get; set; }
 
         /// <summary>
         /// Gets or Sets Contacts
         /// </summary>
         [DataMember(Name="contacts", EmitDefaultValue=false)]
-        public Object Contacts { get; set; }
+        public ItemRelationsContacts Contacts { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name="tags", EmitDefaultValue=false)]
-        public Object Tags { get; set; }
+        public ItemRelationsTags Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Campaign
         /// </summary>
         [DataMember(Name="campaign", EmitDefaultValue=false)]
-        public Object Campaign { get; set; }
+        public ItemRelationsCampaign Campaign { get; set; }
 
         /// <summary>
         /// Gets or Sets ModelType
         /// </summary>
         [DataMember(Name="model_type", EmitDefaultValue=false)]
-        public Object ModelType { get; set; }
+        public BroadcastRelationsModelType ModelType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -213,7 +213,6 @@ namespace RadioManager.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

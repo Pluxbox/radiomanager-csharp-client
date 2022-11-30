@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -39,22 +39,22 @@ namespace RadioManager.Model
             /// Enum _1week for value: 1 week
             /// </summary>
             [EnumMember(Value = "1 week")]
-            _1week = 0,
+            _1week = 1,
             /// <summary>
             /// Enum _2week for value: 2 week
             /// </summary>
             [EnumMember(Value = "2 week")]
-            _2week = 1,
+            _2week = 2,
             /// <summary>
             /// Enum _4week for value: 4 week
             /// </summary>
             [EnumMember(Value = "4 week")]
-            _4week = 2,
+            _4week = 3,
             /// <summary>
             /// Enum _1month for value: 1 month
             /// </summary>
             [EnumMember(Value = "1 month")]
-            _1month = 3        }
+            _1month = 4        }
         /// <summary>
         /// Gets or Sets RepetitionType
         /// </summary>
@@ -85,7 +85,9 @@ namespace RadioManager.Model
         /// <param name="repetitionStart">repetitionStart.</param>
         /// <param name="repetitionDays">repetitionDays.</param>
         /// <param name="ptyCodeId">ptyCodeId.</param>
-        public Broadcast(long? programId = default(long?), long? modelTypeId = default(long?), long? stationId = default(long?), Object fieldValues = default(Object), string title = default(string), DateTime? start = default(DateTime?), DateTime? stop = default(DateTime?), long? genreId = default(long?), string description = default(string), string shortName = default(string), string mediumName = default(string), string website = default(string), string email = default(string), bool? recommended = default(bool?), string language = default(string), bool? published = default(bool?), string repetitionUid = default(string), RepetitionTypeEnum? repetitionType = default(RepetitionTypeEnum?), DateTime? repetitionEnd = default(DateTime?), DateTime? repetitionStart = default(DateTime?), string repetitionDays = default(string), long? ptyCodeId = default(long?))
+        /// <param name="plannedInEpg">plannedInEpg.</param>
+        /// <param name="groupId">groupId.</param>
+        public Broadcast(long? programId = default(long?), long? modelTypeId = default(long?), long? stationId = default(long?), Object fieldValues = default(Object), string title = default(string), DateTime? start = default(DateTime?), DateTime? stop = default(DateTime?), long? genreId = default(long?), string description = default(string), string shortName = default(string), string mediumName = default(string), string website = default(string), string email = default(string), bool? recommended = default(bool?), string language = default(string), bool? published = default(bool?), string repetitionUid = default(string), RepetitionTypeEnum? repetitionType = default(RepetitionTypeEnum?), DateTime? repetitionEnd = default(DateTime?), DateTime? repetitionStart = default(DateTime?), string repetitionDays = default(string), long? ptyCodeId = default(long?), int? plannedInEpg = default(int?), long? groupId = default(long?))
         {
             this.ProgramId = programId;
             this.ModelTypeId = modelTypeId;
@@ -109,6 +111,8 @@ namespace RadioManager.Model
             this.RepetitionStart = repetitionStart;
             this.RepetitionDays = repetitionDays;
             this.PtyCodeId = ptyCodeId;
+            this.PlannedInEpg = plannedInEpg;
+            this.GroupId = groupId;
         }
         
         /// <summary>
@@ -239,6 +243,18 @@ namespace RadioManager.Model
         public long? PtyCodeId { get; set; }
 
         /// <summary>
+        /// Gets or Sets PlannedInEpg
+        /// </summary>
+        [DataMember(Name="planned_in_epg", EmitDefaultValue=false)]
+        public int? PlannedInEpg { get; set; }
+
+        /// <summary>
+        /// Gets or Sets GroupId
+        /// </summary>
+        [DataMember(Name="group_id", EmitDefaultValue=false)]
+        public long? GroupId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -268,6 +284,8 @@ namespace RadioManager.Model
             sb.Append("  RepetitionStart: ").Append(RepetitionStart).Append("\n");
             sb.Append("  RepetitionDays: ").Append(RepetitionDays).Append("\n");
             sb.Append("  PtyCodeId: ").Append(PtyCodeId).Append("\n");
+            sb.Append("  PlannedInEpg: ").Append(PlannedInEpg).Append("\n");
+            sb.Append("  GroupId: ").Append(GroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -411,6 +429,16 @@ namespace RadioManager.Model
                     this.PtyCodeId == input.PtyCodeId ||
                     (this.PtyCodeId != null &&
                     this.PtyCodeId.Equals(input.PtyCodeId))
+                ) && 
+                (
+                    this.PlannedInEpg == input.PlannedInEpg ||
+                    (this.PlannedInEpg != null &&
+                    this.PlannedInEpg.Equals(input.PlannedInEpg))
+                ) && 
+                (
+                    this.GroupId == input.GroupId ||
+                    (this.GroupId != null &&
+                    this.GroupId.Equals(input.GroupId))
                 );
         }
 
@@ -467,6 +495,10 @@ namespace RadioManager.Model
                     hashCode = hashCode * 59 + this.RepetitionDays.GetHashCode();
                 if (this.PtyCodeId != null)
                     hashCode = hashCode * 59 + this.PtyCodeId.GetHashCode();
+                if (this.PlannedInEpg != null)
+                    hashCode = hashCode * 59 + this.PlannedInEpg.GetHashCode();
+                if (this.GroupId != null)
+                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 return hashCode;
             }
         }

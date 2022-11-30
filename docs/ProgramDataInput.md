@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Title** | **string** |  | 
 **Disabled** | **bool?** |  | [optional] 
 **GenreId** | **long?** |  | [optional] 
+**GroupId** | **long?** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **ShortName** | **string** |  | [optional] 
 **MediumName** | **string** |  | [optional] 

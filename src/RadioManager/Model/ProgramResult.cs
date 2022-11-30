@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -37,6 +37,7 @@ namespace RadioManager.Model
         /// <param name="title">title (required).</param>
         /// <param name="disabled">disabled.</param>
         /// <param name="genreId">genreId.</param>
+        /// <param name="groupId">groupId.</param>
         /// <param name="description">description.</param>
         /// <param name="shortName">shortName.</param>
         /// <param name="mediumName">mediumName.</param>
@@ -52,7 +53,8 @@ namespace RadioManager.Model
         /// <param name="presenters">presenters.</param>
         /// <param name="tags">tags.</param>
         /// <param name="modelType">modelType.</param>
-        public ProgramResult(long? modelTypeId = default(long?), Object fieldValues = default(Object), string title = default(string), bool? disabled = default(bool?), long? genreId = default(long?), string description = default(string), string shortName = default(string), string mediumName = default(string), string website = default(string), string email = default(string), bool? recommended = default(bool?), string language = default(string), long? ptyCodeId = default(long?), Object genre = default(Object), Object items = default(Object), Object blocks = default(Object), Object broadcasts = default(Object), Object presenters = default(Object), Object tags = default(Object), Object modelType = default(Object), long? modelTypeId = default(long?), Object fieldValues = default(Object), string title = default(string), Object modelType = default(Object), long? id = default(long?), DateTime? updatedAt = default(DateTime?), DateTime? createdAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), long? externalStationId = default(long?)) : base(id, updatedAt, createdAt, deletedAt, externalStationId)
+        /// <param name="group">group.</param>
+        public ProgramResult(long? modelTypeId = default(long?), Object fieldValues = default(Object), string title = default(string), bool? disabled = default(bool?), long? genreId = default(long?), long? groupId = default(long?), string description = default(string), string shortName = default(string), string mediumName = default(string), string website = default(string), string email = default(string), bool? recommended = default(bool?), string language = default(string), long? ptyCodeId = default(long?), BroadcastRelationsGenre genre = default(BroadcastRelationsGenre), ProgramRelationsItems items = default(ProgramRelationsItems), ProgramRelationsBlocks blocks = default(ProgramRelationsBlocks), ProgramRelationsBroadcasts broadcasts = default(ProgramRelationsBroadcasts), ProgramRelationsPresenters presenters = default(ProgramRelationsPresenters), ProgramRelationsTags tags = default(ProgramRelationsTags), BroadcastRelationsModelType modelType = default(BroadcastRelationsModelType), BroadcastRelationsGroup group = default(BroadcastRelationsGroup), long? modelTypeId = default(long?), Object fieldValues = default(Object), string title = default(string), BroadcastRelationsGroup group = default(BroadcastRelationsGroup), long? id = default(long?), DateTime? updatedAt = default(DateTime?), DateTime? createdAt = default(DateTime?), DateTime? deletedAt = default(DateTime?), long? externalStationId = default(long?)) : base(id, updatedAt, createdAt, deletedAt, externalStationId)
         {
             // to ensure "modelTypeId" is required (not null)
             if (modelTypeId == null)
@@ -75,6 +77,7 @@ namespace RadioManager.Model
             this.FieldValues = fieldValues;
             this.Disabled = disabled;
             this.GenreId = genreId;
+            this.GroupId = groupId;
             this.Description = description;
             this.ShortName = shortName;
             this.MediumName = mediumName;
@@ -90,6 +93,7 @@ namespace RadioManager.Model
             this.Presenters = presenters;
             this.Tags = tags;
             this.ModelType = modelType;
+            this.Group = group;
         }
         
         /// <summary>
@@ -121,6 +125,12 @@ namespace RadioManager.Model
         /// </summary>
         [DataMember(Name="genre_id", EmitDefaultValue=false)]
         public long? GenreId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets GroupId
+        /// </summary>
+        [DataMember(Name="group_id", EmitDefaultValue=false)]
+        public long? GroupId { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
@@ -174,43 +184,49 @@ namespace RadioManager.Model
         /// Gets or Sets Genre
         /// </summary>
         [DataMember(Name="genre", EmitDefaultValue=false)]
-        public Object Genre { get; set; }
+        public BroadcastRelationsGenre Genre { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items", EmitDefaultValue=false)]
-        public Object Items { get; set; }
+        public ProgramRelationsItems Items { get; set; }
 
         /// <summary>
         /// Gets or Sets Blocks
         /// </summary>
         [DataMember(Name="blocks", EmitDefaultValue=false)]
-        public Object Blocks { get; set; }
+        public ProgramRelationsBlocks Blocks { get; set; }
 
         /// <summary>
         /// Gets or Sets Broadcasts
         /// </summary>
         [DataMember(Name="broadcasts", EmitDefaultValue=false)]
-        public Object Broadcasts { get; set; }
+        public ProgramRelationsBroadcasts Broadcasts { get; set; }
 
         /// <summary>
         /// Gets or Sets Presenters
         /// </summary>
         [DataMember(Name="presenters", EmitDefaultValue=false)]
-        public Object Presenters { get; set; }
+        public ProgramRelationsPresenters Presenters { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name="tags", EmitDefaultValue=false)]
-        public Object Tags { get; set; }
+        public ProgramRelationsTags Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets ModelType
         /// </summary>
         [DataMember(Name="model_type", EmitDefaultValue=false)]
-        public Object ModelType { get; set; }
+        public BroadcastRelationsModelType ModelType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Group
+        /// </summary>
+        [DataMember(Name="group", EmitDefaultValue=false)]
+        public BroadcastRelationsGroup Group { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -226,6 +242,7 @@ namespace RadioManager.Model
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Disabled: ").Append(Disabled).Append("\n");
             sb.Append("  GenreId: ").Append(GenreId).Append("\n");
+            sb.Append("  GroupId: ").Append(GroupId).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  ShortName: ").Append(ShortName).Append("\n");
             sb.Append("  MediumName: ").Append(MediumName).Append("\n");
@@ -241,6 +258,7 @@ namespace RadioManager.Model
             sb.Append("  Presenters: ").Append(Presenters).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  ModelType: ").Append(ModelType).Append("\n");
+            sb.Append("  Group: ").Append(Group).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -299,6 +317,11 @@ namespace RadioManager.Model
                     this.GenreId == input.GenreId ||
                     (this.GenreId != null &&
                     this.GenreId.Equals(input.GenreId))
+                ) && base.Equals(input) && 
+                (
+                    this.GroupId == input.GroupId ||
+                    (this.GroupId != null &&
+                    this.GroupId.Equals(input.GroupId))
                 ) && base.Equals(input) && 
                 (
                     this.Description == input.Description ||
@@ -374,6 +397,11 @@ namespace RadioManager.Model
                     this.ModelType == input.ModelType ||
                     (this.ModelType != null &&
                     this.ModelType.Equals(input.ModelType))
+                ) && base.Equals(input) && 
+                (
+                    this.Group == input.Group ||
+                    (this.Group != null &&
+                    this.Group.Equals(input.Group))
                 );
         }
 
@@ -396,6 +424,8 @@ namespace RadioManager.Model
                     hashCode = hashCode * 59 + this.Disabled.GetHashCode();
                 if (this.GenreId != null)
                     hashCode = hashCode * 59 + this.GenreId.GetHashCode();
+                if (this.GroupId != null)
+                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.ShortName != null)
@@ -426,6 +456,8 @@ namespace RadioManager.Model
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.ModelType != null)
                     hashCode = hashCode * 59 + this.ModelType.GetHashCode();
+                if (this.Group != null)
+                    hashCode = hashCode * 59 + this.Group.GetHashCode();
                 return hashCode;
             }
         }
@@ -437,7 +469,6 @@ namespace RadioManager.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

@@ -1,7 +1,7 @@
 /* 
  * RadioManager
  *
- * RadioManager
+ * This OpenAPI 3 Document describes the functionality of the API v2 of RadioManager. Note that no rights can be derived from this Document and the true functionality of the API might differ.
  *
  * OpenAPI spec version: 2.0
  * Contact: support@pluxbox.com
@@ -39,7 +39,7 @@ namespace RadioManager.Model
         /// <param name="presenters">presenters.</param>
         /// <param name="items">items.</param>
         /// <param name="externalStationId">externalStationId.</param>
-        public ModelTypeResult(Object campaigns = default(Object), Object broadcasts = default(Object), Object programs = default(Object), Object contacts = default(Object), Object presenters = default(Object), Object items = default(Object), long? externalStationId = default(long?), Object campaigns = default(Object), Object broadcasts = default(Object), Object programs = default(Object), Object contacts = default(Object), long? externalStationId = default(long?), long? id = default(long?), string name = default(string), ModelEnum? model = default(ModelEnum?), DateTime? createdAt = default(DateTime?), DateTime? updatedAt = default(DateTime?), Object options = default(Object), long? order = default(long?), DateTime? deletedAt = default(DateTime?)) : base(id, name, model, createdAt, updatedAt, options, order, deletedAt)
+        public ModelTypeResult(ModelTypeRelationsCampaigns campaigns = default(ModelTypeRelationsCampaigns), ModelTypeRelationsBroadcasts broadcasts = default(ModelTypeRelationsBroadcasts), ModelTypeRelationsPrograms programs = default(ModelTypeRelationsPrograms), ModelTypeRelationsContacts contacts = default(ModelTypeRelationsContacts), ModelTypeRelationsPresenters presenters = default(ModelTypeRelationsPresenters), ModelTypeRelationsItems items = default(ModelTypeRelationsItems), long? externalStationId = default(long?), ModelTypeRelationsCampaigns campaigns = default(ModelTypeRelationsCampaigns), ModelTypeRelationsBroadcasts broadcasts = default(ModelTypeRelationsBroadcasts), ModelTypeRelationsPrograms programs = default(ModelTypeRelationsPrograms), ModelTypeRelationsContacts contacts = default(ModelTypeRelationsContacts), long? externalStationId = default(long?), long? id = default(long?), string name = default(string), ModelEnum? model = default(ModelEnum?), DateTime? createdAt = default(DateTime?), DateTime? updatedAt = default(DateTime?), ModelTypeOptions options = default(ModelTypeOptions), long? order = default(long?), DateTime? deletedAt = default(DateTime?)) : base(id, name, model, createdAt, updatedAt, options, order, deletedAt)
         {
             this.Campaigns = campaigns;
             this.Broadcasts = broadcasts;
@@ -54,37 +54,37 @@ namespace RadioManager.Model
         /// Gets or Sets Campaigns
         /// </summary>
         [DataMember(Name="campaigns", EmitDefaultValue=false)]
-        public Object Campaigns { get; set; }
+        public ModelTypeRelationsCampaigns Campaigns { get; set; }
 
         /// <summary>
         /// Gets or Sets Broadcasts
         /// </summary>
         [DataMember(Name="broadcasts", EmitDefaultValue=false)]
-        public Object Broadcasts { get; set; }
+        public ModelTypeRelationsBroadcasts Broadcasts { get; set; }
 
         /// <summary>
         /// Gets or Sets Programs
         /// </summary>
         [DataMember(Name="programs", EmitDefaultValue=false)]
-        public Object Programs { get; set; }
+        public ModelTypeRelationsPrograms Programs { get; set; }
 
         /// <summary>
         /// Gets or Sets Contacts
         /// </summary>
         [DataMember(Name="contacts", EmitDefaultValue=false)]
-        public Object Contacts { get; set; }
+        public ModelTypeRelationsContacts Contacts { get; set; }
 
         /// <summary>
         /// Gets or Sets Presenters
         /// </summary>
         [DataMember(Name="presenters", EmitDefaultValue=false)]
-        public Object Presenters { get; set; }
+        public ModelTypeRelationsPresenters Presenters { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items", EmitDefaultValue=false)]
-        public Object Items { get; set; }
+        public ModelTypeRelationsItems Items { get; set; }
 
         /// <summary>
         /// Gets or Sets ExternalStationId
@@ -213,7 +213,6 @@ namespace RadioManager.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

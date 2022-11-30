@@ -4,15 +4,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **long?** |  | 
-**UpdatedAt** | **DateTime?** |  | 
-**CreatedAt** | **DateTime?** |  | 
-**DeletedAt** | **DateTime?** |  | 
+**UpdatedAt** | **DateTime?** |  | [optional] 
+**CreatedAt** | **DateTime?** |  | [optional] 
+**DeletedAt** | **DateTime?** |  | [optional] 
 **ExternalStationId** | **long?** |  | [optional] 
 **ModelTypeId** | **long?** |  | 
 **FieldValues** | **Object** |  | [optional] 
 **Title** | **string** |  | 
 **Disabled** | **bool?** |  | [optional] 
 **GenreId** | **long?** |  | [optional] 
+**GroupId** | **long?** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **ShortName** | **string** |  | [optional] 
 **MediumName** | **string** |  | [optional] 
@@ -21,13 +22,14 @@ Name | Type | Description | Notes
 **Recommended** | **bool?** |  | [optional] 
 **Language** | **string** |  | [optional] 
 **PtyCodeId** | **long?** |  | [optional] 
-**Genre** | **Object** |  | [optional] 
-**Items** | **Object** |  | [optional] 
-**Blocks** | **Object** |  | [optional] 
-**Broadcasts** | **Object** |  | [optional] 
-**Presenters** | **Object** |  | [optional] 
-**Tags** | **Object** |  | [optional] 
-**ModelType** | **Object** |  | [optional] 
+**Genre** | [**BroadcastRelationsGenre**](BroadcastRelationsGenre.md) |  | [optional] 
+**Items** | [**ProgramRelationsItems**](ProgramRelationsItems.md) |  | [optional] 
+**Blocks** | [**ProgramRelationsBlocks**](ProgramRelationsBlocks.md) |  | [optional] 
+**Broadcasts** | [**ProgramRelationsBroadcasts**](ProgramRelationsBroadcasts.md) |  | [optional] 
+**Presenters** | [**ProgramRelationsPresenters**](ProgramRelationsPresenters.md) |  | [optional] 
+**Tags** | [**ProgramRelationsTags**](ProgramRelationsTags.md) |  | [optional] 
+**ModelType** | [**BroadcastRelationsModelType**](BroadcastRelationsModelType.md) |  | [optional] 
+**Group** | [**BroadcastRelationsGroup**](BroadcastRelationsGroup.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
