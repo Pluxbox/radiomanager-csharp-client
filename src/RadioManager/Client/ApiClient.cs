@@ -52,12 +52,12 @@ namespace RadioManager.Client
         public ApiClient()
         {
             Configuration = RadioManager.Client.Configuration.Default;
-            RestClient = new RestClient("https://radiomanager.io/api/v2");
+            RestClient = new RestClient("https://staging.radiomanager.io/api/v2");
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (https://radiomanager.io/api/v2).
+        /// with default base path (https://staging.radiomanager.io/api/v2).
         /// </summary>
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
@@ -72,7 +72,7 @@ namespace RadioManager.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "https://radiomanager.io/api/v2")
+        public ApiClient(String basePath = "https://staging.radiomanager.io/api/v2")
         {
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");

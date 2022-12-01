@@ -114,7 +114,7 @@ namespace RadioManager.Client
         public Configuration()
         {
             UserAgent = "Swagger-Codegen/1.0.0/csharp";
-            BasePath = "https://radiomanager.io/api/v2";
+            BasePath = "https://staging.radiomanager.io/api/v2";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -129,7 +129,7 @@ namespace RadioManager.Client
             IDictionary<string, string> defaultHeader,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "https://radiomanager.io/api/v2") : this()
+            string basePath = "https://staging.radiomanager.io/api/v2") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");
